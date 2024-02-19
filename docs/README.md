@@ -1,10 +1,8 @@
-# Snyk Documentation
-
-
+# Snyk 사용자 가이드
 
 ## Start using Snyk
 
-<table data-header-hidden><thead><tr><th></th><th width="164.33333333333331"></th><th width="188"></th><th></th></tr></thead><tbody><tr><td>​<a href="getting-started/">Getting started</a> <br>Start running Snyk to secure your code</td><td><a href="enterprise-configuration/">Enterprise configuration</a><br>Use Snyk in an enterprise system</td><td><a href="implement-snyk/">Implement Snyk</a><br>Set up Snyk to run in your business</td><td><a href="scan-with-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview.md">Supported languages</a><br>Match your language and package to Snyk</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th></th><th width="164.33333333333331"></th><th width="188"></th><th></th></tr></thead><tbody><tr><td><a href="getting-started/">​시작하기</a><br>Start running Snyk to secure your code</td><td><a href="enterprise-configuration/">Enterprise 구성</a><br>Use Snyk in an enterprise system</td><td><a href="implement-snyk/">Snyk 구현 가이드</a><br>Set up Snyk to run in your business</td><td><a href="scan-with-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview.md">지원하는 언어</a><br>Match your language and package to Snyk</td></tr></tbody></table>
 
 ## Integrate with Snyk <a href="#explore-snyk-products" id="explore-snyk-products"></a>
 
@@ -17,7 +15,7 @@
 
 ## Manage risk
 
-<table data-header-hidden><thead><tr><th width="254"></th><th width="325"></th></tr></thead><tbody><tr><td><a href="manage-risk/">Manage risk</a><br>Prioritize and report on Snyk scan results</td><td><a href="manage-risk/snyk-apprisk/">Snyk AppRisk</a> <br>Implement a high-performing developer security program</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="254"></th><th width="325"></th></tr></thead><tbody><tr><td><a href="manage-risk/">Manage risk</a><br>Prioritize and report on Snyk scan results</td><td><a href="manage-risk/snyk-apprisk/">Snyk AppRisk</a><br>Implement a high-performing developer security program</td></tr></tbody></table>
 
 ## Configuration and administration <a href="#use-other-resources" id="use-other-resources"></a>
 
