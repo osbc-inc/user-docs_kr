@@ -1,72 +1,72 @@
-# Set up an integration
+# 통합 설정
 
 {% hint style="info" %}
-**Recap**\
-You have [created a Snyk account](create-or-log-in-to-a-snyk-account.md). You now need to tell Snyk where to scan.
+**요약**\
+[created a Snyk account](create-or-log-in-to-a-snyk-account.md). 이제 Snyk에게 스캔할 위치를 알려주어야 합니다.
 {% endhint %}
 
-You must give Snyk access to your environment, to allow Snyk to scan that environment. The type of integration you need depends on what systems you use, and what you want to scan. See [Integrate with Snyk](../../integrate-with-snyk/) for information about aviaable integrators.
+Snyk가 해당 환경을 스캔할 수 있도록 하려면 Snyk에게 귀하의 환경에 대한 액세스 권한을 부여해야 합니다. 필요한 통합 유형은 사용하는 시스템과 스캔하려는 대상에 따라 다릅니다. 사용 가능한 통합자에 대한 자세한 내용은 [Integrate with Snyk](../../integrate-with-snyk/) 을 참조하세요.
 
-You can set up this integration:
+이 통합을 설정할 수 있습니다.
 
-* [Following a guided process](set-up-an-integration.md#guided-process-after-signup), immediately after creating a Snyk account.
-* [Manually](set-up-an-integration.md#manual-process-any-time), at any point.
+* Snyk 계정을 만든 직후, [Following a guided process](set-up-an-integration.md#guided-process-after-signup)을 따릅니다.
+* 언제든지 수동으로 가능합니다.
 
-## Guided process (after signup)
+## 안내 과정(가입 후)
 
-Immediately after you [Create a Snyk account](create-or-log-in-to-a-snyk-account.md), you will see optional getting started walkthrough prompts. You can choose to provide some information to help Snyk guide your experience, and then follow the prompts to integrate your code repository for a seamless experience.
+[Create a Snyk account](create-or-log-in-to-a-snyk-account.md) 직후, 선택적인 시작 안내 메시지가 표시됩니다. Snyk가 귀하의 경험을 안내하는 데 도움이 되는 몇 가지 정보를 제공하도록 선택한 다음 프롬프트에 따라 코드 저장소를 통합하여 원활한 경험을 할 수 있습니다.
 
-An example follows.
+예는 다음과 같습니다.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-05-16 at 9.36.53 AM.png" alt="Choose integration method"><figcaption><p>Choose integration method</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-05-16 at 9.36.53 AM.png" alt="Choose integration method"><figcaption><p>통합 방법 선택</p></figcaption></figure>
 
-Fill in the details for the integration you select. If you select **GitHub**, fill in the details as shown.
+선택한 통합에 대한 세부정보를 입력하세요. **GitHub**를 선택하는 경우 표시된 대로 세부사항을 입력하십시오.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-05-16 at 9.37.34 AM.png" alt="Set access permissions"><figcaption><p>Set access permissions</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-05-16 at 9.37.34 AM.png" alt="Set access permissions"><figcaption><p>액세스 권한 설정</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-05-16 at 9.39.45 AM.png" alt="Configure automation settings &#x26; authenticate"><figcaption><p>Configure automation settings &#x26; authenticate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-05-16 at 9.39.45 AM.png" alt="Configure automation settings &#x26; authenticate"><figcaption><p>자동화 설정 구성 및 인증</p></figcaption></figure>
 
 {% hint style="info" %}
-Snyk Code is enabled by default for the Snyk GitHub integration in this setup stage. If you don't want to enable it in this process, it can be turned on in your Organization **Settings** at a future date.
+이 설정 단계에서는 Snyk GitHub 통합에 대해 Snyk Code가 기본적으로 활성화됩니다. 이 과정에서 활성화하지 않으려면, 나중에 조직 **설정**에서 활성화할 수 있습니다.
 {% endhint %}
 
-To finish, [Import a Project](import-a-project.md) to scan:
+완료하려면, 스캔할 [Import a Project](import-a-project.md) .
 
-<figure><img src="../../.gitbook/assets/image (248) (1).png" alt="Add your first project"><figcaption><p>Add your first project</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (248) (1).png" alt="Add your first project"><figcaption><p>첫 번째 프로젝트 추가</p></figcaption></figure>
 
-Alternatively, if you want to scan your code without authenticating to your source code repository, you can select the CLI integration. This allows you to run scans from your local machine and upload results to your Organization in Snyk.
+또는 소스 코드 저장소에 인증하지 않고 코드를 스캔하려는 경우 CLI 통합을 선택할 수 있습니다. 이를 통해 로컬 컴퓨터에서 스캔을 실행하고 결과를 Snyk의 조직에 업로드할 수 있습니다.
 
-Though GitHub, Bitbucket Cloud, and the CLI are shown with dedicated tiles, many other integrations are available through the **View all integrations** link.
+GitHub, Bitbucket Cloud 및 CLI는 전용 타일로 표시되지만 **모든 통합 보기(View all integrations)** 링크를 통해 다른 많은 통합을 사용할 수 있습니다.
 
-## Manual process (any time)
+## 수동 프로세스(언제든지)
 
-You can add an integration to Snyk manually at any point. For more information, see [Integrate with Snyk](../../integrate-with-snyk/).
+언제든지 Snyk에 통합을 수동으로 추가할 수 있습니다. 자세한 내용은 [Integrate with Snyk](../../integrate-with-snyk/)을 참조하세요.
 
-An example follows showing a Git repository integration
+Git 저장소 통합을 보여주는 예는 다음과 같습니다.
 
-To scan code from a Git-based source code repository, you must integrate Snyk with a [Git repository integration](../../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/). Snyk has pre-built integrations for GitHub, GitHub Enterprise, Bitbucket Cloud, and other repositories.
+Git 기반 소스 코드 저장소에서 코드를 스캔하려면, Snyk를 [Git repository integration](../../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/)과 통합해야 합니다. Snyk에는 GitHub, GitHub Enterprise, Bitbucket Cloud 및 기타 리포지토리에 대한 통합이 사전 구축되어 있습니다.
 
-First, log in to the Snyk Web UI ([app.snyk.io](https://app.snyk.io)), and select **Integrations > Source control**.
+먼저, Snyk 웹 UI([app.snyk.io](https://app.snyk.io))에 로그인하고, **통합(Integrations) > 소스 제어(Source control)**를 선택합니다.
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-07-26 at 13.26.22.png" alt="Select Source control integrations"><figcaption><p>Select Source control integrations</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-07-26 at 13.26.22.png" alt="Select Source control integrations"><figcaption><p>소스 제어 통합 선택</p></figcaption></figure>
 
 </div>
 
 {% hint style="info" %}
-If an integration is already configured for your Organization, it is marked as **Configured**.
+조직에 통합이 이미 구성되어 있으면 **구성됨(Configured)**으로 표시됩니다.
 {% endhint %}
 
-To connect Snyk with your GitHub repositories:
+Snyk를 GitHub 리포지토리와 연결하려면 다음을 수행하세요.
 
-1. Choose whether to give Snyk access to both public and private repositories or only to public repositories.\
-   The GitHub authorization screen opens.
-2. In the GitHub authorization screen, click **Authorize Snyk** to provide Snyk with access to your repositories.
-3. Enter your account credentials and save your details when prompted.
+1. Snyk에 공개 및 비공개 저장소 모두에 대한 액세스 권한을 부여할지 아니면 공개 저장소에만 액세스할 것인지 선택합니다.\
+   GitHub 인증 화면이 열립니다.
+2. GitHub 인증 화면에서, **Authorize Snyk**를 클릭하여 Snyk에 리포지토리에 대한 액세스 권한을 제공합니다.
+3. 계정 자격 증명을 입력하고 메시지가 나타나면 세부 정보를 저장합니다.
 
-See [Git repository integrations (SCMs)](../../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/) for more information.
+자세한 내용은 [Git repository integrations (SCMs)](../../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/)을 참조하세요.
 
-## What's next?
+## 다음은 무엇인가?
 
-You can now [import a Snyk Project](import-a-project.md), to tell Snyk what to scan for issues.
+이제 [import a Snyk Project](import-a-project.md)를 가져와서, Snyk에게 문제를 검색할 항목을 알려줄 수 있습니다.

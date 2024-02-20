@@ -1,23 +1,23 @@
-# View Snyk scan results
+# Snyk 스캔 결과 확인
 
 {% hint style="info" %}
-**Recap**\
-You have [imported a Project into Snyk](import-a-project.md), and Snyk has scanned that Project for any issues.
+**요약**\
+[imported a Project into Snyk](import-a-project.md), Snyk는 해당 프로젝트에 문제가 있는지 검사했습니다.
 {% endhint %}
 
-You can now view the results of your scan on the Projects listing page and select the link to view Project details:
+이제 프로젝트 목록 페이지에서 스캔 결과를 확인하고 링크를 선택하여 프로젝트 세부 정보를 볼 수 있습니다.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-01-23 at 15.24.15.png" alt="Projects listing page showing a new scan"><figcaption><p>Projects listing page showing a new scan</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-01-23 at 15.24.15.png" alt="Projects listing page showing a new scan"><figcaption><p>새 스캔을 보여주는 프로젝트 목록 페이지</p></figcaption></figure>
 
-This shows the number of issues found, grouped by severity level (**C**ritical, **H**igh, **M**edium or **L**ow). See [Severity levels](../../scan-with-snyk/find-and-manage-priority-issues/severity-levels.md) for more details.
+발견된 문제 수를 심각도 수준(**C**ritical, **H**igh, **M**edium or **L**ow)별로 그룹화하여 표시합니다. 자세한 내용은 [Severity levels](../../scan-with-snyk/find-and-manage-priority-issues/severity-levels.md)을 참조하세요.
 
-The scan results and available actions depend on the type of Project you scan:
+스캔 결과와 사용 가능한 작업은 스캔하는 프로젝트 유형에 따라 다릅니다.
 
-* Open-source libraries: see [Snyk Open Source](../../scan-with-snyk/snyk-code/manage-code-vulnerabilities/view-vulnerabilities-in-your-code.md).
-* Application code: see [Snyk Code](broken-reference).
-* Container images: see [Snyk Container](../../scan-with-snyk/snyk-container/scan-container-images.md).
-* Infrastructure as Code (IaC), Kubernetes, Helm and Terraform configuration files and cloud misconfigurations: see [Scan infrastructure](../../scan-with-snyk/scan-infrastructure/).
+* 오픈 소스 라이브러리: [Snyk Open Source](../../scan-with-snyk/snyk-code/manage-code-vulnerabilities/view-vulnerabilities-in-your-code.md)를 참조하세요.
+* 애플리케이션 코드: [Snyk Code](broken-reference/)를 참조하세요.
+* 컨테이너 이미지: [Snyk Container](../../scan-with-snyk/snyk-container/scan-container-images.md)를 참조하세요.
+* IaC(Infrastructure as Code), Kubernetes, Helm 및  Terraform 구성 파일 및 클라우드 구성 오류: [Scan infrastructure](../../scan-with-snyk/scan-infrastructure/)을 참조하세요.
 
-## **What's next?**
+## 다음은 무엇인가**?**
 
-Now, you can start to fix your issues. See [Manage risk](../../manage-risk/).
+이제 문제 해결을 시작할 수 있습니다. [Manage risk](../../manage-risk/)를 참조하세요.

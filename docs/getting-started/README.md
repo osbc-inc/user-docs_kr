@@ -12,7 +12,7 @@ Snyk는 개발자의 작업 흐름에 대한 가시성과 실행 가능한 통�
 
 강력한 보안 프로세스는 이러한 구성 요소가 구축되고 유지 관리되는 각 구성 요소를 보호합니다. Snyk는 DevOps 프로세스에 통합되어 개발자가 각자 선호하는 방법을 사용하여 작업하는 동시에 업계 모범 사례를 따르고 지원합니다. Snyk는 IDE, 워크플로우 및 자동화 파이프라인에 직접 통합되어 툴킷에 보안 전문 지식을 추가합니다.
 
-<figure><img src="../.gitbook/assets/image (162) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="Developer Security Platform: Products and Developer experience"><figcaption><p>Developer Security Platform: Products and Developer experience</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (162) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="Developer Security Platform: Products and Developer experience"><figcaption><p>개발자 보안 플랫폼: 제품 및 개발자 경험</p></figcaption></figure>
 
 ## 작업 흐름에서 Snyk 사용
 
@@ -32,7 +32,7 @@ Snyk는 개발자의 작업 흐름에 대한 가시성과 실행 가능한 통�
 이 비디오는 CLI를 사용하여 취약점을 검색하는 방법을 보여줍니다.
 
 {% embed url="https://thoughtindustries-1.wistia.com/medias/b8vrvtmnbu" %}
-Running Snyk from the command line.
+명령줄에서 Snyk를 실행합니다.
 {% endembed %}
 
 ## Snyk은 내 환경에서 어떻게 작동하나요?

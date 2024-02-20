@@ -1,54 +1,54 @@
-# Create or log in to a Snyk account
+# Snyk 계정 생성 및 로그인
 
-You need a Snyk account to use Snyk functions.
+Snyk 기능을 사용하려면 Snyk 계정이 필요합니다.
 
 {% hint style="info" %}
-If you already have a Snyk account, see [Log in to an existing account](create-or-log-in-to-a-snyk-account.md#log-in-to-an-existing-account).
+이미 Snyk 계정이 있는 경우, [Log in to an existing account](create-or-log-in-to-a-snyk-account.md#log-in-to-an-existing-account)을 참조하세요.
 {% endhint %}
 
-## Create a Snyk account
+## Snyk 계정 만들기
 
 {% hint style="info" %}
-You can create a free account or sign up for a Snyk pricing plan; see [Snyk Pricing Plans](../../implement-snyk/enterprise-implementation-guide/trial-limitations.md) for details.
+무료 계정을 만들거나 Snyk 가격 플랜에 가입할 수 있습니다. 자세한 내용은 [Snyk Pricing Plans](../../implement-snyk/enterprise-implementation-guide/trial-limitations.md) 을 참조하세요.
 {% endhint %}
 
-Follow these steps to create a Snyk account:
+Snyk 계정을 만들려면 다음 단계를 따르세요.
 
-1.  Go to [https://snyk.io/](https://snyk.io) and click **Start free** on the left of the page or **Sign up**.
+1.  [https://snyk.io/](https://snyk.io) 에 접속하여 페이지 왼쪽의 **무료 시작(Start free)** 또는 **회원가입(Sign up)**을 클릭하세요.
 
-    <figure><img src="../../.gitbook/assets/start-free_signup.png" alt="Start free or sign up for a Snyk account"><figcaption><p>Start free or sign up for a Snyk account</p></figcaption></figure>
-2.  Choose your preferred signup method. This example shows creating a free account.
+    <figure><img src="../../.gitbook/assets/start-free_signup.png" alt="Start free or sign up for a Snyk account"><figcaption><p>무료로 시작하거나 Snyk 계정에 가입하세요</p></figcaption></figure>
+2.  원하는 가입 방법을 선택하세요. 아래 예시는 무료 계정을 만드는 방법을 보여줍니다.
 
-    <figure><img src="../../.gitbook/assets/signin_method_10nov2022.png" alt="Choose signup method"><figcaption><p>Choose signup method</p></figcaption></figure>
-3. Follow the prompts to create a new account. You now have a free Snyk account and can log in at any time at [https://app.snyk.io](https://app.snyk.io)
+    <figure><img src="../../.gitbook/assets/signin_method_10nov2022.png" alt="Choose signup method"><figcaption><p>가입 방법 선택</p></figcaption></figure>
+3. 메시지에 따라 새 계정을 만드세요. 무료 Snyk 계정이 생성되면, [https://app.snyk.io](https://app.snyk.io)에서 언제든지 로그인할 수 있습니다.
 
-<figure><img src="../../.gitbook/assets/new_acct_created-10nov2022.png" alt="Get started options for a new Snyk account"><figcaption><p>Get started options for a new Snyk account</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/new_acct_created-10nov2022.png" alt="Get started options for a new Snyk account"><figcaption><p>새 Snyk 계정 시작 옵션</p></figcaption></figure>
 
-## **What's next after signing up?**
+## 가입 후 다음 단계는 무엇입니까**?**
 
-To scan your code, you must first integrate Snyk with the repository holding that code, either:
+코드를 스캔하려면, 먼저 Snyk를 해당 코드가 있는 저장소와 통합해야 합니다.
 
-* Following the automated prompts, immediately after creating a Snyk account.
-* Manually, at any time.
+* Snyk 계정을 만든 직후, 자동 프롬프트를 따릅니다.
+* 언제든지 수동으로 가능합니다.
 
-See [Set up an integration](set-up-an-integration.md) for details.
+자세한 내용은 [Set up an integration](set-up-an-integration.md) 을 참조하세요.
 
-## Log in to an existing account
+## 기존 계정에 로그인
 
-You can navigate to [Snyk](https://snyk.io/) and use the link to log in. If your company uses single sign-on (SSO), use the SSO link provided by your administrators.
+[Snyk](https://snyk.io/) 로 이동하여 링크를 사용하여 로그인 할 수 있습니다. 회사에서 SSO(Single Sign-On)를 사용하는 경우 관리자가 제공한 SSO 링크를 사용하세요.
 
-If your company requires an invitation to use Snyk, you may see a list of Organizations when you log in for the first time. This means that you have not yet been invited. Select the name of an Organization Admin to send an email to request access to that Organization.
+회사에서 Snyk 사용을 위해 초대를 요구하는 경우 처음 로그인할 때 조직 목록이 표시될 수 있습니다. 이는 귀하가 아직 초대되지 않았음을 의미합니다. 해당 조직에 대한 액세스를 요청하기 위해 이메일을 보내려면 조직 관리자의 이름을 선택하세요.
 
-Organizations in Snyk control access to projects. For details see the [Snyk Organizations](../../snyk-admin/manage-groups-and-organizations/whats-a-snyk-organization.md) page.
+Snyk의 조직은 프로젝트에 대한 액세스를 제어합니다. 자세한 내용은 [Snyk Organizations](../../snyk-admin/manage-groups-and-organizations/whats-a-snyk-organization.md) 페이지를 참조하세요.
 
-The Organization settings and policies influence your scan results, depending on which Organization you use when you add a project.
+조직 설정 및 정책은 프로젝트를 추가할 때 사용하는 조직에 따라 스캔 결과에 영향을 미칩니다.
 
 {% hint style="info" %}
-If you log in with a different authentication provider from the one your company uses for the Snyk account, you create a new account. You will not be logged in to the correct Organization for your company.
+회사에서 Snyk 계정에 사용하는 인증 제공업체가 아닌 다른 인증 제공업체로 로그인하는 경우 새 계정을 생성하세요. 귀하의 회사에 맞는 올바른 조직에 로그인되지 않습니다.
 {% endhint %}
 
-Snyk shows your preferred, that is, default Organization when you log in to the Snyk Web UI. Snyk also uses the settings for your preferred Organization when you test a project locally using the CLI.
+Snyk는 Snyk Web UI에 로그인할 때 선호하는 조직, 즉 기본 조직을 표시합니다. Snyk는 또한 CLI를 사용하여 로컬로 프로젝트를 테스트할 때 선호하는 조직에 대한 설정을 사용합니다.
 
 {% hint style="info" %}
-To change your default Organization, see [Manage account preferences and settings](../explore-snyk-through-the-web-ui.md#manage-account-preferences-and-settings) on Explore the Snyk Web UI.
+기본 조직을 변경하려면, Snyk 웹 UI 탐색에서 [Manage account preferences and settings](../explore-snyk-through-the-web-ui.md#manage-account-preferences-and-settings) 를 참조하세요.
 {% endhint %}
