@@ -684,7 +684,7 @@
   * [Error Catalog](scan-with-snyk/error-catalog.md)
 * [risk 관리](manage-risk/README.md)
   * [Snyk AppRisk](manage-risk/snyk-apprisk/README.md)
-    * [Getting started with Snyk AppRisk](manage-risk/snyk-apprisk/getting-started-with-snyk-apprisk.md)
+    * [Snyk AppRisk 시작하기](manage-risk/snyk-apprisk/getting-started-with-snyk-apprisk.md)
     * [Implementation guide for Snyk AppRisk](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/README.md)
       * [Prerequisites](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/prerequisites.md)
       * [Level 1: Configure Snyk AppRisk and setup integrations](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/level-1-configure-snyk-apprisk-and-setup-integrations.md)
