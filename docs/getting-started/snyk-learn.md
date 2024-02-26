@@ -1,107 +1,107 @@
 # Snyk Learn
 
-[Snyk Learn](https://learn.snyk.io) is dedicated to [developer education](snyk-learn.md#developer-education) and [product training](snyk-learn.md#product-training).
+[Snyk Learn](https://learn.snyk.io) [developer education](snyk-learn.md#developer-education) 및 [product training](snyk-learn.md#product-training) 전념하고 있습니다.
 
-## Developer education
+## 개발자 교육
 
-Our developer education resources look at vulnerabilities in detail, including the why and how:
+우리의 개발자 교육 리소스는 다음과 같은 이유와 방법을 포함하여 취약점을 자세히 살펴봅니다.
 
-* **Why** is it vulnerable?
-* **How** do we mitigate it?
+* **왜** 취약한가?
+* **어떻게** 완화할 수 있는가?
 
-Snyk Learn teaches developers how to stay secure, with interactive lessons exploring vulnerabilities across a variety of languages and ecosystems.
+Snyk Learn은 다양한 언어와 생태계 전반의 취약점을 탐색하는 대화형 강의를 통해, 개발자에게 보안을 유지하는 방법을 가르칩니다.
 
-Many graduate developers may have completed their whole degree program without ever taking a course dedicated to computer security. Snyk Learn helps to educate these developers (and all developers) with knowledge and expertise, both theory and practical.
+많은 대학원 개발자들이 컴퓨터 보안에 관한 과정을 수강하지 않고 전체 학위 프로그램을 이수했을 수도 있습니다. Snyk Learn은 이론과 실무 모두에 대한 지식과 전문 지식을 갖춘 개발자(및 모든 개발자)를 교육하는 데 도움이 됩니다.
 
-### Lessons for developers
+### 개발자를 위한 교훈
 
-Our lessons are targeted toward developers who want to learn more about specific vulnerabilities and how to mitigate them. Snyk Learn is also helpful for developers, team leads, and managers who want to enhance the general security knowledge of their team.
+우리의 강의는 특정 취약점과 이를 완화하는 방법에 대해 자세히 알아보고 싶은 개발자를 대상으로 합니다. Snyk Learn은 팀의 일반적인 보안 지식을 향상시키려는 개발자, 팀 리더 및 관리자에게도 유용합니다.
 
-The lessons at Snyk Learn are aligned with the [NIST NICE Framework](https://www.nist.gov/itl/applied-cybersecurity/nice) Work Role Categories and Competency Areas.
+&#x20;Snyk Learn의 수업은 [NIST NICE Framework](https://www.nist.gov/itl/applied-cybersecurity/nice) 업무 역할 범주 및 역량 영역에 맞춰져 있습니다.&#x20;
 
-### Lesson structure
+### 수업 구조
 
-Lessons are structured as follows:
+수업은 다음과 같이 구성됩니다.
 
-* The _basics_ of the vulnerability are covered which explains exactly what the vulnerability is.
-* There is an _in action_ section that looks at how the vulnerability would be executed.
-* Each lesson has an interactive widget where developers can see exactly how the vulnerability is being executed. But seeing it work and knowing how it works is different.
-* The third section of the lesson is _under the hood_ where we take a look at why the vulnerability worked and the code behind it.
-* Finally, it’s the _mitigation_ section. This is where developers will learn how to fix the vulnerability using code examples.
+* 취약점이 무엇인지 정확하게 설명하는 취약점의 _기본 사항_을 다룹니다.
+* 취약점이 어떻게 실행되는지 살펴보는 _action_ 섹션이 있습니다.
+* 각 레슨에는 개발자가 취약점이 어떻게 실행되고 있는지 정확하게 확인할 수 있는 대화형 위젯이 있습니다. 하지만 작동하는 모습을 보는 것과 작동 방식을 아는 것은 다릅니다.
+* 수업의 세 번째 섹션은 _후드 아래에서_ 취약점이 작동하는 이유와 그 뒤에 있는 코드를 살펴봅니다.
+* 마지막으로 _mitigation_ 섹션입니다. 여기에서 개발자는 코드 예제를 사용하여 취약점을 해결하는 방법을 배울 수 있습니다.
 
-### Language coverage
+### 언어 적용 범위
 
-There are many lessons covering many different languages. The languages being covered currently are JavaScript, Java, C#, Python, PHP, Go, and C++. We also have a couple of lessons for Kubernetes. More languages will be covered in the future.
+다양한 언어를 다루는 많은 수업이 있습니다. 현재 다루는 언어는 JavaScript, Java, C#, Python, PHP, Go 및 C++입니다. Kubernetes에 대한 몇 가지 강의도 있습니다. 앞으로는 더 많은 언어가 다루어질 것입니다.
 
-### Learning paths
+### 학습 경로
 
-We offer [learning paths](https://learn.snyk.io/learning-paths/) as a way for learners to take a predefined set of lessons. We offer multiple learning paths, including OWASP Top 10 and Snyk Top 10.
+우리는 학습자가 사전 정의된 수업을 수강할 수 있는 방법으로 [learning paths](https://learn.snyk.io/learning-paths/)를 제공합니다. 우리는 OWASP Top 10 및 Snyk Top 10을 포함한 다양한 학습 경로를 제공합니다.
 
 ### OWASP Top 10
 
-This learning path covers the [OWASP](https://owasp.org/) top 10. Each OWASP category is a module on Learn. Each module contains at least one lesson. Completing all ten modules will result in the successful completion of this OWASP learning path. The modules are:
+이 학습 경로는 [OWASP](https://owasp.org/) 상위 10개를 다룹니다. 각 OWASP 카테고리는 Learn의 모듈입니다. 각 모듈에는 하나 이상의 강의가 포함되어 있습니다. 10개의 모듈을 모두 완료하면 이 OWASP 학습 경로가 성공적으로 완료됩니다. 모듈은 다음과 같습니다:
 
-* Broken Access Control
-* Cryptographic Failures
-* Injection
-* Insecure Design
-* Security Misconfiguration
-* Vulnerable and Outdated Components
-* Identification and Authentication Failures
-* Software and Data Integrity Failures
-* Security Logging and Monitoring Failures
-* Server-Side Request Forgery
+* 손상된 액세스 제어
+* 암호화 실패
+* 주입
+* 안전하지 않은 디자인
+* 보안 구성 오류
+* 취약하고 오래된 구성 요소
+* 식별 및 인증 실패
+* 소프트웨어 및 데이터 무결성 오류
+* 보안 로깅 및 모니터링 실패
+* 서버측 요청 위조
 
 ### Snyk Top 10
 
-This learning path covers the Snyk top 10. This covers the top 10 Open Source vulnerabilities in the previous year found by Snyk. The modules are:
+이 학습 경로는 Snyk 상위 10개를 다룹니다. 이는 Snyk가 발견한 전년도 상위 10개 오픈 소스 취약점을 다룹니다. 모듈은 다음과 같습니다
 
-* Denial of Service (DoS)
-* Remote Code Execution (RCE)
-* Deserialization of Untrusted Data
-* SQL Injection
-* Prototype Pollution
-* Insecure Temporary File
-* Directory/Path Traversal
-* Privilege Escalation
-* Regular Expression of Denial of Service (ReDoS)
-* Null Pointer Dereference
+* 서비스 거부(DoS)
+* 원격 코드 실행(RCE)
+* 신뢰할 수 없는 데이터의 역직렬화
+* SQL 주입
+* 프로토타입 오염
+* 안전하지 않은 임시 파일
+* 디렉터리/경로 탐색
+* 권한 승격
+* 서비스 거부의 정규 표현(ReDoS)
+* 널 포인터 역참조
 
-## Product training
+## 제품 교육
 
-Snyk product training provides videos and self-paced courses for learning how to use Snyk, including:
+Snyk 제품 교육은 다음을 포함하여, Snyk 사용 방법을 배우기 위한 비디오와 자습 과정을 제공합니다.
 
-* How to implement Snyk
-* How to configure and manage Snyk organizations
-* How to use Snyk to find and fix issues
+* Snyk 구현 방법
+* HoSnyk 조직을 구성하고 관리하는 방법
+* Snyk를 사용하여 문제를 찾고 해결하는 방법
 
-The platform is an easy way for teams to get an introduction to Snyk tools and user best practices. Most courses take between 3 and 10 minutes, and have been described by a customer as a "very good overview on how to get started with the Snyk journey!"
+이 플랫폼은 팀이 Snyk 도구 및 사용자 모범 사례를 소개할 수 있는 쉬운 방법입니다. 대부분의 과정은 3\~10분 정도 소요되며, 고객은 "Snyk 여정을 시작하는 방법에 대한 매우 좋은 개요"라고 설명했습니다.
 
-### Implementation course catalog
+### 구현 과정 카탈로그
 
-Learn about key decisions and tasks for Snyk implementation in this [set of resources](https://learn.snyk.io/catalog/product-training/?type=product-training\&format=learning\_path). You'll find information to help decision-makers and teams decide where to implement Snyk and the best practices for rolling out Snyk across a business or enterprise. You'll learn different ways to structure your account and how to set up single sign-on (SSO) for authentication and user provisioning.
+이 리소스 세트에서 Snyk 구현을 위한 주요 결정 및 작업에 대해 알아보세요. 의사 결정자와 팀이 Snyk를 구현할 위치를 결정하는 데 도움이 되는 정보와 비즈니스 또는 기업 전체에 Snyk를 배포하기 위한 모범 사례를 찾을 수 있습니다. 계정을 구성하는 다양한 방법과 인증 및 사용자 프로비저닝을 위한 SSO(Single Sign-On)를 설정하는 방법을 배우게 됩니다.
 
-### Configuring and managing Snyk course catalog
+### Snyk 코스 카탈로그 구성 및 관리
 
-Learn about setting up, configuring, and managing an Organization in Snyk. You'll find [topics](https://learn.snyk.io/catalog/product-training/?type=product-training\&format=learning\_path) to get you off to the right start, including setting the defaults for your Organization's notifications and alerts. You'll also learn different ways to configure various automations that Snyk offers to optimize your application security.
+Snyk에서 조직을 설정, 구성 및 관리하는 방법을 알아보세요. 조직의 알림 및 경고에 대한 기본값 설정을 포함하여 올바른 시작을 시작하는 데 도움이 되는 [topics](https://learn.snyk.io/catalog/product-training/?type=product-training\&format=learning\_path)을 찾을 수 있습니다. 또한 Snyk가 애플리케이션 보안을 최적화하기 위해 제공하는 다양한 자동화를 구성하는 다양한 방법을 배우게 됩니다.
 
-### Finding and fixing issues with Snyk course catalog
+### Snyk 코스 카탈로그 문제 찾기 및 수정
 
-Learn how to use Snyk to find and fix issues in different ways. These [short courses ](https://learn.snyk.io/catalog/product-training/?type=product-training\&format=learning\_path)demonstrate how to get started with the Snyk CLI and with a plug-in or extension to use in your IDE and how to find, prioritize, and fix issues through the Snyk Web UI.
+Snyk를 사용하여 다양한 방법으로 문제를 찾고 해결하는 방법을 알아보세요. 이 [short courses](https://learn.snyk.io/catalog/product-training/?type=product-training\&format=learning\_path)에서는 Snyk CLI와 IDE에서 사용할 플러그인 또는 확장을 시작하는 방법과 Snyk 웹 UI를 통해 문제를 찾고, 우선 순위를 지정하고, 해결하는 방법을 보여줍니다.
 
-### Video library catalog
+### 비디오 라이브러리 카탈로그
 
-In addition to the courses available for enrolment, the [video library](https://learn.snyk.io/catalog/product-training/?type=product-training) offers individual videos that provide quick demonstrations or refreshers on key Snyk tasks. Each video includes links to related courses.
+등록할 수 있는 과정 외에도 [video library](https://learn.snyk.io/catalog/product-training/?type=product-training)는 주요 Snyk 작업에 대한 빠른 데모나 복습을 제공하는 개별 비디오를 제공합니다. 각 비디오에는 관련 강좌에 대한 링크가 포함되어 있습니다.
 
-### Additional resources
+### 추가 리소스
 
-Snyk Training is one component of learning available for users and customers.
+Snyk 교육은 사용자와 고객이 사용할 수 있는 학습 구성 요소 중 하나입니다.
 
-The [Digital Success program](https://snyk.io/digital-customer-success/) offers customers a way to get started quickly and scale learning to the rest of their teams. In addition to the self-paced content available in Snyk Training, customers can take advantage of:
+[Digital Success program](https://snyk.io/digital-customer-success/) 은 고객에게 빠르게 시작하고 나머지 팀으로 학습을 확장할 수 있는 방법을 제공합니다. Snyk Training에서 제공되는 자가 학습 콘텐츠 외에도 고객은 다음을 활용할 수 있습니다.
 
-* Office hours: Informal sessions to discuss a Snyk topic
-* Kickoff sessions: Guided learning for roll-out best practices
+* 근무 시간(Office hours): Snyk 주제를 논의하기 위한 비공식 세션
+* 킥오프 세션(Kickoff sessions): 출시 모범 사례에 대한 학습 안내
 
 {% hint style="info" %}
-Also, see [Snyk Learn](snyk-learn.md) for developer education for general security across a variety of languages and ecosystems.
+또한 다양한 언어와 생태계 전반의 일반 보안에 대한 개발자 교육을 보려면 [Snyk Learn](snyk-learn.md)을 참조하세요.
 {% endhint %}
