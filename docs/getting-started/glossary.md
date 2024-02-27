@@ -116,7 +116,7 @@ Docker를 사용하여 컨테이너 이미지를 빌드하는 데 사용되는 �
 
 ### Exploit
 
-취약점을 어떻게 활용할 수 있는지 보여줍니다. exploit이 널리 공개되면 일반적으로 ‘exploit in the wild’라고 합니다. [View exploits](../scan-with-snyk/find-and-manage-priority-issues/view-exploits.md)를 참조하세요.
+취약점을 어떻게 활용할 수 있는지 보여줍니다. exploit이 널리 공개되면 일반적으로 ‘exploit in the wild’라고 합니다. [View exploits](../scan-with-snyk/find-and-manage-priority-issues/view-exploits.md)를 참조하십시오.&#x20;
 
 ### Exploit Maturity
 
@@ -126,285 +126,285 @@ Docker를 사용하여 컨테이너 이미지를 빌드하는 데 사용되는 �
 
 ### Fixable / Partially fixable
 
-A measure of whether a vulnerability can be fixed by Sny by applying a patch, upgrade, or pin. See [Vulnerability fix types](../scan-with-snyk/snyk-open-source/manage-vulnerabilities/vulnerability-fix-types.md).
+패치, 업그레이드 또는 핀을 적용하여 Snyk에서 취약점을 수정 여부를 확인합니다. [Vulnerability fix types](../scan-with-snyk/snyk-open-source/manage-vulnerabilities/vulnerability-fix-types.md)을 참조하십시오.&#x20;
 
 ### Fix PR
 
-A pull request with an automatic fix for discovered vulnerabilities that Snyk can offer the user. See [Automated fix PRs](../scan-with-snyk/snyk-open-source/automatic-and-manual-prs-with-snyk-open-source/automated-fix-pull-requests-for-backlog-issues-and-known-vulnerabilities.md).
+Snyk은 사용자에게 취약점에 대한 자동 수정이 포함된 pull request를 제공할 수 있습니다. [Automated fix PRs](../scan-with-snyk/snyk-open-source/automatic-and-manual-prs-with-snyk-open-source/automated-fix-pull-requests-for-backlog-issues-and-known-vulnerabilities.md)을 참조하십시오.&#x20;
 
 ## G
 
 ### Git
 
-A distributed version control system for tracking changes in source code during software development.
+소프트웨어 개발 중 소스 코드의 변경 사항을 추적하기 위한 분산 버전 관리 시스템입니다.
 
 ## I
 
 ### IaC
 
-Infrastructure as Code. See [Snyk Infrastructure as Code.](glossary.md#snyk-infrastructure-as-code)
+Infrastructure as Code의 약자로, [Snyk Infrastructure as Code](glossary.md#snyk-infrastructure-as-code) 참조하십시오.&#x20;
 
 ### IAST
 
-Interactive Application Security Testing. This approach tests for vulnerabilities while running the application. See [DAST](glossary.md#dast) and [SAST](glossary.md#sast).
+Interactive Application Security Testing의 약자로, 이 접근 방식은 애플리케이션을 실행하는 동안 취약점을 테스트합니다. [DAST](glossary.md#dast) 및 [SAST](glossary.md#sast)를 참조하십시오.&#x20;
 
 ### IDE
 
-Integrated Development Environment. An application that has facilities for software development, typically with a source code editor, build automation tools, and a debugger.
+Integrated Development Environment의  약자로, 일반적으로 소스 코드 편집기, 빌드 자동화 도구 및 디버거를 포함하여 소프트웨어 개발을 위한 기능을 갖춘 애플리케이션입니다.
 
 ### Image
 
-The stored instance of a container that holds a set of software needed to run an application.
+애플리케이션을 실행하는 데 필요한 소프트웨어 집합을 포함하는 컨테이너의 저장된 인스턴스입니다.
 
 ### Image layer
 
-Container images typically consist of several different file system layers, which are combined together at runtime into a single file system.
+컨테이너 이미지는 일반적으로 여러 개의 서로 다른 파일 시스템 계층으로 구성되어 있으며, 런타임에 단일 파일 시스템으로 결합합니다.
 
 ### Integrations
 
-Third-party products, applications, and platforms that Snyk works with, for example, SCM systems such as GitHub. See [Integrate with Snyk](../integrate-with-snyk/).
+Snyk가 작동하는 타사 제품, 애플리케이션 및 플랫폼(예: GitHub와 같은 SCM 시스템). [Integrate with Snyk](../integrate-with-snyk/)을 참조하십시오.
 
 ### Issue
 
-A license problem, vulnerability, or misconfiguration identified and listed by Snyk. See [Find and manage priority issues](../scan-with-snyk/find-and-manage-priority-issues/).
+Snyk가 식별하고 나열한 라이선스 문제, 취약성 또는 구성 오류입니다. [Find and manage priority issues](../scan-with-snyk/find-and-manage-priority-issues/)를 참조하십시오.
 
 ## L
 
 ### Library
 
-A specific type of package.
+특정 유형의 패키지입니다.
 
 ### License policy
 
-A set of criteria for evaluating open-source license issues. License policies enable you to set the severity level and define legal instructions for each license. See [License policies](../scan-with-snyk/policies/license-policies/).
+오픈 소스 라이선스 문제를 평가하기 위한 일련의 기준입니다. 라이센스 정책을 사용하면 심각도 수준을 설정하고 각 라이센스에 대한 법적 지침을 정의할 수 있습니다. [License policies](../scan-with-snyk/policies/license-policies/)를 참조하십시오.
 
 ## M
 
 ### Manifest
 
-A file containing metadata about other files in a package.
+패키지의 다른파일들에 대한 메타데이터를 포함하는 파일입니다.
 
 ### Monitor
 
-The `snyk monitor` command tests a Project and uploads the results to Snyk. See the CLI help for [Monitor](../snyk-cli/commands/monitor.md).
+`snyk monitor`명령은 프로젝트를 테스트하고 결과를 Snyk에 업로드합니다. [Monitor](../snyk-cli/commands/monitor.md)에 대한 CLI 도움말을 참조하세요.
 
 ## O
 
 ### OCI
 
-Open Container Initiative. An independent body set up to facilitate collaboration on standards for containers, to ensure they are interoperable between vendor solutions.
+Open Container Initiative의 약자로, 컨테이너 표준에 대한 협업을 용이하게 하고 공급 업체 솔루션 간에 상호 운용성을 보장하기 위해 설립된 독립적인 기구입니다.
 
 ### Organization
 
-An Organization in Snyk is a way to collect and organize your Projects. Members of Organizations have access to these Projects. See [Manage Groups and Organizations](../snyk-admin/manage-groups-and-organizations/).
+Snyk의 조직은 프로젝트를 수집하고 구성하는 방법입니다. 그런 다음 구성원이 특정 프로젝트에 액세스할 수 있습니다. [Manage Groups and Organizations](../snyk-admin/manage-groups-and-organizations/)를 참조하십시오.
 
 ### Origin or source
 
-The identifier for the ecosystem that a Target exists in. Snyk can scan Projects from multiple integrations, including CLI, API, GitHub, Kubernetes, and others. See [Snyk Projects](../snyk-admin/snyk-projects/).
+Target이 존재하는 생태계의 식별자입니다. Snyk는 CLI, API, GitHub, Kubernetes 등을 포함한 여러 통합에서 프로젝트를 스캔할 수 있습니다. [Snyk Projects](../snyk-admin/snyk-projects/)를 참조하십시오.
 
 ## P
 
 ### Package
 
-A group of files and additional metadata about those files, used by package managers.
+패키지 관리자가 사용하는 파일 그룹 및 해당 파일에 대한 추가 메타데이터입니다.
 
 ### Package manager
 
-A set of tools that automate and manage packages of bundled files, and are usually specific to a language. For example, npm.
+패키지를 자동화하고 관리하는 도구 집합으로, 일반적으로 언어에 따라 다른 Package manager를 사용합니다. (예: npm)
 
 ### Package registry
 
-A software package hosting service that allows customers to host packages and code in one place.
+고객이 패키지와 코드를 한 곳에서 호스팅할 수 있는 소프트웨어 패키지 호스팅 서비스입니다.
 
 ### Pinnable
 
-A fix type: define and "pin" a specific version of an indirect dependency, to avoid a direct dependency pulling in a vulnerable version.
+수정 유형 중 하나이며, 취약한 버전을 가져오는 직접 의존성을 피하기 위해 간접 의존성의 특정 버전을 정의하고 “pin”합니다.
 
 ### Policy
 
-See [license policy](glossary.md#license-policy), [security policy](glossary.md#security-policy), and [`.snyk` policy](glossary.md#.snyk-policy).
+[license policy](glossary.md#license-policy), [security policy](glossary.md#security-policy), [`.snyk` policy](glossary.md#.snyk-policy)를 참조하십시오.
 
 ### **Policy (Snyk AppRisk)**
 
-A way to automate actions in certain conditions, like classifying and tagging assets with business context. You can also use a policy to configure actions like sending a message or setting the coverage gap control using a Policy builder UI.
+비즈니스 상황에 따라 자산을 분류하고 태그를 지정하는 등 특정 조건에서 작업을 자동화하는 방법입니다. 정책 빌드 UI를 사용하여 메시지를 보내거나 커버리지 갭 컨트롤을 설정하는 등의 작업을 구성할 수도 있습니다.
 
 ### PR
 
-Pull Request. Allows a user to exchange changes made to source code and collaborate with others on the same branch.
+Pull Request의 약자로, 사용자가 소스 코드의 변경 사항을 교환하고 동일한 branch의 다른 사용자와 협업할 수 있습니다.
 
 ### PR Checks
 
-Use Snyk PR Checks to prevent new security issues from entering your codebase by automatically scanning code changes in real time as soon as you submit a pull request (PR) in your source code manager (SCM). See [Run PR Checks](../scan-with-snyk/run-pr-checks/).
+Snyk PR Checks를 사용하면 소스 코드 관리자(SCM)에서 pull request(PR)을 하자마자 실시간으로 코드 변경 사항을 자동으로 스캔하여 새로운 보안 문제가 코드베이스에 유입되는 것을 방지할 수 있습니다. [Run PR Checks](../scan-with-snyk/run-pr-checks/)를 참조하십시오.
 
 ### Priority Score
 
-Snyk scores issues, including vulnerabilities and licenses for Open Source, to help prioritize the treatment of each one. Scores are based on multiple factors including the CVSS score and range from 0 (low) to 1000 (high). See [Priority Score](../scan-with-snyk/find-and-manage-priority-issues/priority-score.md).
+Snyk는 Issue(취약점 및 라이선스)를 점수화하여 각각의 Issue 해결의 우선순위를 정하는 데 도움이 됩니다. 점수는 CVSS 점수를 포함한 여러 요소를 기반으로 하며 0(낮음)에서 1000(높음) 사이의 범위를 가집니다. [Priority Score](../scan-with-snyk/find-and-manage-priority-issues/priority-score.md)를 참조하십시오.
 
 ### Project
 
-An external item scanned by Snyk with configuration to define how to run that scan. Projects appear on the **Projects** menu on the Snyk dashboard. See also [Target](glossary.md#target). For details, see [Snyk Projects](../snyk-admin/snyk-projects/).
+Snyk이 스캔하는 외부 항목으로, 해당 스캔을 실행하는 방법을 정의하는 구성입니다. Snyk 대시보드의 프로젝트 메뉴에 나타납니다. 자세한 내용은 [Target](glossary.md#target), [Snyk Projects](../snyk-admin/snyk-projects/)를 참조하십시오.
 
 ## R
 
 ### Reachability
 
-Whether an application contains code that will hit a vulnerable code path during execution. See [Reachable vulnerabilities](../scan-with-snyk/find-and-manage-priority-issues/reachable-vulnerabilities.md).
+실행 중 공격 가능한 취약한 경로의 코드가 애플리케이션에 포함되어 있는지 여부입니다. [Reachable vulnerabilities](../scan-with-snyk/find-and-manage-priority-issues/reachable-vulnerabilities.md)를 참조하십시오.
 
 ### Registry
 
-See [Container registry](glossary.md#container-registry) or [Package registry](glossary.md#package-registry).
+[Container registry](glossary.md#container-registry), [Package registry](glossary.md#package-registry)를 참조하십시오.
 
 ### Repository
 
-A storage area that contains all elements necessary for the distribution of an application.
+애플리케이션 배포에 필요한 모든 요소를 포함하는 저장소 영역을 말합니다.
 
 ### Resource
 
-A cloud infrastructure entity such as an AWS S3 bucket, Identity and Access Management (IAM) role, or Virtual Private Cloud (VPC) flow log.
+AWS S3 버킷, Identity and Access Management(IAM) 역할 또는 Virtual Private Cloud(VPC) 흐름 로그와 같은 클라우드 인프라 엔터티입니다.
 
 ### Risk score
 
-A value assigned to an issue, ranging from 0 to 1,000, representing the risk imposed on your environment.
+환경에 부과되는 위험을 나타내는 문제에 할당된 값(범위: 0\~1,000) 입니다.
 
 ### Rule
 
-A security policy that checks cloud infrastructure and infrastructure as code (IaC) for misconfigurations that can lead to security problems.
+보안 문제로 이어질 수 있는 잘못된 구성이 있는지 클라우드 인프라 및 IaC(Infrastructure as Code)를 확인하는 보안 정책입니다.
 
 ## S
 
 ### SARIF
 
-Static Analysis Results Interchange Format. A standard, JSON-based format for the output of static analysis tools.
+Static Analysis Results Interchange Format의 약자로, 정적 분석 도구의 출력을 위한 표준 JSON 기반 형식입니다.
 
 ### SAST
 
-Static Application Security Testing. A method to secure software by reviewing the source code of your proprietary software and identifying sources of vulnerabilities. Also see [DAST](glossary.md#dast).
+Static Application Security Testing의 약자로, 독점 소프트웨어의 소스 코드를 검토하고 취약점의 원인을 식별하여 소프트웨어를 보호하는 방법입니다. [DAST](glossary.md#dast)를 참조하십시오.
 
 ### SBOM
 
-Software Bill Of Materials. A list of components in a piece of software.
+Software Bill Of Materials의 약자로,  소프트웨어의 구성 요소 목록입니다.
 
 ### SCA
 
-Software Composition Analysis. A technology that is used to identify open-source and third-party components in use in an application, including their known security vulnerabilities, and typically adversarial license restrictions. See also [Static Code Analysis](glossary.md#static-code-analysis).
+Software Composition Analysis의 약자로, 알려진 보안 취약성과 일반적으로 적대적인 라이선스 제한을 포함하여 애플리케이션에서 사용 중인 오픈 소스 및 타사 구성 요소를 식별하는 데 사용되는 기술입니다. [Static Code Analysis](glossary.md#static-code-analysis)를 참조하십시오.
 
 ### SCM
 
-Source Code Management. Also known as a code repository (repo) or version control system. The method used by developers to store their source code and track changes to code. SCM helps resolve conflicts when merging updates from multiple contributors. GitHub is an example of a common SCM system. See [Git repositories (SCMs)](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/).
+Source Code Management의 약자로, code repo / repository / version control system이라고도 합니다. 개발자가 소스 코드를 저장하고 코드의 변경 사항을 추적하기 위해 사용하는 방법입니다. SCM은 여러 기여자의 업데이트를 병합할 때 발생하는 충돌을 해결하는 데 도움이 됩니다. [Git repositories (SCMs)](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/)를 참조하십시오.
 
 ### SDLC
 
-Software Development Lifecycle. A process followed by a development team, describing how to develop and maintain software.
+Software Development Life Cycle의 약자로, 소프트웨어 개발 수명 주기를 말합니다. 개발 팀이 뒤따르는 프로세스로, 소프트웨어 개발 및 유지 관리 방법을 설명합니다.
 
 ### Security policy
 
-A set of criteria for evaluating open-source vulnerabilities. Security policies enable you to set custom rules to automatically prioritize or de-prioritize specific vulnerabilities. See [Security policies](../scan-with-snyk/policies/security-policies/).
+오픈 소스 취약점을 평가하기 위한 일련의 기준입니다. 보안 정책을 사용하면 특정 취약점의 우선 순위를 자동으로 지정하거나 우선 순위를 낮추는 사용자 지정 규칙을 설정할 수 있습니다. [Security policies](../scan-with-snyk/policies/security-policies/)를 참조하십시오.
 
 ### Severity
 
-A severity level is applied to a vulnerability or a license issue, to indicate the risk for that item in an application. See [Severity levels](../scan-with-snyk/find-and-manage-priority-issues/severity-levels.md).
+심각도 수준은 취약점 또는 라이선스 문제에 적용되어 애플리케이션에서 해당 항목의 위험을 나타냅니다. [Severity levels](../scan-with-snyk/find-and-manage-priority-issues/severity-levels.md)를 참조하십시오.
 
 ### Snapshot
 
-An individual report within the test history of a Project. Includes a tree of dependencies and a list of vulnerabilities that was accurate at the time the test was conducted.
+프로젝트 테스트 기록 내의 개별 보고서입니다. 테스트가 수행된 당시 정확했던 디펜던시 트리와 취약점 목록이 포함됩니다.
 
 ### `.snyk` policy
 
-A policy file that Snyk uses to define certain analysis behaviors and to specify patches for the CLI and CI/CD plugins. See [The .snyk file](../scan-with-snyk/policies/the-.snyk-file.md).
+Snyk가 특정 분석 동작을 정의하고, CLI 및 CI/CD 플러그인에 대한 패치를 지정하는 데 사용하는 정책 파일입니다. [The .snyk file](../scan-with-snyk/policies/the-.snyk-file.md)를 참조하십시오.
 
 ### Snyk
 
-A platform providing Cloud Native Application Security (CNAS) solutions, allowing developers to own and build security for the whole application, from code and open source to containers and cloud infrastructure. Snyk is also the company providing the Snyk platform. See [Introducing Snyk](broken-reference/).
+CNAS(Cloud Native Application Security) 솔루션을 제공하는 플랫폼으로 개발자는 코드 및 오픈소스에서 컨테이너 및 클라우드 인프라에 이르기까지 전체 애플리케이션에 대한 보안을 유지하고 구축할 수 있습니다. Synk은 또한 Snyk 플랫폼을 제공하는 회사입니다. [Introducing Snyk](broken-reference/)를 참조하십시오.
 
 ### Snyk Advisor
 
-A free web application that allows you to compare software packages across open-source ecosystems. It provides insights into the overall health of a particular package by combining community and security data into a single unified view. See [Snyk Advisor](https://snyk.io/advisor/).
+오픈 소스 생태계 전반에서 소프트웨어 패키지를 비교할 수 있는 무료 웹 애플리케이션입니다. 커뮤니티 및 보안 데이터를 단일 통합 뷰에 결합하여 특정 패키지의 전반적인 상태에 대한 통찰력을 갖게 합니다. [Snyk Advisor](https://snyk.io/advisor/)를 참조하십시오.
 
 ### Snyk API
 
-A Snyk tool that enables developers to integrate programmatically with Snyk. See [Snyk API](../snyk-api/).
+개발자가 Snyk와 프로그래밍 방식으로 통합할 수 있게 해주는 Snyk 도구입니다. [Snyk API](../snyk-api/)를 참조하십시오.
 
 ### Snyk Apps
 
-Snyk Apps are the modern and preferred way to build integrations with Snyk, exposing fine-grained scopes for accessing resources over the Snyk APIs, powered by OAuth 2.0 for a developer-friendly experience. See [Snyk Apps](../snyk-api-info/snyk-apps/).
+Snyk 앱은 Snyk와의 통합을 구축하는 현대적이고 선호되는 방법입니다. 개발자 친화적인 환경을 위해 OAuth 2.0으로 구동되는 Snyk API를 통해 리소스에 액세스하기 위한 세분화된 범위를 노출합니다. [Snyk Apps](../snyk-api-info/snyk-apps/)를 참조하십시오.
 
 ### Snyk Broker
 
-A client/server system that serves as an agent or proxy, allowing Snyk to scan private customer environments: Jira, code repositories, or container registries. Snyk Broker relays messages and allows users to filter which messages are allowed through, for example, allowing users to expose only some GitHub APIs to Snyk. See [Snyk Broker](../enterprise-configuration/snyk-broker/).
+Agent/Proxy 역할을 하는 클라이언트/서버 시스템으로, Snyk이 개인 고객 환경(Jira, 소스코드 저장소 또는 컨테이너 레지스트리)을 스캔할 수 있습니다. 메시지를 중계하고 사용자가 허용되는 메시지를 필터링할 수 있도록 합니다. 예를 들어, 사용자는 Snyk에 일부 GitHub API만 노출할 수 있습니다. [Snyk Broker](../enterprise-configuration/snyk-broker/)를 참조하십시오.
 
 ### Snyk CLI
 
-A Snyk platform tool that enables developers to find and fix known vulnerabilities in dependencies, using a command line interface. See [Snyk CLI](../snyk-cli/).
+Snyk 플랫폼 도구입니다. Snyk CLI를 사용하면 개발자가 CLI를 사용하여 디펜던시의 알려진 취약점을 찾아 수정할 수 있습니다. [Snyk CLI](../snyk-cli/)를 참조하십시오.
 
 ### Snyk Code
 
-A Snyk product. A SAST product enabling developers to find and fix vulnerabilities in your proprietary application code. See [Snyk Code](../scan-with-snyk/snyk-code/).
+Snyk 제품 중 하나입니다. 개발자가 독점 애플리케이션 코드의 취약점을 찾아 수정할 수 있는 SAST 제품입니다. [Snyk Code](../scan-with-snyk/snyk-code/)를 참조하십시오.
 
 ### Snyk Container
 
-A Snyk product. Enables developers to find and fix vulnerabilities in container images and Kubernetes applications. See [Snyk Container](../scan-with-snyk/snyk-container/).
+Snyk 제품 중 하나입니다. 개발자가 컨테이너 이미지 및 Kubernetes 애플리케이션의 취약점을 찾아 수정할 수 있습니다. [Snyk Container](../scan-with-snyk/snyk-container/)를 참조하십시오.
 
 ### Snyk Infrastructure as Code
 
-A Snyk product. Enables developers to find and fix vulnerabilities in Kubernetes, Helm, and Terraform configuration files. See [Snyk Infrastructure as Code](../scan-with-snyk/scan-infrastructure/scan-your-iac-source-code/).
+Snyk 제품 중 하나입니다. 개발자가 Kubernetes, Helm 및 Terraform 구성 파일의 취약점을 찾아 수정할 수 있습니다. [Snyk Infrastructure as Code](../scan-with-snyk/scan-infrastructure/scan-your-iac-source-code/)를 참조하십시오.
 
 ### Snyk Open Source
 
-A Snyk product. Enables developers to find and fix open-source vulnerabilities. See [Snyk Open Source](../scan-with-snyk/snyk-open-source/).
+Snyk 제품 중 하나입니다. 개발자가 오픈 소스 취약점을 찾아 수정할 수 있습니다. [Snyk Open Source](../scan-with-snyk/snyk-open-source/)를 참조하십시오.
 
 ### Snyk plugin
 
-A library used by the Snyk CLI to scan a certain language or build system.
+Snyk CLI에서 특정 언어를 스캔하거나 시스템을 구축하는 데 사용되는 라이브러리입니다.
 
 ### Snyk Security Intelligence
 
-A component powering the Snk cloud-native application security platform.\
-Incorporates the Snyk Intel Vulnerability DB: the Snyk database of vulnerabilities, providing detailed information and fix advice for known vulnerabilities. See [Vulnerability DB](https://snyk.io/vuln).
+Snk 클라우드 네이티브 애플리케이션 보안 플랫폼을 지원하는 구성 요소입니다. \
+**Snyk Intel Vulnerability DB** 통합: Snyk의 취약점 데이터베이스를 통합하여 자세한 정보를 제공하고 알려진 취약점에 대한 조언을 제공합니다. [Vulnerability DB](https://snyk.io/vuln)를 참조하십시오.
 
 ### Snyk Web UI
 
-The browser-based environment providing users access to Snyk functions. See [Explore the Snyk Web UI](explore-snyk-through-the-web-ui.md).
+사용자에게 Snyk 기능에 대한 액세스를 제공하는 브라우저 기반 환경입니다. [Explore the Snyk Web UI](explore-snyk-through-the-web-ui.md)를 참조하십시오.
 
 ### Social Trends
 
-Snyk shows a Trending banner on issues that are being actively discussed on Twitter. See [Vulnerabilities with Social Trends](../scan-with-snyk/find-and-manage-priority-issues/vulnerabilities-with-social-trends.md).
+Snyk는 트위터에서 활발하게 논의되고 있는 문제에 대한 인기 배너를 표시합니다. [Vulnerabilities with Social Trends](../scan-with-snyk/find-and-manage-priority-issues/vulnerabilities-with-social-trends.md)를 참조하십시오.
 
 ### Source
 
-See [Origin](glossary.md#origin-or-source).
+[Origin](glossary.md#origin-or-source)를 참조하십시오.
 
 ### SPDX
 
-Software Package Data Exchange. A file format used to document information on the software licenses under which a piece of computer software is distributed. See [SPDX](https://spdx.dev/).
+Software Package Data Exchange의 약자로, 소프트웨어가 배포되는 소프트웨어 라이센스에 대한 정보를 문서화하는 데 사용되는 파일 형식입니다. [SPDX](https://spdx.dev/)를 참조하십시오.
 
 ### Static Code Analysis
 
-A method of debugging by examining source code before a program is run. See also [SCA, Software Composition Analysis](glossary.md#sca).
+프로그램을 실행하기 전에 소스 코드를 검사하여 디버깅하는 방법입니다. [SCA, Software Composition Analysis](glossary.md#sca)를 참조하십시오.
 
 ## T
 
 ### Target
 
-Representation of an external resource Snyk has scanned. All [Snyk Projects](glossary.md#project) are associated with a parent Target. One Target may relate to many Projects. The structure of the Target depends on the [origin](glossary.md#origin-or-source).
+Snyk가 스캔한 외부 리소스의 표현입니다. 모든 [Snyk Projects](glossary.md#project)는상위 Target과 연결되어 있습니다. 하나의 타겟은 여러 프로젝트와 관련될 수 있습니다. Target의 구조는[origin](glossary.md#origin-or-source)에 따라 다릅니다.
 
 ### **Tags (Snyk AppRisk)**
 
-A way to categorize assets. Helps you recognize or handle assets differently according to mutual properties. Assets can be filtered by their tags in the inventory or when creating policy rules. A tag can be automatically assigned to an asset, or the asset can be tagged by a policy you created. GitHub and GitLab topics are treated as asset tags and you can use them for creating policies.
+자산을 분류하는 방법입니다. 상호 재산에 따라 자산을 다르게 인식하거나 처리할 수 있도록 도와줍니다. 자산은 인벤토리의 태그를 기준으로 필터링하거나 정책 규칙을 생성할 때 필터링할 수 있습니다. 태그는 자산에 자동으로 할당되거나 생성된 정책에 따라 자산에 태그가 지정될 수 있습니다. GitHub 및 GitLab 주제는 자산 태그로 처리되며 정책 생성에 사용할 수 있습니다.
 
 ## U
 
 ### Upgradable / Patchable
 
-A fix type: a problem can be fixed by upgrading a version of a package or by applying a patch.
+수정 유형 중 하나이며, 패키지 버전을 업그레이드하거나 패치를 적용하여 문제를 해결할 수 있습니다.
 
 ## V
 
 ### Vulnerability
 
-A security vulnerability identified by Snyk. See [Manage vulnerabilities](../scan-with-snyk/snyk-open-source/manage-vulnerabilities/).
+Snyk가 식별한 보안 취약점입니다. [Manage vulnerabilities](../scan-with-snyk/snyk-open-source/manage-vulnerabilities/)를 참조하십시오.
 
 ## W
 
 ### Webhook
 
-A way for an app to provide other applications with real-time information. Snyk uses webhooks to check changes in code. See [Snyk Webhooks](../snyk-api-info/snyk-webhooks/).
+프로그램이 다른 애플리케이션에 실시간 정보를 제공하는 방법입니다. Snyk는 웹훅을 사용하여 코드 변경 사항을 확인합니다. [Snyk Webhooks](../snyk-api-info/snyk-webhooks/)를 참조하십시오.
