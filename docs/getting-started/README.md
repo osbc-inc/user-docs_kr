@@ -6,7 +6,7 @@ Snyk은 자체 코드, 오픈소스 디펜던시, 컨테이너 이미지, laC(in
 
 ## Snyk 개발자 우선 접근 방식
 
-Snyk는 개발자의 작업 흐름에 대한 가시성과 실행 가능한 통찰력을 제공합니다. 이점은 개발자가 개발 작업의 일부로 보안 업무에 참여한다는 것입니다. 따라서 하드 QA 게이트 설치와 같은 오버헤드 집약적인 작업보다는 보안 애플리케이션을 구축하는 데 중점을 둡니다.
+Snyk는 개발자의 작업 흐름에 대한 가시성과 실행 가능한 통찰력을 제공합니다. 장점은 개발자가 개발 작업의 일부로 보안 업무에 참여한다는 것입니다. 따라서 하드 QA 게이트 설치와 같은 오버헤드 집약적인 작업보다는 보안 애플리케이션을 구축하는 데 중점을 둡니다.
 
 이제 개발자는 독점 코드와 오픈 소스 코드를 조합하여 애플리케이션을 조립하고, 해당 코드를 컨테이너에서 실행한 다음, Kubernetes 및 Terraform과 같은 기술을 사용하여 코드 구성으로 인프라를 배포합니다.
 
@@ -17,8 +17,8 @@ Snyk는 개발자의 작업 흐름에 대한 가시성과 실행 가능한 통�
 ## 작업 흐름에서 Snyk 사용
 
 * **코드 보호**:  [Snyk Open Source](../scan-with-snyk/snyk-open-source/)를 사용하여 오픈 소스 종속성의 취약성을 수정하고 [Snyk Code](../scan-with-snyk/snyk-code/)를 사용하여 소스 코드의 취약성을 수정합니다.
-* **컨테이너 보호**: [Snyk Container](../scan-with-snyk/snyk-container/)를 사용하여 컨테이너 이미지 및Kubernetes  애플리케이션의 취약성을 수정합니다.
-* **인프라 보호**: [Snyk Infrastructure as Code (IaC)](../scan-with-snyk/scan-infrastructure/scan-your-iac-source-code/)를 사용하여Terraform, CloudFormation, Kubernetes 및 Azure 템플릿의 잘못된 구성을 수정합니다.  [IaC+](../scan-with-snyk/scan-infrastructure/iac+-code-to-cloud-capabilities/)를 사용하여 Amazon Web Services 계정, Microsoft Azure 구독, Google Cloud Projects의 잘못된 구성을 수정합니다.
+* **컨테이너 보호**: [Snyk Container](../scan-with-snyk/snyk-container/)를 사용하여 컨테이너 이미지 및 Kubernetes  애플리케이션의 취약성을 수정합니다.
+* **인프라 보호**: [Snyk Infrastructure as Code (IaC)](../scan-with-snyk/scan-infrastructure/scan-your-iac-source-code/)를 사용하여 Terraform, CloudFormation, Kubernetes 및 Azure 템플릿의 잘못된 구성을 수정합니다.  [IaC+](../scan-with-snyk/scan-infrastructure/iac+-code-to-cloud-capabilities/)를 사용하여 Amazon Web Services 계정, Microsoft Azure 구독, Google Cloud Projects의 잘못된 구성을 수정합니다.
 
 ## Snyk 실행 방법 선택
 
@@ -47,11 +47,11 @@ Snyk는 개발자의 작업 흐름에 대한 가시성과 실행 가능한 통�
 
 소프트웨어 개발 프로세스를 위한 Snyk 통합을 통해 소스 제어, IDE, CI/CD 등을 포함한 개발 및 보안 프로세스에 Snyk를 통합할 수 있습니다.
 
-자세한 내용은 [Integrate with Snyk](../integrate-with-snyk/)을 참조하세요.
+자세한 내용은 [Snyk 연동](../integrate-with-snyk/)을 참조하세요.
 
 ## Snyk의 가격은 얼마입니까?
 
-Snyk에는 무료부터 엔터프라이즈까지 다양한 가격 계획이 있습니다. [Snyk Pricing Plans](../implement-snyk/enterprise-implementation-guide/trial-limitations.md)을 참조하세요.
+Snyk에는 무료부터 엔터프라이즈까지 여러 가격대의 요금제를 제공하고 있습니다. [Snyk Pricing Plans](../implement-snyk/enterprise-implementation-guide/trial-limitations.md)을 참조하세요.
 
 ## 내 데이터는 어떻게 되나요?
 

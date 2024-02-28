@@ -2,10 +2,10 @@
 
 {% hint style="info" %}
 **요약**\
-[imported a Project into Snyk](import-a-project.md), Snyk는 해당 프로젝트에 문제가 있는지 검사했습니다.
+[프로젝트를 Snyk으로 가져왔고,](import-a-project.md) Snyk는 해당 프로젝트에 문제가 있는지 검사했습니다.
 {% endhint %}
 
-이제 프로젝트 목록 페이지에서 스캔 결과를 확인하고 링크를 선택하여 프로젝트 세부 정보를 볼 수 있습니다.
+프로젝트 목록 페이지에서 스캔 결과를 확인하고 링크를 선택하면, 프로젝트 세부 정보를 볼 수 있습니다.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-01-23 at 15.24.15.png" alt="Projects listing page showing a new scan"><figcaption><p>새 스캔을 보여주는 프로젝트 목록 페이지</p></figcaption></figure>
 
@@ -20,4 +20,4 @@
 
 ## 다음은 무엇인가**?**
 
-이제 문제 해결을 시작할 수 있습니다. [Manage risk](../../manage-risk/)를 참조하세요.
+이제 문제를 해결할 수 있습니다. [risk 관리](../../manage-risk/)를 참조하세요.

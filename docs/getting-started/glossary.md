@@ -36,7 +36,7 @@ Snyk AppRisk 자산은 애플리케이션의 일부이며 보안 및 개발자�
 
 ### CLI
 
-명령줄 인터페이스. [Snyk CLI](glossary.md#snyk-cli)를 참조하세요
+Command Line Interface의 약자로, [Snyk CLI](glossary.md#snyk-cli)를 참조하세요
 
 ### Cloud Native Application Security
 
@@ -49,7 +49,7 @@ CI/CD 파이프라인 전반에 걸쳐 보안을 구현하고, 마이크로서�
 
 ### Container engine
 
-사용자의 경우, 컨테이너 이미지를 가져와 실행 중인 컨테이너로 바꾸는 애플리케이션입니다. 컨테이너 엔진은 일반적으로 컨테이너 레지스트리와 연결되며 컨테이너를 실행합니다. 컨테이너 엔진의 예로는 Docker, CRI-O 또는 LXC가 있습니다
+사용자의 경우, 컨테이너 이미지를 가져와 실행 중인 컨테이너로 바꾸는 애플리케이션입니다. 컨테이너 엔진은 일반적으로 컨테이너 레지스트리와 연결되며 컨테이너를 실행합니다. 컨테이너 엔진의 예로는 Docker, CRI-O 또는 LXC가 있습니다.
 
 ### Container image
 
@@ -162,7 +162,7 @@ Integrated Development Environment의  약자로, 일반적으로 소스 코드 
 
 ### Integrations
 
-Snyk가 작동하는 타사 제품, 애플리케이션 및 플랫폼(예: GitHub와 같은 SCM 시스템). [Integrate with Snyk](../integrate-with-snyk/)을 참조하십시오.
+Snyk가 작동하는 타사 제품, 애플리케이션 및 플랫폼(예: GitHub와 같은 SCM 시스템). [Snyk 연동](../integrate-with-snyk/)을 참조하십시오.
 
 ### Issue
 

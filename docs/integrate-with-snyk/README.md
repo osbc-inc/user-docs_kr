@@ -1,25 +1,24 @@
-# Integrate with Snyk
+# Snyk 연동
 
-This section of the Snyk user docs explains how to set up and use many types of integration with Snyk.  This includes plugins and extensions for using Snyk in your IDE, importing Git repositories, and methods for using Snyk in your CI/CD environment:
+Snyk 사용자 문서의 이 섹션에서는 Snyk와의 다양한 유형의 통합을 설정하고 사용하는 방법을 설명합니다. 여기에는 IDE에서 Snyk를 사용하기 위한 플러그인 및 확장, Git 리포지토리 가져오기, CI/CD 환경에서 Snyk를 사용하기 위한 방법이 포함됩니다:
 
-* [Use Snyk in your IDE](ide-tools/)
+* [IDE와 연동하여 Snyk 사용](ide-tools/)
 * [Git repositories and CI/CD comparisons](git-repository-and-ci-cd-integrations-comparisons.md)
-* [Snyk CI/CD integrations](snyk-ci-cd-integrations/)
-* [Git repositories (SCMs) integrations with Snyk](git-repositories-scms-integrations-with-snyk/)
+* [Snyk CI/CD 연동](snyk-ci-cd-integrations/)
+* [Snyk와 SCM(Git repositories) 통합](git-repositories-scms-integrations-with-snyk/)
 
-Snyk provides plugins for repository gatekeepers and integrations to connect with package repositories:
+Snyk는 패키지 저장소와 연결하기 위한 repository gatekeepers 및 통합을 위한 플러그인을 제공합니다.
 
 * [Gatekeeper plugins](gatekeeper-plugins/)
 * [Package repository integrations](package-repository-integrations/)
 
-Additional integrations support working with Snyk Container and Snyk Iac:
+추가 통합은 Snyk Container 및 Snyk Iac 작업을 지원합니다.
 
 * [Snyk Container integrations](snyk-container-integrations/)
 * [Cloud platforms integrations](cloud-platforms-integrations/)
 
-Integrations for [event forwarding](event-forwarding/) allow you to push Snyk platform events directly to certain products on other platforms, enabling you to set up custom alerting, build your own reporting, trigger automation, and more.
+[event forwarding](event-forwarding/)을 위한 통합을 통해 Snyk 플랫폼 이벤트를 다른 플랫폼의 특정 제품에 직접 푸시할 수 있으므로, 사용자 지정 경고 설정, 자체 보고 작성, 자동화 트리거 등이 가능합니다.
 
-[Notification and ticketing systems integrations](notification-and-ticketing-systems-integraitons/) help you work with Snyk in Jira and Slack.
+[Notification and ticketing systems integrations](notification-and-ticketing-systems-integraitons/) 은 Jira 및 Slack에서 Snyk로 작업하는 데 도움이 됩니다.
 
-Information is also provided on how Snyk can work with [vulnerability management tools](vulnerability-management-tools/).
-
+Snyk가 [vulnerability management tools](vulnerability-management-tools/)를 사용하는 방법에 대한 정보도 제공됩니다.

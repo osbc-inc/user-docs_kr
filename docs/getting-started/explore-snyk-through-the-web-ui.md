@@ -1,17 +1,17 @@
 # Web UI를 통해 Snyk 확인
 
 {% hint style="success" %}
-아직 계정을 만들지 않았다면, [create an account](quickstart/create-or-log-in-to-a-snyk-account.md)어야 합니다.
+아직 계정을 만들지 않았다면, [계정을 만들](quickstart/create-or-log-in-to-a-snyk-account.md)어야 합니다.
 {% endhint %}
 
 ## Snyk 웹 UI 및 지원되는 브라우저 소개
 
-Snyk 웹 UI를 사용하여 브라우저에서 전체 Snyk 기능을 실행할 수 있습니다. 자세한 내용은 [supported browsers](quickstart/#supported-browsers) 를 참조하세요.
+Snyk 웹 UI를 통해 브라우저에서 전체 Snyk 기능을 실행할 수 있습니다. 자세한 내용은 [supported browsers](quickstart/#supported-browsers) 를 참조하세요.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-07-13 at 11.06.29 AM.png" alt="Snyk Dashboard, the view when you log in"><figcaption><p>Snyk 대시보드, 로그인 시 보이는 화면</p></figcaption></figure>
 
 {% hint style="info" %}
-&#x20;[Snyk CLI](../snyk-cli/), [within your IDE](../integrate-with-snyk/ide-tools/) 및 [Snyk API](../snyk-api/) 통해, Snyk 기능을 사용할 수도 있습니다.
+&#x20;[Snyk CLI](../snyk-cli/), [IDE](../integrate-with-snyk/ide-tools/) 및 [Snyk API](../snyk-api/) 통해, Snyk 기능을 사용할 수도 있습니다.
 {% endhint %}
 
 코드 리포지토리를 연결한 다음, Snyk를 사용하여 애플리케이션 코드, 오픈 소스 라이브러리, 컨테이너 레지스트리 및 구성 파일을 검사하고 보호할 수 있습니다.
@@ -30,7 +30,7 @@ Snyk 웹 UI를 사용하여 브라우저에서 전체 Snyk 기능을 실행할 �
 
 ## 대시보드 살펴보기
 
-기존 계정에 로그인하면 웹 UI에서 대시보드가 열립니다. 여기서 pending tasks와 vulnerable Projects를 보고, 팀 구성원을 초대하고, 새 프로젝트를 추가할 수 있습니다.
+기존 계정에 로그인하면 웹 UI에서 대시보드가 열립니다. pending tasks와 vulnerable Projects를 보고, 팀 구성원을 초대하고, 새 프로젝트를 추가할 수 있습니다.
 
 다음 예에서는 Enterprise 계정용 Snyk 대시보드에 pending tasks와 vulnerable Projects가 표시됩니다.
 
@@ -85,9 +85,9 @@ Snyk 웹 UI를 사용하여 브라우저에서 전체 Snyk 기능을 실행할 �
 
 대시보드 탐색에서 **통합(Integrations)**을 선택하여 다음을 수행할 수 있는 통합 페이지([Integrations](../integrate-with-snyk/))를 엽니다.
 
-* 취약성 모니터링을 위해 Snyk에 연결할 수 있는 [SCM integrations](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/)을 설정하고 확인하세요.
+* 취약성 모니터링을 위해 Snyk에 연결할 수 있는 [SCM 통합](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/)을 설정하고 확인하세요.
 * [Cloud platforms](../integrate-with-snyk/cloud-platforms-integrations/) 과 [Container integrations](../integrate-with-snyk/snyk-container-integrations/)을 설정합니다.
-* &#x20;[CI/CD integrations](../integrate-with-snyk/snyk-ci-cd-integrations/), [IDE plugins](../integrate-with-snyk/ide-tools/), [Gatekeeper plugins](../integrate-with-snyk/gatekeeper-plugins/)을 설정합니다.
+* &#x20;[CI/CD 연동](../integrate-with-snyk/snyk-ci-cd-integrations/), [IDE plugins](../integrate-with-snyk/ide-tools/), [Gatekeeper plugins](../integrate-with-snyk/gatekeeper-plugins/)을 설정합니다.
 * [Notifications](../integrate-with-snyk/notification-and-ticketing-systems-integraitons/), [Cloud events](../integrate-with-snyk/event-forwarding/) 통합을 설정합니다.
 
 <figure><img src="../.gitbook/assets/image (123) (1) (2) (1).png" alt="Integrations page"><figcaption><p>통합 페이지</p></figcaption></figure>
@@ -122,7 +122,7 @@ Snyk 웹 UI를 사용하여 브라우저에서 전체 Snyk 기능을 실행할 �
 
 계정 설정에서 다음 정보와 옵션에 액세스할 수 있습니다.
 
-* 무료 계정의 API 토큰 또는 인증 토큰을 보고 관리하세요. 모든 애플리케이션 및 도구에 적용되는 지침은 [Obtaining your Snyk API token](how-to-obtain-and-authenticate-with-your-snyk-api-token.md)를 참조하세요.
+* 무료 계정의 API 토큰 또는 인증 토큰을 보고 관리하세요. 모든 애플리케이션 및 도구에 적용되는 지침은 [Snyk API 토큰 획득](how-to-obtain-and-authenticate-with-your-snyk-api-token.md) 참조하세요.
 * **승인된 애플리케이션** 목록을 확인하세요.
 * 선호하는 조직을 설정하세요. [Manage Organizations: Set your preferred Organization](../snyk-admin/manage-groups-and-organizations/create-and-delete-organizations.md#set-your-preferred-organization).
 * 계정을 **삭제**하세요.

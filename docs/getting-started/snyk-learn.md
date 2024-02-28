@@ -1,6 +1,6 @@
 # Snyk Learn
 
-[Snyk Learn](https://learn.snyk.io) [developer education](snyk-learn.md#developer-education) 및 [product training](snyk-learn.md#product-training) 전념하고 있습니다.
+[Snyk Learn](https://learn.snyk.io), [개발자 교육](snyk-learn.md#undefined) 및 [제품 교육](snyk-learn.md#undefined-5)에  전념하고 있습니다.
 
 ## 개발자 교육
 

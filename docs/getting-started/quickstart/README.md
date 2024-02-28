@@ -4,10 +4,10 @@
 
 이 빠른 시작은 Snyk 애플리케이션에서 다음과 같은 기본 작업을 수행하는 데 도움이 됩니다.
 
-1. [Create a Snyk account](create-or-log-in-to-a-snyk-account.md).
-2. [Set up a Snyk integration](set-up-an-integration.md): Snyk에 스캔을 위해 코드에 대한 액세스 권한을 부여합니다.
-3. [Import a Project](import-a-project.md) 를 가져오거나 로컬로 스캔을 실행하여 문제를 스캔하고 식별합니다.
-4. [Review the results](view-snyk-scan-results.md) 를 검토하고 발견된 문제의 세부 내용에 따라 조치를 취합니다.
+1. [Snyk 계정 생성 및 로그인](create-or-log-in-to-a-snyk-account.md).
+2. [Snyk 통합 설정](set-up-an-integration.md): Snyk에 스캔을 위해 코드에 대한 액세스 권한을 부여합니다.
+3. [프로젝트를 가져오거나 ](import-a-project.md) 로컬로 스캔을 실행하여 문제를 스캔하고 식별합니다.
+4. [Snyk 스캔 결과 확인](view-snyk-scan-results.md) 검토하고 발견된 문제의 세부 내용에 따라 조치를 취합니다.
 
 ## 기본 작업에 대한 추가 정보
 

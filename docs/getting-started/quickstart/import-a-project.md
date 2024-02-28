@@ -2,7 +2,7 @@
 
 {% hint style="info" %}
 **요약**\
-[created a Snyk account](create-or-log-in-to-a-snyk-account.md) 하고 [integrated with your source code (Git) repository](set-up-an-integration.md) 하여 스캔을 위해 코드에 액세스할 수 있도록 했습니다. 이제 검사를 실행할 수 있습니다.
+[Snyk 계정을  생성](create-or-log-in-to-a-snyk-account.md)하고 [소스 코드(Git) 저장소와 통합하여](set-up-an-integration.md) 스캔을 위해 코드에 액세스할 수 있도록 했습니다. 이제 검사를 실행할 수 있습니다.
 {% endhint %}
 
 **Snyk 프로젝트**는 Snyk가 문제를 검색하는 항목입니다(예: 오픈 소스 종속성을 나열하는 매니페스트 파일).
@@ -69,7 +69,7 @@ Snyk 웹 UI를 통해 프로젝트 가져오기에 대한 비디오 데모
 프로젝트 가져오기는 다음 작업도 수행합니다.
 
 * 해당 프로젝트에서 문제를 정기적으로 검사하도록 Snyk를 설정합니다. 기본값은 [Test frequency settings](../../snyk-admin/manage-settings/usage-settings.md#test-frequency-settings) 을 참조하세요.
-* 일부 자동화, 특히 풀 및 병합 요청에 대한 기본 Snyk 테스트를 시작하여 취약점이 프로젝트에 추가되는 것을 방지합니다. 이 자동화는 조건에 따라 빌드에 실패하며 [integration settings](../../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/)에서 비활성화하거나 사용자 정의할 수 있습니다.
+* 일부 자동화, 특히 풀 및 병합 요청에 대한 기본 Snyk 테스트를 시작하여 취약점이 프로젝트에 추가되는 것을 방지합니다. 이 자동화는 조건에 따라 빌드에 실패하며 [Snyk와  SCM(Git Repository) 통합](../../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/)에서 비활성화하거나 사용자 정의할 수 있습니다.
 
 {% hint style="info" %}
 자동화 사용 모범 사례에 대한 교육을 받으려면, Snyk 과정 [Source Code Manager Configurations](https://learn.snyk.io/lesson/configure-snyk-scm/)을 방문하세요.
@@ -77,4 +77,4 @@ Snyk 웹 UI를 통해 프로젝트 가져오기에 대한 비디오 데모
 
 ## 다음은 무엇인가?
 
-이제 [view Snyk scan results](view-snyk-scan-results.md) 수 있습니다.
+이제 [Snyk 스캔 결과를 확인](view-snyk-scan-results.md) 수 있습니다.
