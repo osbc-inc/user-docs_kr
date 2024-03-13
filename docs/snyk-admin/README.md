@@ -1,6 +1,6 @@
-# Snyk admin
+# Snyk Admin
 
-Snyk administration encompasses the following functions:
+Snyk 관리에는 다음 기능이 포함됩니다.
 
 * [Manage Groups and Organizations](manage-groups-and-organizations/)
 * [Manage and use Snyk Projects](snyk-projects/)
@@ -9,4 +9,4 @@ Snyk administration encompasses the following functions:
 * [Manage notifications](manage-notifications.md)
 * [Manage settings](manage-settings/)
 
-See [Enterprise setup](../enterprise-configuration/) for information about set up for Enterprise plan customers.
+Enterprise 요금제 고객을 위한 설정에 대한 자세한 내용은 [Enterprise setup](../enterprise-configuration/) 을 참조하세요.
