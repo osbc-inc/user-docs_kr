@@ -1,67 +1,67 @@
-# Getting started with the Snyk CLI
+# Snyk CLI 시작하기
 
-## Introduction to Snyk and the Snyk CLI
+## Snyk 및 Snyk CLI 소개
 
-[Snyk](https://snyk.io/) is a developer-first, cloud-native security tool to scan and monitor your software development projects for security vulnerabilities. Snyk scans multiple content types for security issues:
+[Snyk](https://snyk.io/)는 소프트웨어 개발 프로젝트에서 보안 취약점을 검사하고 모니터링하는 개발자 중심의 클라우드 기반 보안 도구입니다. Snyk는 보안 문제에 대해 여러 콘텐츠 유형을 검사합니다.
 
-* [**Snyk Open Source**](https://docs.snyk.io/scan-using-snyk/snyk-open-source): Find and automatically fix open-source vulnerabilities
-* [**Snyk Code**](https://docs.snyk.io/scan-using-snyk/snyk-code): Find and fix vulnerabilities in your application code in real time
-* [**Snyk Container**](https://docs.snyk.io/scan-using-snyk/snyk-container): Find and fix vulnerabilities in container images and Kubernetes applications
-* [**Snyk Infrastructure as Code**](https://docs.snyk.io/scan-using-snyk/scan-infrastructure): Find and fix insecure configurations in Terraform and Kubernetes code
+* [**Snyk Open Source**](https://docs.snyk.io/scan-using-snyk/snyk-open-source): 오픈 소스 취약점을 찾아 자동으로 수정
+* [**Snyk Code**](https://docs.snyk.io/scan-using-snyk/snyk-code): 애플리케이션 코드의 취약점을 실시간으로 찾아 수정합니다.
+* [**Snyk Container**](https://docs.snyk.io/scan-using-snyk/snyk-container): 컨테이너 이미지 및 Kubernetes 애플리케이션의 취약점을 찾아 수정합니다.
+* [**Snyk Infrastructure as Code**](https://docs.snyk.io/scan-using-snyk/scan-infrastructure): Terraform 및 Kubernetes 코드에서 안전하지 않은 구성을 찾아 수정
 
 [Learn more about what Snyk can do and sign up for a free account](https://snyk.io/).
 
-The **Snyk CLI brings the functionality of Snyk into your development workflow**. You can run the CLI locally from the command line or in an IDE. You can also run the CLI in your CI/CD pipeline. The following shows an example of Snyk CLI test command output.
+**Snyk CLI는 Snyk의 기능을 개발 워크플로에 도입합니다**. 명령줄이나 IDE에서 로컬로 CLI를 실행할 수 있습니다. CI/CD 파이프라인에서 CLI를 실행할 수도 있습니다. 다음은 Snyk CLI 테스트 명령 출력의 예를 보여줍니다.
 
-<figure><img src="../.gitbook/assets/snyk-cli-screenshot.png" alt="Snyk CLI test command output example"><figcaption><p>Snyk CLI test command output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/snyk-cli-screenshot.png" alt="Snyk CLI test command output example"><figcaption><p>Snyk CLI 테스트 명령 출력</p></figcaption></figure>
 
-Snyk CLI scanning **supports many languages and tools.** For detailed information, see the [summary of supported environments](https://docs.snyk.io/getting-started/introducing-snyk#how-can-snyk-work-in-my-environment).
+Snyk CLI 스캐닝은 **다양한 언어와 도구를 지원**합니다. 자세한 내용은 [summary of supported environments](https://docs.snyk.io/getting-started/introducing-snyk#how-can-snyk-work-in-my-environment)을 참조하세요.
 
-This page explains how to install, authenticate, and start scanning using the CLI. Snyk also has an onboarding wizard to guide you through these steps. For a demonstration, view [Starting with Snyk: an overview of the CLI onboarding flow](https://www.youtube.com/watch?v=adj3VF82-v8).
+이 페이지에서는 CLI를 사용하여 설치, 인증 및 스캔을 시작하는 방법을 설명합니다. Snyk에는 이러한 단계를 안내하는 온보딩 마법사도 있습니다. 데모를 보려면 [Starting with Snyk: an overview of the CLI onboarding flow](https://www.youtube.com/watch?v=adj3VF82-v8).
 
-## Install the Snyk CLI and authenticate your machine
+## Snyk CLI를 설치하고 시스템을 인증하세요.
 
-To use the CLI, you must install it and authenticate your machine. See [Install or update the Snyk CLI](https://docs.snyk.io/snyk-cli/install-the-snyk-cli) and [Authenticate the CLI with your account](https://docs.snyk.io/snyk-cli/authenticate-the-cli-with-your-account). You can refer to the [release notes](https://github.com/snyk/cli/releases) for a summary of changes in each release. Before scanning your code, review the [Code execution warning for Snyk CLI](https://docs.snyk.io/snyk-cli/code-execution-warning-for-snyk-cli).
+CLI를 사용하려면, CLI를 설치하고 시스템을 인증해야 합니다.  [Install or update the Snyk CLI](https://docs.snyk.io/snyk-cli/install-the-snyk-cli) 및 [Authenticate the CLI with your account](https://docs.snyk.io/snyk-cli/authenticate-the-cli-with-your-account)을 참조하세요. 각 릴리스의 변경 사항 요약은[release notes](https://github.com/snyk/cli/releases) 를 참조하세요. 코드를 스캔하기 전에, [Code execution warning for Snyk CLI](https://docs.snyk.io/snyk-cli/code-execution-warning-for-snyk-cli)를 검토하세요.
 
-**Note:** Before you can use the CLI for Open Source scanning, you must install your package manager. The needed third-party tools, such as Gradle or Maven, must be in the `PATH`.
+**참고:** 오픈 소스 검사에 CLI를 사용하려면, 먼저 패키지 관리자를 설치해야 합니다. Gradle 또는 Maven과 같은 필요한 타사 도구가 `PATH`에 있어야 합니다.
 
-You can use the CLI in your IDE or CI/CD environment. For details, see [Install as part of a Snyk integration](https://docs.snyk.io/snyk-cli/install-the-snyk-cli#install-as-a-part-of-a-snyk-integration).
+IDE 또는 CI/CD 환경에서 CLI를 사용할 수 있습니다. 자세한 내용은, [Install as part of a Snyk integration](https://docs.snyk.io/snyk-cli/install-the-snyk-cli#install-as-a-part-of-a-snyk-integration)를 참조하세요.
 
-## Test your installation
+## 설치 테스트
 
-After authenticating, you can **test your installation**. For a quick test, run `snyk --help`.
+인증 후, **설치를 테스트**할 수 있습니다. 빠른 테스트를 위해, `snyk --help`를 실행하세요.
 
-Alternatively, you can perform a **quick test** on a public npm package, for example `snyk test ionic`.
+또는, `snyk test ionic`과 같은 공개 npm 패키지에서 **빠른 테스트**를 수행할 수 있습니다.
 
-Look at the `test` command **report** in your terminal. The report shows the vulnerabilities Snyk found in the package. For each issue found, Snyk reports the severity of the issue, provides a link to a detailed description, reports the path through which the vulnerable module got into your system, and provides guidance on how to fix the problem.
+터미널에서 `test` 명령 **보고서**를 살펴보세요. 보고서에는 Snyk이 패키지에서 발견한 취약점이 표시됩니다. 발견된 각 문제에 대해 Snyk는 문제의 심각도를 보고합니다. 자세한 설명에 대한 링크를 제공하며, 취약한 모듈이 시스템에 유입된 경로를 보고하고, 문제 해결 방법에 대한 지침을 제공합니다.
 
-## Scan your development Project
+## 개발 프로젝트 스캔
 
-**Note:** Before using the Snyk CLI to test your Open Source Project for vulnerabilities, with limited exceptions, you must **build your Project**. For details, see [Which Projects must be built before testing with CLI?](https://support.snyk.io/hc/en-us/articles/360015552617-Which-projects-must-be-built-before-testing-with-CLI-)
+**참고:** Snyk CLI를 사용하여 오픈 소스 프로젝트의 취약점을 테스트하기 전에, 제한된 예외를 제외하고, **프로젝트를 빌드**해야 합니다. 자세한 내용은, [Which Projects must be built before testing with CLI?](https://support.snyk.io/hc/en-us/articles/360015552617-Which-projects-must-be-built-before-testing-with-CLI-)를 참조하세요.
 
-In addition, depending on the language of your open-source Project, you may need to **set up your language environment** before using the Snyk CLI. For details, refer to [Supported languages, frameworks, and feature availability overview.](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)
+또한, Snyk CLI를 사용하기 전에 오픈 소스 프로젝트의 언어에 따라 **언어 환경을 설정**해야 할 수도 있습니다. 자세한 내용은 [Supported languages, frameworks, and feature availability overview](https://docs.snyk.io/scan-using-snyk/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview)를 참조하세요.
 
-After you have installed the CLI and authenticated your machine, to **scan an open-source Project**, use `cd /my/project/` to change the current directory to`a`folder containing a supported package manifest file, such as `package.json`, `pom.xml`, or `composer.lock`. Then run `snyk test`. All vulnerabilities identified are listed, including their path and fix guidance.
+CLI를 설치하고 시스템을 인증한 후, **오픈 소스 프로젝트를 스캔하려면** `cd /my/project/` 를 사용하여 현재 디렉터리를 `package.json`, `pom.xml`, `composer.lock`과 같은 지원되는 패키지 매니페스트 파일이 포함된 `a`폴더로 변경합니다. 그런 다음 `snyk test`를 실행하십시오. 경로 및 수정 지침을 포함하여 식별된 모든 취약점이 나열됩니다.
 
-To scan your **source code** run `snyk code test`.
+**소스 코드**를 스캔하려면 `snyk code test`를 실행하세요.
 
-You can **scan a Docker image** by its tag running, for example: `snyk container test ubuntu:18.04`.
+실행 중인 태그로 **Docker 이미지를 스캔**할 수 있습니다, (예: `snyk container test ubuntu:18.04`)
 
-To scan a **Kubernetes (K8s) file** run the following:\
+Kubernetes(K8s) 파일을 스캔하려면 다음을 실행하세요 :\
 `snyk iac test /path/to/kubernetes_file.yaml`
 
-For details about using the Snyk CLI to scan each content type, see the following:
+Snyk CLI를 사용하여 각 콘텐츠 유형을 검사하는 방법에 대한 자세한 내용은 다음을 참조하세요:
 
-* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source) and the CLI help for the [`test`](https://docs.snyk.io/snyk-cli/commands/test) and [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) commands
-* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) and the [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
-* [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container), including Docker scanning, and the [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
-* [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac), including Terraform and Kubernetes (K8s) Projects, and the [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
+* [Snyk CLI for Snyk Open Source](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-open-source)와 [`test`](https://docs.snyk.io/snyk-cli/commands/test) 및 [`monitor`](https://docs.snyk.io/snyk-cli/commands/monitor) 명령에 대한 CLI 도움말
+* [Snyk CLI for Snyk Code](https://docs.snyk.io/snyk-cli/commands/code) 및 [Snyk Code CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-code)
+* Docker 스캐닝을 포함한, [Snyk CLI for Snyk Container](https://docs.snyk.io/snyk-cli/commands/container) 및 [Snyk Container CLI help](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-snyk-container)
+* Terraform 및 Kubernetes(K8s) 프로젝트를 포함한 [Snyk CLI for Snyk IaC](https://docs.snyk.io/snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac) 및 [Snyk IAC CLI help](https://docs.snyk.io/snyk-cli/commands/iac)
 
-## Monitor your Open Source or Container Project
+## 오픈 소스 또는 컨테이너 프로젝트 모니터링
 
-Snyk can monitor your Open Source or Container integrated SCM Project periodically and alert you to new vulnerabilities. To set up your Project to be monitored, run `snyk monitor` or `snyk container monitor`.
+Snyk는 오픈 소스 또는 컨테이너 통합 SCM 프로젝트를 주기적으로 모니터링하고 새로운 취약점에 대해 경고할 수 있습니다. 모니터링할 프로젝트를 설정하려면,`snyk monitor` 또는 `snyk container monitor`를 실행하세요.
 
-This creates a snapshot of your current dependencies so Snyk can regularly scan your code. Snyk can then alert you about newly disclosed vulnerabilities as they are introduced or when a previously unavailable patch or upgrade path is created. The following code shows an example of the output of the `snyk monitor` command.
+이렇게 하면 Snyk가 정기적으로 코드를 스캔할 수 있도록 현재 종속성에 대한 스냅샷이 생성됩니다. 그런 다음 Snyk는 새로 공개된 취약점이 도입되거나 이전에 사용할 수 없었던 패치 또는 업그레이드 경로가 생성될 때 이에 대해 경고할 수 있습니다. 다음 코드는 `snyk monitor` 의 출력 예를 보여줍니다.
 
 ```
 > snyk monitor
