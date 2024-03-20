@@ -30,8 +30,8 @@ Snyk REST API는 이전에 Snyk API v3으로 알려졌습니다.
 
 API, CLI 및 통합의 출력에는 차이가 있을 수 있습니다.
 
-For example, for many package managers using the API will be less accurate than running the Snyk CLI as part of your build pipe or locally on your package. More than one version of a package may fit the requirements in manifest files. Running the CLI locally tests the actual deployed code, and has an accurate snapshot of the dependency versions in use. The API infers a snapshot, with inferior accuracy. Note that the Snyk CLI can output machine-readable JSON (`snyk test --json`).
+예를 들어 API를 사용하는 많은 패키지 관리자의 경우 Snyk CLI를 빌드 파이프의 일부로 실행하거나 패키지에서 로컬로 실행하는 것보다 정확성이 떨어집니다. 둘 이상의 패키지 버전이 매니페스트 파일의 요구 사항에 맞을 수 있습니다. CLI를 로컬에서 실행하면 실제 배포된 코드를 테스트하고 사용 중인 종속성 버전의 정확한 스냅샷을 얻을 수 있습니다. API는 정확도가 떨어지는 스냅샷을 추론합니다. Snyk CLI는 기계가 읽을 수 있는 JSON (`snyk test --json`)을 출력할 수 있습니다.
 
-You can allow Snyk access to your development flow by using Snyk integrations. The advantage is having Snyk monitor every new pull request and suggest fixes by opening new pull requests. You can integrate Snyk directly with your source code management (SCM) tool, or by using a Broker to allow greater security and auditability.
+Snyk 통합을 사용하여 Snyk가 개발 흐름에 액세스하도록 허용할 수 있습니다. 장점은 Snyk이 모든 새로운 풀 요청을 모니터링하고 새로운 풀 요청을 열어 수정 사항을 제안한다는 것입니다. Snyk를 소스 코드 관리(SCM) 도구와 직접 통합하거나 Broker를 사용하여 보안 및 감사 가능성을 높일 수 있습니다.
 
-Use the API when you want to customize, integrate, and automate Snyk security as part of your specific workflows.
+특정 워크플로우의 일부로 Snyk 보안을 사용자 정의, 통합 및 자동화하려는 경우 API를 사용하십시오.
