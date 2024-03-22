@@ -1,51 +1,51 @@
-# Getting started with the Snyk Enterprise plan
+# Snyk Enterprise 플랜 시작하기
 
-This page looks at how you can get several members of your team involved in trying Snyk to get feedback and buy-in.
-
-{% hint style="info" %}
-If you have been using Snyk on the Free or Team Plan and are looking for guidance on upgrading to the Enterprise plan, see the [Enterprise implementation guide](../implement-snyk/enterprise-implementation-guide/).
-{% endhint %}
-
-Snyk has a number of tools and processes that help secure your entire software development lifecycle. With Snyk, you can scan while you are coding or monitor code when you are not working on it. Snyk can also provide visibility into issues across your Projects with a Git repository integration or integrate into your CI/CD through plugins, the CLI, or curated containers.
-
-For users who are evaluating Snyk or planning an enterprise deployment, and for most programming languages, Snyk recommends integrating with a Git repository to get started.
+이 페이지에서는 피드백을 받고 승인을 얻기 위해 Snyk를 사용해 보는 데 여러 팀원을 참여시키는 방법을 살펴봅니다.
 
 {% hint style="info" %}
-The tool that best serves your tech stack, environment, and workflow depends on your individual circumstances. See the [guide](../scan-with-snyk/supported-languages-and-frameworks/) specific to your language for more details.
+무료 또는 팀 플랜으로 Snyk를 사용하고 있으며 Enterprise 플랜으로 업그레이드하는 방법에 대한 지침을 찾고 있는 경우, [Enterprise implementation guide](../implement-snyk/enterprise-implementation-guide/)를 참조하세요.
 {% endhint %}
 
-To learn more about choosing the best integration points within the software development lifecycle for you and for your team, at their current level of security maturity, see [Integrating Snyk at your company](https://learn.snyk.io/lesson/integrate-snyk-at-your-company/).
+Snyk에는 전체 소프트웨어 개발 수명주기를 보호하는 데 도움이 되는 다양한 도구와 프로세스가 있습니다. Snyk를 사용하면 코딩하는 동안 스캔하거나, 작업하지 않을 때 코드를 모니터링할 수 있습니다. Snyk은 또한 Git 리포지토리 통합을 통해 프로젝트 전체의 문제에 대한 가시성을 제공하거나 플러그인, CLI 또는 선별된 컨테이너를 통해 CI/CD에 통합할 수 있습니다.
 
-To see what Snyk can do for you, **try out a Project**
-
-The rest of this page explains how to connect a Git repository to Snyk and how to show results from scanning Snyk Projects that are in that repository. The focus is on helping you understand how Snyk works before you start the process of implementing Snyk with your team or teams.
+Snyk를 평가하거나 엔터프라이즈 배포를 계획하는 사용자와 대부분의 프로그래밍 언어의 경우, Snyk은 Git 저장소와 통합하여 시작할 것을 권장합니다.
 
 {% hint style="info" %}
-Snyk provides limited free tests per month for each type of scan, Snyk Open Source, Code, Container, or IaC. For unlimited tests, ensure you have a paid plan for the type of testing you need to do, and that the setting for that type has been enabled.
+기술 스택, 환경 및 워크플로에 가장 적합한 도구는 개별 상황에 따라 다릅니다. 자세한 내용은 해당 언어별 [guide](../scan-with-snyk/supported-languages-and-frameworks/)를 참조하세요.
 {% endhint %}
 
-## Create or log in to your Snyk account
+(현재 보안 성숙도 수준에서) 귀하와 귀하의 팀을 위한 소프트웨어 개발 수명 주기 내에서 최상의 통합 지점을 선택하는 방법에 대해 자세히 알아보려면, [Integrating Snyk at your company](https://learn.snyk.io/lesson/integrate-snyk-at-your-company/)을 참조하세요.
 
-You must have a Snyk account to use Snyk functionality, even within your local environment. [Create a free account](../getting-started/quickstart/create-or-log-in-to-a-snyk-account.md) to try out Snyk for a Project. If your enterprise is already using Snyk, you may be able to log in using single sign-on to be provisioned with a Snyk account. For details, see [Log in to an existing account](../getting-started/quickstart/create-or-log-in-to-a-snyk-account.md#log-in-to-an-existing-account).
+Snyk이 무엇을 할 수 있는지 알아보려면, **프로젝트를 사용해 보세요.**
 
-## **Enable Snyk Code**
+이 페이지의 나머지 부분에서는 Git 저장소를 Snyk에 연결하는 방법과 해당 저장소에 있는 Snyk 프로젝트를 스캔하여 결과를 표시하는 방법을 설명합니다. 팀과 함께 Snyk 구현 프로세스를 시작하기 전에 Snyk의 작동 방식을 이해하는 데 중점을 둡니다.
 
-When you create a new Organization in Snyk, Snyk Code (SAST) scanning is disabled by default. Snyk recommends enabling the Snyk Code product before you import your first Projects into Snyk.
+{% hint style="info" %}
+Snyk는 각 스캔 유형, Snyk 오픈 소스, 코드, 컨테이너 또는 IaC에 대해 매월 제한된 무료 테스트를 제공합니다. 무제한 테스트의 경우, 수행해야 하는 테스트 유형에 대한 유료 계획이 있고 해당 유형에 대한 설정이 활성화되어 있는지 확인하십시오.
+{% endhint %}
 
-1. Select the **Settings > Snyk Code** option.
-2. Click the toggle to enable Snyk Code; then click **Save changes**.
+## Snyk 계정 생성 또는 로그인
 
-## **Add a Snyk Project**
+로컬 환경 내에서도 Snyk 기능을 사용하려면 Snyk 계정이 있어야 합니다. 프로젝트에 Snyk를 사용해 보려면, [Create a free account](../getting-started/quickstart/create-or-log-in-to-a-snyk-account.md). 기업에서 이미 Snyk를 사용하고 있는 경우 Single Sign-On을 사용하여 로그인하여 Snyk 계정을 제공할 수 있습니다. 자세한 내용은 [Log in to an existing account](../getting-started/quickstart/create-or-log-in-to-a-snyk-account.md#log-in-to-an-existing-account)을 참조하세요.
 
-Add a Snyk Project to connect a Git repository integration. This video demonstrates the process.
+## Snyk 코드 활성화
+
+Snyk에서 새 조직을 생성하면 SAST(Snyk Code) 스캔이 기본적으로 비활성화됩니다. Snyk에서는 첫 번째 프로젝트를 Snyk로 가져오기 전에 Snyk Code 제품을 활성화할 것을 권장합니다.
+
+1. **Settings > Snyk Code** 옵션을 선택합니다.
+2. Snyk Code를 활성화하려면 토글을 클릭하세요. 그런 다음 **Save changes**을 클릭합니다.
+
+## Snyk 프로젝트 추가
+
+Git repository 통합을 연결하려면 Snyk 프로젝트를 추가하세요. 이 비디오는 그 과정을 보여줍니다.
 
 {% embed url="https://thoughtindustries-1.wistia.com/medias/9hwr0bnvko" %}
-Adding projects video
+프로젝트 비디오 추가
 {% endembed %}
 
-## **Configure initial Snyk integration settings**
+## 초기 Snyk 통합 설정 구성
 
-After your Git repository is connected (see [See Git repository integrations (SCMs)](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/) for details), you have automated processes available to automatically check pull requests for vulnerabilities, automatically generate pull requests, and automatically generate dependency upgrade pull requests. Snyk recommends you disable these options initially.
+Git 리포지토리가 연결되면(자세한 내용은 [See Git repository integrations (SCMs)](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/) 참조), 자동으로 취약점에 대한 pull request를 확인하고 자동으로 생성하며, 종속성 업그레이드 pull request를 자동으로 생성하는 데 사용할 수 있는 자동화된 프로세스가 있습니다. Snyk에서는 처음에 이러한 옵션을 비활성화할 것을 권장합니다.
 
 The settings for each Snyk Project are inherited from the Snyk Organization integration settings. Follow these steps to ensure these settings are disabled: Default Snyk test for pull requests, Automatic fix pull requests, Automatic dependency upgrade pull requests, and Automatic updates to Dockerfile base images. You can go back and enable these settings when your teams are ready to implement these options.
 

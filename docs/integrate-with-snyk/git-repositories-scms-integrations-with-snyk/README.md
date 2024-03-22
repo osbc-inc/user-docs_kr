@@ -1,6 +1,6 @@
-# Git repositories (SCMs) integrations with Snyk
+# Snyk와 SCM(Git Repository) 통합
 
-Snyk can integrate with the following Source Control Managers (SCMs) to help you track, monitor, and fix the issues and vulnerabilities in your code:
+Snyk는 다음 SCM(소스 제어 관리자)과 통합하여 코드의 문제와 취약성을 추적, 모니터링 및 수정하는 데 도움을 줄 수 있습니다.
 
 * [GitHub](snyk-github-integration.md)
 * [GitHub Enterprise](snyk-github-enterprise-integration.md)
@@ -11,13 +11,14 @@ Snyk can integrate with the following Source Control Managers (SCMs) to help you
 * [GitLab](snyk-gitlab-integration.md)
 * [Azure (TFS) Repos](snyk-azure-repositories-tfs-integration.md)
 
-## Tips for integrating Git repositories with Snyk
+## Git repository를 Snyk와 통합하기 위한 팁
 
-See the [Snyk deployment recommendations](introduction-to-git-repository-integrations/snyk-scm-integration-good-practices.md) for integrating your SCM with Snyk and [Using GitHub or GitHub Enterprise integration](introduction-to-git-repository-integrations/using-github-or-github-enterprise-integration.md).
+SCM을 Snyk와 통합하고 GitHub 또는 GitHub Enterprise 통합을 사용하려면 [Snyk deployment recommendations](introduction-to-git-repository-integrations/snyk-scm-integration-good-practices.md)을 참조하세요.\
 
-## How to use Snyk Pull Requests (PRs) with Git repositories
 
-For details, see the following pages:
+## Git repository에서 Snyk PR(Pull Request)을 사용하는 방법
+
+자세한 내용은 다음 페이지를 참조하세요.
 
 * [Opening fix and upgrade PRs from a fixed GitHub account](introduction-to-git-repository-integrations/opening-fix-and-upgrade-pull-requests-from-a-fixed-github-account.md)
 * [PR Checks](../../scan-with-snyk/run-pr-checks/)
