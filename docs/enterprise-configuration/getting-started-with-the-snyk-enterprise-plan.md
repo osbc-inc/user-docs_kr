@@ -47,18 +47,18 @@ Git repository 통합을 연결하려면 Snyk 프로젝트를 추가하세요. �
 
 Git 리포지토리가 연결되면(자세한 내용은 [See Git repository integrations (SCMs)](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/) 참조), 자동으로 취약점에 대한 pull request를 확인하고 자동으로 생성하며, 종속성 업그레이드 pull request를 자동으로 생성하는 데 사용할 수 있는 자동화된 프로세스가 있습니다. Snyk에서는 처음에 이러한 옵션을 비활성화할 것을 권장합니다.
 
-The settings for each Snyk Project are inherited from the Snyk Organization integration settings. Follow these steps to ensure these settings are disabled: Default Snyk test for pull requests, Automatic fix pull requests, Automatic dependency upgrade pull requests, and Automatic updates to Dockerfile base images. You can go back and enable these settings when your teams are ready to implement these options.
+각 Snyk 프로젝트의 설정은 Snyk 조직 통합 설정에서 상속됩니다. 풀 요청에 대한 기본 Snyk 테스트, 자동 수정 풀 요청, 자동 종속성 업그레이드 pull request 및 Dockerfile 기본 이미지에 대한 자동 업데이트 설정이 비활성화되어 있는지 확인하려면 다음 단계를 따르세요. 팀이 이러한 옵션을 구현할 준비가 되면 돌아가서 이러한 설정을 활성화할 수 있습니다.
 
-1. Select the **Integrations** page from the left-hand navigation menu.
-2. Select the **settings cog icon** for your Git repository integration.
-3. In the **Default Snyk test for pull requests** section, ensure the following are disabled:
-   1. **Open Source Security & Licenses** (default checks when PRs are opened)
-   2. **Automatic fix pull requests**: both **New vulnerabilities** and **Known vulnerabilities (backlog)**
-   3. **Automatically update Dockerfile base images**
-   4. **Automatic dependency upgrade pull requests**
+1. 왼쪽 탐색 메뉴에서 **통합** 페이지를 선택합니다.
+2. Git 리포지토리 통합을 위한 **설정 톱니바퀴 아이콘**을 선택하세요.
+3. **pull request에 대한 기본 Snyk 테스트** 섹션에서 다음이 비활성화되어 있는지 확인하세요 :
+   1. **오픈 소스 보안 & 라이선스**(PR이 열릴 때 기본 확인)
+   2. **자동 수정 pull request** : **새로운 취약점** 및 **알려진 취약점(백로그)** 모두
+   3. **Dockerfile 기본 이미지 자동 업데이트**
+   4. **자동 디펜던시 업그레이드 pull request**
 
 {% hint style="info" %}
-Snyk recommends defining standards for these options as well as notification defaults before you add more than a few Projects. When your teams are ready for a broader implementation, Snyk recommends defining standards for these options according to your security maturity. For more information, see [Configure integrations](../implement-snyk/enterprise-implementation-guide/phase-2-configure-account/set-visibility-and-configure-an-organization-template/configure-integrations.md).
+Snyk은 여러 프로젝트를 추가하기 전에 이러한 옵션에 대한 표준과 알림 기본값을 정의할 것을 권장합니다. 팀이 더 광범위한 구현을 준비할 때 Snyk는 보안 성숙도에 따라 이러한 옵션에 대한 표준을 정의할 것을 권장합니다. 자세한 내용은 [Configure integrations](../implement-snyk/enterprise-implementation-guide/phase-2-configure-account/set-visibility-and-configure-an-organization-template/configure-integrations.md)을 참조하세요.
 {% endhint %}
 
 ## **Review the Snyk scan result**
