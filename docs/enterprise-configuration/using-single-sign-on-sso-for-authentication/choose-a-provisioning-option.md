@@ -1,41 +1,41 @@
-# Choose a provisioning option
+# provisioning 옵션을 선택하세요
 
 {% hint style="info" %}
-Work with your Snyk account team to prepare for implementing this SSO option.
+Snyk 계정 팀과 협력하여 이 SSO 옵션 구현을 준비하세요.
 {% endhint %}
 
-Determine how new users in your company get access to Snyk:
+회사의 신규 사용자가 Snyk에 액세스하는 방법을 결정하세요 :
 
 * [Open to all](choose-a-provisioning-option.md#open-to-all)
 * [Invitation required](choose-a-provisioning-option.md#invitation-required)
 * [Custom mapping](choose-a-provisioning-option.md#custom-mapping)
 
-## Open to all
+## 모두에게 공개(Open to all)
 
-With the Open option, all users have automatic access to Snyk by using SSO to log in. They will have access to all Organizations in your selected Group. Their accounts will all be provisioned with the same role, with two options:
+Open 옵션을 사용하면 모든 사용자는 SSO를 사용하여 로그인하여 Snyk에 자동으로 액세스할 수 있습니다. 선택한 그룹의 모든 조직에 액세스할 수 있습니다. 해당 계정은 모두 다음 두 가지 옵션과 함께 동일한 역할로 프로비저닝됩니다.
 
-* The **Org** **administrator** role allows all new users to manage other Org admins and collaborators, view Group reports, and work with Organizations within the Group as well as perform non-administrative tasks in the Organization.
-* The **Org** **collaborator** role can perform non-administrative tasks in the Organization.
+* **조직 관리자** 역할을 통해 모든 신규 사용자는 다른 조직 관리자 및 공동 작업자를 관리하고, 그룹 보고서를 보고, 그룹 내의 조직과 작업할 수 있을 뿐만 아니라 조직에서 비관리 작업을 수행할 수 있습니다.
+* **조직 공동 작업자** 역할은 조직에서 비관리 작업을 수행할 수 있습니다.
 
-Let Snyk Support know whether new users will have the **administrator** role or the **collaborator** role for the Organization. The selected role applies for all users. For details, see [Permissions per rol](broken-reference)e.
+새로운 사용자가 조직의 **관리자** 역할 또는 **공동 작업자** 역할을 갖게 될지 Snyk 지원팀에 알려주십시오. 선택한 역할은 모든 사용자에게 적용됩니다. 자세한 내용은 [Permissions per role](broken-reference/)을 참조하세요.
 
-## Invitation required
+## 초대 필요(Invitation required)
 
-With the invitation required or **Group Member** option, admins can invite users or users can request access to an Organization.
+Invitation required 또는 **Group Member** 옵션을 사용하면 관리자가 사용자를 초대하거나 사용자가 조직에 대한 액세스를 요청할 수 있습니다.
 
-There are two ways to invite users to Organizations. Invite members (see [Manage users in your Organizations](../../snyk-admin/manage-users-in-organizations-and-groups/manage-users-in-organizations.md)) or automate the process using the Snyk [API Invite users endpoint.](https://snyk.docs.apiary.io/#reference/organizations/user-invitation-to-organization/invite-users)
+사용자를 조직에 초대하는 방법에는 두 가지가 있습니다. 구성원을 초대하거나([Manage users in your Organizations](../../snyk-admin/manage-users-in-organizations-and-groups/manage-users-in-organizations.md) 참조) Snyk [API Invite users endpoint.](https://snyk.docs.apiary.io/#reference/organizations/user-invitation-to-organization/invite-users)를 사용하여 프로세스를 자동화하세요.&#x20;
 
-If users who have not been invited use SSO to log in, they will gain access to Snyk, but they will not see any Projects until an admin invites them or manually adds them to the Organization(s). You can provide a list of Organizations with the appropriate contact person so that new users can [request access](https://docs.snyk.io/user-and-group-management/managing-users-and-permissions/organization-access-requests).
+초대받지 않은 사용자가 SSO를 사용하여 로그인하는 경우, Snyk에 액세스할 수 있지만 관리자가 초대하거나 수동으로 조직에 추가할 때까지 어떤 프로젝트도 볼 수 없습니다. 새로운 사용자가 [request access](https://docs.snyk.io/user-and-group-management/managing-users-and-permissions/organization-access-requests) 할 수 있도록 적절한 담당자와 함께 조직 목록을 제공할 수 있습니다.
 
-## Custom mapping
+## 맞춤 매핑(Custom mapping)
 
 {% hint style="warning" %}
-**Release status**\
-Custom Mapping is available only for Enterprise plans.
+**출시 상태**\
+사용자 정의 매핑은 Enterprise 플랜에서만 사용할 수 있습니다.
 
-See [Pricing plans](https://snyk.io/plans).
+[Pricing plans](https://snyk.io/plans)을 참조하세요.
 {% endhint %}
 
-You can provision user accounts with customized rules using the [Custom Mapping Option](custom-mapping-option/).
+[Custom Mapping Option](custom-mapping-option/) 옵션을 사용하여 사용자 정의된 규칙으로 사용자 계정을 프로비저닝할 수 있습니다.
 
-You can configure SSO differently for each of your different Groups. You can also map users to a specific Organization and role assignment based on information from the identity provider.
+서로 다른 그룹마다 SSO를 다르게 구성할 수 있습니다. 또한 ID 공급자의 정보를 기반으로 사용자를 특정 조직 및 역할 할당에 매핑할 수도 있습니다.

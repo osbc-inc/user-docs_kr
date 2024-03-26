@@ -43,7 +43,7 @@ Snyk 웹 UI를 통해 브라우저에서 전체 Snyk 기능을 실행할 수 있
 * 가장 취약한 일부 프로젝트의 취약점을 수정하기 위해 제기할 수 있는 PR(Pull Request)
 * (Snyk에 의해 또는 Snyk를 통해) 이미 제기되어 검토를 기다리고 있는PR (Pull Request).
 
-현재 Snyk는 GitHub, GitHub Enterprise 및 Bitbucket Cloud에서만, 가장 취약한 프로젝트에 대해서만 PR을 추적하고 플래그를 지정합니다. 다른 SCM을 사용하는 경우 **Pending task** 섹션에는 이미 제기된 PR이 아닌 제기될 수 있는 PR만 표시됩니다.
+현재 Snyk은 GitHub, GitHub Enterprise 및 Bitbucket Cloud에서만, 가장 취약한 프로젝트에 대해서만 PR을 추적하고 플래그를 지정합니다. 다른 SCM을 사용하는 경우 **Pending task** 섹션에는 이미 제기된 PR이 아닌 제기될 수 있는 PR만 표시됩니다.
 
 <figure><img src="../.gitbook/assets/image (109) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1).png" alt="Pending tasks and Vulnerable Projects listed on the Dashboard"><figcaption><p>대시보드에 나열된 Pending tasks 및 Vulnerable Projects</p></figcaption></figure>
 

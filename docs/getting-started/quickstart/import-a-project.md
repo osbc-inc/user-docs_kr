@@ -25,7 +25,7 @@ Snyk 웹 UI를 통해 프로젝트 가져오기에 대한 비디오 데모
 
 </div>
 
-* 사용할 저장소를 선택하십시오. 그런 다음 **선택한 저장소 추가(Add selected repositories)**를 클릭하여 선택한 저장소를 프로젝트로 가져옵니다. \
+* 사용할 저장소를 선택한 후, **선택한 저장소 추가(Add selected repositories)**를 클릭하여 선택한 저장소를 프로젝트로 가져옵니다. \
   가져오는 프로젝트에 대한 선택적 설정을 선택할 수 있습니다. **사용자 정의 파일 위치 추가**(**Add custom file location)** 및 **폴더 제외(Exclude folders)**는 Snyk Open Source 및 Snyk Container에서만 지원됩니다. 자세한 내용은Azure 리포지토리 통합 설명서에서 [Adding custom file locations and excluding folders](https://docs.snyk.io/integrations/git-repository-scm-integrations/snyk-azure-repositories-tfs-integration#adding-custom-file-locations-and-excluding-folders) 를 참조하세요.
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-10-20 at 15.20.49.png" alt="Select GitHub repositories to import"><figcaption><p>가져올 GitHub 저장소를 선택하세요.</p></figcaption></figure>
@@ -50,7 +50,7 @@ Snyk 웹 UI를 통해 프로젝트 가져오기에 대한 비디오 데모
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-01-23 at 13.23.59.png" alt="Import Projects progress and option to view import log"><figcaption><p><strong>Import Projects progress and option to view import log</strong></p></figcaption></figure>
 
-가져오는 동안, Snyk는 전체 디렉터리 트리에서 종속성을 나열하는 `package.json` 파일과 같은 관련 파일에 대해 선택한 저장소를 검색하기 시작하고, 이러한 파일을 Snyk 프로젝트로 가져옵니다.
+가져오는 동안, Snyk은 전체 디렉터리 트리에서 종속성을 나열하는 `package.json` 파일과 같은 관련 파일에 대해 선택한 저장소를 검색하기 시작하고, 이러한 파일을 Snyk 프로젝트로 가져옵니다.
 
 ## 결과 가져오기
 

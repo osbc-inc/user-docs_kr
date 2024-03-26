@@ -1,32 +1,32 @@
-# Set up Snyk Single Sign-On (SSO)
+# Snyk SSO(Single Sign-On) 설정
 
-Set up Single Sign-On (SSO) to allow your developers and teams easy access to Snyk through your existing SSO provider.
+개발자와 팀이 기존 SSO 공급자를 통해 Snyk에 쉽게 액세스할 수 있도록 SSO(Single Sign-On)를 설정하세요.
 
-The information you need to establish trust between Snyk and the identity provider depends on which type of SSO you are using.
+Snyk와 ID 공급자 간에 신뢰를 구축하는 데 필요한 정보는 사용 중인 SSO 유형에 따라 다릅니다.
 
-Ensure you have at least one Group and Organization to indicate where new users will be assigned. For details, see [Manage Groups and Organizations](../../snyk-admin/manage-groups-and-organizations/).
+새 사용자가 할당될 위치를 나타내는 그룹과 조직이 하나 이상 있는지 확인하세요. 자세한 내용은 [Manage Groups and Organizations](../../snyk-admin/manage-groups-and-organizations/)를 참조하세요.
 
 {% hint style="info" %}
-After you gather the needed information identified in the following sections, create a support ticket to request SSO setup.
+다음 섹션에서 확인된 필요한 정보를 수집한 후 SSO 설정을 요청하기 위한 지원 티켓을 만드세요.
 
-Alternatively, Group Admins can configure Snyk Single Sign-On. See [Self-Serve Single Sign-On (SSO)](self-serve-single-sign-on-sso/) for the steps.
+또는 그룹 관리자가 Snyk Single Sign-On을 구성할 수 있습니다. 단계는 [Self-Serve Single Sign-On (SSO)](self-serve-single-sign-on-sso/) 를 참조하세요.
 {% endhint %}
 
-## Overview of SSO
+## SSO 개요
 
-The process of establishing trust between your identity provider (IdP) and Snyk requires a few steps coordinated between your SSO administrator and Snyk Support.
+IdP(ID 공급자)와 Snyk 간에 신뢰를 설정하는 프로세스에는 SSO 관리자와 Snyk 지원 간에 조정되는 몇 가지 단계가 필요합니다.
 
-* In your identity provider platform, enter details about the Snyk environment and user attributes.
-* Provide Snyk with details from your IdP.
-* Set up a user for testing and send Snyk the username and password for that user.
-* Use the link provided by Snyk to generate a payload.
-* After Snyk finalizes the connection, confirm the login process is working correctly.
+* ID 공급자 플랫폼에서 Snyk 환경 및 사용자 속성에 대한 세부 정보를 입력합니다.
+* IdP의 세부정보를 Snyk에 제공하세요.
+* 테스트할 사용자를 설정하고 해당 사용자의 사용자 이름과 비밀번호를 Snyk에 보냅니다.
+* Snyk에서 제공하는 링크를 사용하여 페이로드를 생성하세요.
+* Snyk이 연결을 완료한 후 로그인 프로세스가 올바르게 작동하는지 확인하세요.
 
-Users are provisioned to Snyk when they log in. If an invitation is required, users may only see a list of your Organizations until the admin adds them to the appropriate Organizations.
+사용자는 로그인할 때 Snyk에 프로비저닝됩니다. 초대가 필요한 경우, 관리자가 사용자를 적절한 조직에 추가할 때까지 사용자는 조직 목록만 볼 수 있습니다.
 
-After SSO is configured both from Snyk and your company's network, a trust relationship is established with Snyk, Auth0 (on behalf of Snyk), and your network. Any sensitive data is encrypted and stored in Auth0 only for the purposes of enabling user logins.
+Snyk와 회사 네트워크 모두에서 SSO가 구성되면 Snyk, Auth0(Snyk 대신) 및 네트워크와 신뢰 관계가 설정됩니다. 모든 민감한 데이터는 사용자 로그인을 활성화할 목적으로만 암호화되어 Auth0에 저장됩니다.
 
-Each type of SSO connection requires different details for establishing trust between your identity provider and Snyk. The following sections explain those details. The details are also included in the worksheets in the Resources section at the end of this article.
+각 유형의 SSO 연결에는 ID 공급자와 Snyk 간의 신뢰를 구축하기 위한 서로 다른 세부 정보가 필요합니다. 다음 섹션에서는 이러한 세부정보를 설명합니다. 자세한 내용은 이 기사 마지막 부분의 리소스 섹션에 있는 워크시트에도 포함되어 있습니다.
 
 ## Set up SAML for SSO
 
@@ -177,7 +177,7 @@ To complete your login:
 3. Log in with your identity provider as you would for other applications.
 4. Let Snyk Support know which user to promote as the Group administrator.
 
-## &#x20;Resources for SSO setup
+## Resources for SSO setup
 
 These worksheets include the information to enter in your Identity provider and the information you need to collect before submitting a ticket to Snyk Support to request single sign-on.
 
