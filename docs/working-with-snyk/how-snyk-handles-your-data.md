@@ -1,20 +1,20 @@
-# How Snyk handles your data
+# Snyk이 데이터를 처리하는 방법
 
-Snyk is a developer security platform placing the utmost importance on data security. Fully understanding your privacy and security needs, Snyk provides this document with the goal of providing you with transparency as to how and what data is accessed, transferred, and stored by Snyk.
+Snyk은 데이터 보안을 가장 중요하게 생각하는 개발자 보안 플랫폼입니다. Snyk은 귀하의 개인 정보 보호 및 보안 요구 사항을 완전히 이해하고 Snyk이어떤 데이터에 액세스하고, 전송하고, 저장하는지에 대한 투명성을 귀하에게 제공한다는 목표로 이 문서를 제공합니다.
 
-The data that Snyk handles varies depending on the product you are using, how you are integrating with Snyk and your Snyk deployment. Be aware, Snyk is subject to fast-moving changes, therefore, the types of data that Snyk accesses and stores might change with the introduction of a new capability or changes to an existing capability.
+Snyk이 처리하는 데이터는 사용 중인 제품, Snyk와 통합하는 방법, Snyk 배포에 따라 다릅니다. Snyk은 빠르게 변화할 수 있으므로 Snyk이 액세스하고 저장하는 데이터 유형은 새로운 기능의 도입이나 기존 기능의 변경으로 인해 변경될 수 있습니다.
 
-## Flexible deployment options
+## 유연한 배포 옵션
 
-Snyk leverages the latest software development practices and technologies to provide customers with the flexibility to use Snyk’s developer security platform in the manner that best suits the needs of their business.
+Snyk 최신 소프트웨어 개발 사례와 기술을 활용하여 고객이 비즈니스 요구 사항에 가장 적합한 방식으로 Snyk의 개발자 보안 플랫폼을 사용할 수 있는 유연성을 제공합니다.
 
-Snyk’s cloud-first deployment options offer ease of use and scalability while also providing the required level of data protection with multi- and single-tenancy options supported in the US, EU, and AUS.
+Snyk의 클라우드 우선 배포 옵션은 사용 편의성과 확장성을 제공하는 동시에 미국, EU 및 AUS에서 지원되는 multi- 및 single-tenancy 옵션을 통해 필요한 수준의 데이터 보호를 제공합니다.
 
-In the future, Snyk will support additional regions.
+앞으로 Snyk는 더 많은 지역을 지원할 예정입니다.
 
-* **Multi-Tenant SaaS**: The simplest, most common, and most cost-effective way to use Snyk’s developer security platform
-* **Single-Tenant SaaS:** Private Cloud - An isolated and fully managed instance of the Snyk developer security platform on AWS. For details, see [Snyk Deployment Options](https://snyk.io/platform/deployment-options/).
-* **Snyk Broker**: A client service installed on your private infrastructure, acting as a proxy between the Snyk developer security platform (multi- or single-tenant) and your on-premise codebase. [Snyk Broker](../enterprise-configuration/snyk-broker/) securely handles inbound and outbound connections, encrypting data during transit and deliberately controlling the access Snyk has to your data. Sensitive credentials stay behind your firewall.
+* **Multi-Tenant SaaS**: Snyk의 개발자 보안 플랫폼을 사용하는 가장 간단하고 일반적이며 비용이 효율적인 방법
+* **Single-Tenant SaaS:**AWS에서 Snyk 개발자 보안 플랫폼의 격리된 완전 관리형 인스턴스입니다. 자세한 내용은 [Snyk Deployment Options](https://snyk.io/platform/deployment-options/)을 참조하세요.
+* **Snyk Broker**: Snyk 개발자 보안 플랫폼(multi- 또는 single-tenant)과 온프레미스 코드베이스 간의 프록시 역할을 하는 개인 인프라에 설치된 클라이언트 서비스입니다.. [Snyk Broker](../enterprise-configuration/snyk-broker/) 는 인바운드 및 아웃바운드 연결을 안전하게 처리하고 전송 중 데이터를 암호화하며 Snyk이 귀하의 데이터에 대한 액세스를 의도적으로 제어합니다. 민감한 자격 증명은 방화벽 뒤에 있습니다.
 
 ## Customer data flows across Snyk
 
