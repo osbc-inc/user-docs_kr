@@ -1,19 +1,19 @@
-# Level 3: Prioritization setup
+# Level 3: 우선순위 설정
 
-Learn what Risk-Based prioritization is and how to set up and deploy the Kubernetes connector for Snyk AppRisk.
+위험 기반 우선순위 지정과 Snyk AppRisk용 Kubernetes 커넥터를 설정하고 배포하는 방법에 대해 확인할 수 있습니다.
 
-Risk-based prioritization is the capability of Snyk AppRisk to understand the context of your application and help you better prioritize your security issues.
+위험 기반 우선 순위 지정은 Snyk AppRisk가 애플리케이션의 컨텍스트를 이해하고 보안 문제의 우선 순위를 보다 잘 지정할 수 있도록 지원하는 기능입니다.
 
-The [Snyk Risk-Based prioritization](../risk-based-prioritization-for-snyk-apprisk/prioritization-setup/) product focuses on several risk factors for your vulnerabilities:
+[Snyk Risk-Based prioritization](../risk-based-prioritization-for-snyk-apprisk/prioritization-setup/)은 취약점에 대한 여러 가지 위험 요소에 중점을 둡니다:
 
-* **OS condition**: Does this vulnerability apply to my operating system?
-* **Deployed**: Is my code in a container image that is deployed?
-* **Public facing**: Does my container image have a configured path to the internet?
+* **OS 상태**: 해당 취약점이 운영 체제에 적용됩니까?
+* **배포**: 내 코드가 배포된 컨테이너 이미지에 있습니까?
+* **공용 사용**: 컨테이너 이미지에 인터넷 경로가 구성되어 있습니까?
 
-The goal of Snyk Risk-based prioritization is to provide application context to your Open Source, Code, and Container issues by understanding how your application is deployed and configured. This enables you to prioritize your issues based on the risk they are posing to your application.
+Snyk Risk 기반 우선순위 지정의 목적은 애플리케이션이 배포되고 구성되는 방식을 이해함으로써 오픈 소스, 코드 및 컨테이너 문제에 대한 애플리케이션 컨텍스트를 제공하는 것입니다. 이를 통해 애플리케이션에 미치는 위험을 기반으로 문제의 우선순위를 지정할 수 있습니다.
 
-See the [How risk-based prioritization works](../risk-based-prioritization-for-snyk-apprisk/how-risk-based-prioritization-works/) page, with focus on the [Assets](../risk-based-prioritization-for-snyk-apprisk/how-risk-based-prioritization-works/assets.md) and [Risk factors](../risk-based-prioritization-for-snyk-apprisk/how-risk-based-prioritization-works/risk-factors/) pages, for more details and a better understanding of the core concepts.
+핵심 개념에 대한 자세한 내용과 이해는[Assets](../risk-based-prioritization-for-snyk-apprisk/how-risk-based-prioritization-works/assets.md) 및 [Risk factors](../risk-based-prioritization-for-snyk-apprisk/how-risk-based-prioritization-works/risk-factors/) 페이지를 중심으로 [How risk-based prioritization works](../risk-based-prioritization-for-snyk-apprisk/how-risk-based-prioritization-works/)를 참조하십시오.
 
-The purpose of this level is to provide context to your Snyk Container issues or vulnerabilities. After you deploy the kubernetes connector to your cluster, you will be able to identify if a Container is Deployed and Public Facing, allowing you to prioritize your container vulnerabilities.
+이 Level의 목적은 Snyk Container 문제나 취약점에 대한 컨텍스트를 제공하는 것입니다. Kubernetes 커넥터를 클러스터에 배포한 후 컨테이너가 배포 및 공개 측면에 있는지 식별할 수 있으므로 컨테이너 취약점의 우선 순위를 지정할 수 있습니다.
 
-See the [Prioritization setup: Kubernetes connector](../risk-based-prioritization-for-snyk-apprisk/prioritization-setup/prioritization-setup-kubernetes-connector.md) page for more details about how to set up the Kubernetes connector.
+Kubernetes 커넥터 설정 방법에 대한 자세한 내용은 [Prioritization setup: Kubernetes connector](../risk-based-prioritization-for-snyk-apprisk/prioritization-setup/prioritization-setup-kubernetes-connector.md)를 참조하십시오.
