@@ -1,14 +1,14 @@
-# Prerequisites
+# 전제조건
 
-Before you get started, ensure that you meet the following prerequisites:&#x20;
+시작하기 전에 다음 전제 조건을 충족해야 합니다:
 
-* You are a Snyk Enterprise customer.
-* Your account is entitled with access to Snyk AppRisk Essentials.
-* You are a Group Administrator for the Group associated with Snyk AppRisk, or you are assigned a Group level role with permissions to View Group and Edit AppRisk.&#x20;
-* The Group associated with Snyk AppRisk includes organizations that have onboarded Snyk application security products.
-* You have the necessary permissions and authority to onboard cloud-based SCM tools (Azure DevOps, GitHub, GitLab, and so on) to Snyk AppRisk for repository asset discovery.
+* 당신은 Snyk Enterprise 고객입니다.
+* 귀하의 계정은 Snyk AppRisk Essentials에 액세스할 수 있습니다.
+* Snyk AppRisk와 연결된 그룹의 그룹 관리자이거나 View Group 및 Edit AppRisk에 대한 권한이 있는 그룹 수준 역할이 할당됩니다.
+* Snyk AppRisk와 관련된 그룹에는 Snyk 애플리케이션 보안 제품이 포함되어 있습니다.
+* 저장소 자산 검색을 위해 클라우드 기반 SCM tools (Azure DevOps, GitHub, GitLab 등)을 Snyk AppRisk에 온보드할 수 있는 필요한 권한과 권한이 있습니다.
 
-Navigate to the following sections if you need information about:
+정보가 필요한 경우 다음 섹션으로 이동합니다:
 
 * [Permissions](../getting-started-with-snyk-apprisk.md#permissions)
 * [Login and Authentication](../getting-started-with-snyk-apprisk.md#login-and-authentication)
