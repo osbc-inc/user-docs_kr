@@ -1,6 +1,5 @@
-# Level 4: Associate the source code with the container images
+# Level 4: 소스 코드를 컨테이너 이미지와 연결합니다
 
-Leverage the complete capabilities of risk-based prioritization by associating your Snyk Code and Snyk Open Source Projects with your Container Project. This allows you to prioritize your Snyk Open Source and Snyk Code issues using contextual risk factors.
+Snyk Code 및 Snyk Open Source 프로젝트를 컨테이너 프로젝트와 연결하여 위험 기반 우선 순위 지정의 완전한 기능을 활용할 수 있습니다. 이를 통해 컨텍스트 위험 요소를 사용하여 Snyk Open Source 및 Snyk Code 문제의 우선 순위를 지정할 수 있습니다.
 
-See the [Prioritization setup: Associating Snyk Open Source, Code, and Container Projects](../risk-based-prioritization-for-snyk-apprisk/prioritization-setup/prioritization-setup-associating-snyk-open-source-code-and-container-projects.md) page for more details on how to set up the required linking for the chosen application.
-
+선택한 응용 프로그램에 필요한 연결을 설정하는 방법에 대한 자세한 내용은 [Prioritization setup: Associating Snyk Open Source, Code, and Container Projects](../risk-based-prioritization-for-snyk-apprisk/prioritization-setup/prioritization-setup-associating-snyk-open-source-code-and-container-projects.md)를 참조하십시오.
