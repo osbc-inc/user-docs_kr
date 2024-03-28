@@ -1,6 +1,6 @@
 # Snyk Enterprise 플랜 시작하기
 
-이 페이지에서는 피드백을 받고 승인을 얻기 위해, Snyk을 사용해 보는 데 여러 팀원을 참여시키는 방법을 살펴봅니다.
+이 페이지에서는 피드백을 받고 승인을 얻기 위해, Snyk을 사용해 보는 데 여러 팀원을 참여하는 방법을 살펴봅니다.&#x20;
 
 {% hint style="info" %}
 무료 또는 팀 플랜으로 Snyk를 사용하고 있으며 Enterprise 플랜으로 업그레이드하는 방법에 대한 지침을 찾고 있는 경우, [Enterprise implementation guide](../implement-snyk/enterprise-implementation-guide/)를 참조하세요.
