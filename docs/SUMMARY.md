@@ -688,7 +688,7 @@
     * [Implementation guide for Snyk AppRisk](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/README.md)
       * [Prerequisites](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/prerequisites.md)
       * [Level 1: Configure Snyk AppRisk and setup integrations](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/level-1-configure-snyk-apprisk-and-setup-integrations.md)
-      * [Level 2: Policies](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/level-2-policies.md)
+      * [Level 2: 정책](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/level-2-policies.md)
       * [Level 3: 우선순위 설정](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/level-3-prioritization-setup.md)
       * [Level 4: 소스 코드를 컨테이너 이미지와 연결합니다](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/level-4-associate-the-source-code-with-the-container-images.md)
     * [Integrations for Snyk AppRisk](manage-risk/snyk-apprisk/integrations-for-snyk-apprisk/README.md)
