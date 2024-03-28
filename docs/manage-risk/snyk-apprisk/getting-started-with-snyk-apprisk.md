@@ -39,7 +39,7 @@ SSO, Google SAML 등을 사용하여 Snyk에 로그인하고 인증합니다.
 Snyk AppRisk가 활성화된 Group을 선택합니다. 왼쪽 탐색 메뉴에 Snyk AppRisk에 대한 링크가 나타납니다. 이 링크를 클릭하면 새 브라우저 화면에서 프로그램이 열립니다.
 
 {% hint style="info" %}
-Keep both Snyk Web UI and Snyk AppRisk tabs open to ensure optimal functionality.
+최적의 성능으로 작동하기 위해 Snyk Web UI 및 Snyk AppRisk 탭을 모두 열은 상태로 진행합니다.
 {% endhint %}
 
 ## 주요 내용
