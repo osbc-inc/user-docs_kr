@@ -42,38 +42,34 @@ Snyk AppRisk가 활성화된 Group을 선택합니다. 왼쪽 탐색 메뉴에 S
 Keep both Snyk Web UI and Snyk AppRisk tabs open to ensure optimal functionality.
 {% endhint %}
 
-## Key Concepts
+## 주요 내용
 
-**Asset**: An asset is an identifiable entity that is part of an application, and relevant for security and developers.
+**Asset**: Asset은 애플리케이션의 일부인 식별 가능한 엔티티로 보안 및 개발자와 관련이 있습니다.
 
-**Controls**: The security controls associated with the asset. Navigate to the [Coverage controls](policies-for-snyk-apprisk/use-cases-for-policies/coverage-control-policy-use-case.md) section to see all available statuses for security controls.
+**Controls**: 자산과 관련된 보안 컨트롤입니다. [Coverage controls](policies-for-snyk-apprisk/use-cases-for-policies/coverage-control-policy-use-case.md) 섹션으로 이동하여 보안 컨트롤에 사용 가능한 모든 상태를 확인합니다.
 
-**Coverage**: An assessment of whether applicable assets are scanned and tested by security tools (like Snyk Open Source, for instance), as it relates to an application security program. A type of policy that allows you to specify what controls should be applied and, optionally, how often it needs to be run.
+**Coverage**: 응용프로그램 보안 프로그램과 관련하여 보안 도구(예: Snyk Open Source)에 의해 검사 및 테스트 여부를 평가합니다. 적용해야 할 컨트롤과 선택적으로 실행해야 할 빈도를 지정할 수 있는 정책 유형입니다.
 
-**Tags**: A way to categorize assets. Helps you recognize or handle assets differently according to mutual properties. Assets can be filtered by their tags in the inventory or when creating policy rules. A tag can be automatically assigned to an asset, or the asset can be tagged by a policy you created. GitHub and GitLab topics are treated as asset tags and you can use them for creating policies.
+**Tags**: Asset을 분류하는 방법입니다. 속성에 따라 Asset을 다르게 인식하거나 처리할 수 있도록 도와줍니다. Asset은 인벤토리에 있는 tags로 필터링하거나 정책을 만들 때 필터링할 수 있습니다. 태그를 Asset에 자동으로 할당하거나 사용자가 만든 정책에 따라 tags를 지정할 수 있습니다. GitHub 및 GitLab 항목은 Asset tags로 처리되어 정책을 만드는 데 사용할 수 있습니다.
 
-**Class**: A way to assign business context to assets and categorize an asset based on the business criticality. Assets can be assigned Classes A, B, C, or D, where Class A (assets that are business critical, deal with sensitive data, subject to compliance, and so on) is the most important and Class D (test apps, sandbox environments, and so on) the least important. Assets are assigned Class C by default. A class can be used in policies as well as defined in a policy.
+**Class**: Asset에 비즈니스 컨텍스트를 할당하고 비즈니스 중요도에 따라 Asset을 분류하는 방법입니다. Asset은 클래스 A, B, C 또는 D로 할당할 수 있습니다. 여기서 클래스 A(비즈니스 중요, 중요한 데이터 처리, 규정 준수 대상 등의 자산)가 가장 중요하고 클래스 D(테스트 앱, 샌드박스 환경 등)가 가장 중요도가 떨어집니다. 자산은 기본적으로 클래스 C로 할당됩니다. 클래스는 정책에서 정의된 것뿐만 아니라 정책에서도 사용할 수 있습니다.
 
-**Policy**: A way to automate actions in certain conditions, like classifying and tagging assets with business context. You can also use a policy to configure actions like sending a message or setting the coverage gap control using a Policy builder UI.
+**Policy**: 비즈니스 상황에 따라 자산을 분류하고 tags를 지정하는 것과 같은 특정 조건에서 작업을 자동화하는 방법입니다. policy 빌드 UI를 사용하여 메시지를 보내거나 커버리지 갭 컨트롤을 설정하는 등의 작업을 구성할 수도 있습니다.
 
-## Scanning methods
+## 스캔 방법
 
-You can initiate a scan from the Web UI, the CLI, the API, or with PR Checks. See the [Start scanning using the CLI, Web UI, or API](../../scan-with-snyk/start-scanning-using-the-cli-web-ui-or-api.md) page for more details.
+웹 UI, CLI, API 또는 PR Checks에서 스캔을 시작할 수 있습니다. 자세한 내용은 [Start scanning using the CLI, Web UI, or API](../../scan-with-snyk/start-scanning-using-the-cli-web-ui-or-api.md)을 참조하십시오.
 
-If you initiate your scans using the CLI, you might encounter one of the following situations:
+CLI를 사용하여 검색을 시작하는 경우 다음과 같은 상황이 발생할 수 있습니다:
 
-1. If you have a `.git` folder available in the directory that the CLI is scanning, then the `git remoteurl` is picked up automatically for Snyk Open Source, Snyk Container, and Snyk IaC.
+1. CLI가 검색 중인 디렉토리에서 `.git` 폴더를 사용할 수 있는 경우, Snyk Open Source, Snyk Container 및 Snyk IaC에 대해 `git remoteurl` 이 자동으로 선택됩니다.
 
 {% hint style="info" %}
-Snyk Code does not automatically pick up the `git remoteurl`, even if the `.git` folder is available in the directory scanned by the CLI.
+CLI에서 스캔한 디렉토리에서 `.git` 폴더를 사용할 수 있는 경우에도 Snyk Code는`git remoteurl`을 자동으로 픽업하지 않습니다.
 {% endhint %}
 
-2. If you do not have a `.git` folder available in the directory that the CLI is scanning, you can use different test or monitor commands to achieve the same result:
-   * [`snyk monitor`](../../snyk-cli/commands/monitor.md#remote-repo-url-less-than-url-greater-than), for Snyk Open Source
-   * [`snyk iac test`](../../snyk-cli/commands/iac-test.md#remote-repo-url-less-than-url-greater-than) - also requires the `--report` command
-   * `snyk container monitor` - momentarily, no options are available.
-   * `snyk code test` - momentarily, no options are available.
-
-\\
-
-\\
+2. CLI가 검색 중인 디렉토리에 `.git` 폴더를 사용할 수 없는 경우 다른 test 또는 monitor 명령을 사용하여 동일한 결과를 얻을 수 있습니다:
+   * [`snyk monitor`](../../snyk-cli/commands/monitor.md#remote-repo-url-less-than-url-greater-than), Snyk 오픈 소스용
+   * [`snyk iac test`](../../snyk-cli/commands/iac-test.md#remote-repo-url-less-than-url-greater-than) -  `--report` 옵션도 필요합니다
+   * `snyk container monitor` - 일시적으로 옵션을 사용할 수 없습니다.
+   * `snyk code test` - 일시적으로 옵션을 사용할 수 없습니다.
