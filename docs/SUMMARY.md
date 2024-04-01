@@ -693,7 +693,7 @@
       * [Level 4: 소스 코드를 컨테이너 이미지와 연결](manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/level-4-associate-the-source-code-with-the-container-images.md)
     * [Snyk AppRisk를 위한 Integrations](manage-risk/snyk-apprisk/integrations-for-snyk-apprisk/README.md)
       * [Integration 사용자 설정](manage-risk/snyk-apprisk/integrations-for-snyk-apprisk/customize-an-integration.md)
-      * [Connect an SCM integration](manage-risk/snyk-apprisk/integrations-for-snyk-apprisk/connect-an-scm-integration.md)
+      * [SCM integration 연결](manage-risk/snyk-apprisk/integrations-for-snyk-apprisk/connect-an-scm-integration.md)
     * [Inventory for Snyk AppRisk](manage-risk/snyk-apprisk/inventory-for-snyk-apprisk/README.md)
       * [Inventory capabilities](manage-risk/snyk-apprisk/inventory-for-snyk-apprisk/inventory-capabilities.md)
       * [Search and filter capabilities](manage-risk/snyk-apprisk/inventory-for-snyk-apprisk/search-and-filter-capabilities.md)
