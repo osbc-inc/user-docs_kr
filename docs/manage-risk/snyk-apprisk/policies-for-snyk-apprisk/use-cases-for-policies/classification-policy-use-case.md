@@ -1,29 +1,28 @@
-# Classification policy - Use case
+# 분류 정책 - Use case
 
-You can use the **Set Asset Class** action from the Policies view to classify the assets based on importance, where class A is the most important and class D is the least important.&#x20;
+Policies view에서 자산 클래스 설정 작업을 사용하여 중요도에 따라 자산을 분류할 수 있습니다. 여기서 클래스 A가 가장 중요하고 클래스 D가 가장 덜 중요합니다.
 
-You can set the asset class based on:&#x20;
+자산 클래스는 다음을 기준으로 설정할 수 있습니다:
 
-* the repository name &#x20;
-* the asset tags
+* 저장소 이름
+* 자산 태그
 
 {% hint style="info" %}
-Snyk AppRisk identifies GitHub and GitLab topics as asset tags.
+Snyk AppRisk는 GitHub 및 GitLab 항목을 자산 태그로 식별합니다.
 {% endhint %}
 
-Use the classification policy to give business context to your application. When you set up a classification policy, all your assets are automatically classified.
+분류 정책을 사용하여 애플리케이션에 비즈니스 컨텍스트를 제공합니다. 분류 정책을 설정하면 모든 자산이 자동으로 분류됩니다.
 
-If you just started using the classification policy, the recommendation is to focus first on the Class D assets, since they are the least important.
+분류 정책을 막 사용하기 시작한 경우 클래스 D 자산은 가장 중요하지 않으므로 먼저 집중하는 것이 좋습니다.
 
-The following example filters the assets that contain `sandbox`, `test`, and `to-delete` in their names. In Snyk AppRisk, GitHub and GitLab topics are pulled in from the SCM integration and applied to repository assets, so if topics like `PCI-Compliance` have been added to repos in the SCM, Snyk can take those tags in Snyk AppRisk and classify those assets as Class A.
+다음 예제에서는 이름에 `sandbox`, `test`및 `to-delete` 을 필터링합니다. Snyk AppRisk에서 GitHub 및 GitLab 항목은 SCM 통합에서 가져온 후 저장소 자산에 적용되므로 SCM의 저장소에`PCI-Compliance` 와 같은 항목이 추가된 경우 Snyk는 Snyk AppRisk에서 해당 태그를 가져와 해당 자산을 클래스 A로 분류할 수 있습니다.
 
 <figure><img src="../../../../.gitbook/assets/image (7).png" alt="AppRisk - Setting up filters for a classification policy"><figcaption><p>Snyk AppRisk - Setting up filters for a classification policy</p></figcaption></figure>
 
-After you set up the filters, you need to apply a Class D asset classification to those assets.
+필터를 설정한 후 해당 자산에 클래스 D 자산 분류를 적용해야 합니다.
 
 <figure><img src="../../../../.gitbook/assets/image (8).png" alt="AppRisk - Setting up actions for a classification policy"><figcaption><p>Snyk AppRisk - Setting up actions for a classification policy</p></figcaption></figure>
 
-You can apply a similar pattern and create actions for Class A, B, and C assets, within the same policy.
+동일한 정책 내에서 클래스 A, B 및 C 자산에 대해 유사한 패턴을 적용하고 작업을 생성할 수 있습니다.
 
 <figure><img src="../../../../.gitbook/assets/image (9).png" alt="AppRisk - Setting up multiple actions for a classification policy"><figcaption><p>Snyk AppRisk - Setting up multiple actions for a classification policy</p></figcaption></figure>
-
