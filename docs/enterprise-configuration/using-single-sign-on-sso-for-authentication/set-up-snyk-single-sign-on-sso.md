@@ -28,17 +28,17 @@ Snyk와 회사 네트워크 모두에서 SSO가 구성되면 Snyk, Auth0(Snyk �
 
 각 유형의 SSO 연결에는 ID 공급자와 Snyk 간의 신뢰를 구축하기 위한 서로 다른 세부 정보가 필요합니다. 다음 섹션에서는 이러한 세부정보를 설명합니다. 자세한 내용은 이 기사 마지막 부분의 리소스 섹션에 있는 워크시트에도 포함되어 있습니다.
 
-## Set up SAML for SSO
+## SSO용 SAML 설정
 
-To establish trust with Snyk, add an Entity ID, an Assertion Consumer Service (ACS) URL, and a Signing certificate in your identity provider.
+Snyk과 신뢰를 구축하려면, ID 공급자에 Entity ID, ACS(Assertion Consumer Service) URL 및 서명 인증서를 추가하세요.
 
-* The **Entity ID** is the URL that uniquely identifies Snyk as a SAML entity or service provider. Note: **default Entity ID must be checked** manually as no default is set for this.
-* The **Assertion Consumer Service (ACS)** is the endpoint on the Snyk network that listens for requests from your identity provider to enable communication between users on your network and Snyk. This URL is sometimes called a Reply URL.
-* The **Signing certificate** is the Snyk certificate, stored on your server that is needed to maintain the trust relationship. It contains the necessary encryption keys for authentication.
+* **Entity ID**는 Snyk를 SAML Entity 또는 서비스 제공업체로 고유하게 식별하는 URL입니다. (참고: **기본 Entity ID는** 기본값이 설정되어 있지 않으므로 수동으로 **확인해야 합니다.**)
+* **Assertion Consumer Service (ACS)**는 네트워크 사용자와 Snyk 간의 통신을 활성화하기 위해 ID 공급자의 요청을 수신하는 Snyk 네트워크의 엔드포인트입니다. 이 URL을 Reply URL이라고도 합니다.
+* **서명 인증서(Signing certificate)**는 신뢰 관계를 유지하는 데 필요한 서버에 저장된 Snyk 인증서입니다. 인증에 필요한 암호화 키가 포함되어 있습니다.
 
-Use these details to set up the connection with your Identity provider (IdP):
+다음 세부 정보를 사용하여 ID 공급자(IdP)와의 연결을 설정하세요.
 
-| **Details**                                    | **Description**                                                                                                                                                             |
+| **Details**                                    | **설명**                                                                                                                                                                      |
 | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Entity ID                                      | **urn:auth0:snyk:saml-{group-name-normalized}**                                                                                                                             |
 | Entity ID (Snyk EU Tenant Customers)           | **urn:auth0:snyk-mt-eu-prod-1:saml-{group-name-normalized}**                                                                                                                |
@@ -51,135 +51,135 @@ Use these details to set up the connection with your Identity provider (IdP):
 | Signing certificate (Snyk AU Tenant Customers) | [https://snyk-mt-au-prod-1.au.auth0.com/pem?cert=connection)](https://snyk-mt-au-prod-1.au.auth0.com/pem?cert=connection\))                                                 |
 
 {% hint style="info" %}
-Replace **{group-name-normalized}** with the name of your Snyk Group. If your Group name includes spaces, replace them with dashes. For example, if your Group name is `Your Company Group`, then the **{group-name-normalized}** value is **your-company-group**.
+**{group-name-normalized}**를 Snyk 그룹 이름으로 바꾸세요. 그룹 이름에 공백이 포함된 경우 대시로 바꾸세요. 예를 들어, 그룹 이름이 `Your Company Group`인 경우,  **{group-name-normalized}** 값은 **your-company-group**입니다.
 {% endhint %}
 
-To map information from your Identity provider to Snyk, name your user attributes as follows, using the same capitalization and spelling:
+ID 공급자의 정보를 Snyk에 매핑하려면, 동일한 대소문자 및 철자를 사용하여 다음과 같이 사용자 속성의 이름을 지정하세요.
 
-| **Attribute** | **Description**                                 |
-| ------------- | ----------------------------------------------- |
-| email         | The user email address                          |
-| name          | The name of the person to be authenticated      |
-| username      | The person’s username for the identity provider |
+| **속성**   | **설명**             |
+| -------- | ------------------ |
+| email    | 사용자 이메일 주소         |
+| name     | 인증할 사람의 이름         |
+| username | ID 제공업체의 개인 사용자 이름 |
 
-If your user attributes do not match, note that the Snyk configuration for your SSO will take more time.
+사용자 속성이 일치하지 않으면, SSO에 대한 Snyk을 구성하는데 시간이 더 소요됩니다.
 
-## SAML information to provide to Snyk
+## Snyk에 제공할 SAML 정보
 
-Obtain the following information from your identity provider. Provide this information to Snyk to establish trust on the service-provider side.
+ID 제공자로부터 다음 정보를 얻으십시오. 서비스 제공자 측에서 신뢰를 구축하려면 이 정보를 Snyk에 제공하세요.
 
-| Information                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Sign-in URL                   | The URL for your identity provider sign-in page                                                                                                                                                                                                                                                                                                                                                                                                           |
-| X509 Signing Certificate      | The identity provider public key, encoded in Base64 format                                                                                                                                                                                                                                                                                                                                                                                                |
-| Sign-out URL                  | <p>Optional, but recommended -</p><p>The URL for redirect whenever a user logs out of Snyk</p>                                                                                                                                                                                                                                                                                                                                                            |
-| User ID attribute             | <p>Optional default is <strong>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier</strong><br><br><strong>Important:</strong> This value uniquely identifies Snyk users and if changed will result in a duplicate user being created. If you see a duplicate user after changing identity provider <a href="https://support.snyk.io/hc/en-us/requests/new">submit a request </a>to Snyk support to have the duplicate user removed.</p> |
-| Protocol binding              | HTTP-POST is recommended, HTTP-Redirect is also supported                                                                                                                                                                                                                                                                                                                                                                                                 |
-| IdP initiated flow supported? | Idp-initiated flows carry a security risk and are therefore not recommended. Make sure you understand the risks before enabling                                                                                                                                                                                                                                                                                                                           |
-| Email domains and subdomains  | The email domains and subdomains that need access to the SSO                                                                                                                                                                                                                                                                                                                                                                                              |
+| Information(정보)               | 설명                                                                                                                                                                                                                                                                                                                  |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sign-in URL                   | ID 공급자 로그인 페이지의 URL                                                                                                                                                                                                                                                                                                 |
+| X509 Signing Certificate      | Base64 형식으로 인코딩된 ID 공급자 공개 키                                                                                                                                                                                                                                                                                        |
+| Sign-out URL                  | <p>선택사항이지만 권장됩니다 -</p><p>사용자가 Snyk에서 로그아웃할 때마다 redirect 되는 URL</p>                                                                                                                                                                                                                                                  |
+| User ID attribute             | <p>선택적 기본값은<strong>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier</strong><br><br><strong>중요:</strong> T이 값은 Snyk 사용자를 고유하게 식별하며, 변경되면 중복 사용자가 생성됩니다. ID 공급자를 변경한 후 중복 사용자가 표시되면 Snyk 지원팀에 <a href="https://support.snyk.io/hc/en-us/requests/new">submit a request </a>하여 중복 사용자를 제거하세요.</p> |
+| Protocol binding              | HTTP-POST가 권장되며, HTTP-Redirect도 지원됩니다.                                                                                                                                                                                                                                                                              |
+| IdP initiated flow supported? | Idp에서 시작된 흐름은 보안 위험을 수반하므로 권장되지 않습니다. 활성화하기 전에 위험을 인지했는지 확인하십시오.                                                                                                                                                                                                                                                    |
+| Email domains and subdomains  | SSO에 액세스해야 하는 이메일 도메인 및 하위 도메인                                                                                                                                                                                                                                                                                      |
 
 ##
 
-## Set up OpenID Connect (OIDC) for SSO
+## SSO용 OpenID Connect(OIDC) 설정
 
 {% hint style="info" %}
-The IdP (or issuer URL) must be publicly reachable. If these cannot be made public then SAML should be used rather than OIDC
+IdP(또는 issuer URL)는 공개적으로 연결할 수 있어야 합니다.If these cannot be made public then SAML should be used rather than OIDC
 {% endhint %}
 
-When using OIDC for the connection between your Identity provider and Snyk, add the Callback/Redirect URIs and OAuth Grant Type in your identity provider to establish trust with Snyk.
+ID 공급자와 Snyk 간의 연결에 OIDC를 사용하는 경우, ID 공급자에 콜백/리디렉션 URI 및 OAuth 부여 유형을 추가하여 Snyk와의 신뢰를 설정하세요.
 
-| Information                                       | Description                                                                                                    |
+| Information(정보)                                   | 설명                                                                                                             |
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Callback/Redirect URIs                            | [https://snyk.auth0.com/login/callback](https://snyk.auth0.com/login/callback)                                 |
 | Callback/Redirect URIs (Snyk EU Tenant Customers) | [https://snyk-mt-eu-prod-1.eu.auth0.com/login/callback](https://snyk-mt-eu-prod-1.eu.auth0.com/login/callback) |
 | Callback/Redirect URIs (Snyk AU Tenant Customers) | [https://snyk-mt-au-prod-1.au.auth0.com/login/callback](https://snyk-mt-au-prod-1.au.auth0.com/login/callback) |
 | OAuth Grant Type                                  | Implicit (or Authorization Code)                                                                               |
 
-## OIDC information to provide to Snyk
+## Snyk에 제공할 OIDC 정보
 
-Obtain the following information from your identity provider. Provide this information to Snyk to establish trust on the service-provider side.
+ID 제공자로부터 다음 정보를 얻으십시오. 서비스 제공자 측에서 신뢰를 구축하려면 이 정보를 Snyk에 제공하세요.
 
-| Information                  | Description                                                                                                                 |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Issuer URL                   | The URL of the discovery document of the OpenID Connect provider you want to connect with. This must be publicly reachable. |
-| Client ID                    | The public identifier unique for your authorization server                                                                  |
-| Client Secret                | Needed only if the IdP does not allow the Implicit grant type                                                               |
-| Email domains and subdomains | The email domains and subdomains that need access to the SSO                                                                |
+| Information(정보)              | 설명                                                           |
+| ---------------------------- | ------------------------------------------------------------ |
+| Issuer URL                   | 연결하려는 OpenID Connect 공급자의 검색 문서 URL입니다. 공개적으로 접근할 수 있어야 합니다. |
+| Client ID                    | 인증 서버의 고유한 공개 식별자                                            |
+| Client Secret                | IdP가 암시적 부여 유형을 허용하지 않는 경우에만 필요합니다.                          |
+| Email domains and subdomains | SSO에 액세스해야 하는 이메일 도메인 및 하위 도메인                               |
 
-## Set up Azure AD as SSO (via App Registration/OIDC)
+## Azure AD를 SSO로 설정(앱 등록/OIDC를 통해)
 
-When using Azure AD for the connection between your Identity provider and Snyk, you must add the Redirect URIs in your Identity provider to establish trust with Snyk.
+ID 공급자와 Snyk 간의 연결에 Azure AD를 사용하는 경우, ID 공급자에 Redirect URI를 추가하여 Snyk와의 신뢰를 설정해야 합니다.
 
 {% hint style="info" %}
-Use your Azure AD name when authenticating rather than the SCM user account name, or a connection error can occur.
+인증할 때 SCM 사용자 계정 이름 대신 Azure AD 이름을 사용하세요. 그렇지 않으면 연결 오류가 발생할 수 있습니다.
 {% endhint %}
 
-| Information                              | Description                                                                                                    |
+| Information(정보)                          | 설명                                                                                                             |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Redirect URIs                            | [https://snyk.auth0.com/login/callback](https://snyk.auth0.com/login/callback)                                 |
 | Redirect URIs (Snyk EU Tenant Customers) | [https://snyk-mt-eu-prod-1.eu.auth0.com/login/callback](https://snyk-mt-eu-prod-1.eu.auth0.com/login/callback) |
 | Redirect URIs (Snyk AU Tenant Customers) | [https://snyk-mt-au-prod-1.au.auth0.com/login/callback](https://snyk-mt-au-prod-1.au.auth0.com/login/callback) |
 
-## Azure AD information to provide to Snyk
+## Snyk에 제공할 Azure AD 정보
 
-Obtain the following information from your identity provider. Provide this information to Snyk to establish trust on the service-provider side.
+ID 제공자로부터 다음 정보를 얻으십시오. 서비스 제공자 측에서 신뢰를 구축하려면 이 정보를 Snyk에 제공하세요.
 
-| Information               | Description                                                                                                                 |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Client ID                 | The public identifier unique for your authorization server                                                                  |
-| Client Secret             | The secret for your authorization that grants tokens to authorized requestors                                               |
-| Microsoft Azure AD Domain | The numbers and letters shown in the Directory (tenant) ID, which can be found from the Snyk app you created under Overview |
+| Information(정보)           | 설명                                                      |
+| ------------------------- | ------------------------------------------------------- |
+| Client ID                 | 인증 서버의 고유한 공개 식별자                                       |
+| Client Secret             | 승인된 요청자에게 토큰을 부여하는 승인의 비밀입니다.                           |
+| Microsoft Azure AD Domain | 개요에서 생성한 Snyk 앱에서 찾을 수 있는, 디렉터리(tenant) ID에 표시되는 숫자와 문자 |
 
-## Set up ADFS as SSO
+## ADFS를 SSO로 설정
 
-When using Active Directory Federation Service (ADFS) for the connection between your Identity provider and Snyk, add the Realm Identifier, a Callback URL, and a Signing certificate in your Identity provider to establish trust with Snyk. For more information, see [Connecting Auth0 to an ADFS server (video)](https://www.youtube.com/watch?v=ICW6sGP9ht8).
+ID 공급자와 Snyk 간의 연결을 위해 ADFS(Active Directory Federation Service)를 사용하는 경우, ID 공급자에 영역 식별자, 콜백 URL 및 서명 인증서를 추가하여 Snyk와의 신뢰를 설정하세요. 자세한 내용은[Connecting Auth0 to an ADFS server (video)](https://www.youtube.com/watch?v=ICW6sGP9ht8)을 참조하세요.
 
-| **Information**                         | **Description**                                                                                                                                                  |
-| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Realm Identifier                        | urn:auth0:snyk                                                                                                                                                   |
-| EU Realm Identifier                     | urn:auth0:snyk-mt-eu-prod-1                                                                                                                                      |
-| AU Realm Identifier                     | urn:auth0:snyk-mt-au-prod-1                                                                                                                                      |
-| Callback URL                            | [https://snyk.auth0.com/login/callback](https://snyk.auth0.com/login/callback)                                                                                   |
-| Callback URL (Snyk EU Tenant Customers) | [https://snyk-mt-eu-prod-1.eu.auth0.com/login/callback](https://snyk-mt-eu-prod-1.eu.auth0.com/login/callback)                                                   |
-| Callback URL (Snyk AU Tenant Customers) | [https://snyk-mt-au-prod-1.au.auth0.com/login/callback](https://snyk-mt-au-prod-1.au.auth0.com/login/callback)                                                   |
-| Signing cert                            | [https://snyk.auth0.com/pem](https://snyk.auth0.com/pem) (add as a signature and not encryption)                                                                 |
-| Signing cert (Snyk EU Tenant Customers) | [https://snyk-mt-eu-prod-1.eu.auth0.com/pem?cert=connection](https://snyk-mt-eu-prod-1.eu.auth0.com/pem?cert=connection) (add as a signature and not encryption) |
-| Signing cert (Snyk AU Tenant Customers) | [https://snyk-mt-eu-prod-1.au.auth0.com/pem?cert=connection](https://snyk-mt-eu-prod-1.au.auth0.com/pem?cert=connection) (add as a signature and not encryption) |
+| **Information**(정보)                     | **설명**                                                                                                                                     |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Realm Identifier                        | urn:auth0:snyk                                                                                                                             |
+| EU Realm Identifier                     | urn:auth0:snyk-mt-eu-prod-1                                                                                                                |
+| AU Realm Identifier                     | urn:auth0:snyk-mt-au-prod-1                                                                                                                |
+| Callback URL                            | [https://snyk.auth0.com/login/callback](https://snyk.auth0.com/login/callback)                                                             |
+| Callback URL (Snyk EU Tenant Customers) | [https://snyk-mt-eu-prod-1.eu.auth0.com/login/callback](https://snyk-mt-eu-prod-1.eu.auth0.com/login/callback)                             |
+| Callback URL (Snyk AU Tenant Customers) | [https://snyk-mt-au-prod-1.au.auth0.com/login/callback](https://snyk-mt-au-prod-1.au.auth0.com/login/callback)                             |
+| Signing cert                            | [https://snyk.auth0.com/pem](https://snyk.auth0.com/pem) (암호화가 아닌 서명으로 추가)                                                                 |
+| Signing cert (Snyk EU Tenant Customers) | [https://snyk-mt-eu-prod-1.eu.auth0.com/pem?cert=connection](https://snyk-mt-eu-prod-1.eu.auth0.com/pem?cert=connection) (암호화가 아닌 서명으로 추가) |
+| Signing cert (Snyk AU Tenant Customers) | [https://snyk-mt-eu-prod-1.au.auth0.com/pem?cert=connection](https://snyk-mt-eu-prod-1.au.auth0.com/pem?cert=connection) (암호화가 아닌 서명으로 추가) |
 
-## ADFS information to provide to Snyk
+## Snyk에 제공할 ADFS 정보
 
-Obtain the following information from your Identity provider. Provide this information to Snyk in order to establish trust on the service-provider side.
+ID 공급자로부터 다음 정보를 얻으십시오. 서비스 제공자 측에서 신뢰를 구축하려면 이 정보를 Snyk에 제공하세요.
 
-* ADFS URL or Federation Metadata XML file
+* ADFS URL 또는 Federation Metadata XML file
 
-## Map Enterprise users
+## 기업 사용자 지도
 
-For Enterprise plans, Snyk can map new users to a specific Organization and role when they first sign in using SSO. This option requires additional configuration, including specific naming conventions for organizations.
+Enterprise 요금제의 경우, Snyk은 새 사용자가 SSO를 사용하여 처음 로그인할 때 특정 조직 및 역할에 매핑할 수 있습니다. 이 옵션을 사용하려면 조직의 특정 명명 규칙을 포함한 추가 구성이 필요합니다.
 
-Work with your Snyk account team to prepare for implementing this SSO option.
+Snyk 계정 팀과 협력하여 이 SSO 옵션 구현을 준비하세요.
 
-## Complete SSO connection
+## SSO 연결 완료
 
-After you set up the connection with your Identity provider and provide the necessary details to Snyk Support, Snyk sends you a link to generate a payload.
+ID 공급자와의 연결을 설정하고 Snyk 지원팀에 필요한 세부 정보를 제공하면, Snyk에서 페이로드를 생성하기 위한 링크를 보냅니다.
 
 {% hint style="info" %}
-Ignore any error message you see after clicking this link the first time, as Snyk uses the generated payload to complete the configuration.
+Snyk는 생성된 페이로드를 사용하여 구성을 완료하므로, 이 링크를 처음 클릭한 후 표시되는 오류 메시지를 무시하세요.
 {% endhint %}
 
-When Snyk finishes the configuration, the support agent asks you to navigate to the login page in incognito mode to prevent cookies from interfering with the login process.
+Snyk가 구성을 마치면, 지원 담당자는 쿠키가 로그인 프로세스를 방해하지 않도록 시크릿 모드에서 로그인 페이지로 이동하도록 요청합니다.
 
-Use [https://app.snyk.io/login/sso](https://app.snyk.io/login/sso) for logging into your production environment.
+프로덕션 환경에 로그인하려면 [https://app.snyk.io/login/sso](https://app.snyk.io/login/sso) 를 사용하세요.
 
-To complete your login:
+로그인을 완료하려면:
 
-1. Enter your email address.
-2. Select **Continue to provider**.
-3. Log in with your identity provider as you would for other applications.
-4. Let Snyk Support know which user to promote as the Group administrator.
+1. 당신의 이메일 주소를 입력 해주세요.
+2. **Continue to provider** 을 선택합니다.
+3. 다른 애플리케이션과 마찬가지로 ID 공급자로 로그인합니다.
+4. 그룹 관리자로 승격할 사용자를 Snyk 지원팀에 알려주세요.
 
-## Resources for SSO setup
+## SSO 설정을 위한 리소스
 
-These worksheets include the information to enter in your Identity provider and the information you need to collect before submitting a ticket to Snyk Support to request single sign-on.
+이 워크시트에는 ID 공급자에 입력할 정보와 Single Sign-On을 요청하기 위해, Snyk 지원팀에 티켓을 제출하기 전, 수집해야 하는 정보가 포함되어 있습니다.
 
 {% file src="../../.gitbook/assets/SSO Azure Worksheet (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (3).pdf" %}
 
