@@ -695,7 +695,7 @@
       * [Integration 사용자 설정](manage-risk/snyk-apprisk/integrations-for-snyk-apprisk/customize-an-integration.md)
       * [SCM integration 연결](manage-risk/snyk-apprisk/integrations-for-snyk-apprisk/connect-an-scm-integration.md)
     * [Snyk AppRisk 인벤토리](manage-risk/snyk-apprisk/inventory-for-snyk-apprisk/README.md)
-      * [Inventory capabilities](manage-risk/snyk-apprisk/inventory-for-snyk-apprisk/inventory-capabilities.md)
+      * [인벤토리 성능](manage-risk/snyk-apprisk/inventory-for-snyk-apprisk/inventory-capabilities.md)
       * [Search and filter capabilities](manage-risk/snyk-apprisk/inventory-for-snyk-apprisk/search-and-filter-capabilities.md)
     * [Policies for Snyk AppRisk](manage-risk/snyk-apprisk/policies-for-snyk-apprisk/README.md)
       * [Create policies](manage-risk/snyk-apprisk/policies-for-snyk-apprisk/create-policies.md)
