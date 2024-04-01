@@ -1,55 +1,54 @@
-# Inventory for Snyk AppRisk
+# Snyk AppRisk 인벤토리
 
-Snyk AppRisk inventory layouts are organizing your repository assets in meaningful ways, enabling you to:
+Snyk AppRisk 인벤토리 레이아웃은 의미 있는 방법으로 저장소 자산을 구성하여 다음과 같은 작업을 수행할 수 있습니다:
 
-* Gain full repository asset visibility from your SCM tools, including details about configured teams and repository code committers.
-* Track controls coverage for Snyk products.
-* Prioritize coverage mitigation efforts according to business impact.
+* 구성된 팀 및 리포지토리 코드 커미터에 대한 세부 정보를 포함하여 SCM 도구에서 전체 리포지토리 자산 가시성을 얻을 수 있습니다.
+* Snyk 제품에 대한 적용 범위를 추적합니다.
+* Business impact에 따라 보장 완화의 우선순위를 정합니다.
 
-Each line in the inventory represents either a repository asset or a scanned artifact from Snyk that is likely a repository but lacks some identifying information. Scanned artifacts are not supported through Policies.
+인벤토리의 각 행은 저장소 자산 또는 Snyk에서 스캔한 아티팩트 중 하나를 나타내며, 이 아티팩트는 저장소일 가능성이 높지만 일부 식별 정보가 부족합니다. 스캔한 아티팩트는 정책을 통해 지원하지 않습니다.
 
-## Inventory Layouts <a href="#inventory-layouts" id="inventory-layouts"></a>
+## 인벤토리 레이아웃 <a href="#inventory-layouts" id="inventory-layouts"></a>
 
-To get better context and clarity over your asset inventory, Snyk AppRisk allows flexible structuring with inventory layouts. Snyk AppRisk includes four inventory layouts, and groups assets by different contexts:
+Snyk AppRisk는 자산 인벤토리에 대한 더 나은 컨텍스트와 명확성을 얻기 위해 인벤토리 레이아웃을 통해 유연한 구조화를 가능하게 합니다. Snyk AppRisk는 4개의 인벤토리 레이아웃을 포함하며, 자산을 다른 컨텍스트로 그룹화합니다:
 
-* **Code Assets**: A flat list of all repository assets.&#x20;
-* **Organization Teams**: Repository assets grouped by teams. Note that only SCM organizations with teams, and repositories assigned to a team, appear on this layout.
-* **Technology**: Repository assets grouped by technology, as detected and tagged by Snyk AppRisk.
-* **Type**: All the discovered assets, grouped by their type.&#x20;
+* **Code Assets**: 모든 저장소 자산의 목록입니다.
+* **Organization Teams**: 팀별로 그룹화된 저장소 자산입니다. 이 레이아웃에는 팀과 팀에 할당된 저장소가 있는 SCM 조직만 나타납니다.
+* **Technology**: Snyk AppRisk에서 탐지하고 태그를 지정한 기술별로 그룹화된 저장소 자산입니다.
+* **Type**: 검색된 모든 자산을 유형별로 그룹화합니다.
 
-Each inventory layout may include different counts of assets and scanned artifacts, depending on the grouping context. Otherwise, all columns and data manipulation features are the same on each inventory layout.
+각 인벤토리 레이아웃은 그룹화 컨텍스트에 따라 자산 및 스캔된 아티팩트의 다른 카운트를 포함할 수 있습니다. 그렇지 않으면 모든 열 및 데이터 조작 기능이 각 인벤토리 레이아웃에서 동일합니다.
 
-## Assets and their attributes
+## Assets 및 attributes
 
-Every item listed in the inventory is considered an individual asset. Most assets are actual components of the application (code repositories, domains, endpoints, and so on), but an asset can also be a representation of a Group such as the asset type (repository), a group (certain business unit), or even a product. Assets in the inventory are presented with key attributes in the following columns:
+인벤토리에 나열된 모든 항목은 개별 자산으로 간주됩니다. 대부분의 자산은 애플리케이션의 실제 구성 요소 (code repositories, domains, endpoints, and so on)이지만 자산은 asset 유형(저장소), 그룹(특정 비즈니스 단위) 또는 제품과 같은 그룹을 나타낼 수도 있습니다. 인벤토리에 있는 자산은 다음 열에 주요 속성이 표시됩니다:
 
-* **Asset** - The name of the repository asset or scanned artifact, and the Git remote URL, if available. Scanned artifacts are missing Git remote URLs.
-* **Controls** - A report detailing all products detected by the Snyk AppRisk on a specific repository asset and all products that should be covered but are not yet by the Snyk AppRisk.
-* **Tags** -  Snyk AppRisk automatically tags repository assets with information about the used technologies (Python, Terraform, and so on) in the repository, and repository latest updates. You can also use policies to tag repository assets.
-* **Developers** - includes the SCM profile details for code committers to the repository asset.
-* **Class** - reflects the business criticality of the asset from A (most critical) to D (least critical), as defined by the user in the Policies view. The class can be manually changed by you or automatically changed by a policy. You can lock the value you have manually set for a Class to prevent policies from overriding it.
+* **Asset** - 저장소 자산 또는 스캔한 아티팩트의 이름 및 Git 원격 URL(사용 가능한 경우). 스캔한 아티팩트에는 Git 원격 URL이 없습니다.
+* **Controls** - 특정 저장소 자산에 대해 Snyk AppRisk에서 탐지한 모든 제품과 적용해야 하지만 아직 Snyk AppRisk에서 적용되지 않은 모든 제품을 자세히 설명하는 보고서입니다.
+* **Tags** - Snyk AppRisk는 저장소에 있는 사용된 기술(Python, Terraform 등)에 대한 정보와 저장소 최신 업데이트에 자동으로 저장소 자산에 태그를 지정합니다. 정책을 사용하여 저장소 자산에 태그를 지정할 수도 있습니다.
+* **Developers** - 저장소 자산에 대한 코드 커밋에 대한 SCM 프로파일 세부 정보를 포함합니다.
+* **Class** - 사용자가 정책 보기에서 정의한 A(가장 중요함)에서 D(가장 덜 중요함)까지의 자산의 비즈니스 중요도를 반영합니다. 클래스는 사용자가 수동으로 변경하거나 정책에 의해 자동으로 변경할 수 있습니다. 클래스에 대해 수동으로 설정한 값을 잠글 수 있어 정책이 클래스를 재정의하는 것을 방지할 수 있습니다.
 
 <figure><img src="../../../.gitbook/assets/Inventory1.png" alt="Inventory view - Key attributes"><figcaption><p>Inventory view - Key attributes</p></figcaption></figure>
 
-### **Asset Sources, Types, and Scanned Artifacts**
+### 자산 출처, 유형 및 스캔한 아티팩트
 
-Snyk AppRisk derives assets from Snyk automatically, and also from any SCM tools that are onboarded using the Snyk AppRisk Integration Hub. SCM tools from Snyk AppRisk Integration Hub may add additional repositories that aren’t scanned by Snyk, as well as additional context such as teams and code committers.
+Snyk AppRisk는 Snyk에서 자산을 자동으로 얻고, 또한 Snyk AppRisk Integration Hub를 사용하여 온보드된 모든 SCM 도구에서도 자산을 얻습니다. Snyk AppRisk Integration Hub의 SCM 도구는 팀 및 코드 커미터와 같은 추가 컨텍스트뿐만 아니라 Snyk에서 스캔하지 않은 추가 저장소를 추가할 수 있습니다.
 
-### Repository assets and scanned artifacts
+### 저장소 자산 및 스캔한 아티팩트
 
-#### Repository assets
+#### 저장소 자산
 
-Currently, Snyk AppRisk supports repository assets as an asset type. In future releases, Snyk will add support for additional code-based assets, such as software packages. Repository assets are visible in all inventory layouts and are supported by Policies. To avoid duplication, assets are identified using a unique identifier, which is the git remote URL for repository assets.
+현재 Snyk AppRisk는 자산 유형으로 저장소 자산을 지원합니다. 향후 릴리스에서 Snyk는 소프트웨어 패키지와 같은 추가 코드 기반 자산에 대한 지원을 추가할 예정입니다. 저장소 자산은 모든 인벤토리 레이아웃에서 볼 수 있으며 정책에서 지원됩니다. 중복을 방지하기 위해 저장소 자산의 Git 원격 URL인 고유 식별자를 사용하여 자산을 식별합니다.
 
 {% hint style="info" %}
-If you archive or delete repositories, they are not displayed in the asset inventory and, therefore, not considered to be shown in the dashboard widgets.
+저장소를 보관하거나 삭제하는 경우 해당 저장소는 자산 인벤토리에 표시되지 않으므로 대시보드 위젯에 표시되지 않는 것으로 간주됩니다.
 {% endhint %}
 
-#### Scanned artifacts
+#### 스캔한 아티팩트
 
-Snyk AppRisk also includes the concept of scanned artifacts. A scanned artifact is an entity detected by Snyk and cannot be identified as a repository asset because it does not include identifying information, such as a Git remote URL.&#x20;
+Snyk AppRisk에는 스캔한 아티팩트의 개념도 포함되어 있습니다. 스캔한 아티팩트는 Snyk에서 탐지한 개체이며 Git 원격 URL과 같은 식별 정보를 포함하지 않기 때문에 리포지토리 자산으로 식별할 수 없습니다.
 
-Scanned artifacts provide users with visibility into what Snyk AppRisk detects from scans but require additional troubleshooting.&#x20;
+검색된 아티팩트는 사용자에게 Snyk AppRisk가 검색에서 감지하는 내용을 파악할 수 있도록 제공하지만 추가 문제 해결이 필요합니다.
 
-You can see the scanned artifacts in the Inventory Type view. The scanned artifacts are not supported by Policies. Furthermore, scanned artifacts may include duplicates, as identifying information is missing.
-
+인벤토리 유형 보기에서 스캔한 아티팩트를 볼 수 있습니다. 스캔한 아티팩트는 정책에서 지원되지 않습니다. 또한 식별 정보가 누락되어 스캔한 아티팩트에 중복이 포함될 수 있습니다.
