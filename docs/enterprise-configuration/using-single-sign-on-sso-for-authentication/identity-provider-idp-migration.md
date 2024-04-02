@@ -1,13 +1,13 @@
 # Identity Provider (IdP) migration
 
-When migrating from a legacy IdP to a new IdP, you must submit new IdP metadata information to Snyk.
+레거시 IdP에서 새 IdP로 마이그레이션할 때 새 IdP 메타데이터 정보를 Snyk에 제출해야 합니다.
 
-To migrate identity providers:
+Identity Provider를 migrate 하려면:
 
-1. Download the correct Worksheet from the [SSO resources](../using-single-sign-on-sso-for-authentication/set-up-snyk-single-sign-on-sso.md#resources).
-2. Fill out Worksheet with the IdP metadata information.
-3. Submit the Worksheet; [contact Snyk Support](https://support.snyk.io/hc/en-us/requests/new) to raise a Support ticket.
+1. [SSO resources](set-up-snyk-single-sign-on-sso.md#resources)에서 올바른 워크시트를 다운로드합니다.
+2. IdP 메타데이터 정보로 워크시트를 작성합니다.
+3. 워크시트를 제출하세요. (지원 티켓을 올리려면 [contact Snyk Support](https://support.snyk.io/hc/en-us/requests/new))
 
-To prevent new users from being created within Snyk, you must maintain your SAML protocol and use both the same Entity ID and ACS URL. If you are changing SAML protocols, [contact Snyk Support](https://support.snyk.io/hc/en-us/requests/new).
+Snyk 내에서 새 사용자가 생성되는 것을 방지하려면 SAML 프로토콜을 유지 관리하고 동일한 Entity ID와 ACS URL을 모두 사용해야 합니다. SAML 프로토콜을 변경하는 경우, [contact Snyk Support](https://support.snyk.io/hc/en-us/requests/new) 하십시오.
 
-After you have done this, the Support team will contact you and confirm the updated metadata has granted access through the new IdP.
+이 작업이 완료되면 지원 팀에서 귀하에게 연락하여 업데이트된 메타데이터가 새 IdP를 통해 액세스 권한을 부여했는지 확인합니다.

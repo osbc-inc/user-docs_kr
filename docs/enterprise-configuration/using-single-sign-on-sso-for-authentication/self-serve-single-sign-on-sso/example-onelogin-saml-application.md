@@ -56,6 +56,6 @@
 <figure><img src="https://lh6.googleusercontent.com/N_sEZ9IrkaSDpmkYVGhHTiSUf1kVL3P1VWBjBhIJfZgraVdifO8zFfS9Y6yQYjNlc5ic9mSimYGfw07-cm7LsweGdlywAAv99LqSz5964wne9EOjB_PvPuE8yhyLf3kvmKhRU6vQKhVsKxiGNR9Mb_E" alt="Enter SAML attributes in the Snyk portal"><figcaption><p>Snyk 포털에 SAML 속성 입력</p></figcaption></figure>
 
 11. 3단계로 스크롤하여 로그인 시 신규 사용자를 어떻게 처리할지 결정하세요. **그룹 구성원, 조직 공동 작업자 또는 조직 관리자** 중에서 사용하려는 옵션을 선택하십시오.\
-    마지막으로 OneLogin에서 구성한 **프로필 속성**(이메일, 이름, 닉네임)을 입력하고 **변경 사항 저장**을 클릭한 후 3단계 상단의 직접 URL을 사용하거나 [generic SSO login](https://app.snyk.io/login/sso).으로 이동하여 로그인할 수 있는지 확인하세요.
+    마지막으로 OneLogin에서 구성한 **프로필 속성**(이메일, 이름, 닉네임)을 입력하고 **변경 사항 저장**을 클릭한 후 3단계 상단의 직접 URL을 사용하거나 [generic SSO login](https://app.snyk.io/login/sso) 으로 이동하여 로그인할 수 있는지 확인하세요.
 
 <figure><img src="https://lh4.googleusercontent.com/OIEztWL9xGSkLQ1yu2jS8IzU1dLWVuX7YJgfTyHYt3aV_pUn53WWc7qOCZvgK0b2M28SmNsTUDtJJZMdQhhA-5kNA2je71LM-AwHwvyd8UyBtPhfHFEnn0rlCmBEM4tppxVXsiLY78KOLJihIMids0E" alt="Enter profile attributes"><figcaption><p>프로필 속성 입력</p></figcaption></figure>
