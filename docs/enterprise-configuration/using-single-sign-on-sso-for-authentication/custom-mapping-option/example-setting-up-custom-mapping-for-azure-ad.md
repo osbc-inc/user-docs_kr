@@ -1,34 +1,34 @@
-# Example: Setting up custom mapping for Azure AD
+# 예: Azure AD에 대한 사용자 지정 매핑 설정
 
-The following information shows how to configure the custom mapping of roles for Azure AD using the [Custom Mapping Option](./).
+다음 정보는 [사용자 지정 매핑 옵션](./)을 사용하여 Azure AD에 대한 사용자 지정 역할 매핑을 구성하는 방법을 보여줍니다.
 
 {% hint style="info" %}
-See the [Azure AD Enterprise Application example](../self-serve-single-sign-on-sso/example-azure-ad-enterprise-application.md) for guidance setting up the initial Enterprise application.
+초기 엔터프라이즈 애플리케이션 설정에 대한 지침은 [Azure AD Enterprise Application 예제](../self-serve-single-sign-on-sso/example-azure-ad-enterprise-application.md)를 참조하세요.
 {% endhint %}
 
 {% hint style="info" %}
-Any step on the Snyk side in setting up the Enterprise application must be performed by your Snyk contact, as self-serve SSO does not accommodate custom mapping.
+셀프 서비스 SSO는 사용자 지정 매핑을 수용하지 않으므로 Snyk 담당자가 Enterprise Application 설정 시 Snyk 측의 모든 단계를 수행해야 합니다.
 {% endhint %}
 
-The following are the **prerequisites** for **configuring App roles**:
+다음은 **App roles를 구성**하기 위한 **필수 구성 요소** :&#x20;
 
-* Snyk support must configure your Snyk SSO as Microsoft Azure AD (WAAD or SAML).
-* If you select SAML, there is a requirement to add a custom claim; the step to do that is in these instructions.
-* You must have an existing Azure Enterprise application and app registration connected to that SSO configuration.
+* Snyk 지원팀에서는 Snyk SSO를 Microsoft Azure AD(WAAD 또는 SAML)로 구성해야 합니다.
+* SAML을 선택하는 경우 사용자 지정 클레임을 추가해야 합니다. 이를 수행하는 단계는 이 지침에 나와 있습니다.
+* 해당 SSO 구성에 연결된 기존 Azure Enterprise Application 및 앱 등록이 있어야 합니다.
 
-The **steps** in **configuring App role**s follow.
+**앱 역할을 구성**하는 **단계**는 다음과 같습니다.
 
-1.  In your App registration menu, select the name of your Enterprise Application.
+1.  앱 등록 메뉴에서 Enterprise Application의 이름을 선택하세요.
 
-    <figure><img src="../../../.gitbook/assets/image (113) (1).png" alt="App registration, select name of Enterprise Application"><figcaption><p>App registration, select name of Enterprise Application</p></figcaption></figure>
-2.  Select **App roles**, then **Create app role**.
+    <figure><img src="../../../.gitbook/assets/image (113) (1).png" alt="App registration, select name of Enterprise Application"><figcaption><p>앱 등록, Enterprise Application 이름 선택</p></figcaption></figure>
+2.  **App roles**을 선택한 다음, **Create app role**를 선택합니다.
 
-    <figure><img src="../../../.gitbook/assets/image (1) (1) (2) (1) (1).png" alt="Select App roles, Create app role"><figcaption><p>Select App roles, Create app role</p></figcaption></figure>
-3.  Create an app role with details as needed.\
-    Select the **Allowed member types**: **Users/Groups**, **Applications**, or **Both**.\
-    Enter the **Value** and **Description** for the selected type.\
-    Enable the app role.\
-    When you are finished, select **Apply**.
+    <figure><img src="../../../.gitbook/assets/image (1) (1) (2) (1) (1).png" alt="Select App roles, Create app role"><figcaption><p>App roles 선택, app role 생성</p></figcaption></figure>
+3.  필요에 따라 세부정보가 포함된 app role을 만듭니다.\
+    **Allowed member types**: **Users/Groups**, **Applications**, 또는 **Both**을 선택합니다.\
+    선택한 유형에 대한 **Value** 과 **Description**을 입력합니다.\
+    app role을 활성화합니다.\
+    완료되면 **Apply**을 선택합니다.
 
     <figure><img src="../../../.gitbook/assets/image (2) (2) (1).png" alt="Create app role with details"><figcaption><p>Create app role with details</p></figcaption></figure>
 4.  In Azure AD, select your Enterprise Application.
