@@ -30,31 +30,31 @@
     app role을 활성화합니다.\
     완료되면 **Apply**을 선택합니다.
 
-    <figure><img src="../../../.gitbook/assets/image (2) (2) (1).png" alt="Create app role with details"><figcaption><p>Create app role with details</p></figcaption></figure>
-4.  In Azure AD, select your Enterprise Application.
+    <figure><img src="../../../.gitbook/assets/image (2) (2) (1).png" alt="Create app role with details"><figcaption><p>세부정보가 포함된 app role 만들기</p></figcaption></figure>
+4.  Azure AD에서 Enterprise Application을 선택합니다.
 
     <figure><img src="../../../.gitbook/assets/image (3) (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="Select Enterprise Application in Azure AD"><figcaption><p>Select Enterprise Application in Azure AD</p></figcaption></figure>
-5.  Select **Users and groups**; then **Add user/group**.\
-    Search and select the users and groups to add.
+5.  **Users and groups**을 선택한 다음, **Add user/group** 합니다.\
+    추가할 사용자 및 그룹을 검색하고 선택하세요.
 
-    <figure><img src="../../../.gitbook/assets/image (4) (5).png" alt="Select Users and groups, Add user/group"><figcaption><p>Select Users and groups, Add user/group</p></figcaption></figure>
-6.  Select **Users and groups**; from the dropdown, select a role; and select **Assign**.
+    <figure><img src="../../../.gitbook/assets/image (4) (5).png" alt="Select Users and groups, Add user/group"><figcaption><p><strong>Users and groups</strong>을 선택한 다음, <strong>Add user/group</strong> 합니다.</p></figcaption></figure>
+6.  **Users and groups**을 선택합니다. 드롭다운에서 select a role한 후, **Assign**을 선택합니다.
 
     <figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1).png" alt="Add assignment"><figcaption><p>Add assignment</p></figcaption></figure>
-7.  Repeat for all required groups and roles that should be assigned. Then verify that the list looks similar to this.
+7.  할당해야 하는 모든 필수 그룹 및 역할에 대해 반복합니다. 그런 다음 목록이 다음과 유사한지 확인합니다.
 
     <figure><img src="../../../.gitbook/assets/image (6) (1) (1) (2) (1) (1) (1) (1) (1).png" alt="Users and group list"><figcaption><p>Users and group list</p></figcaption></figure>
 
-    Note that it is also possible add multiple Snyk roles to one App role, as the payload can be interpreted as a comma-separated string. However, this can not be used in conjunction with multiple App roles, as only one syntax will be respected (string or array).
-8. If you have configured a SAML connection, add a custom claim to pass the roles array in the SAML payload to Snyk. Select **Single sign-on** in the left hand menu.
-9.  Select **Edit** next to **Attributes and Claims.**
+    페이로드가 쉼표로 구분된 문자열로 해석될 수 있으므로 하나의 App role에 여러 Snyk roles을 추가할 수 있습니다. 그러나 하나의 구문(문자열 또는 배열)만 존중되므로 여러 App role과 함께 사용할 수 없습니다.
+8. SAML 연결을 구성한 경우 사용자 지정 클레임을 추가하여 SAML 페이로드의 roles 배열을 Snyk에 전달합니다. 왼쪽 메뉴에서 **Single Sign-On**을 선택합니다.
+9.  **Attributes & Claims** 옆에 있는 **Edit**을 선택합니다.
 
     <figure><img src="../../../.gitbook/assets/Screenshot 2023-03-10 at 3.19.31 PM.png" alt="Edit attributes and claims"><figcaption><p>Edit attributes and claims</p></figcaption></figure>
-10. Select **Add new claim** add the following details, and **Save.**\
+10. **Add new claim**를 선택하고 다음 세부 정보를 추가하고 **저장**합니다.\
     **Name**: roles\
     **Source**: Attribute\
     **Source attribute**: user.assignedroles
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2023-03-10 at 2.55.05 PM.png" alt="Custom claim"><figcaption><p>Custom claim</p></figcaption></figure>
 
-When you have completed these steps, reach out to your Snyk point of contact to have the configuration completedd.
+이 단계를 완료한 후 Snyk 담당자에게 연락하여 구성을 완료하세요.
