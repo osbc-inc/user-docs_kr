@@ -28,7 +28,7 @@
       * [예: Okta에 대한 사용자 지정 매핑 설정](enterprise-configuration/using-single-sign-on-sso-for-authentication/custom-mapping-option/example-setting-up-custom-mapping-for-okta.md)
       * [예: Azure AD에 대한 사용자 지정 매핑 설정](enterprise-configuration/using-single-sign-on-sso-for-authentication/custom-mapping-option/example-setting-up-custom-mapping-for-azure-ad.md)
       * [예: Ping Identity에 대한 사용자 지정 매핑 설정](enterprise-configuration/using-single-sign-on-sso-for-authentication/custom-mapping-option/example-setting-up-custom-mapping-for-ping-identity.md)
-      * [Example: Setting up custom mapping for Google Workspace](enterprise-configuration/using-single-sign-on-sso-for-authentication/custom-mapping-option/example-setting-up-custom-mapping-for-google-workspace.md)
+      * [예: Google Workspace에 대한 커스텀 매핑 설정](enterprise-configuration/using-single-sign-on-sso-for-authentication/custom-mapping-option/example-setting-up-custom-mapping-for-google-workspace.md)
       * [Example: Setting up custom mapping for an Okta OIDC app](enterprise-configuration/using-single-sign-on-sso-for-authentication/custom-mapping-option/example-setting-up-oidc-okta-app-with-custom-claims.md)
       * [예: OneLogin에 대한 사용자 정의 매핑 설정](enterprise-configuration/using-single-sign-on-sso-for-authentication/custom-mapping-option/example-setting-up-custom-mapping-for-onelogin.md)
     * [Identity Provider (IdP) migration](enterprise-configuration/using-single-sign-on-sso-for-authentication/identity-provider-idp-migration.md)
