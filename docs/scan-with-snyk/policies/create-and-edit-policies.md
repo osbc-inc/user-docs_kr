@@ -1,32 +1,32 @@
-# Create and modify policies
+# 정책(policies) 만들기 및 수정
 
-The Policy Manager allows you to [create](create-and-edit-policies.md#create-a-policy), [edit](create-and-edit-policies.md#edit-a-policy), and [duplicate or delete a policy](create-and-edit-policies.md#duplicate-or-delete-a-policy).
+정책 관리자를 사용하면 정책을 [만들고](create-and-edit-policies.md#policy), [수정하고](create-and-edit-policies.md#policy-1), [복제하거나 삭제](create-and-edit-policies.md#policy-2) 수 있습니다.
 
-## **Create a policy**
+## 정책(**policy)** 만들기
 
-1. On the Policy Manager screen, select **Add new policy** and in response to the prompts, enter the details.
-2. Enter a policy name and a description to help you quickly identify a policy.\
-   Policies in the same category cannot have the same name. You cannot save a policy without a name.
-3. Select whether to apply the policy to Organizations or Project attributes.
-4. Select the [Organizations](assign-a-policy-to-an-organization.md) or [attributes](assign-policies-to-projects.md) to which you want to apply the policy.
-5. Add rules to the policy. See [Create a license policy and rules](license-policies/create-a-license-policy-and-rules.md) or [Create a security policy and rules](security-policies/create-a-security-policy-and-rules.md).
-6. Click **Submit** to create and save the policy.
+1. 정책 관리자 화면에서 **Add new policy**를 선택하고 메시지가 표시되면 세부 정보를 입력합니다.
+2. 정책을 빠르게 식별할 수 있도록 정책 이름과 설명을 입력합니다.\
+   같은 카테고리에 있는 정책은 같은 이름을 가질 수 없습니다. 이름이 없는 정책은 저장할 수 없습니다.
+3. 정책을 조직 또는 프로젝트 속성에 적용할지 선택합니다.
+4. 정책을 적용할 [Organizations](assign-a-policy-to-an-organization.md) 또는 [attributes](assign-policies-to-projects.md)을 선택합니다.
+5. 정책에 규칙을 추가합니다. [Create a license policy and rules](license-policies/create-a-license-policy-and-rules.md) 또는 [Create a security policy and rules](security-policies/create-a-security-policy-and-rules.md)를 참조하세요.
+6. 정책을 만들고 **Submit**을 클릭하여 저장합니다.
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/screenshot_2020-05-26_at_9.47.26_am.png" alt="Create a policy" width="563"><figcaption><p>Create a policy</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screenshot_2020-05-26_at_9.47.26_am.png" alt="Create a policy" width="563"><figcaption><p>정책(<strong>policy)</strong> 만들기</p></figcaption></figure>
 
 </div>
 
-## Edit a policy
+## 정책(policy) 수정하기
 
-1. Click the name of an existing policy in the Policy Manager tab to make any changes.
-2. Change the [Organizations](assign-a-policy-to-an-organization.md), [attributes](assign-policies-to-projects.md), and rules as you wish.
-3. Click **Submit** to save your changes.
+1. Policy Manager tab에서 기존 정책의 이름을 클릭하여 변경합니다.
+2. [Organizations](assign-a-policy-to-an-organization.md), [attributes](assign-policies-to-projects.md) 및 규칙을 원하는 대로 변경합니다.
+3. **Submit**을 클릭하여 변경 내용을 저장합니다.
 
-## **Duplicate or delete a policy**&#x20;
+## 정책(**policy**) 복제 또는 삭제하기
 
-Click the three dots on the right-hand side to duplicate or delete a policy:
+정책을 복제하거나 삭제하려면 오른쪽에 있는 점 3개(...)를 클릭합니다:
 
 <div align="left">
 
@@ -34,12 +34,12 @@ Click the three dots on the right-hand side to duplicate or delete a policy:
 
 </div>
 
-### Delete a policy
+### 정책(policy) 삭제하기
 
 {% hint style="info" %}
-Deleting a policy cannot be undone. If you delete a policy that has Organizations assigned to it, those Organizations will return to the default policy.
+정책을 삭제한 후에는 되돌릴 수 없습니다. 조직이 할당된 정책을 삭제하면 해당 조직은 기본 정책으로 돌아갑니다.
 {% endhint %}
 
-### Duplicate a policy
+### 정책(policy) 복제
 
-Duplicating a policy copies the rules of a policy but not the assigned Organizations or Projects. The new policy is automatically called **Copy of (Policy Name)…** and can be edited as [explained in Edit a policy](create-and-edit-policies.md#edit-a-policy).
+정책을 복제하면 정책의 규칙은 복사되지만 할당된 조직이나 프로젝트는 복사되지 않습니다. 새 정책은 자동으로 **(Policy Name)의 사본.**..으로 불리며 [정책 편집에 설명된 대로](create-and-edit-policies.md#policy) 편집할 수 있습니다.

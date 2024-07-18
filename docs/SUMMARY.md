@@ -44,7 +44,7 @@
       * [Security policy actions](scan-with-snyk/policies/security-policies/security-policy-actions.md)
       * [Security policy results](scan-with-snyk/policies/security-policies/security-policy-results.md)
     * [라이선스 정책(License policies)](scan-with-snyk/policies/license-policies/README.md)
-      * [Create a license policy and rules](scan-with-snyk/policies/license-policies/create-a-license-policy-and-rules.md)
+      * [라이선스 정책 및 규칙 만들기](scan-with-snyk/policies/license-policies/create-a-license-policy-and-rules.md)
       * [License policy results](scan-with-snyk/policies/license-policies/license-policy-results.md)
   * [Service accounts](enterprise-configuration/service-accounts/README.md)
     * [Service accounts using OAuth 2.0](enterprise-configuration/service-accounts/service-accounts-using-oauth-2.0.md)

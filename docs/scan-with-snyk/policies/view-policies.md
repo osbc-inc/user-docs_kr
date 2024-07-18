@@ -18,7 +18,7 @@ You must be a Group administrator to view, create, and modify policies for that 
 <figure><img src="../../.gitbook/assets/snyk-policy-manager.png" alt="License policies list expanded"><figcaption><p>라이선스 정책 목록 확장</p></figcaption></figure>
 
 {% hint style="info" %}
-이 목록에는 각 정책 카테고리의 새 그룹에 대해 자동으로 생성되며 제거할 수 없는 [default policy](view-policies.md#default-policies)이 포함되어 있습니다.
+이 목록에는 각 정책 카테고리의 새 그룹에 대해 자동으로 생성되며 제거할 수 없는 [기본 정책( Default polices)](view-policies.md#default-policies)이 포함되어 있습니다.
 {% endhint %}
 
 ## 정책 세부 정보(Policy details)
