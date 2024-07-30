@@ -1,77 +1,77 @@
-# Assign policies to Projects
+# 프로젝트에 정책(policies) 할당
 
-After you apply [Project attributes](../../snyk-admin/snyk-projects/project-attributes.md) to your Projects, you can create policies that apply to those attributes. Projects and policies are linked based on the attributes that have the policy applied.
-
-{% hint style="info" %}
-Policies applied to Project attributes always take precedence over policies applied to Organizations.
-{% endhint %}
-
-A policy can be applied to one or multiple Project attributes, but only one policy can be applied to a set of attributes. For example, if there is a policy applied to `Critical`**,** `Production`,`Frontend`, you cannot create another policy that is applied _only_ to these exact attributes.
+프로젝트에 [프로젝트 속성](../../snyk-admin/snyk-projects/project-attributes.md)을 적용한 후에는 해당 속성에 적용되는 정책을 만들 수 있습니다. 프로젝트와 정책은 정책이 적용된 속성을 기반으로 연결됩니다.
 
 {% hint style="info" %}
-Policies applied to Project attributes affect the CLI command `snyk monitor`, assuming it runs on a CLI Project that has Project attributes assigned. Project attributes applied to policies do not affect `snyk test`.
+프로젝트 속성에 적용되는 정책은 항상 조직에 적용되는 정책보다 우선합니다.
 {% endhint %}
 
-## Apply a policy to Project attributes and remove a policy
-
-To apply a policy to an attribute, in the attribute selector panel, check the box for the attribute to which you want to apply the policy.
-
-You can also search for tags that have already been created in Projects in your Group. You can select more than one tag for the policy.
-
-<figure><img src="../../.gitbook/assets/Screenshot 2023-07-28 at 17.28.18.png" alt="Attribute selector panel"><figcaption><p>Attribute selector panel</p></figcaption></figure>
-
-To remove a policy from an attribute, uncheck the box next to the attribute from which you want to remove the policy.
-
-To remove a tag, click the **x** next to the tag.
+정책은 하나 또는 여러 프로젝트 속성에 적용할 수 있지만, 속성 집합에는 하나의 정책만 적용할 수 있습니다. 예를 들어 `Critical`**,** `Production`,`Frontend`에 적용되는 정책이 있는 경우 이러한 정확한 속성에만 적용되는 다른 정책을 만들 수 없습니다.
 
 {% hint style="info" %}
-You can create and save a policy where no attributes are selected, for example, if you have not yet decided the attributes to which the policy should be applied. A policy cannot apply to Projects if all attributes are left blank.
+프로젝트 속성에 적용된 정책은 프로젝트 속성이 할당된 CLI 프로젝트에서 실행된다는 가정 하에 CLI 명령 snyk 모니터에 영향을 줍니다. 정책에 적용된 프로젝트 속성은 snyk 테스트에는 영향을 미치지 않습니다.
 {% endhint %}
 
-## Assign Projects to policies
+## 프로젝트 속성에 정책을 적용하고 정책을 제거합니다.
 
-To have a policy assigned, a Project must have all the attributes listed on the policy applied to the Project. The Project can also have attributes that are not listed on the policy.
+속성에 정책을 적용하려면, 속성 선택기 패널(attribute selector panel)에서 정책을 적용하려는 속성의 확인란을 선택합니다.
+
+그룹의 프로젝트에서 이미 생성된 태그를 검색할 수도 있습니다. 정책에 대해 둘 이상의 태그를 선택할 수 있습니다.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-07-28 at 17.28.18.png" alt="Attribute selector panel"><figcaption><p>속성 선택기 패널(Attribute selector panel)</p></figcaption></figure>
+
+속성에서 정책을 제거하려면 정책을 제거하려는 속성 옆의 확인란(□)을 선택 취소합니다.
+
+태그를 제거하려면 태그 옆에 있는 X를 클릭합니다.
 
 {% hint style="info" %}
-If a policy applies to a Project based on the attributes, then only **Group Admins** can edit the Project attributes. If the Project does not have an applicable policy, **Org Admins** can add attributes to the Project that cause a policy to apply. However, Org Admins will not be able to edit attributes for Projects where a policy already applies.
+예를 들어 정책을 적용할 속성을 아직 결정하지 않은 경우 속성을 선택하지 않은 상태에서 정책을 만들고 저장할 수 있습니다. 모든 속성을 비워두면 프로젝트에 정책을 적용할 수 없습니다.
 {% endhint %}
 
-If multiple tags are added to a policy, the Project needs to match with only one of the Project tags. However, if other attributes are also listed on the policy, the Project would need to have all the attributes and at least one of the listed tags.
+## 정책에 프로젝트 할당
 
-For example, if you have a policy applied to `Critical`, `External`, and `Frontend`, this policy is assigned to Projects that have the same attributes, but not to a Project with the attributes `Critical` and `External` only.
+정책을 할당받으려면 프로젝트에 정책에 나열된 모든 속성이 프로젝트에 적용되어 있어야 합니다. 프로젝트에 정책에 나열되지 않은 속성이 있을 수도 있습니다.
 
-An example policy follows. It is applied to an attribute in the **Business Criticality** section, `Critical`, and to attributes in the **Environment** section,  `Frontend` and `External`. The policy also has two Project tags. The first tag has the key `PCI`, with the value of `Compliant`. The second tag has the key `owner`, with the value of `fred`.
+{% hint style="info" %}
+속성을 기반으로 프로젝트에 정책이 적용되는 경우 **그룹 관리자(Group Admins)**만 프로젝트 속성을 편집할 수 있습니다. 프로젝트에 적용 가능한 정책이 없는 경우, **조직 관리자(Org Admins)**는 프로젝트에 정책이 적용되도록 하는 속성을 추가할 수 있습니다. 그러나 조직 관리자는 정책이 이미 적용된 프로젝트의 속성을 편집할 수 없습니다.
+{% endhint %}
+
+정책에 여러 개의 태그가 추가된 경우 프로젝트는 프로젝트 태그 중 하나만 일치하면 됩니다. 그러나 다른 속성도 정책에 나열된 경우 프로젝트에는 모든 속성과 나열된 태그 중 하나 이상이 있어야 합니다.
+
+예를 들어 `Critical`, `External` 및 `Frontend`에 정책이 적용된 경우 이 정책은 동일한 속성을 가진 프로젝트에는 할당되지만 `Critical`및 `External`속성만 있는 프로젝트에는 할당되지 않습니다.
+
+다음은 정책 예시입니다. 이 정책은 **비즈니스 중요도(Business Criticality)** 섹션의 속성인`Critical`와 **환경(Environment)** 섹션의 속성인 `Frontend` 및 `External`에 적용됩니다. 이 정책에는 두 개의 프로젝트 태그도 있습니다. 첫 번째 태그에는 `PCI`키가 있고 값은`Compliant`입니다. 두 번째 태그에는 키`owner`가 있고 값은 `fred`입니다.
 
 <div align="center" data-full-width="true">
 
-<figure><img src="../../.gitbook/assets/sample-policy.png" alt="Sample policy"><figcaption><p>Sample policy</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sample-policy.png" alt="Sample policy"><figcaption><p>샘플 정책 (Sample policy)</p></figcaption></figure>
 
 </div>
 
-The following Project has the attributes `Frontend`, `External`, and `Critical`, and has at least one matching tag, `PCI:Compliant`. Thus the Project will inherit the policy, that is, the policy is assigned to this Project.
+다음 프로젝트는 `Frontend`, `External`, `Critical`속성을 가지고 있으며 일치하는 태그`PCI:Compliant`를 하나 이상 가지고 있습니다. 따라서 이 프로젝트는 정책을 상속받게 됩니다. 즉, 정책이 이 프로젝트에 할당됩니다.
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/screenshot_2021-03-11_at_12.26.02_pm.png" alt="Project inheriting a policy"><figcaption><p>Project inheriting a policy</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screenshot_2021-03-11_at_12.26.02_pm.png" alt="Project inheriting a policy"><figcaption><p>정책 상속 프로젝트(Project inheriting a policy)</p></figcaption></figure>
 
 </div>
 
-The following Project will not inherit the policy, because the Project lacks the `External` environment attribute.
+프로젝트에 `External` 환경 속성이 없기 때문에 다음 프로젝트는 정책을 상속받지 못합니다.
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/screenshot_2021-03-11_at_12.29.03_pm.png" alt="Project not inheriting a policy"><figcaption><p>Project not inheriting a policy</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screenshot_2021-03-11_at_12.29.03_pm.png" alt="Project not inheriting a policy"><figcaption><p>정책을 상속받지 않는 프로젝트</p></figcaption></figure>
 
 </div>
 
-## Assign multiple policies to a Project
+## 프로젝트에 여러 정책 할당
 
-Multiple policies can be assigned to a Project. For example, you may have a policy applied to the attributes `Critical` and `External` and another policy applied to the attributes `Critical` and `Production`. If you have a Project with the attributes `Critical`, `External` and `Production`,  both policies are assigned.
+프로젝트에 여러 정책을 지정할 수 있습니다.  예를 들어, `Critical` 및`External` 속성에 정책이 적용되고 `Critical` 및`Production`속성에 다른 정책이 적용될 수 있습니다.`Critical`, `External` 및 `Production`속성이 있는 프로젝트가 있는 경우 두 정책이 모두 할당됩니다.
 
-When multiple policies are assigned to a Project, the order of the policies on the policy manager page determines precedence. The policy closest to the top of the list takes precedence over other assigned policies after it. To change the order of policies, either drag and drop the policies into the order you want or use the three dots on the right-hand side to move the policy up or down in the list.
+프로젝트에 여러 정책이 할당된 경우 정책 관리자 페이지에 있는 정책의 순서에 따라 우선 순위가 결정됩니다. 목록 맨 위에 가장 가까운 정책이 그 뒤에 할당된 다른 정책보다 우선합니다. 정책 순서를 변경하려면 정책을 원하는 순서로 끌어서 놓거나 오른쪽에 있는 3개의 점을 사용하여 목록에서 정책을 위 또는 아래로 이동합니다.
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/screenshot_2021-03-11_at_12.51.25_pm.png" alt="Change policy order"><figcaption><p>Change policy order</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/screenshot_2021-03-11_at_12.51.25_pm.png" alt="Change policy order"><figcaption><p>정책 순서 변경</p></figcaption></figure>
 
 </div>
