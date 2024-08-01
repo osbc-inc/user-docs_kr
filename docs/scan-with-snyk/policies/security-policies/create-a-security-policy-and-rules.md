@@ -1,6 +1,7 @@
-# Create a security policy and rules
+# 보안 정책 및 규칙 만들기
 
-To create a new security policy, navigate to **Policies** in your Group menu, and in the Policies manager, expand the **Security policies** category and click **Add new policy**. For details, see [View policies](../view-policies.md).
+To create a new security policy, navigate to **Policies** in your Group menu, and in the Policies manager, expand the **Security policies** category and click **Add new policy**. For details, see [View policies](../view-policies.md).\
+새 보안 정책을 만들려면 그룹 메뉴에서 **정책(Policies)**으로 이동한 다음 정책 관리자에서 **보안 정책(Security policies)** 카테고리를 펼치고 새 정책 추가를 클릭합니다. 자세한 내용은 정책 보기를 참조하세요.
 
 <figure><img src="../../../.gitbook/assets/screenshot_2020-10-20_at_10.01.49_am.png" alt="Security policies category expanded"><figcaption><p>Security policies category expanded</p></figcaption></figure>
 

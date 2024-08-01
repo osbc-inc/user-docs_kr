@@ -1,7 +1,7 @@
 # 정책(Policies) 보기
 
 {% hint style="info" %}
-You must be a Group administrator to view, create, and modify policies for that Group.
+해당 그룹에 대한 정책을 보고, 만들고, 수정하려면 그룹 관리자여야 합니다.
 {% endhint %}
 
 \
