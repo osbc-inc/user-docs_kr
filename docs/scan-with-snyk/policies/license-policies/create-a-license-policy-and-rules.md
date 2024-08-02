@@ -1,25 +1,25 @@
-# Create a license policy and rules
+# 라이선스 정책 및 규칙 만들기
 
 {% hint style="warning" %}
-**Release status**&#x20;
+**Release 상태**
 
-License policies are available for Enterprise plans and apply only to Snyk Open Source scans.&#x20;
+라이선스 정책은 Enterprise 요금제에서 사용할 수 있으며 Snyk 오픈 소스 스캔에만 적용됩니다.
 
-See [Pricing plans](https://snyk.io/plans).
+[요금제](https://snyk.io/plans)를 참조하세요.
 {% endhint %}
 
-Group administrators can configure the following settings for each license:
+그룹 관리자는 각 라이선스에 대해 다음 설정을 구성할 수 있습니다:
 
-* Level of severity: Values include `None`, `Low`, `Medium`, and `High`.
-  * When `None` is selected, instructions cannot be inserted since licenses marked with `None` do not appear in any Snyk test results.
-  * New licenses added by Snyk inherit the `Unknown` license type severity. In cases where this severity is not set to `None`, newly added licenses appear in Snyk test results.
-* Legal instructions for developers: Enter free text to provide any necessary instructions for developers.
-  * Snyk recommends describing the specific policy of your company, explaining the need for collaboration from your developers as well as providing them with step-by-step instructions if any are needed
-  * Legal instructions will appear in the CLI results, in PR Checks, and on issue cards in the Project view
+* 심각도 수준: 값에는 `None`, `Low`, `Medium`,`High`등이 있습니다.
+  * `None`을 선택하면 없음으로 표시된 라이선스는 Snyk 테스트 결과에 나타나지 않으므로 지침을 삽입할 수 없습니다.
+  * Snyk에 의해 추가된 새 라이선스는 `Unknown` 라이선스 유형 심각도를 상속합니다. 이 심각도를 `None`으로 설정하지 않은 경우에는 새로 추가된 라이선스가 Snyk 테스트 결과에 나타납니다.
+* 개발자를 위한 법적 지침: 개발자에게 필요한 지침을 제공하려면 자유 텍스트(free text)를 입력하세요.
+  * 회사의 구체적인 정책을 설명하고 개발자의 협업 필요성을 설명하며 필요한 경우 단계별 지침을 제공하는 것이 좋습니다.
+  * 법적 지침은 CLI 결과, PR 확인 및 프로젝트 보기의 이슈 카드에 표시됩니다.
 
-## View and edit license policies
+## 라이선스 정책 보기 및 편집
 
-If your company account has one or more Groups, follow these steps to view and edit the License policy settings:
+회사 계정에 하나 이상의 그룹이 있는 경우 다음 단계에 따라 라이선스 정책 설정을 보고 편집할 수 있습니다. :
 
 1.  Use the **Switch Group** selector and choose a Group to open its overview.
 
@@ -48,7 +48,7 @@ You can edit the license severities and instructions.
 
 The updated severities or instructions or both are automatically updated on Snyk servers. When the next scheduled test runs or when a user re-tests a Project, updated results are delivered according to these changes. See [License policy results](license-policy-results.md) for details.
 
-## Set severity for  the Unknown license type
+## Set severity for the Unknown license type
 
 The `Unknown` license type indicates Snyk has not recognized a license for a given package version. You can set a severity level for **Unknown**, for example, to ensure these license issues are given a higher severity and so appear more prominently in results.
 
