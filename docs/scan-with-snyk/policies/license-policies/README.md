@@ -1,19 +1,19 @@
-# License policies
+# 라이선스 정책(License policies)
 
-Group administrators can set license policies to define Snyk behavior for handling license issues. For example, you can allow or disallow packages with certain license types to avoid using packages containing incompatible licenses.
+그룹 관리자는 라이선스 정책을 설정하여 라이선스 문제 처리를 위한 Snyk 동작을 정의할 수 있습니다. 예를 들어 특정 라이선스 유형의 패키지를 허용하거나 허용하지 않도록 설정하여 호환되지 않는 라이선스가 포함된 패키지를 사용하지 않도록 할 수 있습니다.
 
-You can [create a license policy and rules](create-a-license-policy-and-rules.md) for your Group.
+그룹에 대한 [라이선스 정책 및 규칙을 만들](create-a-license-policy-and-rules.md) 수 있습니다.
 
-An initial policy is created automatically and set as the default to help you get started quickly with license policy management.
+라이선스 정책 관리를 빠르게 시작할 수 있도록 초기 정책이 자동으로 생성되고 기본값으로 설정됩니다.
 
-This default policy is a baseline to meet the requirements of multiple types of applications, such as SaaS, distributed, and so on, and may be used as a starting point to calibrate additional license policies.&#x20;
+기본 정책은 SaaS, 배포 등 여러 유형의 애플리케이션의 요구 사항을 충족하기 위한 기준이며, 추가 라이선스 정책을 조정하기 위한 출발점으로 사용할 수 있습니다.
 
-The default license policy contains the standard Snyk Default License Policy, but you can edit the rules to suit your preferences.
+기본 라이선스 정책에는 표준 Snyk 기본 라이선스 정책이 포함되어 있지만 원하는 대로 규칙을 편집할 수 있습니다.
 
 {% hint style="info" %}
-The default policy does not endorse or criticize any license and should not be treated as legal guidance.
+기본 정책은 라이선스를 보증하거나 비판하지 않으며 법적 지침으로 취급해서는 안 됩니다.
 {% endhint %}
 
-Any new Organizatione created in your Group are automatically added to the default policy. When an Organization is created, it can be moved to a different policy.
+그룹에 새로 생성된 모든 조직원은 기본 정책에 자동으로 추가됩니다. 조직이 만들어지면 다른 정책으로 이동할 수 있습니다.
 
-For more information, see [Open Source Licenses: Types and Comparison](https://snyk.io/learn/open-source-licenses/).
+자세한 내용은 [Open Source Licenses: 유형 및 비교](https://snyk.io/learn/open-source-licenses/)를 참조하세요.
