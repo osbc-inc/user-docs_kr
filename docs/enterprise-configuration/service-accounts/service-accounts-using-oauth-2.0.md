@@ -1,20 +1,18 @@
-# Service accounts using OAuth 2.0
+# OAuth 2.0을 사용하는 서비스 계정
 
 {% hint style="info" %}
-**Release status**
+**Release 상태**
 
-Service accounts using OAuth 2.0 is available through the Snyk REST API.&#x20;
-
-See [Manage service accounts using the Snyk API](manage-service-accounts-using-the-snyk-api.md).
+OAuth 2.0을 사용하는 서비스 계정은 Snyk REST API를 통해 사용할 수 있습니다. [Snyk API를 사용하여 서비스 계정 관리하기](manage-service-accounts-using-the-snyk-api.md)를 참조하세요.
 {% endhint %}
 
-You can create service accounts that authenticate with the [OAuth 2.0 `client_credentials` grant flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) rather than with the traditional Snyk API key. OAuth 2.0 access tokens can be used the same way a Snyk API key would be used, but they have the added security of a short time-to-live (TTL) and can be automatically refreshed.
+기존 Snyk API 키가 아닌 [OAuth 2.0 `client_credentials` grant flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) 로 인증하는 서비스 계정을 만들 수 있습니다. OAuth 2.0 액세스 토큰은 Snyk API 키와 동일한 방식으로 사용할 수 있지만 짧은 TTL(타임투라이프)의 보안이 추가되었으며 자동으로 새로 고쳐질 수 있습니다.
 
-## OAuth 2.0 with client secret
+## 클라이언트 비밀이 포함된 OAuth 2.0
 
-You can create an `oauth_client_secret` service account at either the Group or Organization level.
+그룹 또는 조직 수준에서 `oauth_client_secret` 서비스 계정을 만들 수 있습니다.
 
-### Receive a client secret
+### 클라이언트 비밀 받기(Receive a client secret)
 
 After the service account is created, you will receive a `client_secret`. You cannot view the `client_secret` again after the service account is created. If you have misplaced it, you can [rotate](manage-service-accounts-using-the-snyk-api.md#manage-a-service-account-client-secret-for-your-group) your `client_secret` and receive a new one.
 
@@ -30,7 +28,7 @@ You can use an`access_token` the same way as you would use a Snyk API key, but w
 
 The `access_token` has a short time to live and must be refreshed once it expires. There are many OAuth 2.0 libraries available that greatly simplify this process.
 
-## OAuth 2.0 with Private Key JWT &#x20;
+## OAuth 2.0 with Private Key JWT
 
 Service accounts can also use the `private_key_jwt` form of `client_assertion` for authentication, as defined in the [OIDC Core 1.0 spec](https://openid.net/specs/openid-connect-core-1\_0.html#ClientAuthentication)) rather than the more traditional `client_secret`.
 
