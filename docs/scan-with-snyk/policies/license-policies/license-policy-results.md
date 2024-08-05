@@ -1,20 +1,20 @@
-# License policy results
+# 라이선스 정책 결과
 
-A newly assigned policy, or modifications to a policy, will apply after the next scheduled test runs for all of the licenses in the Organization.&#x20;
+새로 할당된 정책 또는 정책의 수정 사항은 조직의 모든 라이선스에 대해 다음 예약된 테스트가 실행된 후에 적용됩니다.
 
-If you change severity, results from scans are updated in the [Snyk Web UI](../../../getting-started/explore-snyk-through-the-web-ui.md), in [your IDE](../../../integrate-with-snyk/ide-tools/), or in Snyk [PR Checks](../../run-pr-checks/).
+심각도(severity)를 변경하면 검사 결과가 [Snyk Web UI](../../../getting-started/explore-snyk-through-the-web-ui.md), [IDE](../../../integrate-with-snyk/ide-tools/) 또는 [PR Checks](../../run-pr-checks/)에서 업데이트됩니다.
 
-Examples of results follow.
+결과의 예는 다음과 같습니다.
 
-In the Snyk Web UI, **Dashboard** statistics are updated based on severity changes:
+Snyk Web UI에서 심각도 변경에 따라 **대시보드** 통계가 업데이트됩니다:
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2023-05-12 at 2.00.26 PM.png" alt="License issues on the Dashboard"><figcaption><p>License issues on the Dashboard</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screen Shot 2023-05-12 at 2.00.26 PM.png" alt="License issues on the Dashboard"><figcaption><p>대시보드의 라이선스 문제</p></figcaption></figure>
 
 </div>
 
-License issues appear in the IDE.
+라이선스 문제가 IDE에 표시됩니다.
 
 <div align="left">
 
@@ -22,10 +22,10 @@ License issues appear in the IDE.
 
 </div>
 
-License issues are reported in PR Checks.
+라이선스 문제는 PR Checks에서 보고됩니다.
 
 <div align="left">
 
-<figure><img src="../../../.gitbook/assets/image (4) (4) (1).png" alt="License issues in PR Checks"><figcaption><p>License issues in PR Checks</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (4) (1).png" alt="License issues in PR Checks"><figcaption><p>PR Checks의 라이선스 문제</p></figcaption></figure>
 
 </div>

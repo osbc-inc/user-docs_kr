@@ -1,82 +1,82 @@
-# Service accounts
+# 서비스 계정
 
 {% hint style="warning" %}
-**Release status**\
-SSO is available only for Enterprise plans.
+**Release 상태** \
+SSO는 Enterprise 요금제에서만 사용할 수 있습니다.
 
-Free and Team plan users and Trial users have access to a Snyk user's token under their profile and can use this token to authenticate with a CI/CD, to run the CLI locally or on a build machine, and to authenticate with an IDE manually.
+무료 및 팀 요금제 사용자와 평가판 사용자는 프로필에서 Snyk 사용자 토큰에 액세스할 수 있으며 이 토큰을 사용하여 CI/CD로 인증하고, 로컬 또는 빌드 머신에서 CLI를 실행하고, IDE로 수동으로 인증할 수 있습니다.
 
-See [Pricing plans](https://snyk.io/plans).
+[요금제](https://snyk.io/plans)를 참조하세요.
 {% endhint %}
 
-Service accounts are a special type of system user. Creating a service account generates an API token that is the only token associated with the service account and takes the place of standard user credentials. Snyk needs authentication in order to initiate Snyk processes.
+서비스 계정은 특별한 유형의 시스템 사용자입니다. 서비스 계정을 만들면 서비스 계정과 연결된 유일한 토큰인 API 토큰이 생성되며 표준 사용자 자격 증명을 대신합니다. Snyk 프로세스를 시작하려면 인증이 필요합니다.
 
-You can set up a **service account** to use for automation rather than using a Snyk user's token and to help manage integrations.&#x20;
+Snyk 사용자 토큰을 사용하지 않고 자동화에 사용하고 통합을 관리하기 위해 **서비스 계정(service account)**을 설정할 수 있습니다.
 
-You can generate single or multiple tokens on the Organization or Group levels to manage your integrations. Each service account has a unique name to make it easier to recognize. This name cannot be reused.
+조직 또는 그룹 수준에서 하나 또는 여러 개의 토큰을 생성하여 연동을 관리할 수 있습니다. 각 서비스 계정에는 쉽게 알아볼 수 있도록 고유한 이름이 있습니다. 이 이름은 재사용할 수 없습니다.
 
-## When to use a service account
+## 서비스 계정 사용 시기
 
-If you are an Enterprise user, you have a Snyk user's token under your profile. You also have access to service account tokens.
+Enterprise 사용자의 경우 프로필 아래에 Snyk 사용자 토큰이 있습니다. 또한 서비스 계정 토큰에 액세스할 수 있습니다.
 
-### Use a service account to create any kind of automation.
+### 서비스 계정을 사용하여 모든 종류의 자동화를 만들 수 있습니다.
 
-This includes, but is not limited to, scanning using a CI/CD or build system plugin and automation with the Snyk API.
+여기에는 CI/CD 또는 빌드 시스템 플러그인을 사용한 스캔과 Snyk API를 사용한 자동화가 포함되며 이에 국한되지 않습니다.
 
-### You can use a service account for GitHub Enterprise integration.
+### GitHub Enterprise 통합을 위해 서비스 계정을 사용할 수 있습니다.
 
-If your team needs to set up a service account in GitHub, you must use GitHub Enterprise, which is available only with Snyk Enterprise accounts.
+팀에서 GitHub에서 서비스 계정을 설정해야 하는 경우, Snyk Enterprise 계정으로만 사용할 수 있는 GitHub Enterprise를 사용해야 합니다.
 
-Using a service account to authenticate with an integration rather than a Snyk user's token ensures continuity when users change roles or close their personal Snyk accounts.
+Snyk 사용자 토큰이 아닌 서비스 계정을 사용하여 통합 인증을 하면 사용자가 역할을 변경하거나 개인 Snyk 계정을 폐쇄할 때 연속성을 보장할 수 있습니다.
 
-### Use Group-level tokens in managing integrations.
+### 통합을 관리할 때 그룹 수준 토큰을 사용합니다.
 
-Use Group-level tokens to call Group API endpoints and Organization API endpoints, and to run the CLI for all Organizations in the Group.
+그룹 수준 토큰을 사용하여 그룹 API 엔드포인트 및 조직 API 엔드포인트를 호출하고 그룹의 모든 조직에 대한 CLI를 실행할 수 있습니다.
 
-Group roles are only for service accounts on the Group level and are limited to Enterprise accounts.
+그룹 역할은 그룹 수준의 서비스 계정에만 해당되며 Enterprise 계정으로 제한됩니다.
 
-### Use your Snyk user's token for local scanning and testing API calls.
+### 로컬 스캔 및 API 호출 테스트에 Snyk 사용자 토큰을 사용하세요.
 
-If you are an Enterprise user, use your Snyk user's token to run the CLI locally on your machine, authenticate with an IDE manually, and make an occasional API call, for example, to test the use of an endpoint.
+Enterprise 사용자의 경우, Snyk 사용자 토큰을 사용하여 컴퓨터에서 로컬로 CLI를 실행하고, IDE로 수동으로 인증하고, 엔드포인트 사용을 테스트하는 등 가끔 API 호출을 하세요.
 
 {% hint style="warning" %}
-Snyk advises against using a service account token to authenticate with an IDE.
+Snyk은 서비스 계정 토큰을 사용하여 IDE로 인증하지 말 것을 권장합니다.
 {% endhint %}
 
-## Set up a Group or Organization level service account
+## 그룹 또는 조직 수준 서비스 계정 설정
 
-Generate single or multiple tokens on the Group or Organization levels to manage your integrations.
+그룹 또는 조직 수준에서 단일 또는 여러 개의 토큰을 생성하여 통합을 관리하세요.
 
-### Prerequisites to set up a service account
+### 서비스 계정을 설정하기 위한 전제 조건
 
 {% hint style="warning" %}
-Group viewers are not able to create service accounts, regardless of their Org role.
+그룹 뷰어는 조직 역할에 관계없이 서비스 계정을 만들 수 없습니다.
 {% endhint %}
 
-To create a **Group service account,** you must be a Group admin. To create an **Organization service account,** you must be either a Group member and Org Admin, or a Group admin.
+**그룹 서비스 계정(Group service account)**을 만들려면 그룹 관리자여야 합니다. **조직 서비스 계정(Organization service account)**을 만들려면 그룹 회원이자 조직 관리자 또는 그룹 관리자여야 합니다.
 
-This process describes all options. Repeat the steps to create multiple tokens for the same or any other Group or Organization.
+이 프로세스에서는 모든 옵션에 대해 설명합니다. 동일하거나 다른 그룹 또는 조직에 대해 여러 개의 토큰을 만들려면 단계를 반복합니다.
 
-### How to set up a Group or Organization service account
+### 그룹 또는 조직 서비스 계정을 설정하는 방법
 
-* Log in to your account and navigate to the relevant Group and Organization that you want to manage.
-* Click on **Settings** > **Service accounts** to view existing service accounts and their details.
-* Click **Create a service account** to create a new one.\
-  The screen that loads varies depending on whether you chose a **Group** or an **Organization.**
+* 계정에 로그인하고 관리하려는 관련 그룹 및 조직으로 이동합니다.
+* **Settings(설정) > Service accounts(서비스 계정)**을 클릭하여 기존 서비스 계정과 해당 세부정보를 확인합니다.
+* **Create a service account(서비스 계정 만들기)**를 클릭하여 새 계정을 만듭니다.\
+  **그룹(Group)** 또는 **조직(Organization)**을 선택했는지 여부에 따라 로드되는 화면이 달라집니다.
 
-Note that while creating a **Group service account**, you can choose a Group level role.
+**그룹 서비스 계정(Group service account)**을 만들 때 그룹 수준의 역할을 선택할 수 있다는 점에 유의하세요.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-07-06 at 12.01.28.png" alt="Group settings"><figcaption><p>Group settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-07-06 at 12.01.28.png" alt="Group settings"><figcaption><p>그룹 설정(Group settings)</p></figcaption></figure>
 
-In contrast, while creating an **Organization service account,** you can choose Org level roles, including custom [member roles](../../snyk-admin/user-roles-and-permissions/user-role-management.md) that you have set up for your Organizations.
+반면 **조직 서비스 계정(Organization service account)**을 만드는 동안에는 조직에 대해 설정한 사용자 지정 [구성원 역할](../../snyk-admin/user-roles-and-permissions/user-role-management.md)을 포함하여 조직 수준 역할을 선택할 수 있습니다.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-07-06 at 12.06.35.png" alt="Organization settings"><figcaption><p>Organization settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2022-07-06 at 12.06.35.png" alt="Organization settings"><figcaption><p>조직 설정(Organization settings)</p></figcaption></figure>
 
-#### Enter a service account name
+#### 서비스 계정 이름을 입력합니다.
 
-In the **Service Account** name field, enter a unique name for this token. Remember, this name can be used only once for tokens in the same area, either an **Organization** or a **Group**.
+**서비스 계정(Service Account)** 이름 필드에 이 토큰의 고유한 이름을 입력합니다. 이 이름은 **조직(Organization)** 또는 **그룹(Group)** 중 같은 영역의 토큰에 대해 한 번만 사용할 수 있습니다.
 
-<figure><img src="../../.gitbook/assets/uuid-01c4cc98-23c9-3cb1-4972-1aa4f83ad98e-en.png" alt="Service account name and role"><figcaption><p>Service account name and role</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/uuid-01c4cc98-23c9-3cb1-4972-1aa4f83ad98e-en.png" alt="Service account name and role"><figcaption><p>서비스 계정 이름 및 역할</p></figcaption></figure>
 
 #### Select a role
 
@@ -90,7 +90,7 @@ For Group service accounts, choose from the following list of roles to configure
 * **Group Admin** enables full administrator access.
 * **Group Member** associates a service account with a group but does not grant any specific access.
 
-For **Organization service accounts**, choose from the standard roles, **Org Admin** or **Org** **Collaborator**, or a custom role if you have set up any custom roles. See [Managing permissions](broken-reference) for the scope of the Org Admin and Org Collaborator roles.
+For **Organization service accounts**, choose from the standard roles, **Org Admin** or **Org** **Collaborator**, or a custom role if you have set up any custom roles. See [Managing permissions](broken-reference/) for the scope of the Org Admin and Org Collaborator roles.
 
 ### Create the service account
 
