@@ -94,40 +94,40 @@
 
 **API 문서:** [https://apidocs.snyk.io/?version=2023-09-07#post-/orgs/-org\_id-/service\_accounts](https://apidocs.snyk.io/?version=2023-09-07#post-/orgs/-org\_id-/service\_accounts)
 
-이 호출은 새 서비스 계정을 만듭니다. 서비스 계정이 사용할 수 있는 권한을 정의하는 JSON 형식의 요청 본문에 `role_id`를 전달합니다. 이 `role id`는  Snyk API v1 endpoint [그룹의 모든 역할 list](https://snyk.docs.apiary.io/#reference/groups/list-all-roles-in-a-group/list-all-roles-in-a-group) 사용하여 찾을 수 있습니다. 역할은 여러 서비스 계정에 재사용할 수 있습니다.
+이 호출은 새 서비스 계정을 만듭니다. 서비스 계정이 사용할 수 있는 권한을 정의하는 JSON 형식의 요청 본문에 `role_id`를 전달합니다. 이 `role id`는  Snyk API v1 endpoint [그룹의 모든 역할 list](https://snyk.docs.apiary.io/#reference/groups/list-all-roles-in-a-group/list-all-roles-in-a-group)를 사용하여 찾을 수 있습니다. 역할은 여러 서비스 계정에 재사용할 수 있습니다.
 
-### Get a service account from your Organization
+### 조직에서 서비스 계정 받기
 
 **Request**: `GET https://api.snyk.io/rest/orgs/{orgId}/service_accounts/{serviceAccountId}`
 
 **API 문서:** [https://apidocs.snyk.io/?version=2023-09-07#get-/orgs/-org\_id-/service\_accounts/-serviceaccount\_id-](https://apidocs.snyk.io/?version=2023-09-07#get-/orgs/-org\_id-/service\_accounts/-serviceaccount\_id-)
 
-This call returns details describing a specific service account.
+이 호출은 특정 서비스 계정을 설명하는 세부 정보를 반환합니다.
 
-### Update a service account in your Organization
+### 조직에서 서비스 계정 업데이트
 
 **Request**: `PATCH https://api.snyk.io/rest/orgs/{orgId}/service_accounts/{serviceAccountId}`
 
 **API 문서:** [https://apidocs.snyk.io/?version=2023-09-07#patch-/orgs/-org\_id-/service\_accounts/-serviceaccount\_id-](https://apidocs.snyk.io/?version=2023-09-07#patch-/orgs/-org\_id-/service\_accounts/-serviceaccount\_id-)
 
-This call updates the details of a specific service account, at this time, the name of the service account.
+이 호출은 특정 서비스 계정의 세부 정보(현재 서비스 계정의 이름)를 업데이트합니다.
 
-### Delete a service account from your Organization
+### 조직에서 서비스 계정 삭제하기
 
 **Request**: `DELETE https://api.snyk.io/rest/orgs/{orgId}/service_accounts/{serviceAccountId}`
 
 **API 문서:** [https://apidocs.snyk.io/?version=2023-09-07#delete-/orgs/-org\_id-/service\_accounts/-serviceaccount\_id-](https://apidocs.snyk.io/?version=2023-09-07#delete-/orgs/-org\_id-/service\_accounts/-serviceaccount\_id-)
 
-This call permanently deletes the specified service account.
+이 호출은 지정된 서비스 계정을 영구적으로 삭제합니다.
 
-### Manage a service account client secret for your Organization
+### 조직의 서비스 계정 클라이언트 비밀 관리하기
 
 **Request**: `POST https://api.snyk.io/rest/orgs/{orgId}/service_accounts/{serviceAccountId}/secrets`
 
 **API 문서:** [https://apidocs.snyk.io/?version=2023-09-07#post-/orgs/-org\_id-/service\_accounts/-serviceaccount\_id-/secrets](https://apidocs.snyk.io/?version=2023-09-07#post-/orgs/-org\_id-/service\_accounts/-serviceaccount\_id-/secrets)
 
-This call allows you to manage the client secret for `oauth_client_secret` service accounts. You can perform the following operations:
+이 호출을 통해 `oauth_client_secret` 서비스 계정의 클라이언트 비밀번호를 관리할 수 있습니다. 다음 작업을 수행할 수 있습니다:
 
-* `create` - generate a new client secret. A service account can have a maximum of two active secrets at a time.
-* `delete` - delete an existing client secret. This requires putting `client_secret` in the request body. Deleting an existing client secret would render it invalid. A service account must have at least one active secret; calling delete with your last secret will fail.
-* `replace` - simultaneously delete the existing client secret and generate a new secret. This option is recommended if your `client_secret` is compromised.
+* `create` - 새 클라이언트 비밀을 생성합니다. 서비스 계정은 한 번에 최대 2개의 활성 비밀을 가질 수 있습니다.
+* `delete` - 기존 클라이언트 비밀을 삭제합니다. 이를 위해서는 요청 본문에 `client_secret` 을 입력해야 합니다. 기존 클라이언트 비밀을 삭제하면 해당 비밀이 무효화됩니다. 서비스 계정에는 활성 비밀이 하나 이상 있어야 하며, 마지막 비밀로 delete를 호출하면 실패합니다.
+* `replace` - 기존 클라이언트 비밀을 삭제하고 동시에 새 비밀을 생성합니다. 이 옵션은`client_secret`이 손상된 경우에 사용하는 것이 좋습니다.
