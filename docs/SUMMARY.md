@@ -50,7 +50,7 @@
     * [OAuth 2.0을 사용하는 서비스 계정](enterprise-configuration/service-accounts/service-accounts-using-oauth-2.0.md)
     * [Snyk API를 사용하여 서비스 계정 관리하기](enterprise-configuration/service-accounts/manage-service-accounts-using-the-snyk-api.md)
   * [Snyk Broker](enterprise-configuration/snyk-broker/README.md)
-    * [Components of Snyk Broker](enterprise-configuration/snyk-broker/components-of-snyk-broker.md)
+    * [Snyk Broker의 구성 요소](enterprise-configuration/snyk-broker/components-of-snyk-broker.md)
     * [Connections with Snyk Broker](enterprise-configuration/snyk-broker/connections-with-snyk-broker.md)
     * [Prepare Snyk Broker for deployment](enterprise-configuration/snyk-broker/prepare-snyk-broker-for-deployment.md)
     * [Install and configure Snyk Broker](enterprise-configuration/snyk-broker/install-and-configure-snyk-broker/README.md)
