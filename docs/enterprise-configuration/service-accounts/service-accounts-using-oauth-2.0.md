@@ -49,11 +49,11 @@ Snyk API 키를 사용하는 것과 같은 방법으로 `access_token`을 사용
 
 응답에는 다음 단계에 필요한 `client_id`가 포함됩니다.
 
-### Prepare the JWT signed with a private key
+### 개인 키로 서명된 JWT를 준비합니다.
 
-Snyk recommends you prepare a tool or script to build a `private_key_jwt` with the proper claims and sign it with the private signing key you generated. as a prerequisite
+Snyk는 전제 조건으로 적절한 클레임으로 `private_key_jwt`를 빌드하고 생성한 비공개 서명 키로 서명하는 도구 또는 스크립트를 준비할 것을 권장합니다
 
-The JWT should include the [claims](https://datatracker.ietf.org/doc/html/rfc7519#section-4) outlined in the [Snyk OAuth 2.0 token endpoint](https://snykoauth2.docs.apiary.io/#reference/apps/app-tokens/token-exchange-&-refresh) for the `client_assertion` property. Note that the `aud` claim may vary based on the Snyk instance, for example, `api.snyk.io`, or `api.eu.snyk.io`. For more information, see [Regional hosting and data residency](../../working-with-snyk/regional-hosting-and-data-residency.md).
+JWT에는`client_assertion` 속성에 대한 [Snyk OAuth 2.0 토큰 엔드포인트](https://snykoauth2.docs.apiary.io/#reference/apps/app-tokens/token-exchange-&-refresh)에 설명된 [클레임](https://datatracker.ietf.org/doc/html/rfc7519#section-4)이 포함되어야 합니다. `aud` 클레임은 Snyk 인스턴스(예:  `api.snyk.io` 또는 `api.eu.snyk.io`)에 따라 달라질 수 있다는 점에 유의하세요. 자세한 내용은 [지역 호스팅 및 데이터 레지던시](../../working-with-snyk/regional-hosting-and-data-residency.md)를 참조하세요.
 
 ### 개인 키 JWT 액세스 토큰 가져오기
 
