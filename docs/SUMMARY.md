@@ -51,7 +51,7 @@
     * [Snyk API를 사용하여 서비스 계정 관리하기](enterprise-configuration/service-accounts/manage-service-accounts-using-the-snyk-api.md)
   * [Snyk Broker](enterprise-configuration/snyk-broker/README.md)
     * [Snyk Broker의 구성 요소](enterprise-configuration/snyk-broker/components-of-snyk-broker.md)
-    * [Connections with Snyk Broker](enterprise-configuration/snyk-broker/connections-with-snyk-broker.md)
+    * [Snyk Broker와의 연결](enterprise-configuration/snyk-broker/connections-with-snyk-broker.md)
     * [Prepare Snyk Broker for deployment](enterprise-configuration/snyk-broker/prepare-snyk-broker-for-deployment.md)
     * [Install and configure Snyk Broker](enterprise-configuration/snyk-broker/install-and-configure-snyk-broker/README.md)
       * [Install and configure Broker using Docker](enterprise-configuration/snyk-broker/install-and-configure-snyk-broker/install-and-configure-broker-using-docker.md)
