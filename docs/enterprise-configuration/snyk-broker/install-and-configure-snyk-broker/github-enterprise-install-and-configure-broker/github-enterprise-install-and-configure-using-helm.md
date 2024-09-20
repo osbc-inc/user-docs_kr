@@ -1,8 +1,8 @@
-# GitHub Enterprise - install and configure using Helm
+# Helm을 사용한 설치 및 구성 - GitHub Enterprise
 
-For instructions on using the Snyk Broker Helm Chart, see [Install and configure Broker using Helm](../install-and-configure-broker-using-helm.md). The command to use follows. Refer to [GitHub Enterprise - environment variables for Snyk Broker](github-enterprise-environment-variables-for-snyk-broker.md) for definitions of the environment variables.
+Snyk Broker Helm 차트 사용에 대한 지침은 [Helm을 사용하여  Broker 설치 및 구성하기](../install-and-configure-broker-using-helm.md)를 참조하세요. 사용할 명령어는 다음과 같습니다. 환경 변수에 대한 정의는 [GitHub Enterprise - Snyk Broker의 환경 변수](github-enterprise-environment-variables-for-snyk-broker.md)를 참조하세요.
 
-Note: for `github`, `githubApi` and `githubGraphQl` values do not include `https://`
+참고: `github`의 경우, `githubApi` 및`githubGraphQl` 값에는 https://이 포함되지 않습니다.
 
 ```
 helm install snyk-broker-chart snyk-broker/snyk-broker \
