@@ -1,16 +1,16 @@
-# Bitbucket Server/Data Center - install and configure using Helm
+# Bitbucket Server/데이터 센터 - Helm을 사용한 설치 및 구성
 
 {% hint style="warning" %}
-**Release status**
+**릴리스 상태**
 
-Snyk Code PR Checks are available only for Bitbucket DC/Server versions 7.0 and above.
+Snyk 코드 PR 확인은 Bitbucket DC/Server 버전 7.0 이상에서만 사용할 수 있습니다.
 {% endhint %}
 
-For instructions on using the Snyk Broker Helm Chart, see [Install and configure Broker using Helm](../install-and-configure-broker-using-helm.md). The command to use follows. Refer to [BitBucket Server/Data Center - environment variables](bitbucket-server-data-center-environment-variables-for-snyk-broker.md) for Snyk Broker for definitions of the environment variables.
+Snyk Broker Helm 차트 사용에 대한 지침은 [Helm을 사용하여 Broker 설치 및 구성하기](../install-and-configure-broker-using-helm.md)를 참조하세요. 사용할 명령은 다음과 같습니다. 환경 변수에 대한 정의는[BitBucket Server/Data Center - Snyk Broker의 환경 변수](bitbucket-server-data-center-environment-variables-for-snyk-broker.md)를 참조하세요.
 
-&#x20;in the Docker setup instructions.
+도커 설정 지침에 있습니다.
 
-Note: for `bitbucket` and `bitbucketApi` values do not include `https://`
+참고:`bitbucket` 및 `bitbucketApi`값에는 `https://`
 
 ```
 helm install snyk-broker-chart snyk-broker/snyk-broker \
@@ -26,5 +26,5 @@ helm install snyk-broker-chart snyk-broker/snyk-broker \
 ```
 
 {% hint style="info" %}
-Snyk AppRisk is set by default to **`false`**. Enable it by setting the flag to **`true`**.
+Snyk AppRisk는 기본적으로**`false`**로 설정되어 있습니다. 플래그를 **`true`**로 설정하여 사용하도록 설정합니다.
 {% endhint %}

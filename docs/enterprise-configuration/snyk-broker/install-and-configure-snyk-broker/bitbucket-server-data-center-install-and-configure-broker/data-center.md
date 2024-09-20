@@ -1,31 +1,31 @@
-# Bitbucket Server/Data Center - install and configure using Docker
+# Bitbucket Server/Data Center - Docker를 사용한 설치 및 구성
 
-Follow the instructions on this page to set up Bitbucket Server/Data Center with Snyk Broker. This integration is useful to ensure a secure connection with your on-premise Bitbucket deployment.
+이 페이지의 지침에 따라 Snyk Broker로 Bitbucket Server/Data Center를 설정하세요. 이 통합은 온프레미스 Bitbucket 배포와의 안전한 연결을 보장하는 데 유용합니다.
 
 {% hint style="info" %}
-**Prerequisites**\
-Ask your Snyk account team to provide you with a Broker token.
+**전제 조건**\
+Snyk 계정 팀에 Broker 토큰을 제공해 달라고 요청하세요..
 
-You need Docker or a way to run Docker Linux containers. Some Docker deployments for Windows run only Windows containers. Ensure that your deployment is capable of running Linux containers.
+도커 또는 도커 리눅스 컨테이너를 실행할 수 있는 방법이 필요합니다. 일부 Windows용 Docker 배포는 Windows 컨테이너만 실행합니다. 배포가 Linux 컨테이너를 실행할 수 있는지 확인하세요.
 {% endhint %}
 
-## Configure Broker to be used with Bitbucket
+## Bitbucket과 함께 사용하도록 Broker 구성하기
 
 {% hint style="warning" %}
-**Release status**
+**릴리스 상태**
 
-Snyk Code PR Checks are available only for Bitbucket DC/Server versions 7.0 and above
+Snyk 코드 PR 확인은 Bitbucket DC/Server 버전 7.0 이상에서만 사용할 수 있습니다.
 {% endhint %}
 
-The following explains how to configure Snyk Broker to use the Broker Client with a Bitbucket Server deployment.
+다음은 비트버킷 서버 배포에서 브로커 클라이언트를 사용하도록 Snyk Broker를 구성하는 방법에 대해 설명합니다.
 
-To use the Snyk Broker Client with BitBucket, **run** `docker pull snyk/broker:bitbucket-server`. Refer to [BitBucket Server/Data Center - environment variables](bitbucket-server-data-center-environment-variables-for-snyk-broker.md) for Snyk Broker for definitions of the environment variables.
+BitBucket과 함께 Snyk Broker 클라이언트를 사용하려면,`docker pull snyk/broker:bitbucket-server`를 **실행**합니다. 환경 변수에 대한 정의는[BitBucket Server/Data Center - Snyk Broker의 환경변수](bitbucket-server-data-center-environment-variables-for-snyk-broker.md)를 참조하세요.
 
-**If necessary,** go to the [Advanced configuration page](../advanced-configuration-for-snyk-broker-docker-installation/) and **make any configuration changes** needed, such as providing the CA (Certificate Authority) to the Broker Client configuration if the Bitbucket instance is using a private certificate, and setting up [proxy support](../advanced-configuration-for-snyk-broker-docker-installation/proxy-support-with-docker.md).
+**필요한 경우,** [ 고급 구성 페이지](../advanced-configuration-for-snyk-broker-docker-installation/)로 이동하여 Bitbucket 인스턴스에서 비공개 인증서를 사용하는 경우 브로커 클라이언트 구성에 CA(인증 기관)를 제공하고 [proxy 지원](../advanced-configuration-for-snyk-broker-docker-installation/proxy-support-with-docker.md)을 설정하는 등 필요한 **구성 변경을 수행**합니다.
 
-## Docker run command to set up a Broker Client for Bitbucket
+## 비트버킷용 Broker 클라이언트를 설정하기 위한 Docker 실행 명령
 
-**Copy the following command** to set up a fully configured Broker Client to analyze Open Source, IaC, Container, Code files (with the Code Agent), and Snyk AppRisk information. Enable [Snyk AppRisk](../../../../manage-risk/snyk-apprisk/) to identify your application assets, monitor them, and prioritize the risks.
+**다음 명령을 복사**하여 완전히 구성된 브로커 클라이언트를 설정하여 오픈 소스, IaC, 컨테이너, 코드 파일(코드 에이전트 포함) 및 Snyk AppRisk 정보를 분석하세요. 애플리케이션 자산을 식별하고, 모니터링하고, 위험의 우선순위를 지정할 수 있도록 [Snyk AppRisk](../../../../manage-risk/snyk-apprisk/)를 활성화합니다.
 
 ```bash
 docker run --restart=always \
@@ -44,18 +44,18 @@ docker run --restart=always \
 ```
 
 {% hint style="info" %}
-Snyk AppRisk is set by default to **`false`**. Enable it by setting the flag to **`true`**.
+Snyk AppRisk는 기본적으로**`false`**로 설정되어 있습니다. 플래그를 **`true`**로 설정하여 사용하도록 설정합니다.
 {% endhint %}
 
-As an alternative to using the Docker run command, you can use a derived Docker image to set up the Broker Client integration. See [Derived Docker images](../derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md) for the environment variables to override for the BitBucket Server/Data Center integration.
+Docker 실행 명령을 사용하는 대신 파생된 Docker 이미지를 사용하여 브로커 클라이언트 연동을 설정할 수 있습니다. BitBucket Server/Data Center 연동을 위해 재정의할 환경 변수는 [파생된Docker 이미지](../derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md)를 참조하세요.
 
-## Start the Broker Client container and verify the connection with Bitbucket
+## Broker 클라이언트 컨테이너를 시작하고 Bitbucket과의 연결을 확인합니다.
 
-Paste the Broker Client configuration to start the Broker Client container.
+Broker 클라이언트 구성을 붙여넣어 Broker 클라이언트 컨테이너를 시작합니다.
 
-Once the container is up, the Bitbucket Integrations page shows the connection to Bitbucket and you can `Add Projects`
+컨테이너가 시작되면 Bitbucket 통합 페이지에 Bitbucket에 대한 연결이 표시되고 프로젝트 추가(`Add Projects`)를 할 수 있습니다.
 
-## Basic troubleshooting for Broker with BitBucket
+## BitBucket을 사용한 Broker의 기본 문제 해결
 
-* Run `docker logs <container id>` to look for any errors, where container id is the Bitbucket Broker container ID.
-* Ensure relevant ports are exposed to Bitbucket.
+* `docker logs <container id>` 를 실행하여 오류를 찾습니다. 여기서 컨테이너 ID는 Bitbucket 브로커 컨테이너 ID입니다.
+* 관련 포트가 Bitbucket에 노출되어 있는지 확인합니다.
