@@ -1,47 +1,46 @@
-# Nexus Repository - install and configure using Docker
+# Nexus 리포지토리 - Docker를 사용하여 설치 및 구성하기
 
 {% hint style="info" %}
-**Feature availability**
+**기능 가용성**
 
-Integration with Nexus Repository Manager is available only for Enterprise plans.
+Nexus 리포지토리 관리자와의 통합은 Enterprise 요금제에서만 사용할 수 있습니다.
 
-For more information, see [Plans and pricing](https://snyk.io/plans).
+자세한 내용은 [요금제 및 가격](https://snyk.io/plans)을 참조하세요.
 {% endhint %}
 
-Follow the instructions on this page to set up Nexus Repository Manager with Snyk Broker. This integration is useful to ensure a secure connection with your on-premise Nexus Repository Manager deployment.
+이 페이지의 안내에 따라 스닉 브로커로 Nexus 리포지토리 관리자를 설정하세요. 이 통합은 온프레미스 Nexus 리포지토리 관리자 배포와의 안전한 연결을 보장하는 데 유용합니다.
 
 {% hint style="info" %}
-**Prerequisites**\
-Ask your Snyk account team to provide you with a Broker token or generate it from the Snyk Web UI.
+**전제 조건**\
+Snyk 계정 팀에 Broker 토큰 제공을 요청하거나 Snyk 웹 UI에서 토큰을 생성합니다.
 
-You need Docker or a way to run Docker Linux containers.\
-Some Docker deployments for Windows run only Windows containers. Ensure that your deployment is capable of running Linux containers.
-{% endhint %}
-
-{% hint style="info" %}
-For information about non-brokered integration with Nexus Repository Manager including supported environments and versions and user permissions, see [Nexus Repository Manager setup](../../../../integrate-with-snyk/package-repository-integrations/nexus-repository-manager-connection-setup/).
+Docker 또는 Docker Linux 컨테이너를 실행할 수 있는 방법이 필요합니다. 일부 Windows용 Docker 배포는 Windows 컨테이너만 실행합니다. 배포가 Linux 컨테이너를 실행할 수 있는지 확인하세요.
 {% endhint %}
 
 {% hint style="info" %}
-For information about brokered integration with Nexus Container Registry see [Snyk Broker -Container Registry Agent](../../snyk-broker-container-registry-agent/).
+지원되는 환경 및 버전, 사용자 권한 등 Nexus 리포지토리 관리자와의 비브로커 통합에 대한 자세한 내용은 [Nexus Repository 관리자 설정](../../../../integrate-with-snyk/package-repository-integrations/nexus-repository-manager-connection-setup/)을 참조하세요.
 {% endhint %}
-
-## Obtain Broker token for Nexus integration
-
-1. Go to settings <img src="../../../../.gitbook/assets/cog_icon.png" alt="Settings icon" data-size="line"> > **Integrations > Package Repositories > Nexus**
-2. Verify that you see the screen to configure Nexus.
-
-<figure><img src="../../../../.gitbook/assets/Screenshot 2022-07-15 at 15.15.11.png" alt="Configure Nexus"><figcaption><p>Configure Nexus</p></figcaption></figure>
 
 {% hint style="info" %}
-If you do not see the **Snyk Broker** switch, you do not have the necessary permissions and can only add a publicly accessible instance.
-
-Submit a request to [Snyk Support](https://support.snyk.io/hc/en-us/requests/new) if you want to add a private registry.
+넥서스 컨테이너 레지스트리와의 브로커 통합에 대한 자세한 내용은 [Snyk Broker -Container Registry Agent](../../snyk-broker-container-registry-agent/)를 참조하세요.
 {% endhint %}
 
-When you have permissions to add a private registry, continue with the instructions to [generate a Broker token from the Web UI](set-up-snyk-broker-with-nexus-repository-manager.md#generate-a-broker-token-from-the-web-ui).
+## 넥서스 통합을 위한 Broker 토큰 받기
 
-## Generate a Broker token from the Web UI
+1. &#x20;<img src="../../../../.gitbook/assets/cog_icon.png" alt="Settings icon" data-size="line"> > **Integrations > Package Repositories > Nexus** 로 이동합니다.
+2. Nexus를 구성하는 화면이 표시되는지 확인합니다.
+
+<figure><img src="../../../../.gitbook/assets/Screenshot 2022-07-15 at 15.15.11.png" alt="Configure Nexus"><figcaption><p>Nexus 구성</p></figcaption></figure>
+
+{% hint style="info" %}
+**Snyk Broker** 스위치가 표시되지 않으면 필요한 권한이 없는 것이며 공개적으로 액세스할 수 있는 인스턴스만 추가할 수 있습니다.
+
+비공개 레지스트리를 추가하려면 [Snyk  지원팀](https://support.snyk.io/hc/en-us/requests/new)에 요청을 제출하세요.
+{% endhint %}
+
+비공개 레지스트리를 추가할 수 있는 권한이 있으면 [Web UI에서 Broker 토큰 생성하기](set-up-snyk-broker-with-nexus-repository-manager.md#generate-a-broker-token-from-the-web-ui)를 계속 진행합니다.
+
+## Web UI에서 브로커 토큰 생성하기
 
 1. In the Nexus integration settings, move the **Snyk Broker on/off** switch to **on** to display a form for generating a Broker token.
 2. Select **Generate and Save.**
