@@ -1,83 +1,83 @@
-# Prepare Snyk Broker for deployment
+# 배포를 위한 Snyk Broker 준비하기
 
-## Prerequisites for Snyk Broker
+## Snyk Broker의 전제 조건
 
-The use of Snyk Broker on Windows is not supported. Snyk recommends that Windows users deploy Broker using Linux.
+Windows에서 Snyk Broker를 사용하는 것은 지원되지 않습니다. Windows 사용자는 Linux를 사용하여 Broker를 배포할 것을 권장합니다.
 
-When you set up Broker, Code Agent, or both for use in EU or AU Multi-tenant environments, additional environment variables with the specific URLs are required.\
-Example: `-e BROKER_SERVER_URL=https://broker.eu.snyk.io`\
-For the URLs, see [Broker URLs](../../working-with-snyk/regional-hosting-and-data-residency.md#broker-urls) on the Regional hosting and data residency page.
+EU 또는 AU 멀티테넌트 환경에서 사용하기 위해 Broker, 코드 에이전트 또는 둘 모두를 설정하는 경우 특정 URL이 포함된 추가 환경 변수가 필요합니다.\
+예: `-e BROKER_SERVER_URL=https://broker.eu.snyk.io`\
+URL에 대해서는 지역 호스팅 및 데이터 상주 페이지의 [Broker URLs](../../working-with-snyk/regional-hosting-and-data-residency.md#broker-urls)을 참조하세요.
 
-The following are prerequisites for using Snyk Broker in any environment:
+다음은 모든 환경에서 Snyk Broker를 사용하기 위한 전제 조건입니다:
 
-* Client machine system requirements: 1 CPU, 256MB of RAM
-* Network access: an outbound TLS (443) to [https://broker.snyk.io](https://broker.snyk.io) that is also allowed by any firewalls installed on your network
-* A Snyk account
-* Self-enabled Broker integration using the Snyk API, or enabled by contacting [Snyk Support](https://support.snyk.io/hc/en-us)
-* A unique UUID token called Broker token. See [Generate credentials in the target application for Snyk Broker](prepare-snyk-broker-for-deployment.md#generate-credentials-in-the-target-application-for-snyk-broker)
-* An SCM token or password. See the [integrations documentation](../../integrate-with-snyk/) for each SCM for information on how to obtain the token. Snyk Broker does not support authentication with the mTLS method. &#x20;
-* Docker configured to pull images from Docker Hub
+* 클라이언트 컴퓨터 시스템 요구 사항: CPU 1개, 256MB RAM
+* 네트워크 액세스: 네트워크에 설치된 모든 방화벽에서도 허용되는 [https://broker.snyk.io](https://broker.snyk.io)으로의 아웃바운드 TLS(443)
+* Snyk 계정
+* Snyk API를 사용하여 자체 활성화된 브로커 통합 또는 [Snyk 지원팀](https://support.snyk.io/hc/en-us)에 문의하여 활성화된 브로커 통합
+* Broker 토큰이라는 고유한 UUID 토큰. [Snyk Broker용 대상 애플리케이션에서 자격 증명 생성](prepare-snyk-broker-for-deployment.md#generate-credentials-in-the-target-application-for-snyk-broker)을 참조하세요.
+* SCM 토큰 또는 비밀번호. 토큰을 얻는 방법에 대한 자세한 내용은 각 SCM의 [연동 서비스 문서](../../integrate-with-snyk/)를 참조하세요. Snyk Broker mTLS 방식의 인증을 지원하지 않습니다.
+* Docker Hub에서 이미지를 가져오도록 구성된 Docker
 
-## Prepare hosts for installation of Snyk Broker
+## Snyk Broker 설치를 위한 호스트 준비하기
 
-Snyk recommends configuring at least two separate instances of the Broker Client for each integration, either on different hosts or installed via a Kubernetes system. This ensures that you always have at least two instances running for redundancy.
+각 통합을 위해 Broker 클라이언트의 인스턴스를 서로 다른 호스트에 두 개 이상 구성하거나 Kubernetes 시스템을 통해 설치할 것을 권장합니다. 이렇게 하면 중복성을 위해 항상 두 개 이상의 인스턴스를 실행할 수 있습니다.
 
-## Configure your network for using Snyk Broker
+## Snyk Broker 사용을 위한 네트워크 구성
 
-If you use a proxy server, ensure you configure it, and any firewalls, to allow the Broker Client inbound and outbound access:
+프록시 서버를 사용하는 경우 Broker 클라이언트의 인바운드 및 아웃바운드 액세스를 허용하도록 프록시 서버와 방화벽을 구성해야 합니다:
 
-* Outbound connection from the Broker Client (running in your environment) to [broker.snyk.io](https://broker.snyk.io) (or [https://broker.eu.snyk.io](https://broker.eu.snyk.io) / [https://broker.au.snyk.io](https://broker.au.snyk.io)) on port 443
-* Internal connection that allows inbound access from the integration (SCM, CR) to the Broker Client at the BROKER\_CLIENT\_URL on the port you have configured (typically 8000). This is not inbound from the internet.
+* Broker 클라이언트(사용자 환경에서 실행 중)에서 포트 443의 [broker.snyk.io](https://broker.snyk.io) (또는[https://broker.eu.snyk.io](https://broker.eu.snyk.io) / [https://broker.au.snyk.io](https://broker.au.snyk.io))로의 아웃바운드 연결
+* 연동 서비스(SCM, CR)에서 구성한 포트(일반적으로 8000)의 BROKER\_CLIENT\_URL에서 Broker 클라이언트로의 인바운드 액세스를 허용하는 내부 연결입니다. 이것은 인터넷에서 인바운드가 아닙니다.
 
-Traffic initiated from the Snyk Broker Server side always uses the latest available Broker connection. All activity from the Snyk side (such as traffic driven by recurring tests) appears on only one of your replicas at a time. The amount of Snyk activity is proportional to the activity in the repositories or Jira items. That activity generates webhooks, which are distributed across all replicas.
+Snyk Broker 서버 측에서 시작된 트래픽은 항상 사용 가능한 최신 Broker 연결을 사용합니다. Snyk 측의 모든 활동(예: 반복 테스트에 의해 구동되는 트래픽)은 한 번에 하나의 복제본에만 나타납니다. Snyk 활동의 양은 리포지토리 또는 Jira 항목의 활동에 비례합니다. 해당 활동은 모든 복제본에 배포되는 웹훅을 생성합니다.
 
-## **Define your Broker deployment components**
+## Broker 배포 구성 요소 정의
 
-Consider the following to understand what the required components are for your deployment:
+배포에 필요한 구성 요소가 무엇인지 이해하려면 다음을 고려하세요:
 
-* What service are you connecting Broker to?
-  * GitHub, Jira, Bitbucket, Harbor, other service
-  * See [Snyk Broker - Client integration setups](broken-reference).
-* Are you planning to detect Infrastructure as Code files?
-  * You will need to add an environment variable `-e ACCEPT_IAC` or a custom allowlist `accept.json` file to your deployment.
-  * See [Snyk Broker - Infrastructure as Code detection](snyk-broker-infrastructure-as-code-detection/).
-* Are you planning to detect Snyk Code vulnerabilities?
-* Are you planning to connect to a Container Registry?
-  * You will need to deploy an additional agent with Broker, the Snyk Broker Container Registry Agent.
-  * See [Snyk Broker Container Registry agent](snyk-broker-container-registry-agent/).
+* Broker를 어떤 서비스에 연결하고 있나요?
+  * GitHub, Jira, Bitbucket, Harbor, 기타 서비스
+  * [Snyk Broker - 클라이언트 통합 설정](broken-reference/)을 참조하세요.
+* Infrastructure를 코드 파일로 감지할 계획인가요?
+  * 예. -- 환경 변수 `-e ACCEPT_IAC`또는 사용자 지정 허용 목록 `accept.json` 파일을 배포에 추가해야 합니다.
+  * [Snyk Broker - 코드형 Infrastructure 탐지](snyk-broker-infrastructure-as-code-detection/)를 참조하세요.
+* Snyk 코드 취약점을 탐지할 계획인가요?
+* 컨테이너 레지스트리에 연결할 계획인가요?
+  * Broker와 함께 추가 에이전트인 Snyk Broker 컨테이너 레지스트리 에이전트를 배포해야 합니다.
+  * [Snyk Broker 컨테이너 레지스트리 에이전트](snyk-broker-container-registry-agent/)를 참조하세요.
 
-Every integration has a specific Broker token assigned to it. This means if you want to analyze Snyk Code vulnerabilities and connect to a Container Registry your integration will be:
+모든 연동에는 특정 Broker 토큰이 할당되어 있습니다. 즉, Snyk 코드 취약점을 분석하고 컨테이너 레지스트리에 연결하려는 경우 통합이 이루어집니다:
 
-* One Broker for the SCM with the additional environment variable `-e ACCEPT_CODE` or the custom allowlist `accept.json` and one Broker Code Agent
-* One Broker for the Container Registry and one Broker Container Registry agent
+* 추가 환경 변수 `-e ACCEPT_CODE` 또는 사용자 지정 허용 목록 `accept.json`이 있는 SCM용 브로커 1개와 Broker 코드 에이전트 1개
+* 컨테이너 레지스트리용 브로커 1개 및 컨테이너 레지스트리 Broker 에이전트 1개
 
-## Generate credentials in the target application for Snyk Broker
+## Snyk Broker를 위한 대상 애플리케이션에서 자격 증명 생성하기
 
 {% hint style="info" %}
-Snyk recommends rotating all API tokens and credentials used with Snyk Broker every 90 days.
+Snyk은 90일마다 Snyk Broker에 사용되는 모든 API 토큰과 자격 증명을 교체할 것을 권장합니다.
 
-For the first deployment of Broker, collaborating with your Snyk account team is required.
+Broker를 처음 배포할 때는 Snyk 계정 팀과의 협업이 필요합니다.
 {% endhint %}
 
-After generating the credentials for the Broker's target application, configure the environment variables for launching Snyk Broker.
+Broker의 대상 애플리케이션에 대한 자격 증명을 생성한 후, Snyk Broker 실행하기 위한 환경 변수를 구성합니다.
 
-The Broker token is required and must be generated in order for you to use Snyk Broker.
+Broker 토큰은 필수이며, Broker를 사용하려면 반드시 생성해야 합니다.
 
-For code repository (SCM) integrations, a Broker token can be generated via API or by contacting [Snyk support](https://support.snyk.io/hc/en-us/requests/new).
+코드 리포지토리(SCM) 통합의 경우 Broker 토큰은 API를 통해 생성하거나 [Snyk 지원팀](https://support.snyk.io/hc/en-us/requests/new)에 문의하여 생성할 수 있습니다.
 
-1. Go to the Snyk API v1 documentation and follow the example under "Set up a broker for an existing integration" within the [Integrations API](https://snyk.docs.apiary.io/#reference/integrations/integration/update-existing-integration) or contact [Snyk support](https://support.snyk.io/hc/en-us/requests/new).
-2. Verify the Broker token is generated in the Snyk Web UI under the specified SCM integration. by selecting **Settings** > **Integrations** for that specific integration update to see the Broker token.
+1. Snyk API v1 문서로 이동하여 [연동 서비스 API](https://snyk.docs.apiary.io/#reference/integrations/integration/update-existing-integration) 내의 “기존 연동 서비스를 위한 broker 설정” 아래의 예시를 따르거나 [Snyk 지원팀](https://support.snyk.io/hc/en-us/requests/new)에 문의하세요.
+2. Snyk API v1 문서로 이동하여 연동 서비스 API 내의 “기존 연동 서비스를 위한 broker 설정” 아래의 예시를 따르거나 Snyk 지원팀에 문의하세요. 2. 특정 연동 업데이트에 대한 **설정(Settings) > 연동(Integrations)**을 선택하여 브로커 토큰을 확인하여 브로커 토큰이 지정된 SCM 연동 아래의 Snyk 웹 UI에서 생성되었는지 확인합니다.
 
-For [Artifactory Repository](../../integrate-with-snyk/package-repository-integrations/artifactory-package-repository-connection-setup/) and [Nexus Repository Manager](../../integrate-with-snyk/package-repository-integrations/nexus-repository-manager-connection-setup/) brokered instances or [Jira](install-and-configure-snyk-broker/jira-install-and-configure-broker/setup-broker-with-jira.md) integration, you can generate a Broker token in the Snyk UI or contact [Snyk support](https://support.snyk.io/hc/en-us/requests/new).
+[Artifactory Repository](../../integrate-with-snyk/package-repository-integrations/artifactory-package-repository-connection-setup/) 및 [Nexus Repository 관리자](../../integrate-with-snyk/package-repository-integrations/nexus-repository-manager-connection-setup/) 브로커 인스턴스 또는 [Jira](install-and-configure-snyk-broker/jira-install-and-configure-broker/setup-broker-with-jira.md) 통합의 경우, Snyk UI에서 Broker 토큰을 생성하거나 [Snyk 지원팀](https://support.snyk.io/hc/en-us/requests/new)에 문의할 수 있습니다.
 
-1. Select **Settings** > **Integrations** for that specific integration to generate the Broker token.
-2. Once the Broker token is generated, under the integration, the notification from this screen correctly displays “Could not connect to…”, as you have not yet installed and configured the client.
-3. Copy and paste the Broker token from the UI to use it when you install the client.
+1. Broker 토큰을 생성하려면 해당 특정 연동 서비스에 대한 **설정(Settings) > 연동(Integrations)**을 선택합니다.
+2. Broker 토큰이 생성되면 연동 아래에서 아직 클라이언트를 설치 및 구성하지 않았으므로 이 화면의 알림에 “연결할 수 없음...”이 올바르게 표시됩니다.
+3. UI에서 Broker 토큰을 복사하여 붙여넣어 클라이언트를 설치할 때 사용합니다.
 
-## Enabling Broker across multiple organizations
+## 여러 조직에서 Broker 사용
 
-You can use the same Git service across multiple Organizations in Snyk with the same Broker token. To do this, create the token for an Organization and then create a new Organization based on the original. This clones the token and you can now enable the Broker for it.
+동일한 Broker 토큰을 사용하여 Snyk의 여러 조직에서 동일한 Git 서비스를 사용할 수 있습니다. 이렇게 하려면 조직에 대한 토큰을 만든 다음 원본을 기반으로 새 조직을 만듭니다. 그러면 토큰이 복제되고 이제 해당 토큰에 대해 Broker를 사용 설정할 수 있습니다.
 
-To do this retroactively for existing Organizations, you can use the API v1 endpoint [Clone an integration (with settings and credentials)](https://snyk.docs.apiary.io/#reference/integrations/integration-cloning) to clone a specific integration, including the Broker token.
+기존 조직에 대해 소급 적용하려면 API v1 엔드포인트 [통합 복제(설정 및 자격 증명 포함)](https://snyk.docs.apiary.io/#reference/integrations/integration-cloning) 를 사용하여 Broker 토큰을 포함한 특정 통합을 복제할 수 있습니다.
 
-Unless you do this, you must generate a new Broker token for the Organization, as each integration and Organization have their own unique Broker token.
+이렇게 하지 않는 경우에는 각 연동 서비스 및 조직마다 고유한 Broker 토큰이 있으므로 조직에 대한 새 Broker 토큰을 생성해야 합니다.
