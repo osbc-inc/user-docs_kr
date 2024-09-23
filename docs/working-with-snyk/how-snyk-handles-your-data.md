@@ -110,42 +110,42 @@ Snyk은 귀하의 데이터를 보호하는 것이 얼마나 중요한지 잘 �
 
 <figure><img src="../.gitbook/assets/AppRisk_Color_64px.png" alt="Snyk App Risk logo"><figcaption><p>Snyk AppRisk</p></figcaption></figure>
 
-* Snyk AppRisk provides visibility into data at the Snyk Group level and therefore covers the scope of all Snyk Organizations within a Snyk Group.
-* From Snyk Targets and Projects within associated Snyk organizations, Snyk AppRisk accesses and stores asset metadata to generate code repository assets, package (first-party) assets, and container image assets. Asset metadata includes the Git remote URL, languages represented in repositories, and commit history metadata (not the underlying source code).
-* From SCM integrations configured using the Snyk AppRisk Integration Hub, Snyk AppRisk accesses and stores the following data:
-  * Commit history metadata from the last 50 commits for repositories monitored, including profile information on the code committer, such as GitHub user IDs, display name, or email.
-  * Metadata on the languages (for example, Python, HTML) used for a given code repository.
-  * Repository “topics”, which are represented as asset tags.
+* Snyk AppRisk는 Snyk Group 레벨에서 데이터에 대한 가시성을 제공하므로 Snyk Group 내의 모든 Snyk 조직의 범위를 포함합니다.
+* 연결된 Snyk 조직 내의 Snyk 대상 및 프로젝트에서 Snyk AppRisk는 자산 메타데이터에 접근하고 저장하여 코드 리포지토리 자산, 패키지(퍼스트 파티) 자산 및 컨테이너 이미지 자산을 생성합니다. 자산 메타데이터에는 Git 원격 URL, 리포지토리에 표시된 언어, 커밋 기록 메타데이터(기본 소스 코드가 아님)가 포함됩니다.
+* Snyk AppRisk 통합 허브를 사용하여 구성된 SCM 통합에서 Snyk AppRisk는 다음 데이터에 접근하고 저장합니다:
+  * 모니터링되는 리포지토리에 대한 최근 50개 커밋의 커밋 기록 메타데이터 Code Committer의 프로필 정보(예: GitHub 사용자 ID, 표시 이름 또는 이메일)를 포함합니다.
+  * 특정 코드 리포지토리에 사용된 언어(예: Python, HTML)에 대한 메타데이터.
+  * Asset tags로 표시되는 리포지토리 'topics'.
 
-## Snyk integrations: Git repository cloning
+## Snyk integrations: Git 리포지토리 복제
 
 {% hint style="info" %}
-For more information on Git repository cloning enablement and use, see [Git repository cloning for SCM integrations](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/introduction-to-git-repository-integrations/git-repository-cloning-for-scm-integrations.md).
+Git 리포지토리 복제 활성화 및 사용에 대한 자세한 내용은 [Git repository cloning for SCM integrations](../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/introduction-to-git-repository-integrations/git-repository-cloning-for-scm-integrations.md)를 참조하세요.
 {% endhint %}
 
-### Safeguards Snyk puts in place to ensure data is secure
+### 데이터 보안을 위해 Snyk이 마련한 보호 장치
 
-* Snyk will perform a clone only when an SCM integration flow requires it, for example, PR check, import, and test.
-* Communication between the cloning service and cache is encrypted with TLS 1.2.
-* Cloned assets are deleted from the file system immediately after populating the cache.
-* All data is handled by Snyk in accordance with the SOC 2 standard. For more details, see [Snyk certifications](how-snyk-handles-your-data.md#snyk-certifications).
-* Your data is analyzed only for the purposes of improving code security and code quality and in accordance with your Data Processing Addendum.
+* Snyk은 PR 확인, 가져오기, 테스트 등 SCM integration flow에 필요한 경우에만 복제를 수행합니다.
+* 복제 서비스와 캐시 간의 통신은 TLS 1.2로 암호화합니다.
+* 복제된 자산은 캐시를 채운 후 즉시 파일 시스템에서 삭제됩니다.
+* 모든 데이터는 SOC 2 표준에 따라 Snyk에서 처리됩니다. 자세한 내용은 [Snyk certifications](how-snyk-handles-your-data.md#snyk-certifications)을 참조하세요.
+* 데이터는 코드 보안 및 코드 품질을 개선하기 위한 목적으로만 데이터 처리 지침에 따라 분석됩니다.
 
-### Git cloning applicable contract terms
+### Git 복제 관련 계약 조건
 
-By enabling this feature, you agree that your Git repository is a Protected Asset as defined in the contract between your company and Snyk.
+이 기능을 사용 설정하면 귀하는 Git 리포지토리가 귀사와 Snyk 간의 계약에 정의된 대로 보호 대상 자산이라는 데 동의합니다.
 
 ## Snyk certifications
 
 <figure><img src="../.gitbook/assets/Soc2.png" alt="Soc 2 Type 2 AICPA Soc"><figcaption><p>Soc 2 Type 2 AICPA Soc</p></figcaption></figure>
 
-Snyk is certified to ISO 27001:2013 with the additional objective controls of ISO 27017:2015.
+Snyk은 ISO 27001:2013 인증을 받았으며 ISO 27017:2015의 추가적인 엄격한 관리 기준을 준수합니다.
 
 <figure><img src="../.gitbook/assets/Coalfire.png" alt="Coalfire ISO 27001 certified ISO"><figcaption><p>Coalfire ISO 27001 certified ISO</p></figcaption></figure>
 
-## Snyk policies
+## Snyk 정책
 
-For additional information, see the following pages on the Snyk website:
+자세한 내용은 Snyk 웹사이트의 다음 페이지를 참조하세요:
 
 * [Privacy](https://snyk.io/policies/privacy/)
 * [Snyk Sub-processing](https://snyk.io/policies/subprocessors/)
