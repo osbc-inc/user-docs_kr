@@ -1,14 +1,14 @@
-# Nexus Repository - install and configure using Helm
+# Nexus 리포지토리 - Helm을 사용하여 설치 및 구성하기
 
 {% hint style="info" %}
-For information about brokered integration with Artifactory or Nexus Container Registry see [Snyk Broker -Container Registry Agent](../../snyk-broker-container-registry-agent/).
+Artifactory 또는 Nexus 컨테이너 레지스트리와의 Broker 통합에 대한 자세한 내용은 [Snyk Broker -Container Registry Agent](../../snyk-broker-container-registry-agent/)를 참조하세요.
 {% endhint %}
 
-## Nexus 3 Helm installation
+## Nexus 3 Helm 설치
 
-For instructions on using the Snyk Broker Helm Chart, see [Install and configure Broker using Helm](../install-and-configure-broker-using-helm.md). The command to use follows. For definitions of the environment variables, see [Nexus Repository - environment variables for Snyk Broker](nexus-repository-environment-variables-for-snyk-broker.md).
+Snyk Broker Helm 차트 사용에 대한 지침은[Helm을 사용하여 Broker 설치 및 구성하기](../install-and-configure-broker-using-helm.md)를 참조하세요. 사용할 명령어는 다음과 같다. 환경 변수에 대한 정의는[Nexus 리포지토리 -  Snyk Broker의 환경 변수](nexus-repository-environment-variables-for-snyk-broker.md)를 참조한다.
 
-Note: for `baseNexusUrl` and `nexusUrl` values include `https://`
+참고: for `baseNexusUrl` 및 `nexusUrl` 값의 경우 `https://`
 
 ```
 helm install snyk-broker-chart snyk-broker/snyk-broker \
@@ -20,11 +20,11 @@ helm install snyk-broker-chart snyk-broker/snyk-broker \
              -n snyk-broker --create-namespace
 ```
 
-## Nexus 2 Helm installation
+## Nexus 2 Helm 설치
 
-For instructions on using the Snyk Broker Helm Chart, see [Install and configure Broker using Helm](../install-and-configure-broker-using-helm.md). The command to use follows. For definitions of the environment variables, see [Nexus Repository - environment variables for Snyk Broker](nexus-repository-environment-variables-for-snyk-broker.md).
+Snyk Broker Helm 차트 사용에 대한 지침은[Helm을 사용하여 Broker 설치 및 구성하기](../install-and-configure-broker-using-helm.md)를 참조하세요. 사용할 명령어는 다음과 같다. 환경 변수에 대한 정의는[Nexus 리포지토리 -  Snyk Broker의 환경 변수](nexus-repository-environment-variables-for-snyk-broker.md)를 참조한다.
 
-Note: for `baseNexusUrl` and `nexusUrl` values include `https://`
+참고: for `baseNexusUrl` 및 `nexusUrl` 값의 경우 `https://`
 
 ```
 helm install snyk-broker-chart snyk-broker/snyk-broker \

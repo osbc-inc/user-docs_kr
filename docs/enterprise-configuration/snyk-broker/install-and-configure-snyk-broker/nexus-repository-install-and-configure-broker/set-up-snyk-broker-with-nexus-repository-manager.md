@@ -25,7 +25,7 @@ Docker 또는 Docker Linux 컨테이너를 실행할 수 있는 방법이 필요
 넥서스 컨테이너 레지스트리와의 브로커 통합에 대한 자세한 내용은 [Snyk Broker -Container Registry Agent](../../snyk-broker-container-registry-agent/)를 참조하세요.
 {% endhint %}
 
-## 넥서스 통합을 위한 Broker 토큰 받기
+## Nexus 통합을 위한 Broker 토큰 받기
 
 1. &#x20;<img src="../../../../.gitbook/assets/cog_icon.png" alt="Settings icon" data-size="line"> > **Integrations > Package Repositories > Nexus** 로 이동합니다.
 2. Nexus를 구성하는 화면이 표시되는지 확인합니다.
@@ -42,23 +42,23 @@ Docker 또는 Docker Linux 컨테이너를 실행할 수 있는 방법이 필요
 
 ## Web UI에서 브로커 토큰 생성하기
 
-1. In the Nexus integration settings, move the **Snyk Broker on/off** switch to **on** to display a form for generating a Broker token.
-2. Select **Generate and Save.**
-3. Copy the token that was generated to use when you set up the Broker Client.
+1. Nexus 연동 설정에서 **\[Snyk Broker on/off]** 스위치를 켜기로 이동하여 Broker 토큰을 생성하기 위한 양식을 표시합니다.
+2. **\[Generate and Save]**을 선택합니다.
+3. Broker 클라이언트를 설정할 때 사용하기 위해 생성된 토큰을 복사합니다.
 
-## Configure Broker to be used for Nexus plugins
+## Nexus 플러그인에 사용하도록 Broker 구성하기
 
-### Docker pull for Nexus 3 and Nexus 2 configuration
+### Nexus 3 및 Nexus 2용 도커 풀 구성
 
-To use the Broker client with a Nexus 3 deployment, **run** `docker pull snyk/broker:nexus`.
+Nexus 3 배포에서 Broker 클라이언트를 사용하려면 `docker pull snyk/broker:nexus`를 **실행**합니다.
 
-To use the Broker client with a Nexus 2 deployment, **run** `docker pull snyk/broker:nexus2`.
+넥서스 2 배포에서 브로커 클라이언트를 사용하려면, `docker pull snyk/broker:nexus2`를 **실행**하세요.
 
-For definitions of the environment variables, see [Nexus Repository - environment variables for Snyk Broker](nexus-repository-environment-variables-for-snyk-broker.md).
+환경 변수에 대한 정의는 [Nexus Repository - Snyk Broker의 환경 변수](nexus-repository-environment-variables-for-snyk-broker.md)를 참조하세요.
 
-### Docker run commands to set up Broker Client for Nexus 3 and Nexus 2 integrations
+### Nexus 3 및 Nexus 2 통합을 위한 Broker 클라이언트를 설정하기 위한 Docker 실행 명령
 
-**Copy the following command** to set up a fully configured Broker Client to use with Nexus 3. You can run the Docker container by providing the relevant configuration:
+**다음 명령을 복사**하여 Nexus 3에서 사용할 수 있도록 완전히 구성된 Broker 클라이언트를 설정합니다. 관련 구성을 제공하여 Docker 컨테이너를 실행할 수 있습니다:
 
 ```console
 docker run --restart=always \
@@ -70,7 +70,7 @@ docker run --restart=always \
        snyk/broker:nexus
 ```
 
-**Copy the following command** to set up a fully configured Broker Client to use with Nexus 2. You can run the Docker container by providing the relevant configuration:
+**다음 명령을 복사**하여 Nexus 2에서 사용할 수 있도록 완전히 구성된 Broker 클라이언트를 설정합니다. 관련 구성을 제공하여 Docker 컨테이너를 실행할 수 있습니다:
 
 ```
 docker run --restart=always \
@@ -81,17 +81,17 @@ docker run --restart=always \
   snyk/broker:nexus2
 ```
 
-As an **alternative to using the Docker run command**, you can use a derived Docker image to set up the Broker Client integration. See [Derived Docker images](../derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md) for the environment variables to override for the Nexus3 integration.
+**Docker 실행 명령을 사용하는 대신** 파생된 Docker 이미지를 사용하여 Broker 클라이언트 연동을 설정할 수 있습니다. Nexus3 연동을 위해 재정의할 환경 변수는 [파생된 Docker 이미지](../derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md)를 참조하세요.
 
-## Start the Broker Client container and verify the connection with Nexus Repository Manager
+## Broker 클라이언트 컨테이너를 시작하고 Nexus 리포지토리 관리자와의 연결을 확인합니다.
 
-Paste the Broker Client configuration to start the Broker Client container.
+Broker 클라이언트 구성을 붙여넣어 Broker 클라이언트 컨테이너를 시작합니다.
 
-Check connection status by making a request to the Broker Client `/systemcheck` endpoint.
+Broker 클라이언트`/systemcheck` endpoint에 요청하여 연결 상태를 확인합니다.
 
-Example: `curl http://172.17.0.2:7341/systemcheck`
+예: `curl http://172.17.0.2:7341/systemcheck`
 
-You see success output in the following form:
+성공 결과는 다음과 같은 형식으로 표시됩니다:
 
 `{"brokerClientValidationUrl":"https://acme.com/service/rest/v1/status","brokerClientValidationMethod":"GET","brokerClientValidationTimeoutMs":5000,"brokerClientValidationUrlStatusCode":200,"ok":true}`
 

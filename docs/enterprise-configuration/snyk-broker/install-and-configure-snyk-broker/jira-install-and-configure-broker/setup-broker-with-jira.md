@@ -1,21 +1,21 @@
-# Jira - install and configure using Docker
+# Jira - Docker를 사용하여 설치 및 구성하기
 
-Follow the instructions on this page to set up Jira with Snyk Broker. This integration is useful to ensure a secure connection with your on-premise Jira deployment.
+이 페이지의 지침에 따라 Snyk Broker로 Jira를 설정하세요. 이 통합은 온프레미스 Jira 배포와의 안전한 연결을 보장하는 데 유용합니다.
 
 {% hint style="info" %}
-Docker is a prerequisite.
+Docker는 필수입니다.
 {% endhint %}
 
-## Generate a Broker token from the Web UI
+## Web UI에서 Broker 토큰 생성하기
 
-1. Click **Settings** > **Integrations** > **Jira** > **For installation of Jira within a private network click here**.
-2. Click **Generate** to generate a Broker Token for Jira and click **Show** to confirm.
+1. **Settings(설정)** > **Integrations(통합)** > **Jira** > **개인 네트워크 내에 Jira를 설치하려면** 여기를 클릭합니다.
+2. **Generate(생성)** 을 클릭하여 Jira용 Broker 토큰을 생성하고 **Show(표시)**를 클릭하여 확인합니다.
 
-## Configure Broker to be used for Jira
+## Jira에 사용하도록 Broker 구성하기
 
-To use the Broker Client with a Jira deployment, run `docker pull snyk/broker:jira`. For definitions of the environment variables, see [Jira - environment variables for Snyk Broker](jira-environment-variables-for-snyk-broker.md).
+Jira 배포와 함께 Broker 클라이언트를 사용하려면 `docker pull snyk/broker:jira`를 실행하세요.환경 변수에 대한 정의는[Jira - Snyk Broker의 환경 변수](jira-environment-variables-for-snyk-broker.md)를 참조하세요.
 
-## Docker run command to set up a Broker Client for Jira
+## Docker 실행 명령으로 Jira용 Broker 클라이언트 설정하기
 
 **Copy the following command** to set up a fully configured Broker Client to use with Jira. You can run the Docker container by providing the relevant configuration:
 
@@ -54,7 +54,7 @@ docker run --restart=always \
 
 ## Start the Broker Client container and verify the connection with Jira
 
-&#x20;Paste the Broker Client configuration to start the Broker Client container.
+Paste the Broker Client configuration to start the Broker Client container.
 
 After the container is set up, and the Jira Integrations page shows the connection to Jira, under Projects you can create Jira tickets
 
