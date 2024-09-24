@@ -1,6 +1,6 @@
-# Service accounts for Helm Chart installation
+# Helm 차트 설치를 위한 서비스 계정
 
-To use an existing service account, add the following parameters to the install command:
+기존 서비스 계정을 사용하려면 설치 명령에 다음 매개변수를 추가합니다:
 
 ```
 --set serviceAccount.create=false \

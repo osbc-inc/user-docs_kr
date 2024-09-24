@@ -1,18 +1,18 @@
-# Deploying multiple Brokers in the same namespace
+# 동일한 네임스페이스에 여러 Broker 배포하기
 
-## Helm chart versions 2.x.x
+## Helm 차트 버전 2.x.x
 
-Helm chart versions 2.x.x automatically adds a suffix to all object name based on the release name. Simply use different release name for each broker you want to add into the same namespace.
+Helm 차트 버전 2.x.x는 릴리스 이름에 따라 모든 오브젝트 이름에 접미사를 자동으로 추가한다. 동일한 네임스페이스에 추가하려는 각 broker에 대해 다른 릴리스 이름을 사용하기만 하면 된다
 
 {% hint style="info" %}
-For backward compatibility, 2.1.0 introduces a disableSuffixes flag to revert to the 1.x.x behavior listed below, by simply adding --set disableSuffixes=true or disableSuffixes=true in your values file.
+이전 버전과의 호환성을 위해 2.1.0에서는 값 파일에 --set disableSuffixes=true 또는 disableSuffixes=true를 추가하여 아래 나열된 1.x.x 동작으로 되돌리는 disableSuffixes 플래그가 도입되었습니다.
 {% endhint %}
 
-## Helm chart versions 1.x.x
+## Helm 차트 버전 1.x.x
 
-To deploy an additional Broker into the same namespace as an existing broker, follow these examples.
+기존 Broker와 동일한 네임스페이스에 추가 Broker를 배포하려면 다음 예제를 따르세요.
 
-### Deploy with existing service account
+### 기존 서비스 계정으로 배포
 
 ```
 helm install <ENTER_UNIQUE_CHART_NAME> snyk-broker/snyk-broker \
@@ -25,7 +25,7 @@ helm install <ENTER_UNIQUE_CHART_NAME> snyk-broker/snyk-broker \
              -n <EXISTING_NAMESPACE>
 ```
 
-### Deploy with new service account
+### 새 서비스 계정으로 배포
 
 ```
 helm install <ENTER_UNIQUE_CHART_NAME> snyk-broker/snyk-broker \

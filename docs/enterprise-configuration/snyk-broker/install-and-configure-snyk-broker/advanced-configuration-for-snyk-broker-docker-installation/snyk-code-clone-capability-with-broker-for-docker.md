@@ -1,22 +1,22 @@
-# Snyk Code - Clone capability with Broker for Docker
+# Snyk Code - Docker용 브로커를 통한 복제 기능
 
 {% hint style="warning" %}
-**Release status**&#x20;
+**릴리스 상태**
 
-The environment variable to enable Git clone capabilities is in [Closed Beta](../../../../getting-started/snyk-release-process.md). However, it is the preferred way to run Snyk Code analysis through the Broker and is fully capable.&#x20;
+Git 복제 기능을 활성화하는 환경 변수는 [Closed Beta](../../../../getting-started/snyk-release-process.md) 버전입니다. 그러나 브로커를 통해 Snyk 코드 분석을 실행하는 데 선호되는 방법이며 충분히 사용할 수 있습니다.&#x20;
 
-If you are interested in using the feature, contact your Snyk account team.
+이 기능 사용에 관심이 있으시면 Snyk 계정 팀에 문의하세요.
 {% endhint %}
 
-Brokered Snyk Code enables the Broker to accept code files, and the Broker then scans between the SCM system and Snyk.
+브로커링된 Snyk 코드를 사용하면 Broker가 코드 파일을 수락할 수 있으며, Broker는 SCM 시스템과 Snyk 사이를 스캔합니다.
 
-By default, the Git clone capabilities required by Snyk Code are disabled.
+기본적으로 Snyk Code에 필요한 Git 클론 기능은 비활성화되어 있습니다.
 
-## Accept configuration
+## 구성 수락
 
-To grant Broker access to perform a Git clone of your repository, add the environment variable: `ACCEPT_CODE=true`
+리포지토리의 Git 복제를 수행할 수 있는 Broker 액세스 권한을 부여하려면 환경 변수를 추가하세요: `ACCEPT_CODE=true`
 
-Example:
+예시:
 
 ```
 docker run --restart=always \
@@ -29,17 +29,17 @@ docker run --restart=always \
        snyk/broker:github-com
 ```
 
-This adds the necessary `accept` rules for your Git server.&#x20;
+이렇게 하면 Git 서버에 필요한 `accept`규칙이 추가됩니다.
 
-After this is done, you can follow the Broker instructions for your SCM system. For details, see [Install and configure Snyk Broker](../)
+이 작업이 완료되면 SCM 시스템에 대한 Broker 지침을 따를 수 있습니다. 자세한 내용은 [Snyk Broker 설치 및 구성하기](../)를 참조하세요.
 
-## Custom accept configuration
+## 사용자 지정 수락 구성
 
-The default rules are in the [client templates in the Broker GitHub repository](https://github.com/snyk/broker/tree/master/client-templates).
+기본 규칙은 [Broker GitHub 리포지토리의 클라이언트 템플릿](https://github.com/snyk/broker/tree/master/client-templates)에 있습니다.
 
-If custom `accept` rules are required, you can provide a custom `accept.json`.
+사용자 지정 `accept`규칙이 필요한 경우 사용자 지정`accept.json`을 제공할 수 있습니다.
 
-Example:
+예시:
 
 ```console
 docker run --restart=always \
@@ -52,9 +52,9 @@ docker run --restart=always \
        snyk/broker:github-com
 ```
 
-If you are using a custom `accept` file from a separate folder, with the `ACCEPT` environment variable, you cannot use any of the other `ACCEPT` mechanisms, such as `ACCEPT_CODE` or `ACCEPT_IAC`.
+별도의 폴더에서 사용자 정의 `accept` 파일을 사용하는 경우,  `ACCEPT` 환경 변수를 사용하면 `ACCEPT_CODE` 또는`ACCEPT_IAC`와 같은 다른 `ACCEPT`메커니즘을 사용할 수 없습니다.
 
-If you want to customize the `accept.json`, add this snippet to your custom `accept.json`
+`accept.json`을 사용자 지정하려면 사용자 지정 `accept.json`에 다음 스니펫을 추가하세요.
 
 ```
 {
@@ -65,4 +65,4 @@ If you want to customize the `accept.json`, add this snippet to your custom `acc
 }
 ```
 
-This snippet is valid for all Git integrations.
+이 스니펫은 모든 Git 통합에 유효합니다.

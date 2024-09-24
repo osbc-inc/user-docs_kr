@@ -1,12 +1,12 @@
-# Jira - install and configure using Helm
+# Jira - Helm을 사용하여 설치 및 구성하기
 
-For instructions on using the Snyk Broker Helm Chart, see [Install and configure Broker using Helm](../install-and-configure-broker-using-helm.md).
+Snyk Broker Helm 차트 사용에 대한 지침은 [Helm을 사용하여 Broker 설치 및 구성하기](../install-and-configure-broker-using-helm.md)를 참조하세요.
 
-## Command to install the Jira integration
+## Jira 통합을 설치하는 명령
 
-The command to use follows. For definitions of the environment variables, see [Jira - environment variables for Snyk Broker](jira-environment-variables-for-snyk-broker.md).
+사용할 명령은 다음과 같습니다. 환경 변수에 대한 정의는 [Jira - Snyk Broker의 환경 변수](jira-environment-variables-for-snyk-broker.md)를 참조하세요.
 
-Note: for `jiraHostname` value do not include `https://`
+참고: `jiraHostname`값에 `https://`포함하지 않기.
 
 ```
 helm install snyk-broker-chart snyk-broker/snyk-broker \
@@ -19,11 +19,11 @@ helm install snyk-broker-chart snyk-broker/snyk-broker \
              -n snyk-broker --create-namespace
 ```
 
-## Jira PAT authentication for SSO-enabled JIRA
+## SSO 지원 JIRA를 위한 Jira PAT 인증
 
-When SSO is enabled, JIRA usually prohibits the use of a username and password and requires the use of a personal access token (PAT).
+SSO가 활성화된 경우, JIRA는 일반적으로 사용자 이름과 비밀번호 사용을 금지하고 개인용 액세스 토큰(PAT)을 사용하도록 요구합니다.
 
-When SSO is enabled, you must use a specific Jira version that will instead use the authorization header with the bearer token. To use this version, provide the following configuration:
+SSO를 사용하도록 설정한 경우 무기명 토큰과 함께 권한 부여 헤더를 대신 사용하는 특정 Jira 버전을 사용해야 합니다. 이 버전을 사용하려면 다음 구성을 제공하세요:
 
 ```
 helm install snyk-broker-chart snyk-broker/snyk-broker \
@@ -36,5 +36,5 @@ helm install snyk-broker-chart snyk-broker/snyk-broker \
 ```
 
 {% hint style="info" %}
-You must use the helm chart version 2.2.0 or above.
+helm 차트 버전 2.2.0 이상을 사용해야 합니다.
 {% endhint %}

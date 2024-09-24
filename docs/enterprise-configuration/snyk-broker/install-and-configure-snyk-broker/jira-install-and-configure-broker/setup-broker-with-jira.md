@@ -17,7 +17,7 @@ Jira 배포와 함께 Broker 클라이언트를 사용하려면 `docker pull sny
 
 ## Docker 실행 명령으로 Jira용 Broker 클라이언트 설정하기
 
-**Copy the following command** to set up a fully configured Broker Client to use with Jira. You can run the Docker container by providing the relevant configuration:
+**다음 명령을 복사**하여 Jira와 함께 사용할 완전히 구성된 Broker 클라이언트를 설정하세요. 관련 구성을 제공하여 Docker 컨테이너를 실행할 수 있습니다:
 
 ```console
 docker run --restart=always \
@@ -31,15 +31,15 @@ docker run --restart=always \
        snyk/broker:jira
 ```
 
-If necessary, navigate to [Advanced configuration for Snyk Broker Docker installation](../advanced-configuration-for-snyk-broker-docker-installation/) and make any configuration changes needed, for example, providing the CA (Certificate Authority) to the Broker Client configuration when the Jira instance is using a private certificate.
+필요한 경우, [Snyk Broker Docker 설치를 위한 고급 구성](../advanced-configuration-for-snyk-broker-docker-installation/)으로 이동하여 필요한 구성 변경(예: Jira 인스턴스에서 비공개 인증서를 사용하는 경우 Broker 클라이언트 구성에 CA(인증 기관)를 제공하는 등)을 수행합니다.
 
-As an alternative to using the Docker run command, you can use a derived Docker image to set up the Broker Client integration. See [Derived Docker images](../derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md) for the environment variables to override for the Jira integration.
+Docker 실행 명령을 사용하는 대신 파생된 Docker 이미지를 사용하여 브로커 클라이언트 연동을 설정할 수 있습니다. Jira 통합을 위해 재정의할 환경 변수에 대해서는 [파생된 Docker 이미지](../derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md)를 참조하세요.
 
-## Jira PAT authentication for SSO-enabled JIRA
+## SSO 지원 JIRA를 위한 Jira PAT 인증
 
-When SSO is enabled, JIRA usually prohibits the use of a username and password and requires the use of a personal access token (PAT).
+SSO가 활성화된 경우, JIRA는 일반적으로 사용자 이름과 비밀번호 사용을 금지하고 개인용 액세스 토큰(PAT)을 사용하도록 요구합니다.
 
-When SSO is enabled, you must use a specific Jira version that will instead use the authorization header with the bearer token. To use this version, provide the following configuration:
+SSO를 사용하도록 설정한 경우 무기명 토큰과 함께 권한 부여 헤더를 대신 사용하는 특정 Jira 버전을 사용해야 합니다. 이 버전을 사용하려면 다음 구성을 제공하세요:
 
 ```
 docker run --restart=always \
@@ -52,13 +52,13 @@ docker run --restart=always \
        snyk/broker:jira-bearer-auth
 ```
 
-## Start the Broker Client container and verify the connection with Jira
+## Broker 클라이언트 컨테이너를 시작하고 Jira와의 연결을 확인합니다.
 
-Paste the Broker Client configuration to start the Broker Client container.
+Broker 클라이언트 구성을 붙여넣어 Broker 클라이언트 컨테이너를 시작합니다.
 
-After the container is set up, and the Jira Integrations page shows the connection to Jira, under Projects you can create Jira tickets
+컨테이너가 설정되고 Jira 통합 페이지에 Jira에 대한 연결이 표시되면 프로젝트 아래에서 Jira 티켓을 만들 수 있습니다.
 
-## **Basic troubleshooting for Broker with Jira**
+## Jira를 사용한 Broker의 기본 문제 해결
 
-* Run `docker logs <container id>` to look for any errors, where container id is the Jira Broker container ID.
-* Ensure relevant ports are exposed to Jira.
+* `docker logs <container id>` 를 실행하여 오류를 찾습니다(여기서 컨테이너 ID는 Jira Broker 컨테이너 ID).
+* 관련 포트가 Jira에 노출되어 있는지 확인합니다.

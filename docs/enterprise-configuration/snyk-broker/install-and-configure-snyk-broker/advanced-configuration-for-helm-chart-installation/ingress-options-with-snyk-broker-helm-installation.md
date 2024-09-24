@@ -1,16 +1,16 @@
-# Ingress options with Snyk Broker Helm installation
+# Snyk Broker Helm 설치 시 Ingress 옵션
 
-When you are setting up the Broker using Helm, you may need to configure the `brokerClientUrl` parameter. This parameter enables PR Checks if you are connecting to an SCM and enables connecting to Container Registries.
+Helm을 사용하여 Broker를 설정하는 경우, `brokerClientUrl` 파라미터를 구성해야 할 수 있다. 이 매개변수는 SCM에 연결하는 경우 PR 확인을 활성화하고 컨테이너 레지스트리에 연결할 수 있게 한다.
 
-For this connection to happen, there must be inbound connectivity from the SCM or Container Registry to the Broker. Kubernetes manages this inbound connectivity through ingress.
+이 연결이 이루어지려면 SCM 또는 컨테이너 레지스트리에서 Broker로의 인바운드 연결이 있어야 한다. 쿠버네티스는 인그레스를 통해 이 인바운드 연결을 관리한다.
 
-Ingress is a way to route incoming network traffic to specific services in a Kubernetes cluster. For more information on how to set up ingress see the [Kubernetes guide to ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
+Ingress는 들어오는 네트워크 트래픽을 쿠버네티스 클러스터의 특정 서비스로 라우팅하는 방법이다. Ingress를 설정하는 방법에 대한 자세한 내용은 [Ingress에 대한 Kubernetes](https://kubernetes.io/docs/concepts/services-networking/ingress/)를 참조한다
 
-There are two options available for ingress traffic. By default, the pods are not accessible from outside the cluster.
+ingress 트래픽에 사용할 수 있는 옵션은 두 가지가 있습니다. 기본적으로 클러스터 외부에서는 파드에 액세스할 수 없습니다.
 
-To enable a **load balancer**, add the `--set service.<service-type>=LoadBalancer`. Allowed values are `brokertype`, `crType`, and `caType`. Servicet ype refers to the type of Broker you are running.
+**load balancer**를 사용하려면, `--set service.<service-type>=LoadBalancer`를 추가합니다. 허용되는 값은 `brokertype`, `crType`, `caType`입니다. 서비스 유형은 실행 중인 Broker의 유형을 나타냅니다.
 
-Example for Github:
+Github의 예입니다:
 
 ```
 helm install snyk-broker-chart snyk-broker/snyk-broker \
@@ -22,4 +22,4 @@ helm install snyk-broker-chart snyk-broker/snyk-broker \
              -n snyk-broker --create-namespace
 ```
 
-To add an **ingress**, enable it in the `values.yaml` file and add the relevant configuration parameters, following the example values in the values file. For this to work, your cluster must have an ingress controller configured properly.
+**ingress**를 추가하려면, `values.yaml`파일에서 ingress를 활성화하고 값 파일의 예제 값에 따라 관련 구성 파라미터를 추가합니다. 이 기능을 사용하려면 클러스터에 ingress 컨트롤러가 올바르게 구성되어 있어야 합니다.

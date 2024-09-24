@@ -1,8 +1,8 @@
-# Custom additional options for Broker Helm Chart installation
+# Broker Helm 차트 설치를 위한 사용자 지정 추가 옵션
 
-If you need to inject additional option(s) using environment variables, use the `override.yaml` value file to add any additional environment variable(s) you may need.
+환경 변수를 사용하여 추가 옵션을 삽입해야 하는 경우 `override.yaml` 값 파일을 사용하여 필요한 추가 환경 변수를 추가하세요.
 
-Adding the `--values override.yaml` will load those values into your deployment. For example:
+`override.yaml`에 `--values`를 추가하면 해당 값이 배포에 로드됩니다. 예를 들어:
 
 ```
 helm install snyk-broker-chart . \
@@ -14,7 +14,7 @@ helm install snyk-broker-chart . \
              -n snyk-broker --create-namespace
 ```
 
-You can do the same inline without the override.yaml file if it is more convenient.
+더 편리하다면 override.yaml 파일 없이 인라인으로 동일한 작업을 수행할 수 있습니다.
 
 ```
 helm install snyk-broker-chart . \
@@ -29,8 +29,8 @@ helm install snyk-broker-chart . \
              -n snyk-broker --create-namespace
 ```
 
-You can add custom Kubernetes resources and objects to the chart by adding them to the values file.
+값 파일에 추가하여 사용자 정의 Kubernetes 리소스 및 오브젝트를 차트에 추가할 수 있습니다.
 
-Various combinations of Kubernetes options and objects are available at various levels of the specifications hierarchy, deployment, container, and pod-specific. These are listed in the [default `values.yaml` ](https://github.com/snyk/snyk-broker-helm/blob/a805f97235ba6b004df7a38c93ee94e399b699b7/charts/snyk-broker/values.yaml#L403)file as `extraObjects`, `extraVolumes`, `extraVolumeMounts`, and `extraPodSpecs`.
+다양한 수준의 사양 계층, 배포, 컨테이너 및 파드별로 다양한 조합의 Kubernetes 옵션과 오브젝트를 사용할 수 있습니다. 이러한 옵션은 기본 [default `values.yaml` ](https://github.com/snyk/snyk-broker-helm/blob/a805f97235ba6b004df7a38c93ee94e399b699b7/charts/snyk-broker/values.yaml#L403)파일에 `extraObjects`, `extraVolumes`, `extraVolumeMounts` 및`extraPodSpecs`로 나열되어 있다.
 
-Be careful to use the right syntax and validate the rendered `yaml` using `helm template` command.
+올바른 구문을 사용하고 `helm template`명령을 사용하여 렌더링된 `yaml`의 유효성을 검사하도록 주의하세요.

@@ -1,7 +1,7 @@
 # Snyk Broker - Code Agent
 
 {% hint style="info" %}
-The preferred method of running Snyk Code analysis through the Snyk Broker is through [Brokered Code](../install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/snyk-code-clone-capability-with-broker-for-docker.md).  The Code Agent is an alternative method without advantages. However, if you would like to set it up in your Organization, contact your Snyk Integration Consultant or Technical Success Manager or contact [Snyk Support](https://support.snyk.io/hc/en-us).
+Snyk Broker를 통해 Snyk 코드 분석을 실행하는 가장 선호되는 방법은 [Brokered Code](../install-and-configure-snyk-broker/advanced-configuration-for-snyk-broker-docker-installation/snyk-code-clone-capability-with-broker-for-docker.md)를 이용하는 것입니다. 코드 에이전트는 장점이 없는 대체 방법입니다. 그러나 조직에서 이를 설정하려면 Snyk 통합 컨설턴트 또는 기술 성공 관리자에게 문의하거나 [Snyk 지원팀](https://support.snyk.io/hc/en-us)에 문의하세요.
 {% endhint %}
 
 To connect Snyk Code to your self-hosted Git server via the Snyk Broker, you must add the Code Agent component to the Snyk Broker deployment structure. By using the Code Agent component with the Snyk Broker, you can scan repositories that are stored on your self-hosted Git provider and apply the Snyk Code analysis to these repositories in order to find, prioritize, and fix potential vulnerabilities in your source code.

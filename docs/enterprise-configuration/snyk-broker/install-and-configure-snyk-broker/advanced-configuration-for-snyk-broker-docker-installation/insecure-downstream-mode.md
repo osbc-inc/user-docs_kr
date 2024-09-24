@@ -2,19 +2,19 @@
 description: Usage of this mode is discouraged.
 ---
 
-# Insecure downstream mode
+# 안전하지 않은 다운스트림 모드
 
-In some situations, you may need to use only `http` for your downstream connection. These cases are infrequent and usually occur because of historical `http-`only setups. Snyk recommends upgrading these setups to use `https` instead.
+경우에 따라 다운스트림 연결에 `http`만 사용해야 할 수도 있습니다. 이러한 경우는 드물지만 일반적으로 과거에 설정된 `http-`전용 설정으로 인해 발생합니다. 이러한 설정은 `https`를 사용하도록 업그레이드할 것을 권장합니다.
 
-If upgrading is not possible in the near term, the insecure downstream mode introduces a way to force downstream requests to your SCM, JIRA, or other service to take place over `http` instead of `https`.
+단기간에 업그레이드가 불가능한 경우, 안전하지 않은 다운스트림 모드에서는 SCM, JIRA 또는 기타 서비스에 대한 다운스트림 요청이 `https` 대신 `http`를 통해 이루어지도록 강제하는 방법을 도입합니다.
 
-In most cases, you should avoid insecure downstream mode, and to use it, you must opt-in.\
-Insecure downstream mode makes all requests go over `http`, thus no longer benefitting from the safety of TLS encryption. Insecure downstream mode means all your credentials and data will appear unencrypted, which is only tolerable in tightly secured networks.
+대부분의 경우 안전하지 않은 다운스트림 모드는 피해야 하며, 이를 사용하려면 반드시 옵트인해야 합니다. \
+안전하지 않은 다운스트림 모드에서는 모든 요청이`http`를 통해 이루어지므로 더 이상 TLS 암호화의 안전성을 누릴 수 없습니다. 비보안 다운스트림 모드는 모든 자격 증명과 데이터가 암호화되지 않은 상태로 표시되므로 보안이 철저한 네트워크에서만 허용됩니다.
 
-Export the environment variable `INSECURE_DOWNSTREAM="true"` to use this mode, passing it as an environment value using the `-e INSECURE_DOWNSTREAM="true"` option.
+이 모드를 사용하려면 환경 변수`INSECURE_DOWNSTREAM="true"` 를 내보내고, `-e INSECURE_DOWNSTREAM="true"` 옵션을 사용하여 환경 값으로 전달합니다.
 
 {% hint style="warning" %}
-Using HTTP is highly insecure! Your data and credentials will be transmitted in clear form over the network exchanges.
+HTTP 사용은 매우 안전하지 않습니다! 사용자의 데이터와 자격 증명은 네트워크 교환을 통해 명확한 형태로 전송됩니다.
 
-Snyk **will not be held responsible** for any credential leaks that may occur as a result of the use of insecure downstream mode.
+안전하지 않은 다운스트림 모드 사용으로 인해 발생할 수 있는 자격증명 유출에 대해 Snyk는 **어떠한 책임도 지지 않습니다.**
 {% endhint %}

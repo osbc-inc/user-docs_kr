@@ -1,7 +1,7 @@
-# Image repository, tab, and Image Pull Secret
+# 이미지 저장소, 탭 및 이미지 풀 시크릿
 
-You can choose to use your own container registry and tag instead of the public images by customizing the `values.yaml` file to specify your container registry uri and tag.
+`values.yaml`파일을 사용자 지정하여 컨테이너 레지스트리 uri 및 태그를 지정하여 공개 이미지 대신 자체 컨테이너 레지스트리 및 태그를 사용하도록 선택할 수 있습니다.
 
-If your container registry requires an image pull secret, you can specify an image secret.
+컨테이너 레지스트리에 이미지 풀 시크릿이 필요한 경우 이미지 시크릿을 지정할 수 있습니다.
 
-Note that the Image Pull Secret is NOT created by the chart; rather, the image Pull Secret is expected to be present on your cluster.
+이미지 풀 시크릿은 차트에 의해 생성되는 것이 아니라 클러스터에 이미지 풀 시크릿이 존재해야 한다는 점에 유의하세요.

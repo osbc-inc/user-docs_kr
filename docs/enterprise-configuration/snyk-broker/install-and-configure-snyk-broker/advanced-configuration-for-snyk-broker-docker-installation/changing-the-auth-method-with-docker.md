@@ -1,8 +1,8 @@
-# Changing the auth method with Docker
+# Docker로 인증 방법 변경하기
 
-Each integration has an auth method set by default, with the exact method varying by service.
+각 연동 서비스에는 기본적으로 설정된 인증 방법이 있으며, 정확한 방법은 서비스마다 다릅니다.
 
-BitBucket Server and Data Center, for example, uses Basic Auth with a username and password in the `accept.json` file:
+예를 들어 BitBucket Server 및 Data Center는 `accept.json`파일에 사용자 이름과 비밀번호가 포함된 기본 인증을 사용합니다:
 
 ```json
 {
@@ -20,7 +20,7 @@ BitBucket Server and Data Center, for example, uses Basic Auth with a username a
 }
 ```
 
-For Artifactory, the auth method is configured in the `.env` file by default:
+아티팩토리의 경우 인증 메서드는 기본적으로 `.env` 파일에 구성됩니다:
 
 ```shell
 # The URL to your artifactory
@@ -28,7 +28,7 @@ For Artifactory, the auth method is configured in the `.env` file by default:
 ARTIFACTORY_URL=<username>:<password>@<yourdomain.artifactory.com>/artifactory
 ```
 
-For GitHub, the auth meth is part of the `origin` field in the `accept.json` file:
+GitHub의 경우 인증 메트릭은`accept.json`파일의 `origin` 필드에 있습니다:
 
 ```json
 {
@@ -42,7 +42,7 @@ For GitHub, the auth meth is part of the `origin` field in the `accept.json` fil
 }
 ```
 
-You can override the authentication method. Valid values for `scheme` are `bearer`, `token`, and `basic`, which set the Authorization header to `Bearer`, `Token`, and `Basic` respectively. If a bearer token is preferred, the `accept.json` file can be configured as such:
+0
 
 ```json
 {
@@ -59,12 +59,12 @@ You can override the authentication method. Valid values for `scheme` are `beare
 }
 ```
 
-Note that you must set this for every individual object in the `private` array.
+`private` 배열의 모든 개별 개체에 대해 설정해야 한다는 점에 유의하세요.
 
-If `scheme` is `bearer` or `token`, you must provide a `token`, and if `scheme` is `basic`, you must provide a `username` and `password`.
+`scheme`가 `bearer` 또는 `token`인 경우, `token`을 제공해야 하며, `scheme` 가 `basic`인 경우, `username` 과`password`를 제공해야 합니다.
 
-This overrides any other configured authentication method, for example, setting the token in the `origin` field, or in the `.env` file.
+이렇게 하면 `origin` 필드 또는`.env` 파일에 토큰을 설정하는 등 구성된 다른 모든 인증 방법이 재정의됩니다.
 
 {% hint style="info" %}
-Snyk Broker does not support authentication with mTLS method. &#x20;
+Snyk Broker는 mTLS 방식의 인증을 지원하지 않습니다.
 {% endhint %}

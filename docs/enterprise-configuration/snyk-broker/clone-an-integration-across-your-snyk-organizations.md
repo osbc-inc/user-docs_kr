@@ -1,20 +1,20 @@
-# Clone an integration across your Snyk Organizations
+# Snyk 조직 전체에서 통합 복제하기
 
-You can choose to use the same brokered Git integration across multiple Organizations in Snyk by copying and duplicating the Organization you have already configured.
+이미 구성한 조직을 복사하고 복제하여 Snyk의 여러 조직에서 동일한 브로커링된 Git 통합을 사용하도록 선택할 수 있습니다.
 
-For example, you can integrate Snyk Organizations X, Y, and Z with your single Git repo X.
+예를 들어, Snyk 조직 X, Y, Z를 단일 Git 리포지토리 X와 통합할 수 있습니다.
 
-**Prerequisites**: to clone Organization configurations, you must have teams and groups enabled.
+**전제 조건**: 조직 구성을 복제하려면 팀 및 그룹이 활성화되어 있어야 합니다.
 
-1. From the **Organization** list, choose an Organization in the Group that you are working with.\
+1. **조직(Organization)** 목록에서 함께 작업 중인 그룹에서 조직을 선택합니다.\
    <img src="../../.gitbook/assets/switch_org_02oct2022.png" alt="Choose Organization" data-size="original">
-2.  From the same **Organization** dropdown, click **+Create new Organization.**
+2.  같은 **조직(Organization)** 드롭다운에서 **+새 조직 만들기(+Create new Organization)**를 클릭합니다.
 
-    <figure><img src="../../.gitbook/assets/clone-organization1_02oct2022.png" alt="Select +Create new Organization"><figcaption><p>Select +Create new Organization</p></figcaption></figure>
-3. In the next window, enter a name for your new Organization.
-4. In the **Copy settings from an existing org** section, choose an Organization that you have already configured for the Broker token.
-5.  Review the summary of what will be copied across to the new Organization and click **Create organization** to confirm.
+    <figure><img src="../../.gitbook/assets/clone-organization1_02oct2022.png" alt="Select +Create new Organization"><figcaption><p>새 조직 만들기를 선택합니다.</p></figcaption></figure>
+3. 다음 창에서 새 조직의 이름을 입력합니다.
+4. **기존 조직에서 설정 복사 섹션(Copy settings from an existing org)**에서 브로커 토큰에 대해 이미 구성한 조직을 선택합니다.
+5.  새 조직으로 복사할 항목의 요약을 검토하고 **조직 만들기(Create organization)**를 클릭하여 확인합니다.&#x20;
 
-    <figure><img src="../../.gitbook/assets/clone-org-3screens_02oct2022.png" alt="Review summary of what will be copied to the new Organization and Create"><figcaption><p>Review summary of what will be copied to the new Organization and Create</p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/clone-org-3screens_02oct2022.png" alt="Review summary of what will be copied to the new Organization and Create"><figcaption><p>새 조직에 복사할 항목의 요약을 검토하고 만들기</p></figcaption></figure>
 
-The **Dashboard** for the Organization that you just created opens. The Broker integration is duplicated and set up, and the Broker token is identical to the token for the original Organization.
+방금 생성한 조직의 **대시보드**가 열립니다. Broker 연동이 복제 및 설정되며 Broker 토큰은 원래 조직의 토큰과 동일합니다.

@@ -1,12 +1,12 @@
-# Derived Docker images for Broker Client integrations and Container Registry Agent
+# Broker 클라이언트 통합 및 컨테이너 레지스트리 에이전트를 위한 파생된 Docker 이미지
 
 {% hint style="info" %}
-Using the information on this page is not required to set up Broker Client integrations. You may use a derived Docker image to set up a Broker Client integration. This is an alternative to running the command explained in the instructions for setting up each integration.
+이 페이지의 정보를 사용하여 Broker 클라이언트 연동을 설정할 필요는 없습니다. 파생된 Docker 이미지를 사용하여 Broker 클라이언트 연동을 설정할 수 있습니다. 이는 각 연동 서비스 설정 지침에 설명된 명령을 실행하는 대신 사용할 수 있습니다.
 {% endhint %}
 
-## Derived Docker image for Azure Repos Broker integration setup
+## Azure Repos Broker 통합 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](azure-repos-install-and-configure-broker/setup-broker-with-azure-repos.md), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](azure-repos-install-and-configure-broker/setup-broker-with-azure-repos.md)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:azure-repos
@@ -19,9 +19,9 @@ ENV BROKER_CLIENT_URL   http://my.broker.client:8000
 ENV PORT                8000
 ```
 
-## Derived Docker image for Bitbucket Server/Data Center Broker integration setup
+## Bitbucket Server/데이터 센터 Broker 통합 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](bitbucket-server-data-center-install-and-configure-broker/data-center.md), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](bitbucket-server-data-center-install-and-configure-broker/data-center.md)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:bitbucket-server
@@ -34,9 +34,9 @@ ENV BITBUCKET_API       your.bitbucket-server.domain.com/rest/api/1.0
 ENV PORT                8000
 ```
 
-## Derived Docker image for GitHub Broker integration setup
+## GitHub Broker 통합 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](github-install-and-configure-broker/broker-example-set-up-snyk-broker-with-github.md), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](github-install-and-configure-broker/broker-example-set-up-snyk-broker-with-github.md)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:github-com
@@ -47,9 +47,9 @@ ENV PORT              8000
 ENV BROKER_CLIENT_URL http://my.broker.client:8000
 ```
 
-## Derived Docker image for GitHub Enterprise Broker integration setup
+## GitHub Enterprise Broker 통합 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](github-enterprise-install-and-configure-broker/setup-broker-with-github-enterprise.md), you can build you own Docker image and override relevant environment variables:
+[설정 페이지](github-enterprise-install-and-configure-broker/setup-broker-with-github-enterprise.md)에 표시된 Docker 실행 명령을 사용하는 대신 직접 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:github-enterprise
@@ -63,9 +63,9 @@ ENV PORT              8000
 ENV BROKER_CLIENT_URL http://my.broker.client:8000
 ```
 
-## Derived Docker image for GitLab Broker integration setup
+## GitLab Broker 통합 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](gitlab-install-and-configure-broker/setup-broker-with-gitlab.md), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](gitlab-install-and-configure-broker/setup-broker-with-gitlab.md)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:gitlab
@@ -77,9 +77,9 @@ ENV BROKER_CLIENT_URL   http://my.broker.client:8000
 ENV PORT                8000
 ```
 
-## Derived Docker image for Jira Broker integration setup
+## Jira Broker 통합 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](jira-install-and-configure-broker/setup-broker-with-jira.md), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](jira-install-and-configure-broker/setup-broker-with-jira.md)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:jira
@@ -91,9 +91,9 @@ ENV JIRA_HOSTNAME       your.jira.domain.com
 ENV PORT                8000
 ```
 
-## Derived Docker image for Artifactory Broker integration setup
+## Artifactory Broker 연동 설정을 위해 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](artifactory-repository-install-and-configure-broker/set-up-snyk-broker-with-artifactory-repository.md), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](artifactory-repository-install-and-configure-broker/set-up-snyk-broker-with-artifactory-repository.md)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:artifactory
@@ -102,9 +102,9 @@ ENV BROKER_TOKEN      secret-broker-token
 ENV ARTIFACTORY_URL   <yourdomain>.artifactory.com
 ```
 
-## Derived Docker image for Nexus 3 Broker integration setup
+## Nexus 3 Broker 통합 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](nexus-repository-install-and-configure-broker/set-up-snyk-broker-with-nexus-repository-manager.md), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](nexus-repository-install-and-configure-broker/set-up-snyk-broker-with-nexus-repository-manager.md)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:nexus
@@ -117,12 +117,12 @@ ENV RES_BODY_URL_SUB                 https://<your.nexus.hostname>/repository
 ```
 
 {% hint style="info" %}
-By default for Nexus 3, the X-Forwarded-For headers are stripped off by the Broker Client so Nexus returns the npm tarball uri to the Nexus Registry instead of the Broker Server. Include the environment variable `REMOVE_X_FORWARDED_HEADERS=false` to disable this behavior.
+Nexus 3의 경우 기본적으로 Broker 클라이언트에 의해 X-Forwarded-For 헤더가 제거되므로 Nexus는 Broker 서버가 아닌 Nexus 레지스트리에 npm tarball uri를 반환합니다. 이 동작을 비활성화하려면 환경 변수 `REMOVE_X_FORWARDED_HEADERS=false` to disable 를 포함하세요.
 {% endhint %}
 
-## Derived Docker image for Nexus 2 Broker integration setup
+## Nexus 2 Broker 통합 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](nexus-repository-install-and-configure-broker/set-up-snyk-broker-with-nexus-repository-manager.md), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](nexus-repository-install-and-configure-broker/set-up-snyk-broker-with-nexus-repository-manager.md)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:nexus2
@@ -134,12 +134,12 @@ ENV RES_BODY_URL_SUB                 https://<your.nexus.hostname>/nexus/content
 ```
 
 {% hint style="info" %}
-By default for Nexus 2, the X-Forwarded-For headers are stripped off by the Broker Client so Nexus returns the npm tarball uri to the Nexus Registry instead of the Broker Server. Include the environment variable REMOVE\_X\_FORWARDED\_HEADERS=false to disable this behavior.
+Nexus 2의 경우 기본적으로 Broker 클라이언트에 의해 X-Forwarded-For 헤더가 제거되므로 Nexus는 Broker 서버가 아닌 Nexus 레지스트리에 npm tarball uri를 반환합니다. 이 동작을 비활성화하려면 환경 변수 REMOVE\_X\_FORWARDED\_HEADERS=false를 포함하세요.
 {% endhint %}
 
-## Derived Docker image for Container Registry Agent setup
+## 컨테이너 레지스트리 에이전트 설정을 위한 파생된 Docker 이미지
 
-As an alternative to using the Docker run command shown on the [setup page](../snyk-broker-container-registry-agent/), you can build your own Docker image and override relevant environment variables:
+[설정 페이지](../snyk-broker-container-registry-agent/)에 표시된 Docker 실행 명령을 사용하는 대신 자체 Docker 이미지를 빌드하고 관련 환경 변수를 재정의할 수 있습니다:
 
 ```dockerfile
 FROM snyk/broker:container-registry-agent
