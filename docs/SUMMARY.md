@@ -725,6 +725,7 @@
         * [Export and customize views](manage-risk/snyk-apprisk/risk-based-prioritization-for-snyk-apprisk/using-the-insights-ui/export-and-customize-views.md)
     * [Dashboard for Snyk AppRisk](manage-risk/snyk-apprisk/dashboard-for-snyk-apprisk.md)
     * [Data Considerations for Snyk AppRisk](manage-risk/snyk-apprisk/data-considerations-for-snyk-apprisk.md)
+  * [Page](manage-risk/page.md)
   * [Enterprise Analytics](manage-risk/enterprise-analytics.md)
   * [Reporting](manage-issues/reporting/README.md)
     * [Introducing Snyk Reports](manage-issues/reporting/getting-started-with-snyk-reports.md)
