@@ -1,34 +1,34 @@
-# Step 3: Creating a network for the Broker Client and Code Agent communication
+# 3단계: Broker 클라이언트와 코드 에이전트 통신을 위한 네트워크 만들기
 
-To run Snyk Broker with the Code Agent, you must establish a network connection between them. To do this you can create a Docker bridge network as explained here.
+코드 에이전트로 Snyk Broker 를 실행하려면 두 에이전트 간에 네트워크 연결을 설정해야 합니다. 이를 위해 여기에 설명된 대로 Docker 브리지 네트워크를 생성할 수 있습니다.
 
 {% hint style="info" %}
-For more information on Docker bridge networks, see the [Docker documentation](https://docs.docker.com/network/bridge/).
+도커 브리지 네트워크에 대한 자세한 내용은  [Docker 문서](https://docs.docker.com/network/bridge/)를 참조하세요.
 
-To establish this network connection between the Broker Client and the Code Agent, you can also use other methods and tools, like Ngrok.
+Broker 클라이언트와 코드 에이전트 간에 이 네트워크 연결을 설정하려면 Ngrok과 같은 다른 방법과 도구를 사용할 수도 있습니다.
 {% endhint %}
 
-**To create a Docker bridge network** run:
+**Docker 브리지 네트워크 실행을 만들려면** 다음과 같이 하세요:
 
 ```
 docker network create <network_name>
 ```
 
-where `network_name` is a name for the new network between the Broker Client and the Code Agent, for example:
+여기서 `network_name`은 Broker 클라이언트와 코드 에이전트 간의 새 네트워크 이름입니다(예: Broker 클라이언트와 코드 에이전트):
 
 ```
 docker network create mySnykBrokerNetwork
 ```
 
-where `mySnykBrokerNetwork`is the name of the new network.
+여기서 `mySnykBrokerNetwork`는 새 네트워크의 이름입니다.
 
-**To verify the network creation** run:
+**네트워크 생성을 확인하려면** 실행합니다:
 
 ```
 docker network ls
 ```
 
-Your output is similar to the following:
+출력은 다음과 비슷합니다:
 
 ```
 NETWORK ID     NAME                  DRIVER    SCOPE
