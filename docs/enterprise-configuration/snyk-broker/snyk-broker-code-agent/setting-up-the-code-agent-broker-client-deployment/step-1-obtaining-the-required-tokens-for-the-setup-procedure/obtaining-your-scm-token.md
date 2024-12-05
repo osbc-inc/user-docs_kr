@@ -1,31 +1,31 @@
-# Obtaining your SCM token
+# SCM 토큰 받기
 
-Your integrated SCM token is required for [setup of the Broker Client component](../step-5-setting-up-the-broker-client/step-5.2a-running-the-broker-client-without-the-code-snippet-display.md), and it is used in the `-e <SCM>_TOKEN`, for example, `-e GITHUB_TOKEN=xxx…`. This token is required for accessing the SCM with certain permissions, which are needed for the operation of the Broker and Snyk Code.
+통합 SCM 토큰은 [Broker 클라이언트 구성 요소를 설정](../step-5-setting-up-the-broker-client/step-5.2a-running-the-broker-client-without-the-code-snippet-display.md)하는 데 필요하며,`-e <SCM>_TOKEN`에 사용됩니다, (예:  `-e GITHUB_TOKEN=xxx…`). 이 토큰은 Broker 및 Snyk 코드의 작동에 필요한 특정 권한으로 SCM에 액세스하는 데 필요합니다.
 
-**To obtain your SCM token,** follow the instructions provided by the SCM you want to integrate with the Snyk Broker, and create a token with the required permissions.
+**SCM 토큰을 받으려면,** Snyk Broker와 통합하려는 SCM에서 제공하는 지침에 따라 필요한 권한이 있는 토큰을 생성합니다.
 
-The following SCM tokens are required for the different SCMs:
+다른 SCM에는 다음 SCM 토큰이 필요합니다:
 
-**GitHub and GitHub Enterprise**:
+**GitHub 및 GitHub Enterprise:**
 
-`GITHUB_TOKEN=` - a GitHub personal access token. Scopes: **`repo, read:org`** and **`admin:repo_hook`**.
+`GITHUB_TOKEN=` - GitHub 개인 액세스 토큰. 범위: **`repo, read:org`** and **`admin:repo_hook`**.
 
-See GitHub documentation - [_Creating a personal access token_](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)\_\_
+GitHub 문서 - [_개인 엑세스 토큰 만들기_](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)\_\_를 참조하세요.
 
 **Gitlab**:
 
-**`GITLAB_TOKEN=`** - a GitLab personal access token. Gitlab account with **`Maintainer`** permissions. Scope: **`api`**.
+**`GITLAB_TOKEN=`** - GitLab 개인 액세스 토큰입니다. **`Maintainer`** 권한이 있는 깃랩 계정. 범위: **`api`**.
 
-See Gitlab documentation - [_Personal access tokens_](https://docs.gitlab.com/ee/user/profile/personal\_access\_tokens.html)\_\_
+Gitlab 설명서 - [_개인 엑세스 토큰_](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)\_\_을 참조하세요.
 
 **Azure Repos**:
 
-**`AZURE_REPOS_TOKEN=`** - an Azure Repos personal access token. Scopes: **`Custom defined`, \*\* `Code:` \*\* `Read & write`**_._
+**`AZURE_REPOS_TOKEN=`** - an Azure Repos 개인 액세스 토큰입니다. 범위: **`Custom defined`, \*\* `Code:` \*\* `Read & write`**_._
 
-See Azure Repos documentation - [_Use personal access tokens_](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops\&tabs=Windows)\_\_
+Azure Repos 설명서 - [_개인 액세스 토큰 사용_](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops\&tabs=Windows)\_\_을 참조하세요.
 
-**Bitbucket Server/Data Center**:
+**Bitbucket 서버/데이터 센터:**
 
-**`BITBUCKET_USERNAME=`**, **`BITBUCKET_PASSWORD=`** – the Bitbucket Server username and password or a Bitbucket Server personal access token. Scope: **`Repository admin`**.
+**`BITBUCKET_USERNAME=`**, **`BITBUCKET_PASSWORD=`** – Bitbucket Server 사용자 이름 및 비밀번호 또는 Bitbucket Server 개인 액세스 토큰입니다. 범위: **`Repository admin`**.
 
-See Bitbucket Server documentation - [_Personal access tokens_](https://confluence.atlassian.com/bitbucketserver/http-access-tokens-939515499.html)\\
+Bitbucket Server 설명서 - [_개인 액세스 토큰_](https://confluence.atlassian.com/bitbucketserver/http-access-tokens-939515499.html)\을 참조하세요.

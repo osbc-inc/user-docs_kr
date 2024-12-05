@@ -1,40 +1,40 @@
-# Step 2: Removing an existing Broker Client
+# 2단계: 기존 Broker 클라이언트 제거하기
 
 {% hint style="info" %}
-This section applies only if you already have a running Broker Client. If you do not have a Broker Client yet, proceed to [Step 3 - Creating a network for the Broker Client and Code Agent communication](step-3-creating-a-network-for-the-broker-client-and-code-agent-communication.md).
+This section applies only if you already have a running Broker Client. If you do not have a 이 섹션은 이미 실행 중인 Broker 클라이언트가 있는 경우에만 적용됩니다. 아직 Broker 클라이언트가 없는 경우 [3단계 - Broker 클라이언트 및 코드 에이전트 통신을 위한 네트워크 생성](step-3-creating-a-network-for-the-broker-client-and-code-agent-communication.md)으로 진행하세요.
 {% endhint %}
 
-If you have a running Broker Client for the same Organization and the same Integration, stop and remove it before you set up a new Broker Client for the Code Agent. Since the Broker Client needs to communicate with the Code Agent, and this communication is configured in the setup commands of the Broker Client container, you cannot use an existing Broker Client container for the Code Agent operation.
+동일한 조직 및 동일한 통합에 대해 실행 중인 Broker 클라이언트가 있는 경우, 코드 에이전트에 대한 새 Broker 클라이언트를 설정하기 전에 Broker 클라이언트를 중지하고 제거하세요. Broker 클라이언트는 코드 에이전트와 통신해야 하며 이 통신은 Broker 클라이언트 컨테이너의 설정 명령에서 구성되므로 기존 Broker 클라이언트 컨테이너를 코드 에이전트 작업에 사용할 수 없습니다.
 
 {% hint style="info" %}
-The new Broker Client that you set up for the Code Agent can also serve the Broker deployment for Snyk Open Source and Snyk IaC for the same Snyk Organization and the same SCM. For [Snyk Container](../../snyk-broker-container-registry-agent/), you must set up an additional Broker Client.
+코드 에이전트에 대해 설정한 새 Broker 클라이언트는 동일한 Snyk 조직 및 동일한 SCM에 대한 Snyk 오픈 소스 및 Snyk IaC용 Broker 배포에도 서비스를 제공할 수 있습니다. [Snyk 컨테이너](../../snyk-broker-container-registry-agent/)의 경우 추가 Broker 클라이언트를 설정해야 합니다.
 {% endhint %}
 
-**To find out if you have a running Broker Client**, use the Docker Process Status command, which provides a list of all the containers that are up and running on a machine.
+**실행 중인 Broker 클라이언트가 있는지 확인하려면**, 머신에서 실행 중인 모든 컨테이너의 목록을 제공하는 Docker 프로세스 상태 명령을 사용하세요.
 
 {% hint style="info" %}
-If you have a running Broker Client, this command also provides you with the details you need in order to remove the running Broker Client. If you find a running Broker Client, you only need to remove it if it is configured for the same Snyk Organization and the same SCM as the Code Agent.
+실행 중인 Broker 클라이언트가 있는 경우, 이 명령은 실행 중인 Broker 클라이언트를 제거하는 데 필요한 세부 정보도 제공합니다. 실행 중인 Broker 클라이언트를 발견한 경우 코드 에이전트와 동일한 Snyk 조직 및 동일한 SCM에 대해 구성된 경우에만 제거하면 됩니다.
 {% endhint %}
 
-Run the following:
+다음을 실행합니다:
 
 ```
 docker ps
 ```
 
-If you have a running Broker Client, your output is similar to the following:
+실행 중인 Broker 클라이언트가 있는 경우 출력은 다음과 비슷합니다:
 
 ```
 CONTAINER ID   IMAGE                    COMMAND                  CREATED        STATUS        PORTS                    NAMES
 6eab097879cc   snyk/broker:github-com   "broker --verbose"       18 hours ago   Up 18 hours   0.0.0.0:8001->8000/tcp   suspicious_banzai
 ```
 
-**To remove the Broker Client container**, run the following:
+**Broker 클라이언트 컨테이너를 제거하려면** 다음을 실행합니다:
 
 ```
 docker rm -f <Broker_Client_container_ID_or_name)
 ```
 
-where `container_ID_or_name` is the ID or name of the container of the running Broker Client. You can obtain these details by using the `docker ps` command, for example:
+여기서`container_ID_or_name` 은 실행 중인 Broker 클라이언트의 컨테이너 ID 또는 이름입니다. 이러한 세부 정보는 예를 들어 `docker ps` 명령을 사용하여 얻을 수 있습니다:
 
-<figure><img src="../../../../.gitbook/assets/Broker Client - removing.png" alt="Example of docker ps command"><figcaption><p>Example of docker ps command</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Broker Client - removing.png" alt="Example of docker ps command"><figcaption><p>도커 ps 명령의 예</p></figcaption></figure>
