@@ -1,18 +1,18 @@
 # Eclipse plugin
 
-The Snyk Eclipse plugin provides analysis of your code, containers, and infrastructure as code configurations.
+Snyk Eclipse plugin은 Code, Container 및 infrastructure as code 구성을 제공합니다.
 
-Snyk scans for the following types of issues:
+Snyk는 다음 유형의 문제를 검사합니다:
 
-* [**Open Source Security**](https://snyk.io/product/open-source-security-management/) - security vulnerabilities and license issues in both the direct and indirect (transitive) open-source dependencies pulled into the Snyk Project. See also the [`Open Source docs`](https://docs.snyk.io/products/snyk-open-source).
-* [**Code Security**](https://snyk.io/product/snyk-code/) - security vulnerabilities in your code. See also the [Snyk Code docs](https://docs.snyk.io/products/snyk-code).
-* [**Infrastructure as Code (IaC) Security**](https://snyk.io/product/infrastructure-as-code-security/) - configuration issues in your IaC templates: Terraform, Kubernetes, CloudFormation, and Azure Resource Manager. See also the [Snyk Infrastructure as Code docs](https://docs.snyk.io/products/snyk-infrastructure-as-code).
+* [**Open Source Security**](https://snyk.io/product/open-source-security-management/) - Snyk 프로젝트에 가져온 direct 및 indirect(transitive) 오픈 소스 dependencies 모두에서 보안 취약점 및 라이선스 문제를 검사합니다. [`Open Source docs`](https://docs.snyk.io/products/snyk-open-source) 참조하세요.
+* [**Code Security**](https://snyk.io/product/snyk-code/) - 코드의 보안 취약점을 파악합니다. [Snyk Code docs](https://docs.snyk.io/products/snyk-code) 참조하세요.
+* [**Infrastructure as Code (IaC) Security**](https://snyk.io/product/infrastructure-as-code-security/) -  IaC 템플릿의 구성 문제를 확인하세요: Terraform, Kubernetes, CloudFormation 및 Azure 리소스 관리자의 구성 문제를 다룹니다. [Snyk Infrastructure as Code docs](https://docs.snyk.io/products/snyk-infrastructure-as-code) 참조하세요.
 
-The Eclipse plugin provides automated, algorithm-based fix suggestions for both direct and transitive dependencies. This single plugin provides a Java vulnerability scanner and an open-source security scanner.
+Eclipse plugin은 다이렉트 디펜던시와 트랜지시브 디펜던시 모두에 대해 자동화된 알고리즘 기반 수정 제안을 제공합니다. 이 단일 plugin은 Java 취약성 스캐너와 오픈 소스 보안 스캐너를 제공합니다.
 
-After you have installed and configured the Eclipse plugin, every time you run it, open a file, or autosave, Snyk scans the manifest files, proprietary code, and configuration files in your project. Snyk delivers actionable vulnerability, license, or misconfiguration issue details and displays the results natively within the Eclipse UI.
+Eclipse plugin을 설치하고 구성한 후에는 실행하거나 파일을 열거나 자동 저장할 때마다 프로젝트의 매니페스트 파일, 전용 코드 및 구성 파일을 스캔합니다. Snyk은 실행 가능한 보안 취약점, 라이선스 또는 잘못된 구성 문제에 대한 세부 정보를 제공하고 그 결과를 Eclipse UI에 표시합니다.
 
-This page explains supported environments, support, and giving feedback and provides installation instructions. **After you complete the steps on this page**, you will continue by following the instructions in the other Eclipse plugins docs:
+이 페이지에서는 지원되는 환경, 지원 및 피드백 제공에 대해 설명하고 설치 지침을 제공합니다. 이 페이지의 단계를 완료한 후에는 다른 Eclipse plugin 문서의 지침을 따라 계속 진행하면 됩니다:
 
 * [Download the CLI and language server with the Eclipse plugin](https://docs.snyk.io/ide-tools/eclipse-plugin/download-the-cli-and-language-server-with-the-eclipse-plugin)
 * [Authentication for the Eclipse plugin](https://docs.snyk.io/ide-tools/eclipse-plugin/authentication-for-the-eclipse-plugin)
@@ -24,26 +24,26 @@ This page explains supported environments, support, and giving feedback and prov
 * [Third party dependency scanning (SCA, Snyk Open Source)](https://docs.snyk.io/ide-tools/eclipse-plugin/third-party-dependency-scanning-sca-snyk-open-source)
 * [Troubleshooting for the Eclipse plugin](https://docs.snyk.io/ide-tools/eclipse-plugin/troubleshooting-for-the-eclipse-plugin)
 
-## Where you can download the Eclipse plugin
+## Eclipse plugin을 다운로드할 수 있는 링크
 
-* **Eclipse Marketplace (recommended)**: [https://marketplace.eclipse.org/content/snyk-security-code%E2%80%8B-open-source%E2%80%8B-iac-configurations](https://marketplace.eclipse.org/content/snyk-security-code%E2%80%8B-open-source%E2%80%8B-iac-configurations)
-* Preview update site (CI/CD, on commit): [https://storage.googleapis.com/snyk-eclipse-plugin-test/preview-2.1/repository/](https://storage.googleapis.com/snyk-eclipse-plugin-test/preview-2.1/repository/)
-* Update site (weekly): [https://storage.googleapis.com/snyk-eclipse-plugin/weekly-2.1/repository/](https://storage.googleapis.com/snyk-eclipse-plugin-test/weekly-2.1/repository/)
-* Manual downloads: [https://github.com/snyk/snyk-eclipse-plugin/releases](https://github.com/snyk/snyk-eclipse-plugin/releases)
+* **Eclipse Marketplace(권장)**: [https://marketplace.eclipse.org/content/snyk-security-code%E2%80%8B-open-source%E2%80%8B-iac-configurations](https://marketplace.eclipse.org/content/snyk-security-code%E2%80%8B-open-source%E2%80%8B-iac-configurations)
+* 프리뷰 업데이트 사이트 (CI/CD, on commit): [https://storage.googleapis.com/snyk-eclipse-plugin-test/preview-2.1/repository/](https://storage.googleapis.com/snyk-eclipse-plugin-test/preview-2.1/repository/)
+* 업데이트 사이트(주간): [https://storage.googleapis.com/snyk-eclipse-plugin/weekly-2.1/repository/](https://storage.googleapis.com/snyk-eclipse-plugin-test/weekly-2.1/repository/)
+* 매뉴얼 다운로드: [https://github.com/snyk/snyk-eclipse-plugin/releases](https://github.com/snyk/snyk-eclipse-plugin/releases)
 
-**Signing Information for Jars**
+**Jars의 서명 정보**
 
-If you want to verify the correct provenance of your download, verify the signing details from the Eclipse dialog with this data.
+다운로드의 정확한 출처를 확인하려면 이 데이터로 Eclipse 팝업 화면에서 서명 세부 정보를 확인합니다.
 
 <figure><img src="../../../.gitbook/assets/image (134) (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="The signing key details to verify the integrity and origin of the download plugin"><figcaption><p>The signing key details to verify the integrity and origin of the download plugin</p></figcaption></figure>
 
-The plugin runs on
+플러그인은 다음 OS에서 실행됩니다.
 
 * macOS
 * Linux
 * Windows
 
-## Supported Eclipse versions
+## 지원하는 Eclipse 버전
 
 * 2023-03
 * 2022-12
@@ -55,46 +55,46 @@ The plugin runs on
 * 2021-06
 * 2021-03
 
-## Supported languages, package managers, and frameworks
+## 지원 언어, 패키지 매니저 및 프레임워크
 
-* For Snyk Open Source, the Eclipse plugin supports the languages and package managers supported by Snyk Open Source and the CLI except C/C++. For more information, see [Supported languages, frameworks, and feature availability overview, Open Source section](https://docs.snyk.io/scan-applications/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview#open-source-and-licensing-snyk-open-source).
-* For Snyk Code, the Eclipse plugin supports the languages and frameworks supported by Snyk Code. For more information, For more information, see [Supported languages, frameworks, and feature availability overview, Snyk Code section](https://docs.snyk.io/scan-applications/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview#code-analysis-snyk-code).
-* For Snyk IaC, the Eclipse plugin supports the following IaC templates: Terraform, Kubernetes, CloudFormation, and Azure Resource Manager.
+* Snyk Open Source의 경우, Eclipse plugin은 C/C++를 제외한 모든 언어 및 패키지 관리자와 Snyk Open Source 및 CLI에서 지원하는 패키지 매니저를 지원합니다. 자세한 내용은 [Supported languages, frameworks, and feature availability overview, Open Source section](https://docs.snyk.io/scan-applications/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview#open-source-and-licensing-snyk-open-source)을 참조하세요.
+* Snyk Code의 경우, Eclipse plugin은 Snyk Code에서 지원하는 언어 및 프레임워크를 지원합니다. 자세한 내용은 [Supported languages, frameworks, and feature availability overview, Snyk Code section](https://docs.snyk.io/scan-applications/supported-languages-and-frameworks/supported-languages-frameworks-and-feature-availability-overview#code-analysis-snyk-code)을 참조하세요.
+* Snyk IaC의 경우 Eclipse plugin은 다음 IaC 템플릿을 지원합니다: Terraform, Kubernetes, CloudFormation 및 Azure Resource Manager.
 
-## Supported operating systems and architecture
+## 지원하는 운영 체제 및 아키텍처
 
-You can use the Eclipse plugin in the following environments:
+다음 환경에서 Eclipse plugin을 사용할 수 있습니다:
 
-* Linux: AMD64 and ARM64
-* Windows: 386 and AMD64
-* MacOS: AMD64 and ARM64
+* Linux: AMD64 및 ARM64
+* Windows: 386 및 AMD64
+* MacOS: AMD64 및 ARM64
 
-## How to install the Snyk Eclipse plugin
+## Snyk Eclipse plugin을 설치하는 방법
 
-Navigate to the Marketplace from your running Eclipse instance. Search for Snyk and click **Install**.
+실행 중인 Eclipse 인스턴스에서 마켓플레이스로 이동합니다. Snyk를 검색하고 Install을 클릭합니다.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2022-05-17 at 16.29.29.png" alt="Eclipse Marketplace search showing Snyk plugin and Install button"><figcaption><p>Eclipse Marketplace search showing Snyk plugin and Install button</p></figcaption></figure>
 
-When you are prompted, accept the license agreement and add the **Snyk Security** certificate to complete the installation (this happens only once).
+메시지가 표시되면 라이선스 계약에 동의하고 Snyk Security 인증서를 추가하여 설치를 완료합니다(이 작업은 한 번만 수행됩니다).
 
-Restart the Eclipse instance:
+Eclipse 인스턴스를 다시 시작합니다:
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2022-05-13 at 09.16.37.png" alt="Restart Eclipse"><figcaption><p>Restart Eclipse</p></figcaption></figure>
 
-Once Eclipse is restarted, the Snyk Wizard should run; this will set up your Snyk API endpoint and authentication token.
+Eclipse가 재시작되면 Snyk 마법사가 실행되며, 이 마법사가 Snyk API 엔드포인트와 인증 토큰을 설정합니다.
 
-Once the Snyk configuration wizard runs; follow the instructions to set up your Snyk API:
+Snyk 설정 마법사가 실행되면 지침에 따라 Snyk API를 설정합니다:
 
 <figure><img src="../../../.gitbook/assets/eclipseSnykWizard (1).png" alt="Snyk configuration wizard"><figcaption><p>Snyk configuration wizard</p></figcaption></figure>
 
-Once the Snyk is configured, navigate to **Eclipse Preferences** to ensure that **Snyk** now appears in the list:
+Snyk을 구성했다면, Eclipse 환경설정으로 이동하여 Snyk이 목록에 표시되는지 확인합니다:
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2022-05-17 at 16.36.07.png" alt="Eclipse preferences showing Snyk."><figcaption><p>Eclipse preferences showing Snyk.</p></figcaption></figure>
 
-When you open the preferences, you can opt out of downloading the CLI through the plugin and thus use your own installation of the CLI.
+환경설정을 열면 플러그인 설치를 통한 CLI 다운로드를 선택 해제하여 직접 설치한 CLI를 사용할 수 있습니다.
 
-Continue with the steps to [Download the CLI and language server with the Eclipse plugin](https://docs.snyk.io/ide-tools/eclipse-plugin/download-the-cli-and-language-server-with-the-eclipse-plugin).
+[Download the CLI and language server with the Eclipse plugin](https://docs.snyk.io/ide-tools/eclipse-plugin/download-the-cli-and-language-server-with-the-eclipse-plugin)단계를 계속 진행하세요.
 
 ## Support
 
-If you need help, submit a [request](https://support.snyk.io/hc/en-us/requests/new) to Snyk Support.
+도움이 필요하면 Snyk 지원팀에 [request](https://support.snyk.io/hc/en-us/requests/new)를 제출하세요.
