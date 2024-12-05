@@ -1,41 +1,41 @@
-# Setting up the Code Agent to work with a Proxy Server
+# 프록시 서버와 함께 작동하도록 코드 에이전트 설정하기
 
 {% hint style="info" %}
-Environment variables (provided with -e) are case sensitive. Ensure that they are provided as defined on this page.
+환경 변수(-e와 함께 제공됨)는 대소문자를 구분합니다. 이 페이지에 정의된 대로 제공되었는지 확인하세요.
 {% endhint %}
 
-To use the Code Agent - Broker Client deployment in an infrastructure that uses a proxy, add the following environment variables to the `docker run` command of the Code Agent:
+프록시를 사용하는 인프라에서 코드 에이전트 - Broker 클라이언트 배포를 사용하려면 코드 에이전트의 `docker run` 명령에 다음 환경 변수를 추가하세요:
 
 ```
 -e HTTP_PROXY=http://my.proxy.address:<port_no.> \
 -e HTTPS_PROXY=http://my.proxy.address:<port_no.>
 ```
 
-If your proxy requires username and password authentication, add the following additional environment variable:
+프록시에 사용자 이름 및 비밀번호 인증이 필요한 경우 다음 환경 변수를 추가하세요:
 
 ```
 -e PROXY_AUTH=userID:userPass
 ```
 
-In addition, add these environment variables to the Broker Client component and a command to bypass the Code Agent.
+또한 이러한 환경 변수를 Broker 클라이언트 컴포넌트에 추가하고 코드 에이전트를 우회하는 명령을 추가합니다.
 
-For more information on using Docker containers with a proxy, see [Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/).
+프록시와 함께 Docker 컨테이너를 사용하는 방법에 대한 자세한 내용은 [프록시 서버를 사용하도록 Docker 구성하기](https://docs.docker.com/network/proxy/)를 참조하세요.&#x20;
 
-## **Custom certificates**
+## 사용자 지정 인증서
 
-To use Code Agent with a proxy secured by a custom certificate (HTTPS), add the following environment variables to the `docker run` command of the Code Agent:
+사용자 지정 인증서(HTTPS)로 보안된 프록시와 함께 코드 에이전트를 사용하려면 코드 에이전트의 `docker run` 명령에 다음 환경 변수를 추가하세요:
 
 ```
 -e HTTP_PROXY=http://my.proxy.address:<port_no.> \
 -e HTTPS_PROXY=https://my.proxy.address:<port_no.>
 ```
 
-The following steps depend on the version of Code Agent you are running. If you are using the `latest` tag, to find your nearest versioned image:
+다음 단계는 실행 중인 Code Agent 버전에 따라 다릅니다.`latest(최신)` 태그를 사용하는 경우 가장 최신 버전의 이미지를 찾습니다:
 
-* Compare the `digest` of your local image against [Docker Hub Code Agent Tags](https://hub.docker.com/r/snyk/code-agent/tags): `docker images snyk/code-agent --digest`
-* Find the next image tag of the form `x.y.z` that was released _before_ your local image was built.
+* 로컬 이미지의 `digest`를 [Docker Hub 코드 에이전트 태그](https://hub.docker.com/r/snyk/code-agent/tags)와 비교하세요:`docker images snyk/code-agent --digest`
+* 로컬 이미지가 빌드되기 전에 릴리스된 `x.y.z` 형식의 다음 이미지 태그를 찾습니다.
 
-## **Version `1.18.0` and above**
+## 버&#xC804;**`1.18.0`** 이상
 
 To trust a custom Certificate Authority, you must have either:
 

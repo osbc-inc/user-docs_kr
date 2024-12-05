@@ -1,14 +1,14 @@
-# Step 4.2: Running the Code Agent container
+# 4.2단계: 코드 에이전트 컨테이너 실행
 
-Once the Code Agent image is stored on your machine, use the `docker run` command to run the image and launch a Code Agent container that is based on it.
+코드 에이전트 이미지가 머신에 저장되면 `docker run` 명령을 사용하여 이미지를 실행하고 이를 기반으로 하는 코드 에이전트 컨테이너를 시작합니다.
 
 {% hint style="info" %}
-Environment variables (provided with -e) are case sensitive. Ensure that they are provided as defined on this page.
+Environment variables (provided with -e) are case sensitive. Ensure that they are provided as d멘트 변수(-e와 함께 제공됨)는 대소문자를 구분합니다. 이 페이지에 정의된 대로 제공되었는지 확인하세요.
 {% endhint %}
 
-## Running the Code Agent container
+## 코드 에이전트 컨테이너 실행
 
-In the terminal, enter the following command to launch a container based on the Snyk Code Agent image:
+터미널에서 다음 명령을 입력하여 Snyk 코드 에이전트 이미지를 기반으로 컨테이너를 실행합니다:
 
 ```
 docker run --name <container_name> \
@@ -17,40 +17,40 @@ docker run --name <container_name> \
 snyk/code-agent:<image_tag>
 ```
 
-where:
+어디에:
 
-* `--name <container_name>` is a new name for the Code Agent container. This name is used to define the `GIT_CLIENT_URL` parameter for the Broker Client that you run next. Example, `code-agent`.
-* `-p <host_machine_port_no._mapped to>:<Code_Agent_container_port_no.>` is the mapping of a physical open port in the host machine to a port in the Code Agent container. These port numbers on the host machine and container do not have to be the same. Example: `3001:3000`.\
-  The port number of the host machine must be unique.
-* `-e PORT` is the port of the Code Agent container, where it accepts external connections. The default is `3000`. This port number must be the same as the `<Code_Agent_container_port_ no.>` in the `-p` parameter above.
-* `-e SNYK_TOKEN` is your [Snyk API token](../../../../../getting-started/how-to-obtain-and-authenticate-with-your-snyk-api-token.md) as appears in your **Account Settings** page on the Snyk Web UI.
-* `--network` is the name of the [Docker bridge network](https://docs.snyk.io/features/snyk-broker/snyk-broker-code-agent/setting-up-the-code-agent-broker-client-deployment/step-3-creating-a-network-for-the-broker-client-and-code-agent-communication) that was previously created, for example, `mySnykBrokerNetwork`.
-* `snyk/code-agent:<image_tag>` is the Docker image of the Code Agent container. Specify a tag if not using `latest`.
+* `--name <container_name>`은 코드 에이전트 컨테이너의 새 이름입니다. 이 이름은 다음에 실행할 Broker 클라이언트의 `GIT_CLIENT_URL`매개 변수를 정의하는 데 사용됩니다. 예,`code-agent`.
+* `-p <host_machine_port_no._mapped to>:<Code_Agent_container_port_no.>`는 호스트 머신의 실제 열린 포트를 코드 에이전트 컨테이너의 포트에 매핑하는 것입니다. 호스트 시스템과 컨테이너의 포트 번호가 동일할 필요는 없습니다. 예시:`3001:3000`.\
+  호스트 컴퓨터의 포트 번호는 고유해야 합니다.
+* `-e PORT`는 외부 연결을 수락하는 코드 에이전트 컨테이너의 포트입니다. 기본값은 `3000`입니다. 이 포트 번호는 위의 `-p` 매개 변수의 `<Code_Agent_container_port_ no.>` 와 동일해야 합니다.
+* `-e SNYK_TOKEN`은 Snyk 웹 UI의 **계정 설정** 페이지에 표시되는 [Snyk API 토큰](../../../../../getting-started/how-to-obtain-and-authenticate-with-your-snyk-api-token.md)입니다.
+* `--network`는 이전에 생성한 [Docker 브리지 네트워크](https://docs.snyk.io/features/snyk-broker/snyk-broker-code-agent/setting-up-the-code-agent-broker-client-deployment/step-3-creating-a-network-for-the-broker-client-and-code-agent-communication)의 이름입니다(예:`mySnykBrokerNetwork`).
+* `snyk/code-agent:<image_tag>` 는 코드 에이전트 컨테이너의 Docker 이미지입니다. `latest(최신)`을 사용하지 않는 경우 태그를 지정합니다.
 
-When the Code Agent setup is completed successfully, the following message appears in the terminal:
+코드 에이전트 설정이 성공적으로 완료되면 터미널에 다음 메시지가 나타납니다:
 
 `{ ..., "msg":"Application started", ... }`
 
 <figure><img src="../../../../../.gitbook/assets/Code Agent - Exmaple - success.png" alt="Success message when Code Agent setup is completed"><figcaption><p>Success message when Code Agent setup is completed</p></figcaption></figure>
 
-## Verifying the setup and details of the Code Agent container
+## 코드 에이전트 컨테이너의 설정 및 세부 정보 확인하기
 
-Run the following:
+다음을 실행합니다:
 
 ```
 docker ps
 ```
 
-The output is similar to the following:
+출력은 다음과 비슷합니다:
 
 ```
 CONTAINER ID   IMAGE            COMMAND                 CREATED      STATUS      PORTS                    NAMES
 eebd7d4f0568   snyk/code-agent "docker-entrypoint.s…"   9 days ago   Up 9 days   0.0.0.0:3000->3000/tcp   code-agent
 ```
 
-## Example **for** running the Code Agent
+## 코드 에이전트 실행 예제
 
-In this example the following command was entered in a terminal to launch a Code Agent container:
+이 예제에서는 터미널에 다음 명령을 입력하여 코드 에이전트 컨테이너를 실행했습니다:
 
 ```
 docker run --name code-agent \
@@ -59,20 +59,20 @@ docker run --name code-agent \
 snyk/code-agent
 ```
 
-where:
+어디에:
 
-* `--name` is the name of the new Code Agent container, `code-agent`.
-* `-p` - port `3000` on the host machine is mapped to port `3000` on the Code Agent container.
-* `-e PORT` is the port of the Code Agent container, where it accepts external connections, `3000`.
-* `-e SNYK_TOKEN` is the Snyk API token, `fa7f….`
-* `--network` is the name of the Docker bridge network, used for the communication with the Client Broker, `mySnykBrokerNetwork`.
-* `snyk/code-agent` is the Docker image of the Code Agent container.
+* `--name` 은 새 코드 에이전트 컨테이너의 이름인 `code-agent`입니다.
+* `-p` - 호스트 머신의 port `3000` 이 코드 에이전트 컨테이너의 포트 `3000`에 매핑됩니다.&#x20;
+* `-e PORT` 는 외부 연결을 수락하는 코드 에이전트 컨테이너의 포트(`3000`)입니다.
+* `-e SNYK_TOKEN`은 Snyk API 토큰`(fa7f…`)입니다.
+* `--network` 클라이언트 Broker와의 통신에 사용되는 도커 브리지 네트워크의 이름인 `mySnykBrokerNetwork`입니다.
+* `snyk/code-agent`는 코드 에이전트 컨테이너의 Docker 이미지입니다.
 
-## **Connecting to a Git with an internal certificate**
+## 내부 인증서를 사용하여 Git에 연결하기
 
-By default, the Code Agent establishes HTTPS connections to the Git. If your Git is serving an internal certificate (signed by your own CA), you can provide the CA certificate to the Code Agent.
+기본적으로 코드 에이전트는 Git에 HTTPS 연결을 설정합니다. Git에서 내부 인증서(자체 CA가 서명)를 제공하는 경우, 코드 에이전트에 CA 인증서를 제공할 수 있습니다.
 
-For example, if your CA certificate is at `./private/ca.cert.pem`, provide it to the Docker container by mounting the folder and using the `CA_CERT` environment variable:
+예를 들어, CA 인증서가 `./private/ca.cert.pem`에 있는 경우, 폴더를 마운트하고 `CA_CERT` 환경 변수를 사용하여 Docker 컨테이너에 제공하면 됩니다:
 
 ```
 docker run --name code-agent \
