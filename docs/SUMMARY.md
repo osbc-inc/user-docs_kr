@@ -117,7 +117,7 @@
         * [안전하지 않은 다운스트림 모드](enterprise-configuration/snyk-broker/install-and-configure-snyk-broker/advanced-configuration-for-helm-chart-installation/insecure-downstream-mode.md)
     * [Snyk 조직 전체에서 통합 복제하기](enterprise-configuration/snyk-broker/clone-an-integration-across-your-snyk-organizations.md)
     * [Snyk Broker - Code Agent](enterprise-configuration/snyk-broker/snyk-broker-code-agent/README.md)
-      * [Code Agent 및 Broker 클라이언트의 전제 조건](enterprise-configuration/snyk-broker/snyk-broker-code-agent/prerequisites-for-the-code-agent-and-broker-client.md)
+      * [Code Agent 및 Broker Client 사전 요구 사항](enterprise-configuration/snyk-broker/snyk-broker-code-agent/prerequisites-for-the-code-agent-and-broker-client.md)
       * [Helm을 사용하여 코드 에이전트용 Broker 설치](enterprise-configuration/snyk-broker/snyk-broker-code-agent/install-broker-for-code-agent-using-helm.md)
       * [Docker를 사용하여 코드 에이전트용 Broker 설치하기](enterprise-configuration/snyk-broker/snyk-broker-code-agent/setting-up-the-code-agent-broker-client-deployment/README.md)
         * [1단계: 설정 절차에 필요한 토큰 얻기](enterprise-configuration/snyk-broker/snyk-broker-code-agent/setting-up-the-code-agent-broker-client-deployment/step-1-obtaining-the-required-tokens-for-the-setup-procedure/README.md)
