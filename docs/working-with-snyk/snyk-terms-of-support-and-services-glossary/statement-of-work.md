@@ -1,5 +1,5 @@
 # Statement of Work
 
-If the Customer requests support that does not fall into the scope of Snyk Jumpstart, the parties may enter into one or more statements of work (SOWs) that describe the scope of the work to be performed by Snyk and the Customer’s obligations, including the fees to be paid.
+고객이 Snyk Jumpstart의  범위에 속하지 않는 지원을 요청하는 경우, 양 당사자는 Snyk이 수행할 작업의 범위와 지불해야 할 수수료를 포함한 고객의 의무를 설명하는 하나 이상의 작업 내역서(SOWs)를 체결할 수 있습니다.
 
-\
+\\
