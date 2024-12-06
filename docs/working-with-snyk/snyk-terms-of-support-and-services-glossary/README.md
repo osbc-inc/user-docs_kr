@@ -24,9 +24,9 @@
 
 #### Silver Success Offering
 
-**Technical Success Manager:** Named Technical Resource assigned to your account to guide your onboarding and support your Snyk implementation as it grows and evolves.
+**기술 성공 관리자:** 온보딩을 안내하고 Snyk 구현이 성장하고 발전함에 따라 이를 지원하기 위해 계정에 지정된 기술 리소스가 배정됩니다.
 
-**Dedicated TSM Hours:** Dedicated TSM hours refer to the amount of time the Named Technical Resources will spend working on the account, regardless of whether that time is with the Customer. For instance, if the Customer has questions that a TSM needs to research, the time spent researching is taken into account considering the dedicated hours.\
+**전담 TSM 시간:** 전담 TSM 시간은 해당 시간이 고객과 함께 있는지 여부에 관계없이 지정된 기술 리소스가 계정에서 작업하는 시간을 의미합니다. 예를 들어 고객이 TSM이 조사해야 하는 질문이 있는 경우, 조사에 소요되는 시간은 전용 시간을 고려하여 고려됩니다.\
 \
 The dedicated hours are a guideline meant to set expectations, as opposed to a contractual term. Hours do not roll over. If the Customer needs more time one week, and less the next, the TSM will be flexible and adherent.
 
