@@ -28,15 +28,15 @@
 
 **전담 TSM 시간:** 전담 TSM 시간은 해당 시간이 고객과 함께 있는지 여부에 관계없이 지정된 기술 리소스가 계정에서 작업하는 시간을 의미합니다. 예를 들어 고객이 TSM이 조사해야 하는 질문이 있는 경우, 조사에 소요되는 시간은 전용 시간을 고려하여 고려됩니다.\
 \
-The dedicated hours are a guideline meant to set expectations, as opposed to a contractual term. Hours do not roll over. If the Customer needs more time one week, and less the next, the TSM will be flexible and adherent.
+전용 시간은 계약 기간이 아닌 기대치를 설정하기 위한 가이드라인입니다. 시간은 이월되지 않습니다. 고객이 한 주에 더 많은 시간을 필요로 하고 다음 주에는 더 적은 시간을 필요로 하는 경우, TSM은 유연하게 대응할 것입니다.
 
-The Silver Success offering includes on average up to two (2) dedicated TSM hours per week.
+Silver Success offering은 주당 평균 최대 두(2) 시간의 전용 TSM 시간이 포함되어 있습니다.
 
-**Guided onboarding**: Snyk will guide the Customer through onboarding, ensuring the Customer is enabled with the following:
+**가이드 온보딩**: Snyk 은고객에게 온보딩을 안내하여 고객이 다음 사항을 사용할 수 있도록 합니다:
 
-* Effective account configuration (including Org structure, SSO setup, and so on)
-* Project import strategy
-* Remediation triage strategy
+* 효과적인 계정 구성(조직 구조, SSO 설정 등)
+* 프로젝트 가져오기 전략
+* 수정 사항 분류 전략
 
 Customer onboarding needs vary depending on the solutions purchased.
 
