@@ -28,49 +28,49 @@
 
 **전담 TSM 시간:** 전담 TSM 시간은 해당 시간이 고객과 함께 있는지 여부에 관계없이 지정된 기술 리소스가 계정에서 작업하는 시간을 의미합니다. 예를 들어 고객이 TSM이 조사해야 하는 질문이 있는 경우, 조사에 소요되는 시간은 전용 시간을 고려하여 고려됩니다.\
 \
-전용 시간은 계약 기간이 아닌 기대치를 설정하기 위한 가이드라인입니다. 시간은 이월되지 않습니다. 고객이 한 주에 더 많은 시간을 필요로 하고 다음 주에는 더 적은 시간을 필요로 하는 경우, TSM은 유연하게 대응할 것입니다.
+전용 시간은 계약 기간이 아닌 기대치를 설정하기 위한 가이드라인입니다. 시간은 이월 되지 않습니다. 고객이 한 주에 더 많은 시간을 필요로 하고 다음 주에는 더 적은 시간을 필요로 하는 경우, TSM은 유연하게 대응할 것입니다.
 
 Silver Success offering은 주당 평균 최대 두(2) 시간의 전용 TSM 시간이 포함되어 있습니다.
 
-**가이드 온보딩**: Snyk은고객에게 온보딩을 안내하여 고객이 다음 사항을 사용할 수 있도록 합니다:
+**가이드 온보딩**: Snyk은 고객에게 온보딩을 안내하여 고객이 다음 사항을 사용할 수 있도록 합니다:
 
 * 효과적인 계정 구성(조직 구조, SSO 설정 등)
 * 프로젝트 가져오기 전략
 * 수정 사항 분류 전략
 
-고객 온보딩 요구 사항은 구매한 솔루션에 따라 다릅니다.0
+고객 온보딩 요구 사항은 구매한 솔루션에 따라 다릅니다.
 
 **성공 계획**: Snyk은 고객이 목표를 파악하고 성공 계획을 수립하는 데 도움이 되는 템플릿을 제공합니다. 고객은 계획을 추적하고 실행할 책임이 있습니다.
 
 **비즈니스 리뷰 주기**: 기술 성공 관리자는 1년에 두 번 고객 및 Snyk 계정 팀원과 함께 비즈니스 검토를 진행합니다.
 
-**전용 슬랙 채널**: Slack을 통해 기술 계정 팀과 직접 참여하여 협업을 장려하세요.
+**전용 Slack 채널**: 기술 계정 팀과 Slack을 통해 직접 참여하여 협업을 장려하세요.
 
 #### Gold Success Offering
 
-**Technical Success Manager:** Named Technical Resource assigned to your account to guide your onboarding and support your Snyk implementation as it grows and evolves.
+**기술 성공 관리자:** 온보딩을 안내하고 Snyk 구현이 성장하고 발전함에 따라 이를 지원하기 위해 계정에 지정된 기술 리소스가 배정됩니다.
 
-**Dedicated TSM hours:** Dedicated TSM hours refer to the amount of time the Named Technical Resources will spend working on the account, regardless of whether that time is with the Customer. For instance, if the Customer has questions that a TSM needs to research, the time spent researching is taken into account considering the dedicated hours.
+**전담 TSM 시간:** 전담 TSM 시간은 해당 시간이 고객과 함께 있는지 여부에 관계없이 지정된 기술 리소스가 계정에 대해 작업하는 시간을 의미합니다. 예를 들어, 고객이 TSM이 조사해야 하는 질문이 있는 경우, 해당 연구에 소요된 시간이 할당된 시간에 포함됩니다.
 
-The dedicated hours are a guideline meant to set expectations, as opposed to a contractual term. Hours do not roll over. If the Customer needs more time one week, and less the next, the TSM will be flexible and adherent.
+전용 시간은 계약 기간이 아닌 기대치를 설정하기 위한 가이드라인입니다. 시간은 이월되지 않습니다. 고객이 한 주에 더 많은 시간을 필요로 하고 다음 주에는 더 적은 시간을 필요로 하는 경우, TSM은 유연하게 대응할 것입니다.
 
-The Gold Success Offering includes on average up to four (4) dedicated TSM hours per week.
+Gold Success Offering 주당 평균 최대 4시간의 전용 TSM 시간이 포함되어 있습니다.
 
-**Guided onboarding:** Snyk will guide the Customer through onboarding ensuring the Customer is enabled with the following:
+**가이드 온보딩:** Snyk은 고객에게 온보딩을 안내하여 고객이 다음 사항을 사용할 수 있도록 합니다:
 
-* Effective account configuration (including Org structure, SSO setup, and so on)
-* Project import strategy
-* Remediation triage strategy
+* 효과적인 계정 구성(조직 구조, SSO 설정 등)
+* 프로젝트 가져오기 전략
+* 개선 분류 전략
 
-Customer onboarding needs vary depending on the solutions purchased.
+고객 온보딩 요구 사항은 구매한 솔루션에 따라 다릅니다.
 
-**Success planning:** The Technical Success Manager will conduct discovery to uncover the Customer’s short and long-term goals and create a plan to reach them. The Technical Success Manager will also help define the KPIs based on the Customer’s goals and will create a plan for the Customer to track KPIs.
+**성공 계획:** 기술 성공 관리자는 고객의 장단기 목표를 파악하고 이를 달성하기 위한 계획을 수립하기 위해 탐색을 수행합니다. 또한 기술 성공 관리자는 고객의 목표에 따라 KPI를 정의하고 고객이 KPI를 추적할 수 있는 계획을 수립하는 데 도움을 줍니다.
 
-**Business review cadence:** The Technical Success Manager will deliver a quarterly business review with the Customer and Snyk account team members.
+**비즈니스 리뷰 주기:** 기술 성공 관리자는 고객 및 Snyk 계정 팀원과 함께 분기별 비즈니스 검토를 진행합니다.
 
-**Live training sessions:** Snyk will perform live training sessions on a subject of the Customer’s choice to educate on practices that promote the Customer’s success. The Gold Success Offering includes one (1) live training session per month (12 per year).
+**라이브 교육 세션:** Snyk 은고객이 선택한 주제에 대한 라이브 교육 세션을 진행하여 고객의 성공을 촉진하는 사례에 대해 교육합니다.  Gold Success Offering에는매월 1회(연간 12회)의 라이브 교육 세션이 포함됩니다.
 
-**Private Slack channel:** Direct engagement over Slack with your Technical Account team to encourage collaboration.
+**전용 Slack 채널:** 기술 계정 팀과 Slack을 통해 직접 참여하여 협업을 장려하세요.
 
 #### Platinum Success Offering
 
