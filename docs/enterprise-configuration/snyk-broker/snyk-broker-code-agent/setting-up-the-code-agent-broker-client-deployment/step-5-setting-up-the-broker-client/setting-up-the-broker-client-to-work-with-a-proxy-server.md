@@ -1,12 +1,12 @@
-# Setting up the Broker Client to work with a proxy server
+# Proxy 서버와 함께 작동하도록 Broker 클라이언트 설정하기
 
 {% hint style="info" %}
-These instructions also apply to setup of the Broker Client with code snippets.
+이 지침은 코드 스니펫을 사용한 Broker 클라이언트 설정에도 적용됩니다.
 {% endhint %}
 
-To use the Code Agent - Broker Client deployment in an infrastructure that uses a proxy, verify that the requests to the Code Agent are NOT sent through the proxy, but bypass it.
+프록시를 사용하는 인프라에서 코드 에이전트 - Broker 클라이언트 배포를 사용하려면 코드 에이전트에 대한 요청이 프록시를 통해 전송되지 않고 우회하는지 확인합니다.
 
-For the Broker Client component, to the docker run command add the following environment variable and a command to bypass the Code Agent:
+Broker 클라이언트 컴포넌트의 경우, docker 실행 명령에 다음 환경 변수와 코드 에이전트를 우회하는 명령을 추가합니다:
 
 ```
 -e HTTP_PROXY=http://my.proxy.address:<port_no.>
@@ -14,12 +14,12 @@ For the Broker Client component, to the docker run command add the following env
 -e NO_PROXY=<code_agent_container_name>
 ```
 
-If your proxy requires username and password authentication, add also the following environment variable:
+프록시에 사용자 이름 및 비밀번호 인증이 필요한 경우 다음 환경 변수도 추가하세요:
 
 ```
 -e PROXY_AUTH=userID:userPass
 ```
 
-In addition, add these environment variables to the Code Agent components. See [Setting up the Code Agent to work with a Proxy Server](../step-4-setting-up-the-code-agent/setting-up-the-code-agent-to-work-with-a-proxy-server.md).
+또한 이러한 환경 변수를 코드 에이전트 컴포넌트에 추가합니다. [Proxy 서버와 함께 작동하도록 코드 에이전트 설정하기](../step-4-setting-up-the-code-agent/setting-up-the-code-agent-to-work-with-a-proxy-server.md)를 참조하세요.
 
-For more information on using Docker containers with a proxy, see [Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/).
+프록시와 함께 Docker 컨테이너를 사용하는 방법에 대한 자세한 내용은 [프록시 서버를 사용하도록 Docker 구성하기](https://docs.docker.com/network/proxy/)를 참조하세요.

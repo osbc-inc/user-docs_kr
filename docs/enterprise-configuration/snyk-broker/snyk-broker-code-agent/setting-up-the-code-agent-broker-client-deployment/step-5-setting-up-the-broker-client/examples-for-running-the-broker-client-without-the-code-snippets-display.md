@@ -1,8 +1,8 @@
-# Examples for running the Broker Client without the code snippets display
+# 코드 스니펫 표시 없이 Broker 클라이언트를 실행하는 예제
 
-## **Running the Broker Client for an integrated GitHub Server**
+## 통합 GitHub 서버용 Broker 클라이언트 실행하기
 
-The following command was entered to run the Broker Client for an integrated GitHub Server:
+다음 명령을 입력하여 통합 GitHub 서버용 Broker 클라이언트를 실행했습니다:
 
 ```
 docker run --restart=always \
@@ -16,20 +16,20 @@ docker run --restart=always \
 snyk/broker:github-com
 ```
 
-where:
+어디에:
 
-* `-p 8000:8000` is port number `8000` on the host machine, mapped to port number `8000` on the Broker Client container. This is used for the communication between the Broker Client container and the Broker Server and Code Agent.
-* `-e BROKER_TOKEN` is the Broker token that is associated with the specific Organization and GitHub.
-* `-e GITHUB_TOKEN` is the GitHub token for accessing the GitHub repositories.
-* `-e BROKER_CLIENT_URL` is the URL to the host machine of the Broker Client, `http://localhost:8000`.
-* `-e PORT` is the local port, where the Broker Client container accepts connections, is `8000`.
-* `-e GIT_CLIENT_URL=http://code-agent:3000` is the URL to the port of the running Code Agent container. The URL includes the name of the Code Agent container – `code-agent` - with its port no. - `3000`.
-* `--network` is the name of the Docker bridge network, used for the communication with the Client Broker, `mySnykBrokerNetwork`.
-* `snyk/broker:github-com` is the Docker image of the Broker Client for GitHub.
+* `-p 8000:8000` 은 호스트 머신의 포트 번호`8000`이며, Broker 클라이언트 컨테이너의 포트 번호 `8000` 에 매핑됩니다. 이 포트는 Broker 클라이언트 컨테이너와 Broker 서버 및 코드 에이전트 간의 통신에 사용됩니다.
+* `-e BROKER_TOKEN`은 특정 조직 및 GitHub와 연결된 Broker 토큰입니다.
+* `-e GITHUB_TOKEN`은 GitHub 리포지토리에 액세스하기 위한 GitHub 토큰입니다.
+* `-e BROKER_CLIENT_URL`은 Broker 클라이언트의 호스트 컴퓨터 URL(`http://localhost:8000`)입니다.
+* `-e PORT`는 Broker 클라이언트 컨테이너가 연결을 수락하는 로컬 포트이며,`8000`입니다.
+* `-e GIT_CLIENT_URL=http://code-agent:3000`은 실행 중인 코드 에이전트 컨테이너의 포트에 대한 URL입니다. URL에는 코드 에이전트 컨테이너의 이름(`code-agent`)과 해당 포트 번호(`3000`)가 포함됩니다.
+* `--network`는 클라이언트 Broker인 `mySnykBrokerNetwork`와의 통신에 사용되는 Docker 브리지 네트워크의 이름입니다.
+* `snyk/broker:github-com`은 GitHub용 Broker 클라이언트의 Docker 이미지입니다.
 
-## **Running the Broker Client for an integrated Azure Repos Server**
+## 통합 Azure Repos 서버용 Broker 클라이언트 실행하기
 
-The following command was entered to run the Broker Client for an integrated Azure Repos Server:
+다음 명령을 입력하여 통합 Azure Repos 서버용 Broker 클라이언트를 실행했습니다:
 
 ```
 docker run --restart=always \
@@ -45,15 +45,15 @@ docker run --restart=always \
 snyk/broker:azure-repos
 ```
 
-where:
+어디에:
 
-* `-p 8000:8001` is the port number `8000` on the host machine, mapped to port number `8001` on the Broker Client container. This is used for the communication between the Broker Client container and the Broker Server and Code Agent.
-* `-e BROKER_TOKEN` is the Broker token that is associated with the specific Organization and Azure Repos.
-* `-e AZURE_REPOS_TOKEN` is the Azure Repo token for accessing the Azure Repos repositories.
-* `-e AZURE_REPOS_ORG` -is the name of the Azure Repos organization, `snyktest`.
-* `-e AZURE_REPOS_HOST` is the domain name of the Azure Repos Server, `dev.azure.com`.
-* `-e BROKER_CLIENT_URL` is the URL to the host machine of the Broker Client, `http://localhost:8000`.
-* `-e PORT` - the local port, where the Broker Client container accepts connections, `8001`.
-* `-e GIT_CLIENT_URL=http://code-agent:3000` is the URL to the port of the running Code Agent container. The URL includes the name of the Code Agent container – `code-agent` - with its port no. - `3000`.
-* `--network` is the name of the Docker bridge network, used for the communication with the Client Broker, is `mySnykBrokerNetwork`.
-* `snyk/broker:azure-repos` is the Docker image of the Broker Client for Azure Repos.
+* `-p 8000:8001`은 호스트 머신의 포트 번호 `8000` 으로, Broker 클라이언트 컨테이너의 포트 번호 `8001`에 매핑됩니다. 이 포트는 Broker 클라이언트 컨테이너와 Broker 서버 및 코드 에이전트 간의 통신에 사용됩니다.
+* `-e BROKER_TOKEN`은 특정 조직 및 Azure Repos와 연결된 Broker 토큰입니다.
+* `-e AZURE_REPOS_TOKEN`은 Azure Repos 리포지토리에 액세스하기 위한 Azure Repo 토큰입니다.
+* `-e AZURE_REPOS_ORG` - Azure Repos 조직의 이름인`snyktest`입니다.
+* `-e AZURE_REPOS_HOST` 는 Azure Repos 서버의 도메인 이름인`dev.azure.com`입니다.
+* `-e BROKER_CLIENT_URL`은 Broker 클라이언트의 호스트 컴퓨터 URL(`http://localhost:8000`)입니다.
+* `-e PORT` - Broker 클라이언트 컨테이너가 연결을 수락하는 로컬 포트(`8001`)입니다.
+* `-e GIT_CLIENT_URL=http://code-agent:3000`은 실행 중인 코드 에이전트 컨테이너의 포트에 대한 URL입니다. URL에는 코드 에이전트 컨테이너의 이름( `code-agent`)과 해당 포트 번호(`3000`)가 포함됩니다.
+* `--network`는 클라이언트 Broker와의 통신에 사용되는 Docker 브리지 네트워크의 이름이며, `mySnykBrokerNetwork`입니다.
+* `snyk/broker:azure-repos`는 Azure Repos용 Broker 클라이언트의 Docker 이미지입니다.

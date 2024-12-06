@@ -1,8 +1,8 @@
-# Examples for running the Broker Client with the code snippets display
+# 코드 스니펫을 사용하여 Broker 클라이언트를 실행하는 예제 표시
 
-## **Running the Broker Client for an integrated GitHub Server**
+## 통합 GitHub 서버용 Broker 클라이언트 실행하기
 
-The following command was entered to run the Broker Client for an integrated GitHub Server:
+다음 명령을 입력하여 통합 GitHub 서버용 Broker 클라이언트를 실행했습니다:
 
 ```
 docker run --restart=always \
@@ -18,10 +18,10 @@ docker run --restart=always \
 snyk/broker:github-com
 ```
 
-where:
+어디에:
 
-* `-p 8000:8000`is port number `8000` on the host machine, mapped to port number `8000` on the Broker Client container. This is used for the communication between the Broker Client container and the Broker Server and Code Agent.
-* `-e BROKER_TOKEN` is the Broker token associated with the specific Organization and GitHub.
+* `-p 8000:8000`은 호스트 머신의 포트 번호 `8000`, Broker 클라이언트 컨테이너의 포트 번호 `8000`에 매핑됩니다. 이 포트는 Broker 클라이언트 컨테이너와 브로커 서버 및 코드 에이전트 간의 통신에 사용됩니다.
+* `-e BROKER_TOKEN`은 특정 조직 및 GitHub와 연결된 Broker 토큰입니다.
 * `-e GITHUB_TOKEN` is the GitHub token for accessing the GitHub repositories.
 * `-e BROKER_CLIENT_URL` is the URL to the host machine of the Broker Client, `http://localhost:8000`.
 * `-e PORT` is the local port, where the Broker Client container accepts connections, `8000`.

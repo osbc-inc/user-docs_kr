@@ -1,20 +1,20 @@
-# Step 5.2a – Running the Broker Client without the code snippet display
+# 5.2a 단계 - 코드 스니펫 표시 없이 Broker 클라이언트 실행하기
 
 {% hint style="info" %}
-**Important!** The setup commands for running the Broker Client described in this section include the common commands used for all SCMs. However, some SCMs require additional parameters for the Broker Client setup.
+**중요!** 이 섹션에서 설명하는 Broker 클라이언트 실행을 위한 설정 명령에는 모든 SCM에 사용되는 공통 명령이 포함되어 있습니다. 그러나 일부 SCM은 Broker 클라이언트 설정에 추가 매개 변수가 필요합니다.
 
-When such additional parameters are required, they are indicated in this section, but when setting up a Broker Client for a specific SCM, use also the section that is specific to that SCM. For more information see [Snyk Broker integration setups](broken-reference).
+이러한 추가 매개변수가 필요한 경우 이 섹션에 표시되지만 특정 SCM에 대한 Broker 클라이언트를 설정할 때는 해당 SCM에 해당하는 섹션도 사용합니다. 자세한 내용은 [Snyk Broker 연동 설정](broken-reference/)을 참조하세요.
 {% endhint %}
 
-Once the Broker Client image is stored on your machine, use the docker run command in order to run the image and launch a Broker Client container that is based on it.
+Broker 클라이언트 이미지가 머신에 저장되면 docker 실행 명령을 사용하여 이미지를 실행하고 이를 기반으로 하는 Broker 클라이언트 컨테이너를 시작합니다.
 
-The following explains how to set up the Broker Client in a way that does NOT display the code snippets of the Snyk Code results on the Web UI:
+다음은 웹 UI에 Snyk 코드 결과의 코드 스니펫을 표시하지 않는 방식으로 Broker 클라이언트를 설정하는 방법에 대해 설명합니다:
 
-<figure><img src="../../../../../.gitbook/assets/Broker - Results - without code snippets (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (4) (1).png" alt="Broker Client run with no display of code snippets"><figcaption><p>Broker Client run with no display of code snippets</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Broker - Results - without code snippets (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (4) (1).png" alt="Broker Client run with no display of code snippets"><figcaption><p>코드 스니핑 표시 없이 Broker 클라이언트 실행</p></figcaption></figure>
 
-To display the code snippets, see [Running the Broker Client with the code snippets display](step-5.2b-running-the-broker-client-with-the-code-snippets-display.md).
+코드 조각을 표시하려면 [코드 조각을 표시하여 Broker 클라이언트 실행하기](step-5.2b-running-the-broker-client-with-the-code-snippets-display.md)를 참조하세요.
 
-**To run the Broker Client container**, in the terminal enter the following command to launch a container based on the Snyk Broker Client image:
+**Broker 클라이언트 컨테이너를 실행하려면,** 터미널에서 다음 명령을 입력하여 Snyk Broker 클라이언트 이미지를 기반으로 컨테이너를 실행합니다:
 
 ```
 docker run --restart=always \
@@ -29,46 +29,46 @@ docker run --restart=always \
    snyk/broker:<SCM_tag>
 ```
 
-where:
+어디에:
 
-* `-- restart=always` is a Docker command that determines that the Broker Client container will always restart regardless of the exit status.
-* `-p <host_machine_port_no._mapped to>:<Broker_Client_container_port_ no.>` is the mapping of a physical open port in the host machine to a port in the Broker Client container. These port numbers on the host machine and container do not have to be the same, for example, `8001:8000`.\
-  The port number of the host machine must be unique.
-* `-e BROKER_TOKEN` is the [Broker token](../step-1-obtaining-the-required-tokens-for-the-setup-procedure/obtaining-your-broker-token.md) that is associated with the specific Organization and the specific integrated SCM.
-* `-e <SCM_TOKEN>` is the [SCM token](../step-1-obtaining-the-required-tokens-for-the-setup-procedure/obtaining-your-scm-token.md) for the specific integrated SCM.
-* `-e <SCM_domain>=` is your SCM domain name, without http/https, for example, `snyk.git.com`. For each SCM. Use the parameter for your SCM:
-  * **GitHub** - the `-e <SCM_domain>` parameter is NOT required.
+* `-- restart=always` 는 종료 상태와 관계없이 Broker 클라이언트 컨테이너가 항상 다시 시작되도록 결정하는 Docker 명령입니다.
+* `-p <host_machine_port_no._mapped to>:<Broker_Client_container_port_ no.>` 는 호스트 머신의 실제 열린 포트를 Broker 클라이언트 컨테이너의 포트에 매핑하는 것입니다. 호스트 컴퓨터와 컨테이너의 포트 번호가 동일할 필요는 없습니다(예: `8001:8000`).\
+  호스트 컴퓨터의 포트 번호는 고유해야 합니다.
+* `-e BROKER_TOKEN`은 특정 조직 및 특정 통합 SCM과 연결된 [Broker 토큰](../step-1-obtaining-the-required-tokens-for-the-setup-procedure/obtaining-your-broker-token.md)입니다.
+* `-e <SCM_TOKEN>`은 특정 통합 SCM에 대한 [SCM 토큰](../step-1-obtaining-the-required-tokens-for-the-setup-procedure/obtaining-your-scm-token.md)입니다.&#x20;
+* `-e <SCM_domain>=` 는 http/https를 제외한 SCM 도메인 이름입니다(예:`snyk.git.com`). 각 SCM에 대해. SCM에 대해 이 매개 변수를 사용합니다:
+  * **GitHub** - `-e <SCM_domain>`매개 변수는 필요하지 않습니다.
   * **GitHub Enterprise**: `-e GITHUB`\
-    For [GitHub Enterprise](../../../install-and-configure-snyk-broker/github-enterprise-install-and-configure-broker/setup-broker-with-github-enterprise.md) add the following parameters also:\
+    [GitHub Enterprise](../../../install-and-configure-snyk-broker/github-enterprise-install-and-configure-broker/setup-broker-with-github-enterprise.md)의 경우 다음 매개변수도 추가하세요:\
     `-e GITHUB_API=<your.ghe.domain.com/api/v3_(without_http/s)> \`\
     `-e GITHUB_GRAPHQL=<your.ghe.domain.com/api_(without_http/s)> \`
   * **Azure Repos**: `-e AZURE_REPOS_HOST`\
-    For [Azure Repos](../../../install-and-configure-snyk-broker/azure-repos-install-and-configure-broker/setup-broker-with-azure-repos.md) add the following parameter also:\
+    [Azure Repos](../../../install-and-configure-snyk-broker/azure-repos-install-and-configure-broker/setup-broker-with-azure-repos.md)의 경우 다음 매개 변수도 추가합니다:\
     `-e AZURE_REPOS_ORG=<azure_repo_org_name> \`
-  * **Bitbucket Server/Data Center**: `-e BITBUCKET`\
-    For [Bitbucket Server/Data Center](../../../install-and-configure-snyk-broker/bitbucket-server-data-center-install-and-configure-broker/data-center.md) add the following parameter also:\
+  * **Bitbucket 서버/데이터 센터**: `-e BITBUCKET`\
+    [Bitbucket 서버/데이터 센터](../../../install-and-configure-snyk-broker/bitbucket-server-data-center-install-and-configure-broker/data-center.md)의 경우 다음 매개변수도 추가합니다:\
     `-e BITBUCKET_API=<your.bitbucket-server.domain.com/rest/api/1.0_(without http/s)> \`
   * **GitLab**: `-e GITLAB`
-* \[Optional] `-e BROKER_CLIENT_URL=` is the URL to the host machine of the Broker Client. The URL can include an IP address or a DNS with the port number of the host machine, for example, `http://localhost:8000`.\
-  Add this parameter only if you are using the same Broker Client for other Snyk products, and you want to enable for them the Automatic PR Checks feature. Since currently the Automatic PR Checks feature is not supported by the Code Agent, you do not have to use this parameter for the Code Agent.
-* `-e PORT` is the port number of the Broker Client container, where it accepts external connections. The default is `8000`. This port number must be the same as the `<Broker_Client_container_port_ no.>` in the `-p` parameter above.
-* `-e GIT_CLIENT_URLis`a URL to the port of the running Code Agent container. The URL should include the name of the Code Agent container with its port number, for example, `http://code-agent:3000`.
-* `--network` is the name of the [Docker bridge network](../step-3-creating-a-network-for-the-broker-client-and-code-agent-communication.md), which will be used for the communication with the Code Agent.
-* `snyk/broker:<SCM_tag>` is the [Docker image of the Broker Client](step-5.1-downloading-or-updating-the-snyk-broker-client-docker-image.md) for the specific integrated SCM.
+* \[선택 사항] `-e BROKER_CLIENT_URL=`은 Broker 클라이언트의 호스트 컴퓨터에 대한 URL입니다. URL에는 호스트 컴퓨터의 포트 번호가 포함된 IP 주소 또는 DNS (예: `http://localhost:8000`)를 포함할 수 있습니다.\
+  이 매개변수는 다른 Snyk 제품에 동일한 Broker 클라이언트를 사용하고 있고 자동 PR 확인 기능을 활성화하려는 경우에만 추가하세요. 현재 자동 PR 확인 기능은 코드 에이전트에서 지원되지 않으므로 코드 에이전트에는 이 파라미터를 사용할 필요가 없습니다.
+* `-e PORT` 는 외부 연결을 수락하는 Broker 클라이언트 컨테이너의 포트 번호입니다. 기본값은 `8000`.입니다. 이 포트 번호는 위의 `-p`파라미터의 `<Broker_Client_container_port_ no.>` 와 동일해야 합니다.
+* 실행 중인 코드 에이전트 컨테이너의 포트에 대한 URL을 `-e GIT_CLIENT_URLis`로 입력합니다. URL에는 코드 에이전트 컨테이너의 이름과 해당 포트 번호(예:`http://code-agent:3000`)가 포함되어야 합니다.
+* `--network` 는 코드 에이전트와의 통신에 사용되는 [Docker   bridge network](../step-3-creating-a-network-for-the-broker-client-and-code-agent-communication.md)의 이름입니다.
+* `snyk/broker:<SCM_tag>` 는 특정 통합 SCM을 위한 [Broker 클라이언트의 Docker 이미지](step-5.1-downloading-or-updating-the-snyk-broker-client-docker-image.md)입니다.
 
-When the Broker Client setup is completed successfully, the following message appears in the terminal:
+Broker 클라이언트 설정이 성공적으로 완료되면 터미널에 다음 메시지가 표시됩니다:
 
 `{ ..., "msg":"successfully established a websocket connection to the broker server", ... }`
 
-<figure><img src="../../../../../.gitbook/assets/Broker Client - Setup success message.png" alt="Confirmation message for Broker Client setup"><figcaption><p>Confirmation message for Broker Client setup</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Broker Client - Setup success message.png" alt="Confirmation message for Broker Client setup"><figcaption><p>Broker 클라이언트 설정 확인 메시지</p></figcaption></figure>
 
-**To verify the setup and details of the Broker Client container**, run:
+**Broker 클라이언트 컨테이너의 설정 및 세부 정보를 확인하려면,** 실행합니다:
 
 ```
 docker ps
 ```
 
-The output is similar to the following:
+출력은 다음과 비슷합니다:
 
 ```
 CONTAINER ID   IMAGE                     COMMAND                  CREATED             STATUS             PORTS                    NAMES
