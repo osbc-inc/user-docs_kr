@@ -32,19 +32,19 @@
 
 Silver Success offering은 주당 평균 최대 두(2) 시간의 전용 TSM 시간이 포함되어 있습니다.
 
-**가이드 온보딩**: Snyk 은고객에게 온보딩을 안내하여 고객이 다음 사항을 사용할 수 있도록 합니다:
+**가이드 온보딩**: Snyk은고객에게 온보딩을 안내하여 고객이 다음 사항을 사용할 수 있도록 합니다:
 
 * 효과적인 계정 구성(조직 구조, SSO 설정 등)
 * 프로젝트 가져오기 전략
 * 수정 사항 분류 전략
 
-Customer onboarding needs vary depending on the solutions purchased.
+고객 온보딩 요구 사항은 구매한 솔루션에 따라 다릅니다.0
 
-**Success planning**: Snyk will provide a template to assist the Customer with identifying goals and creating their success plan. The Customer is responsible for tracking and executing their plan
+**성공 계획**: Snyk은 고객이 목표를 파악하고 성공 계획을 수립하는 데 도움이 되는 템플릿을 제공합니다. 고객은 계획을 추적하고 실행할 책임이 있습니다.
 
-**Business review cadence**: The Technical Success Manager will deliver a business review with the Customer and Snyk account team members twice a year.
+**비즈니스 리뷰 주기**: 기술 성공 관리자는 1년에 두 번 고객 및 Snyk 계정 팀원과 함께 비즈니스 검토를 진행합니다.
 
-**Private Slack channel**: Direct engagement over Slack with your Technical Account team to encourage collaboration
+**전용 슬랙 채널**: Slack을 통해 기술 계정 팀과 직접 참여하여 협업을 장려하세요.
 
 #### Gold Success Offering
 
