@@ -37,38 +37,38 @@
 
 ## 버&#xC804;**`1.18.0`** 이상
 
-To trust a custom Certificate Authority, you must have either:
+사용자 지정 인증 기관을 신뢰하려면 둘 중 하나가 있어야 합니다:
 
-* A single Certificate Authority (encoded as a `PEM`), or
-* A directory containing multiple Certificate Authorities (encoded as `PEM`)
+* 단일 인증 기관(`PEM`으로 인코딩) 또는
+* 여러 인증 기관이 포함된 디렉토리(`PEM`으로 인코딩)
 
-To trust a single certificate, add the following arguments to the `docker run` command of the Code Agent:
+단일 인증서를 신뢰하려면 코드 에이전트의 `docker run` 명령에 다음 인수를 추가합니다:
 
 ```
 -v local/path/to/ca.pem:/etc/certs/ca.pem \
 -e GIT_SSL_CAINFO='/etc/certs/ca.pem'
 ```
 
-To trust a directory of certificates, add the following arguments to the `docker run` command of the Code Agent:
+인증서 디렉터리를 신뢰하려면 코드 에이전트의 `docker run` 명령에 다음 인수를 추가합니다:
 
 ```
 -v local/path/to/certdirectory:/etc/certs
 -e GIT_SSL_CAPATH='/etc/certs'
 ```
 
-## **Version `1.16.0` to `1.17.0`**
+## 버&#xC804;**`1.16.0`** \~**`1.17.0`**
 
-Follow the preceding steps and add the following argument to the `docker run` command of the Code Agent:
+앞의 단계에 따라 코드 에이전트의 `docker run`명령에 다음 인수를 추가합니다:
 
 ```
 -e CODE_AGENT_GIT_CLI=true
 ```
 
-## **Version `1.15.2` and below**
+## 버&#xC804;**`1.15.2`** 이하
 
-Code Agent `1.15.2` and below do not support trust of custom Certificate Authorities, and instead must run in a mode that trusts all certificates.
+코드 에이전트 `1.15.2` 이하는 사용자 지정 인증 기관의 신뢰를 지원하지 않으며, 대신 모든 인증서를 신뢰하는 모드로 실행해야 합니다.
 
-Add the following environment variable to the `docker run` command of the Code Agent:
+코드 에이전트의 `docker run` 명령에 다음 환경 변수를 추가합니다:
 
 ```
 -e NODE_TLS_REJECT_UNAUTHORIZED=0
