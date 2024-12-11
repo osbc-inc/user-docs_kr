@@ -102,9 +102,9 @@ Platinum Success Offering 주당 평균 최대 8시간의 전용 TSM 시간이 �
 
 ## Support terms
 
-### Summary of Snyk Global Support Offerings
+### Snyk 글로벌 지원 서비스 요약
 
-Response times are dependent on the severity of the ticket, the Snyk Plan purchased (Free or Team versus Enterprise), and the Success Offering purchased (Standard, Silver, Gold, Platinum).
+응답 시간은 티켓의 심각도, 구매한 Snyk 플랜(무료 또는 팀 대 엔터프라이즈), 구매한 Success Offering (Standard, Silver, Gold, Platinum)에 따라 달라집니다.
 
 #### **Severity definitions**
 
