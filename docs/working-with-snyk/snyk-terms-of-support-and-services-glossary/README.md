@@ -118,13 +118,13 @@ Platinum Success Offering 주당 평균 최대 8시간의 전용 TSM 시간이 �
 * 일반적인 지원 범위를 벗어난 문제, 장기적인 수정이 필요하다고 판단되는 문제 또는 향후 개발 주기의 일부인 문제의 경우 Snyk는 사례별로 정기적이고 의미 있는 업데이트를 제공합니다. 여기에는 새로운 기능 요청, Snyk의 장기 개발 로드맵에 포함된 항목, 복잡한 버그 수정 등이 포함되지만 이에 국한되지 않습니다.
 * 기술 성공 관리자는 중단 또는 수정 지원을 제공하지 않으며 기술 문제 해결 요청을 Snyk의 기술 지원팀에 전달합니다.
 
-#### Definitions of Snyk Global Support hours
+#### Snyk 글로벌 지원 시간 정의&#x20;
 
-**8x5**: Snyk Technical Support Engineers actively respond to tickets within the Customer's local business hours, Monday to Friday.
+**8x5**: Snyk 기술 지원 엔지니어는 월요일부터 금요일까지 고객의 현지 업무 시간 내에 티켓에 적극적으로 응답합니다.
 
-**24x5**: Snyk Technical Support Engineers actively respond to tickets 24 hours a day, Monday to Friday in the Customer's local time zone.
+**24x5**: Snyk 기술 지원 엔지니어는 고객 현지 시간 기준으로 월요일부터 금요일까지 하루 24시간 티켓에 적극적으로 응답합니다.
 
-**24x7**: Snyk Technical Support Engineers actively respond to tickets 24 hours a day, Monday to Friday. In addition, for **urgent customer issues** outside of 24x5, Snyk provides a 24-hour support telephone number. This is served by a telephone answering service which routes the request to Snyk on-call engineers. 24x7 support will be provided in English unless during business hours.
+**24x7**: Snyk 기술 지원 엔지니어는 월요일부터 금요일까지 하루 24시간 티켓에 적극적으로 대응합니다. 또한 연중무휴 시간 외의 **긴급한 고객 문제**에 대해서는 24시간 지원 전화번호를 제공합니다. 이 서비스는 전화 응답 서비스를 통해 요청을 Snyk 대기 엔지니어에게 라우팅합니다. 24시간 연중무휴 지원은 업무 시간 외에는 영어로 제공됩니다.
 
 ### Definitions and Support Plan descriptions
 
