@@ -106,9 +106,9 @@ Platinum Success Offering 주당 평균 최대 8시간의 전용 TSM 시간이 �
 
 응답 시간은 티켓의 심각도, 구매한 Snyk 플랜(무료 또는 팀 대 엔터프라이즈), 구매한 Success Offering (Standard, Silver, Gold, Platinum)에 따라 달라집니다.
 
-#### **Severity definitions**
+#### **심각도 정의**
 
-<table data-full-width="true"><thead><tr><th width="166">Severity Level</th><th width="121.33333333333331">Impact</th><th>Description</th></tr></thead><tbody><tr><td>1: Urgent</td><td>Critical</td><td>Snyk critical failure that impacts Licensee’s operations and prevents Licensee’s work from being done with no workaround.</td></tr><tr><td>2: High</td><td>Major</td><td>A major function of the Snyk service is not operational but Licensee’s operations are not affected, or operations are possible with a workaround.</td></tr><tr><td>3: Normal</td><td>Low</td><td>Minor defect in the Software or Platform with minor or no effect on Licensee’s operation.</td></tr><tr><td>4: Low</td><td>Trivial</td><td>Trivial defect in the Software or Platform with little or no impact on Licensee’s operation.</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th width="166">심각도 수준</th><th width="121.33333333333331">영향</th><th>설명</th></tr></thead><tbody><tr><td>1: 긴급</td><td>치명</td><td>Snyk critical failure that impacts Licensee’s operations and prevents Licensee’s work from being done with no workaround.</td></tr><tr><td>2: 높음</td><td>주요</td><td>A major function of the Snyk service is not operational but Licensee’s operations are not affected, or operations are possible with a workaround.</td></tr><tr><td>3: 보통</td><td>낮음</td><td>Minor defect in the Software or Platform with minor or no effect on Licensee’s operation.</td></tr><tr><td>4: 낮음</td><td>사소</td><td>Trivial defect in the Software or Platform with little or no impact on Licensee’s operation.</td></tr></tbody></table>
 
 #### Initial response time details
 
