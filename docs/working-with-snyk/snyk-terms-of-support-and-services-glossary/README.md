@@ -110,13 +110,13 @@ Platinum Success Offering 주당 평균 최대 8시간의 전용 TSM 시간이 �
 
 <table data-full-width="true"><thead><tr><th width="166">심각도 수준</th><th width="121.33333333333331">영향</th><th>설명</th></tr></thead><tbody><tr><td>1: 긴급</td><td>치명</td><td>사용권자의 운영에 영향을 미치고 해결 방법 없이 사용권자의 작업을 수행하지 못하게 하는 중대한 장애.</td></tr><tr><td>2: 높음</td><td>주요</td><td>Snyk 서비스의 주요 기능이 작동하지 않지만 사용권자의 운영에는 영향을 미치지 않거나 해결 방법을 통해 운영이 가능합니다.</td></tr><tr><td>3: 보통</td><td>낮음</td><td>사용권자의 운영에 경미하거나 영향을 미치지 않는 소프트웨어 또는 플랫폼의 경미한 결함.</td></tr><tr><td>4: 낮음</td><td>사소</td><td>사용권자의 운영에 거의 또는 전혀 영향을 미치지 않는 소프트웨어 또는 플랫폼의 사소한 결함.</td></tr></tbody></table>
 
-#### Initial response time details
+#### 초기 응답 시간 상세 정보
 
-* Snyk will prioritize all support requests based on its reasonable assessment of the severity level of the problem reported, and use all reasonable endeavors to meet the timeframes specified in the table above.
-* The times listed are the time frames in which you can expect the first response.
-* First response times apply to support communications through Snyk's support portal only. Private Slack channels are designed for regular collaboration between Snyk and customers but are not subject to specific first response times and should not be used for support communications.
-* For issues outside of the typical support scope, issues determined to require a longer-term fix, or issues that are part of future development cycles, Snyk will provide regular and meaningful updates on a case-by-case basis. This includes, but is not limited to, new feature requests, items within Snyk’s long-term development roadmap, and complex bug fixes.
-* Technical Success Managers do not provide break or fix support and will refer requests for technical issue resolution to Snyk's Technical Support team.
+* Snyk은 신고된 문제의 심각도에 대한 합리적인 평가를 바탕으로 모든 지원 요청의 우선순위를 정하고 위 표에 명시된 기간을 준수하기 위해 모든 합리적인 노력을 기울일 것입니다.
+* 나열된 시간은 첫 번째 응답을 기대할 수 있는 시간대입니다.
+* 최초 응답 시간은 Snyk의 지원 포털을 통한 지원 커뮤니케이션에만 적용됩니다. 비공개 Slack 채널은 Snyk와 고객 간의 정기적인 협업을 위해 설계되었지만 특정 최초 응답 시간이 적용되지 않으므로 지원 커뮤니케이션에 사용해서는 안 됩니다.
+* 일반적인 지원 범위를 벗어난 문제, 장기적인 수정이 필요하다고 판단되는 문제 또는 향후 개발 주기의 일부인 문제의 경우 Snyk는 사례별로 정기적이고 의미 있는 업데이트를 제공합니다. 여기에는 새로운 기능 요청, Snyk의 장기 개발 로드맵에 포함된 항목, 복잡한 버그 수정 등이 포함되지만 이에 국한되지 않습니다.
+* 기술 성공 관리자는 중단 또는 수정 지원을 제공하지 않으며 기술 문제 해결 요청을 Snyk의 기술 지원팀에 전달합니다.
 
 #### Definitions of Snyk Global Support hours
 
