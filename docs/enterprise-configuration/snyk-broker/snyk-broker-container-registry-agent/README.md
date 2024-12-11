@@ -1,109 +1,109 @@
-# Snyk Broker - Container Registry Agent
+# Snyk Broker - 컨테이너 레지스트리 에이전트
 
 {% hint style="info" %}
-**Feature availability**
+**기능 가용성**
 
-Snyk Broker Container Registry Agent is available only for Enterprise plans.
+Snyk Broker 컨테이너 레지스트리 에이전트는 Enterprise 요금제에서만 사용할 수 있습니다.
 
-For more information, see [Plans and pricing](https://snyk.io/plans).
+자세한 내용은,  [요금제 및 가격 책정](https://snyk.io/plans)을 참조하세요.
 {% endhint %}
 
-The Snyk Broker Container Registry Agent enables you to establish connection with network-restricted container registries so you can scan these registries using the Snyk service.
+Snyk Broker 컨테이너 레지스트리 에이전트를 사용하면 네트워크가 제한된 컨테이너 레지스트리와 연결을 설정하여 Snyk 서비스를 사용하여 이러한 레지스트리를 스캔할 수 있습니다.
 
-When you use the Container Registry Agent, Snyk can integrate with private container registries that you host, and help you to better secure container images in those registries. Integration with private container registries allows you to:
+컨테이너 레지스트리 에이전트를 사용하면 Snyk는 사용자가 호스팅하는 비공개 컨테이너 레지스트리와 통합하여 해당 레지스트리에서 컨테이너 이미지를 더 안전하게 보호할 수 있습니다. 프라이빗 컨테이너 레지스트리와의 통합을 통해 다음을 수행할 수 있습니다:
 
-* Keep sensitive data such as your access tokens inside your private network, never sharing that information with Snyk.
-* Provide controlled access to the network for Snyk, limiting Snyk access and the actions that Snyk can perform.
+* 액세스 토큰과 같은 민감한 데이터는 비공개 네트워크 내에 보관하고 해당 정보를 Snyk와 공유하지 마세요.
+* Snyk에게 네트워크에 대한 제어된 액세스를 제공하여 Snyk의 액세스 및 Snyk이 수행할 수 있는 작업을 제한합니다.
 
-This page explains how to use the Container Registry Agent to integrate through Broker with supported open-source container registries as [listed](./#supported-container-registries) on this page. This method of integration is designed for users who require images to be scanned in their own environment, instead of inside the Snyk service.
+이 페이지에서는 컨테이너 레지스트리 에이전트를 사용하여 Broker를 통해 이 페이지에 [나열된](./#supported-container-registries) 대로 지원되는 오픈 소스 컨테이너 레지스트리와 통합하는 방법을 설명합니다. 이 통합 방법은 Snyk 서비스 내부가 아닌 자체 환경에서 이미지를 스캔해야 하는 사용자를 위해 고안되었습니다.
 
-If you **do not require that images be scanned in your own environment**, you do not need to use the Container Registry Agent. You can **integrate with the supported container registries from the integrations page in your account**. For details, see [Snyk Container - Integrations](../../../integrate-with-snyk/snyk-container-integrations/).
+**자체 환경에서 이미지를 스캔할 필요가 없는 경우**에는 컨테이너 레지스트리 에이전트를 사용할 필요가 없습니다. **계정의 연동 페이지에서 지원되는 컨테이너 레지스트리와 연동**할 수 있습니다. 자세한 내용은 [Snyk 컨테이너 - 통합](../../../integrate-with-snyk/snyk-container-integrations/)을 참조하세요.
 
-## **Components of the network-restricted container registries solution**
+## 네트워크 제한 컨테이너 레지스트리 솔루션의 구성 요소
 
-The following components are needed with network-restricted container registries:
+네트워크 제한 컨테이너 레지스트리에는 다음 구성 요소가 필요합니다:
 
-* Broker Server: running on the Snyk SaaS backend.
-* Broker Client and Container Registry Agent: two Docker images deployed in your infrastructure, creating two separate services, responsible for sampling your container registries in a secured manner and sending the allowed information to Snyk
+* Broker 서버: Snyk SaaS 백엔드에서 실행됩니다.
+* Broker 클라이언트 및 컨테이너 레지스트리 에이전트: 인프라에 배포된 두 개의 Docker 이미지로, 컨테이너 레지스트리를 안전한 방식으로 샘플링하고 허용된 정보를 Snyk에 전송하는 두 개의 별도 서비스를 생성합니다.
 
-The Broker Client provides the Container Registry Agent with the connection details. The Agent uses these details to connect to the container registry, scan the images, and send the scan results through the brokered communication using callbacks. The brokered communication happens when a Broker Client connects, using your Broker ID, to a Broker Server which runs in the Snyk environment. See the [Snyk Broker](../) introductory information for more details.
+Broker 클라이언트는 컨테이너 레지스트리 에이전트에 연결 세부 정보를 제공합니다. 에이전트는 이러한 세부 정보를 사용하여 컨테이너 레지스트리에 연결하고, 이미지를 스캔하고, 콜백을 사용하여 중개 통신을 통해 스캔 결과를 전송합니다. Broker 통신은 브로커 클라이언트가 Broker ID를 사용하여 Snyk 환경에서 실행되는 Broker 서버에 연결할 때 발생합니다. 자세한 내용은 [Snyk Broker](../) 소개 정보를 참조하세요.
 
-<figure><img src="../../../.gitbook/assets/mceclip0-8-.png" alt="Highlevel architecture of the Snyk Broker Container Registry Agent"><figcaption><p>High-level architecture of the Snyk Broker Container Registry Agent</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/mceclip0-8-.png" alt="Highlevel architecture of the Snyk Broker Container Registry Agent"><figcaption><p>Snyk Broker 컨테이너 레지스트리 에이전트의 하이레벨 아키텍처</p></figcaption></figure>
 
-## **Supported container registries**
+## 지원되는 컨테이너 레지스트리
 
-Using the Snyk Broker Container Registry Agent you can integrate Snyk with the following open-source container registries:
+Snyk Broker 컨테이너 레지스트리 에이전트를 사용하면 Snyk을 다음 오픈소스 컨테이너 레지스트리와 통합할 수 있습니다:
 
-* JFrog Container Registry (Artifactory) (type: artifactory-cr)
-* Harbor registry (type: harbor-cr)
-* Azure Container Registry (type: acr)
-* Google Cloud Container Registry (GCR) (type: gcr)
-* Amazon Elastic Container Registry (ECR) (type: ecr)
-* Google Artifact Registry (type: google-artifact-cr)
-* Docker Hub registry (type: docker-hub). Note: Snyk Broker is unable to connect to a self-hosted instance of OCI Distribution, that is, [`docker.io/registry`](http://docker.io/registry).
-* RedHat Quay container registry (type: quay-cr)
-* Nexus registry (type: nexus-cr)
-* GitHub Container registry (type: github-cr)
-* DigitalOcean Container Registry (type: digitalocean-cr)
-* GitLab Container Registry (type: gitlab-cr)
+* JFrog Container Registry (Artifactory) (유형: artifactory-cr)
+* Harbor registry (유형: harbor-cr)
+* Azure Container Registry (유형: acr)
+* Google Cloud Container Registry (GCR) (유형: gcr)
+* Amazon Elastic Container Registry (ECR) (유형: ecr)
+* Google Artifact Registry (유형: google-artifact-cr)
+* Docker Hub registry (유형: docker-hub). 참고: Snyk Broker는 OCI 배포의 자체 호스팅 인스턴스, 즉[`docker.io/registry`](http://docker.io/registry)에 연결할 수 없습니다.
+* RedHat Quay container registry (유형: quay-cr)
+* Nexus registry (유형: nexus-cr)
+* GitHub Container registry (유형: github-cr)
+* DigitalOcean Container Registry (유형: digitalocean-cr)
+* GitLab Container Registry (유형: gitlab-cr)
 
-Artifactory and Nexus are also available as private package repositories with Broker options. The Brokers required for the Container Registry must be the ones as specified in [Prerequisites for Container Registry Agent](./#prerequisites-for-container-registry-agent), not the Brokers for snyk/broker:artifactory or snyk/broker:nexus.
+아티팩토리와 넥서스는 Broker 옵션이 있는 프라이빗 패키지 리포지토리로도 사용할 수 있습니다. 컨테이너 레지스트리에 필요한 Broker는 [Container Registry Agent의 전제 조건](./#prerequisites-for-container-registry-agent)에 지정된 Broker여야 하며, snyk/Broker:아티팩토리 또는 snyk/Broker:넥서스용 Broker가 아니어야 합니다.
 
-GitHub Container registry and GitLab Container Registry do not follow Docker v2 API; they do not have the /v2/\_catalog endpoint. Thus it is not possible to list images in repos, and you must manually specify the images you wish to scan.
+GitHub 컨테이너 레지스트리와 GitLab 컨테이너 레지스트리는 /v2/\_catalog 엔드포인트가 없는 Docker v2 API를 따르지 않습니다. 따라서 리포지토리에 이미지를 나열할 수 없으며 스캔하려는 이미지를 수동으로 지정해야 합니다.
 
-## **Prerequisites for Container Registry Agent**
+## 컨테이너 레지스트리 에이전트의 전제 조건
 
-To set up the Snyk Broker and the Container Registry Agent, you must have a Broker token. Contact [Snyk Support](https://support.snyk.io/hc/en-us) to obtain your Broker token.
+Snyk Broker 와 컨테이너 레지스트리 에이전트를 설정하려면 Broker 토큰이 있어야 합니다. Broker 토큰을 받으려면 [Snyk 지원팀](https://support.snyk.io/hc/en-us)에 문의하세요.
 
 {% hint style="warning" %}
-For the Container Registry Agent to work, you must have two separate containers deployed in your infrastructure, creating two separate services. For details, see [Components of the network-restricted container registries solution ](./#components-of-the-network-restricted-container-registries-solution)on this page.
+F컨테이너 레지스트리 에이전트가 작동하려면 인프라에 두 개의 별도 컨테이너를 배포하여 두 개의 별도 서비스를 만들어야 합니다. 자세한 내용은 이 페이지의 [네트워크 제한 컨테이너 레지스트리 솔루션의 구성요소](./#components-of-the-network-restricted-container-registries-solution)를 참조하세요.
 {% endhint %}
 
-The system and software requirements to set up and run the Snyk Broker Container Registry Agent are as follows;
+Snyk Broker 컨테이너 레지스트리 에이전트를 설정하고 실행하기 위한 시스템 및 소프트웨어 요구 사항은 다음과 같습니다;
 
-* Broker Client machine system requirements: 1 CPU, 256MB of RAM
-* Container registry agent machine system requirements should be (given MAX\_ACTIVE\_OPERATIONS=1):
+* Broker 클라이언트 컴퓨터 시스템 요구 사항: CPU 1개, RAM 256MB
+* 컨테이너 레지스트리 에이전트 머신 시스템 요구 사항은 다음과 같아야 합니다(MAX\_ACTIVE\_OPERATIONS=1): CPU: 1 vcpu
   * CPU: 1 vcpu
-  * Memory: 2Gb (should be reflected in node memory setting)
+  * Memory: 2Gb (노드 메모리 설정에 반영되어야 함)
   * Storage: 5Gb
-* Container registry credentials that have list and pull images permissions
-* Connection between Broker and Agent
-* HTTPS connection between the Agent and the registry. For HTTP-only registries, deploy a reverse proxy between the Agent and the container registry.
-* [Download for the Broker Client image on Docker](https://hub.docker.com/r/snyk/broker/tags?page=1\&ordering=last\_updated\&name=container-registry-agent) : snyk/broker:container-registry-agent (if using Docker)
-* [Download for the Container Registry Agent image on Docker](https://hub.docker.com/r/snyk/container-registry-agent/tags?page=1\&ordering=last\_updated) :  snyk/container-registry-agent:latest If using Docker)
+* 이미지 목록 및 풀 권한이 있는 컨테이너 레지스트리 자격 증명
+* Broker와 에이전트 간 연결
+* 에이전트와 레지스트리 간의 HTTPS 연결. HTTP 전용 레지스트리의 경우, 에이전트와 컨테이너 레지스트리 사이에 리버스 프록시를 배포하세요.
+* [Docker에서 Broker 클라이언트 이미지 다운로드](https://hub.docker.com/r/snyk/broker/tags?page=1\&ordering=last_updated\&name=container-registry-agent): snyk/broker:container-registry-agent(Docker를 사용하는 경우)
+* [Docker에서 컨테이너 레지스트리 에이전트 이미지 다운로드](https://hub.docker.com/r/snyk/container-registry-agent/tags?page=1\&ordering=last_updated) : snyk/container-registry-agent:최신(Docker를 사용하는 경우)
 
 {% hint style="info" %}
-**Scaling to adjust scan capacity**
+**스캔 용량 조정을 위한 스케일링**
 
-With the listed configuration of 1 vCPU and 2GB RAM, scanning capacity would be approximately 160 images of \~350MB each in one run. You can scale this up based on your image sizes. If you have a specific use case that does not allow scaling and does not fit the limitations, contact [Snyk Support](https://support.snyk.io/hc/en-us/).
+나열된 구성의 vCPU 1개와 2GB RAM을 사용하면 스캔 용량은 한 번에 약 350MB씩 약 160개의 이미지를 스캔할 수 있습니다. 이미지 크기에 따라 이 용량을 확장할 수 있습니다. 확장을 허용하지 않고 제한에 맞지 않는 특정 사용 사례가 있는 경우 [Snyk 지원팀](https://support.snyk.io/hc/en-us/)에 문의하세요.
 {% endhint %}
 
-## **Set up the remote connection for Container Registry Agent using Docker**
+## **Docker**를 사용하여 컨테이너 레지스트리 에이전트에 대한 원격 연결 설정하기
 
-### **Configuring and running the Broker Client for Container Registry Agent**
+### 컨테이너 레지스트리 에이전트용 Broker 클라이언트 구성 및 실행
 
-To use the Broker Client with a Container Registry Agent deployment, run `docker pull snyk/broker:container-registry-agent` if you have not already done so as a [prerequisite](./#prerequisites-for-container-registry-agent).
+컨테이너 레지스트리 에이전트 배포와 함께 Broker 클라이언트를 사용하려면, [전제 조건](./#prerequisites-for-container-registry-agent)으로 아직 실행하지 않은 경우 `docker pull snyk/broker:container-registry-agent` docker pull snyk/broker:container-registry-agent를 실행하세요.
 
-The following environment variables are required to configure the Broker Client.
+Broker 클라이언트를 구성하려면 다음 환경 변수가 필요합니다.
 
 {% hint style="info" %}
-For **DigitalOcean Container Registry**, **Google Cloud Container Registry**, **Google Artifact Registry**, and **Artifactory**, there are a few values to note; see [Container registry-specific configurations](./#container-registry-specific-configurations). For **Elastic Container Registry**, additional setup is required. [Specific configurations](./#container-registry-specific-configurations) are also provided.
+**컨테이너 레지스트리, Google 아티팩트 레지스트리** 및 **아티팩토리**에는 몇 가지 주의해야 할 값이 있습니다. [컨테이너 레지스트리별 구성](./#container-registry-specific-configurations)을 참조하세요. **Elastic 컨테이너 레지스트리**의 경우, 추가 설정이 필요합니다. [구체적인 구성](./#container-registry-specific-configurations)도 제공됩니다.
 {% endhint %}
 
-* `BROKER_TOKEN` - The Snyk Broker token, obtained from your Container registry integration provided by Snyk support.
-* `BROKER_CLIENT_URL` - The URL of your Broker Client, including scheme and port, which is used by the container registry agent to call back to Snyk through the brokered connection, for example: "[http://my.broker.client:8000](http://my.broker.client:8000)". &#x20;
-  * This must have http:// and the port number.&#x20;
-  * To configure the client with HTTPS, [additional settings are required](https://docs.snyk.io/snyk-admin/snyk-broker/install-and-configure-broker-using-docker/advanced-configuration-for-snyk-broker-docker-installation/https-for-broker-client-with-docker).
-* `CR_AGENT_URL` - The URL of your Container Registry Agent, including scheme and port, to which the Broker Client will route the requests, for example: "[http://my.container-registry-agent](http://my.container-registry-agent)".
-* `CR_TYPE` - The container registry type as listed in [Supported container registries](./#supported-container-registries) on this page, for example, "docker-hub", "gcr", "artifactory-cr".
-* `CR_BASE` - The hostname of the container registry api to connect to, for example: "cr.host.com".
-* `CR_USERNAME` - The username for authenticating to the container registry api.
-* `CR_PASSWORD` - The password for authenticating to the container registry api.
-* `CR_TOKEN` - Authentication token for DigitalOcean container registry.
-* `PORT` - The local port at which the Broker client accepts connections (default value: 7341).
-* Optional - `BROKER_CLIENT_VALIDATION_URL` - URL to configure /systemcheck for the container registry agent. For details, see [Configuring and using systemcheck](./#configuring-and-using-systemcheck) on this page.
+* `BROKER_TOKEN` - Snyk 지원팀에서 제공하는 컨테이너 레지스트리 통합에서 얻은 Snyk Broker 토큰입니다.
+* `BROKER_CLIENT_URL` - 컨테이너 레지스트리 에이전트가 브로커링된 연결을 통해 Snyk에 다시 호출하는 데 사용하는 스키마 및 포트를 포함한 Broker 클라이언트의 URL(예: Broker 클라이언트)입니다: "[http://my.broker.client:8000](http://my.broker.client:8000)".
+  * http:// 및 포트 번호가 있어야 합니다.
+  * HTTPS로 클라이언트를 구성하려면, [추가 설정이 필요합니다.](https://docs.snyk.io/snyk-admin/snyk-broker/install-and-configure-broker-using-docker/advanced-configuration-for-snyk-broker-docker-installation/https-for-broker-client-with-docker)
+* `CR_AGENT_URL` - Broker 클라이언트가 요청을 라우팅할 컨테이너 레지스트리 에이전트의 URL(예: 스키마 및 포트 포함)입니다: "[http://my.container-registry-agent](http://my.container-registry-agent)".
+* `CR_TYPE` - 이 페이지의 [지원되는 컨테이너 레지스트리](./#supported-container-registries)에 나열된 컨테이너 레지스트리 유형입니다(예: “docker-hub”, “gcr”, “artifactory-cr”).
+* `CR_BASE` - 연결할 컨테이너 레지스트리 API의 호스트 이름(예: “cr.host.com”.
+* `CR_USERNAME` - 컨테이너 레지스트리 API에 인증하기 위한 사용자 이름입니다.
+* `CR_PASSWORD` - 컨테이너 레지스트리 API에 인증하기 위한 비밀번호입니다.
+* `CR_TOKEN` -디지털오션 컨테이너 레지스트리를 위한 인증 토큰입니다.
+* `PORT` - Broker 클라이언트가 연결을 수락하는 로컬 포트입니다(기본값: 7341).
+* 선택 사항 - `BROKER_CLIENT_VALIDATION_URL` - 컨테이너 레지스트리 에이전트에 대해 /systemcheck를 구성할 URL입니다. 자세한 내용은 이 페이지의 [시스템 검사 구성 및 사용](./#configuring-and-using-systemcheck) 참조하세요.
 
-Run the Broker Client container with the relevant configuration:
+관련 구성으로 Broker 클라이언트 컨테이너를 실행합니다:
 
 ```
 docker run --restart=always \
@@ -119,7 +119,7 @@ docker run --restart=always \
        snyk/broker:container-registry-agent
 ```
 
-As an alternative to this command, you can use a derived Docker image to set up the Container Registry Agent. See [Derived Docker images](../install-and-configure-snyk-broker/derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md) for the environment variables to override for the Container Registry Agent.
+이 명령의 대안으로 파생된 Docker 이미지를 사용하여 컨테이너 레지스트리 에이전트를 설정할 수 있습니다. 컨테이너 레지스트리 에이전트에 대해 재정의할 환경 변수는 [파생된 Docker 이미지](../install-and-configure-snyk-broker/derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md)를 참조하세요.
 
 ### Configuring and running **the Container Registry Agent**
 

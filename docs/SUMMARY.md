@@ -137,7 +137,7 @@
           * [5.2b 단계 - 코드 스니펫이 표시된 상태에서 Broker 클라이언트 실행하기](enterprise-configuration/snyk-broker/snyk-broker-code-agent/setting-up-the-code-agent-broker-client-deployment/step-5-setting-up-the-broker-client/step-5.2b-running-the-broker-client-with-the-code-snippets-display.md)
           * [코드 스니펫을 사용하여 Broker 클라이언트를 실행하는 예제 표시](enterprise-configuration/snyk-broker/snyk-broker-code-agent/setting-up-the-code-agent-broker-client-deployment/step-5-setting-up-the-broker-client/examples-for-running-the-broker-client-with-the-code-snippets-display.md)
         * [6단계: 코드 에이전트 테스트 - Snyk Broker 설정](enterprise-configuration/snyk-broker/snyk-broker-code-agent/setting-up-the-code-agent-broker-client-deployment/step-6-testing-the-code-agent-snyk-broker-setup.md)
-    * [Snyk Broker - Container Registry Agent](enterprise-configuration/snyk-broker/snyk-broker-container-registry-agent/README.md)
+    * [Snyk Broker - 컨테이너 레지스트리 에이전트](enterprise-configuration/snyk-broker/snyk-broker-container-registry-agent/README.md)
       * [Setting up the Container Registry Agent for a brokered ECR integration](enterprise-configuration/snyk-broker/snyk-broker-container-registry-agent/setting-up-the-container-registry-agent-for-a-brokered-ecr-integration.md)
       * [Install Broker for Container Registry Agent using Helm](enterprise-configuration/snyk-broker/snyk-broker-container-registry-agent/install-broker-for-container-registry-agent-using-helm.md)
       * [Container Registry Agent advanced configuration using Docker](enterprise-configuration/snyk-broker/snyk-broker-container-registry-agent/container-registry-agent-advanced-configuration-using-docker.md)
