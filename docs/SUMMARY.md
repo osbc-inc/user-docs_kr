@@ -999,7 +999,7 @@
 * [Snyk 작업하기](working-with-snyk/README.md)
   * [Snyk이 데이터를 처리하는 방법](working-with-snyk/how-snyk-handles-your-data.md)
   * [지역 호스팅 및 데이터 레지던시](working-with-snyk/regional-hosting-and-data-residency.md)
-  * [Snyk Terms of Support and Services Glossary](working-with-snyk/snyk-terms-of-support-and-services-glossary/README.md)
+  * [Snyk 지원 약관 및 서비스 용어집](working-with-snyk/snyk-terms-of-support-and-services-glossary/README.md)
     * [Snyk Jumpstart Services Description](working-with-snyk/snyk-terms-of-support-and-services-glossary/snyk-jumpstart-services-description.md)
     * [Snyk Jumpstart Customer Prerequisites](working-with-snyk/snyk-terms-of-support-and-services-glossary/snyk-jumpstart-customer-prerequisites.md)
     * [Statement of Work](working-with-snyk/snyk-terms-of-support-and-services-glossary/statement-of-work.md)
