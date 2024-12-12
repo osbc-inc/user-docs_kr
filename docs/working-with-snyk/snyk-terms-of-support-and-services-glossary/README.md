@@ -130,51 +130,51 @@ Platinum Success Offering 주당 평균 최대 8시간의 전용 TSM 시간이 �
 
 #### Standard Support
 
-The Standard Success Plan includes Standard Support.
+Standard Success Plan에는 Standard Support가 포함됩니다.
 
-**Pooled Technical Support:** Support tickets are handled and triaged by a pool of Technical Support Engineers.
+**공동 기술 지원:** 지원 티켓은 기술 지원 엔지니어 풀에서 처리하고 분류합니다.
 
-**8x5 support hours (Free and Team plans\*)**: Snyk Technical Support Engineers actively respond to tickets on the next business day, responding within local business hours, Monday to Friday.
+**8x5 지원 시간 (무료 및 팀 요금제\*)** Snyk 기술 지원 엔지니어는 월요일부터 금요일까지 현지 업무 시간 내에 다음 영업일에 티켓에 적극적으로 응답합니다.
 
-**24x5 support hours (Enterprise plan)**: Snyk Technical Support Engineers actively respond to tickets 24 hours a day, Monday to Friday. Included within the Enterprise plan.
+**24x5 지원 시간 (Enterprise 플랜)**: Snyk 기술 지원 엔지니어가 월요일부터 금요일까지 하루 24시간 티켓에 적극적으로 응답합니다. Enterprise 플랜에 포함되어 있습니다.
 
 {% hint style="info" %}
-\*Includes legacy Business plans
+\*legacy Business 플랜 포함
 {% endhint %}
 
 #### Silver Support
 
-The Silver Success Plan includes Silver Support.
+Silver Success Plan에는 Silver Support가 포함됩니다.
 
-**Pooled Technical Support:** Support tickets are handled and triaged by a pool of Technical Support Engineers.
+**공동 기술 지원:** 지원 티켓은 기술 지원 엔지니어 풀에서 처리하고 분류합니다.
 
-**24x7 support hours**: Snyk Technical Support Engineers actively respond to tickets 24 hours a day, Monday to Friday. For urgent customer issues outside of 24x5, Snyk provides a 24-hour support telephone number (+1-844-835-8167). This is served by a telephone answering service, which routes the request to Snyk on-call engineers.
+**24x7 지원 시간**: Snyk 기술 지원 엔지니어는 월요일부터 금요일까지 하루 24시간 티켓에 적극적으로 대응합니다. 연중무휴 24시간 이외의 긴급한 고객 문제에 대해서는 24시간 지원 전화 번호(+1-844-835-8167)를 제공합니다. 이 전화는 전화 응답 서비스를 통해 Snyk 대기 중인 엔지니어에게 요청을 전달합니다.
 
 #### Gold Support
 
-The Gold Success slan includes Gold Support.
+Gold Success  Plan에는 Gold Support가 포함됩니다.
 
-**Pooled Technical Support:** Support tickets are handled and triaged by a pool of Technical Support Engineers.
+**공동 기술 지원:** 지원 티켓은 기술 지원 엔지니어 풀에서 처리하고 분류합니다.
 
-**24x7 support hours**: Snyk Technical Support Engineers actively respond to tickets 24 hours a day, Monday to Friday. For urgent customer issues outside of 24x5, Snyk provides a 24-hour support telephone number (+1-844-835-8167). This is served by a telephone answering service, which routes the request to Snyk on-call engineers.
+**24x7 지원 시간**: Snyk 기술 지원 엔지니어는 월요일부터 금요일까지 하루 24시간 티켓에 적극적으로 대응합니다. 연중무휴 24시간 이외의 긴급한 고객 문제에 대해서는 24시간 지원 전화 번호(+1-844-835-8167)를 제공합니다. 이 전화는 전화 응답 서비스를 통해 Snyk 대기 중인 엔지니어에게 요청을 전달합니다.
 
 #### Platinum Support
 
-The Platinum Success Plan includes Platinum Support.
+Platinum Success Plan에는 Platinum Support가 포함됩니다.
 
-The Platinum add-on provides extended, in-depth, and skilled expertise to help you maximize your investment with Snyk. by aligning a **Technical Support Engineer** to your account who will have the relevant level of depth in your environment, deployment, and use cases that will help to expedite resolution time and offer best practices.
+Platinum add-on은 확장된 심층적이고 숙련된 전문 지식을 제공하여  Snyk에 대한 투자를 극대화할 수 있도록 도와줍니다. 고객의 환경, 배포 및 사용 사례에 대해 깊이 있는 지식을 갖춘 **기술 지원 엔지니어**를 계정에 배정하여 해결 시간을 단축하고 모범 사례를 제공할 수 있습니다.
 
-**Technical Support Engineer:** The aligned Technical Support Engineer (TSE) to be assigned to the Customer's account has familiarity with the Customer's environment and deployment, helps with solving support tickets, and is the Customer's point of escalation. The aligned TSE will also partner with the Customer for incident management.
+**기술 지원 엔지니어:** 고객 계정에 배정되는 기술 지원 엔지니어(TSE)는 고객의 환경 및 배포에 익숙하고 지원 티켓 해결에 도움을 주며 고객의 에스컬레이션 창구 역할을 합니다. 또한 배정된 TSE는 인시던트 관리를 위해 고객과 협력합니다.
 
-**24x7 support hours:** Snyk support engineers actively respond to tickets 24 hours a day, Monday to Friday. For urgent Customer issues outside of 24x5, Snyk provides a 24-hour support telephone number (+1-844-835-8167). This is served by a telephone answering service, which routes the request to Snyk on-call engineers.
+**24x7 지원 시간:** Snyk 지원 엔지니어는 월요일부터 금요일까지 하루 24시간 티켓에 적극적으로 응답합니다. 연중무휴 24시간 이외의 긴급한 고객 문제에 대해서는 24시간 지원 전화 번호(+1-844-835-8167)를 제공합니다. 이 전화는 전화 응답 서비스를 통해 Snyk 대기 중인 엔지니어에게 요청을 라우팅합니다.
 
-**Prioritized support ticket routing:** Tickets raised by Platinum Success Customers are automatically routed to Snyk Technical Support Engineers and prioritized ahead of non-Platinum ticket traffic.
+**우선순위 지원 티켓 라우팅:** Platinum 성공 고객이 제기한 티켓은 자동으로 Snyk 기술 지원 엔지니어에게 라우팅되어 비플래티넘 티켓 트래픽보다 우선적으로 처리됩니다.
 
-## Implementation and professional services
+## 구현  및 전문 서비스
 
-The Customer acknowledges that the implementation and professional service options listed below may be performed either by Snyk personnel or by Snyk's certified partners under the direction and supervision of Snyk. In either event, Snyk remains fully responsible and liable for the performance of the Snyk Accelerate or Snyk Assist implementation support and its partner's compliance with the terms of the underlying Agreement between Snyk and the Customer, including obligations of confidentiality and data security.
+고객은 아래 나열된 구현 및 전문 서비스 옵션이 Snyk 직원 또는 Snyk의 인증된 파트너가 Snyk의 지시 및 감독 하에 수행할 수 있음을 인정합니다. 어떤 경우든 Snyk는 기밀 유지 및 데이터 보안 의무를 포함하여 Snyk Accelerate 또는 Snyk Assist 구현 지원의 이행과 파트너가 Snyk와 고객 간의 기본 계약 조건을 준수하는 것에 대해 전적인 책임과 의무를 집니다.
 
-See the service descriptions on each of the following pages.
+다음 페이지의 각 서비스 설명을 참조하세요.
 
 * [Snyk Jumpstart](snyk-jumpstart-services-description.md)
 * [Statement of Work](statement-of-work.md)
