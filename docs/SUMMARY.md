@@ -141,7 +141,7 @@
       * [Broker ECR 통합을 위한 컨테이너 레지스트리 에이전트 설정하기](enterprise-configuration/snyk-broker/snyk-broker-container-registry-agent/setting-up-the-container-registry-agent-for-a-brokered-ecr-integration.md)
       * [Helm을 사용하여 컨테이너 레지스트리 에이전트용 Broker 설치하기](enterprise-configuration/snyk-broker/snyk-broker-container-registry-agent/install-broker-for-container-registry-agent-using-helm.md)
       * [Docker를 사용한 컨테이너 레지스트리 에이전트 고급 구성](enterprise-configuration/snyk-broker/snyk-broker-container-registry-agent/container-registry-agent-advanced-configuration-using-docker.md)
-    * [Snyk Broker - Infrastructure as Code detection](enterprise-configuration/snyk-broker/snyk-broker-infrastructure-as-code-detection/README.md)
+    * [Snyk Broker - 코드형 인프라 탐지](enterprise-configuration/snyk-broker/snyk-broker-infrastructure-as-code-detection/README.md)
       * [Detecting Terraform configuration files using Snyk Broker (Custom)](enterprise-configuration/snyk-broker/snyk-broker-infrastructure-as-code-detection/detecting-terraform-configuration-files-using-a-broker.md)
       * [Detecting CloudFormation configuration files using Snyk Broker (Custom)](enterprise-configuration/snyk-broker/snyk-broker-infrastructure-as-code-detection/detecting-cloudformation-configuration-files-using-a-broker.md)
       * [Detecting Kubernetes configuration files using Snyk Broker (Custom)](enterprise-configuration/snyk-broker/snyk-broker-infrastructure-as-code-detection/detecting-kubernetes-configuration-files-using-a-broker.md)

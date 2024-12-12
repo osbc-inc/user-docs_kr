@@ -17,9 +17,9 @@ docker run --restart=always \
        snyk/container-registry-agent:latest
 ```
 
-## **Container Registry and Broker Client with an internal certificate**
+## 내부 인증서가 있는 컨테이너 레지스트리 및 Broker 클라이언트
 
-By default, the Container Registry Agent establishes HTTPS connections to the Container Registry and Broker Client. If your Container Registry or Broker Client is serving an internal certificate (signed by your own CA), you can provide the CA certificate to the Container Registry Agent. For example, if your CA certificate is at `./private/ca.cert.pem`, provide it to the Docker container by mounting the folder and using the `NODE_EXTRA_CA_CERTS` environment variable:
+기본적으로 컨테이너 레지스트리 에이전트는 컨테이너 레지스트리 및 Broker 클라이언트에 대한 HTTPS 연결을 설정합니다. 컨테이너 레지스트리 또는 Broker 클라이언트가 내부 인증서(자체 CA가 서명)를 제공하는 경우, 컨테이너 레지스트리 에이전트에 CA 인증서를 제공할 수 있습니다. 예를 들어, CA 인증서가`./private/ca.cert.pem`에 있는 경우, 폴더를 마운트하고 `NODE_EXTRA_CA_CERTS` 환경 변수를 사용하여 Docker 컨테이너에 제공하세요:
 
 ```
 docker run --restart=always
