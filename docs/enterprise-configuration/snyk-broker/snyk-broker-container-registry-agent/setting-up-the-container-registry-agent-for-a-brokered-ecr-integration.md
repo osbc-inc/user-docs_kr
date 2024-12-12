@@ -1,22 +1,22 @@
-# Setting up the Container Registry Agent for a brokered ECR integration
+# Broker ECR 통합을 위한 컨테이너 레지스트리 에이전트 설정하기
 
-## Terminology and diagram for brokered ECR integration
+## Broker ECR 통합을 위한 용어 및 다이어그램
 
-In Elastic Container Registries the brokered communication is the same as in other container registries. However, ECR has a special authentication mechanism that requires setting up an Identify and Access Management (IAM) Role or User in the Agent.
+Elastic 컨테이너 레지스트리에서 브로커링된 통신은 다른 컨테이너 레지스트리와 동일합니다. 그러나 ECR에는 에이전트에서 IAM(식별 및 액세스 관리) 역할 또는 사용자를 설정해야 하는 특별한 인증 메커니즘이 있습니다.
 
-The **Container Registry Agent IAM Role or IAM User** is an IAM Role or IAM User is used by the Container Registry Agent to assume a role with access to ECR.
+**컨테이너 레지스트리 에이전트 IAM** 역할 또는 **IAM 사용자**는 컨테이너 레지스트리 에이전트에서 ECR에 액세스할 수 있는 역할을 맡는 데 사용됩니다.
 
-The **Snyk ECR Service Role is an IAM Role** with access to ECR and assumed by the Container Registry Agent IAM Role or IAM User to gain read-only access to ECR. The Snyk ECR Service Role ARN is provided to the Broker Client together with the region the ECR runs in, and is passed to the Container Registry Agent that will assume it.
+**Snyk ECR 서비스 역할**은 ECR에 대한 액세스 권한이 있는 **IAM 역할**이며 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자가 ECR에 대한 읽기 전용 액세스 권한을 갖도록 가정합니다. Snyk ECR 서비스 역할 ARN은 ECR이 실행되는 지역과 함께 Broker 클라이언트에 제공되며, 이를 맡게 될 컨테이너 레지스트리 에이전트에 전달됩니다.
 
-If there are multiple ECRs in multiple accounts that need to communicate with the Container Registry Agent, you must set up a Broker Client for each ECR.
+여러 계정에 컨테이너 레지스트리 에이전트와 통신해야 하는 여러 ECR이 있는 경우, 각 ECR에 대해 Broker 클라이언트를 설정해야 합니다.
 
-The following illustrates the architecture for a brokered ECR integration. Refer to the steps that follow for information about setting up the components on the diagram.
+다음은 브로커 ECR 통합을 위한 아키텍처를 보여줍니다. 다이어그램의 구성 요소 설정에 대한 자세한 내용은 다음 단계를 참조하세요.
 
-<figure><img src="../../../.gitbook/assets/Broker-CRA-architecture-diagram.png" alt="Architecture of the brokered ECR integration"><figcaption><p>Architecture of the brokered ECR integration</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Broker-CRA-architecture-diagram.png" alt="Architecture of the brokered ECR integration"><figcaption><p>브로커 ECR 통합의 아키텍처</p></figcaption></figure>
 
-## **Summary of steps for brokered ECR integration**
+## 브로커 ECR 통합을 위한 단계 요약
 
-Follow these steps to set up a single Container Registry Agent instance with access to ECR repositories located in different accounts.
+다음 단계에 따라 서로 다른 계정에 있는 ECR 리포지토리에 액세스할 수 있는 단일 컨테이너 레지스트리 에이전트 인스턴스를 설정하세요.
 
 1. **Run this step once only.** Create the Container Registry Agent IAM Role or IAM User with permissions to assume a role. Use the IAM Role or IAM User to run the Container Registry Agent. **Run the following steps for each of your ECR accounts, using a separate Broker instance for each ECR account**.
 2. In the AWS account where your ECR resides, create the Snyk ECR Service Role with read access to your ECR and restrict this role to be assumed only by the specific Container Registry Agent IAM Role or IAM User created in the previous step.
@@ -46,7 +46,7 @@ You can also provide a dedicated role in Amazon ECS tasks. For more information 
 6. Review and provide a role name: **SnykCraEc2Role**.
 7. Create the role.
 8.  From the role's **Summary** page, for later use, copy the **Instance Profile ARN**.\
-    Example:  `arn:aws:iam::aws-account:instance-profile` or `SnykCraEc2Role`\
+    Example: `arn:aws:iam::aws-account:instance-profile` or `SnykCraEc2Role`\
     Also, copy the **Role ARN**.
 
     Example: `arn:aws:iam::aws-account:role` or `SnykCraEc2Role`

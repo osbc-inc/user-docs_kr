@@ -121,16 +121,16 @@ docker run --restart=always \
 
 이 명령의 대안으로 파생된 Docker 이미지를 사용하여 컨테이너 레지스트리 에이전트를 설정할 수 있습니다. 컨테이너 레지스트리 에이전트에 대해 재정의할 환경 변수는 [파생된 Docker 이미지](../install-and-configure-snyk-broker/derived-docker-images-for-broker-client-integrations-and-container-registry-agent.md)를 참조하세요.
 
-### Configuring and running **the Container Registry Agent**
+### 컨테이너 레지스트리 에이전트 구성 및 실행
 
-You can pull the Container Registry Agent image from Docker Hub using the link provided in the [prerequisites](./#prerequisites-for-container-registry-agent).
+[필수 요구 사항](./#prerequisites-for-container-registry-agent)에 제공된 링크를 사용하여 Docker Hub에서 컨테이너 레지스트리 에이전트 이미지를 가져올 수 있습니다.
 
-To configure the Container Registry Agent, the following environment variables are required:
+컨테이너 레지스트리 에이전트를 구성하려면 다음 환경 변수가 필요합니다:
 
-* `SNYK_PORT` - the local port at which the Container Registry Agent accepts connections (default value: 17500).
-* `SNYK_MAX_IMAGE_SIZE_IN_BYTES` - the maximum size of an image that Snyk is able to scan (default value: 2147483648).
+* `SNYK_PORT` - 컨테이너 레지스트리 에이전트가 연결을 수락하는 로컬 포트(기본값: 17500).
+* `SNYK_MAX_IMAGE_SIZE_IN_BYTES` - Snyk이 스캔할 수 있는 이미지의 최대 크기(기본값: 2147483648).
 
-Run the Container Registry Agent container with the relevant configuration:
+관련 구성으로 컨테이너 레지스트리 에이전트 컨테이너를 실행합니다:
 
 ```
 docker run --restart=always \
@@ -139,39 +139,38 @@ docker run --restart=always \
        snyk/container-registry-agent:latest
 ```
 
-## **Container registry-specific configurations**
+## 컨테이너 레지스트리별 구성
 
-The following container registries require specific environment variables, setup, or both.
+다음 컨테이너 레지스트리에는 특정 환경 변수, 설정 또는 둘 다 필요합니다.
 
-### **DigitalOcean Container Registry**
+### 디지털오션 컨테이너 레지스트리
 
-`CR_USERNAME` and `CR_PASSWORD` are not required to set up Broker Client for DigitalOcean Container Registry. Instead, specify `CR_TOKEN`, the Digital Ocean authentication token.
+디지털오션 컨테이너 레지스트리용 Broker 클라이언트를 설정할 때 `CR_USERNAME`과`CR_PASSWORD`는 필요하지 않습니다. 대신 디지털 오션 인증 토큰인`CR_TOKEN`을 지정합니다.
 
-### **GCR and Google Artifact Registry**
+### GCR 및 Google 아티팩트 레지스트리
 
-All the preceding information applies to setting up the Broker Client for these container registries. Note that the `CR_USERNAME` value is permanent and should be `_json_key`, and the `CR_PASSWORD` value should be the JSON key used to authenticate to Google.
+앞의 모든 정보는 이러한 컨테이너 레지스트리에 대한 Broker 클라이언트를 설정하는 데 적용됩니다. `CR_USERNAME`값은 영구적이며 `_json_key`여야 하고, `CR_PASSWORD` 값은 Google 인증에 사용되는 JSON 키여야 한다는 점에 유의하세요.
 
-### **JFrog Container Registry (Artifactory)**
+### **JFrog** 컨테이너 레지스트리(아티팩토리)
 
-If you are using **Repository path** as your Docker access method, set the container registry hostname in the `CR_BASE` variable in this structure: `<your artifactory host>/artifactory/api/docker/<artifactory-repo-name>`
+**리포지토리 경로**를 Docker 액세스 방법으로 사용하는 경우 컨테이너 레지스트리 호스트 이름을 이 구조의 `CR_BASE` 변수에 설정하세요:`<your artifactory host>/artifactory/api/docker/<artifactory-repo-name>`
 
-Note that the catalog endpoint `/artifactory/api/docker/<artifactory-repository>/v2/_catalog` is not required for importing a project in Artifactory; this is used for listing the image repositories.
+카탈로그 엔드포인트 `/artifactory/api/docker/<artifactory-repository>/v2/_catalog` 는 Artifactory에서 프로젝트를 가져올 때 필요하지 않으며, 이미지 저장소를 나열하는 데 사용됩니다.
 
-See [Configuring your JFrog Artifactory container registry integration](../../../integrate-with-snyk/snyk-container-integrations/container-security-with-jfrog-artifactory-integration/configuring-your-jfrog-artifactory-container-registry-integration.md) for more details.
+자세한 내용은 [JFrog Artifactory 컨테이너 레지스트리 통합 구성하기](../../../integrate-with-snyk/snyk-container-integrations/container-security-with-jfrog-artifactory-integration/configuring-your-jfrog-artifactory-container-registry-integration.md)를 참조하세요.
 
-### **Elastic Container Registry (ECR)**
+### **Elastic** 컨테이너 레지스트리 **(ECR)**
 
-In Elastic Container Registries and other container registries the communication is the same. The Agent makes synchronous calls to the container registries to list and pull the image. Then the Agent scans the images and sends the results to the Broker Client using callbacks. ECR has a special authentication mechanism that requires setting up an IAM Role or User in the Agent.
+Elastic 컨테이너 레지스트리와 다른 컨테이너 레지스트리에서 통신은 동일합니다. 에이전트는 컨테이너 레지스트리를 동기식으로 호출하여 이미지를 나열하고 가져옵니다. 그런 다음 에이전트는 이미지를 스캔하고 콜백을 사용하여 결과를 Broker 클라이언트로 전송합니다. ECR에는 에이전트에서 IAM 역할 또는 사용자를 설정해야 하는 특수 인증 메커니즘이 있습니다.
 
-<figure><img src="../../../.gitbook/assets/image (20) (3).png" alt="High-level architecture of the brokered ECR integration"><figcaption><p>High-level architecture of the brokered ECR integration</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20) (3).png" alt="High-level architecture of the brokered ECR integration"><figcaption><p>Broker ECR 통합의 상위 수준 아키텍처</p></figcaption></figure>
 
-#### **Required AWS Resource with ECR**
+#### ECR에 필요한 AWS 리소스
 
-ECR setup requires that the following kinds of IAM resources be created:
+ECR 설정에는 다음과 같은 종류의 IAM 리소스를 만들어야 합니다:
 
-* Container Registry Agent IAM Role or IAM User: an IAM Role or IAM User the Agent uses to assume a cross-account role with access to ECR. It should have the following permissions: "`sts:AssumeRole"`.
-*   Snyk ECR Service Role: an IAM Role with access to ECR which is assumed by the Container Registry Agent IAM Role or IAM User to gain read-only access to ECR.\
-    The ECR Service Role should have the following permissions:
+* 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자: 에이전트가 ECR에 대한 액세스 권한이 있는 교차 계정 역할을 맡는 데 사용하는 IAM 역할 또는 IAM 사용자. 다음과 같은 권한을 가져야 합니다:"`sts:AssumeRole"`.
+*   Snyk ECR 서비스 역할: 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자가 ECR에 대한 읽기 전용 액세스 권한을 얻기 위해 가정하는 ECR에 대한 액세스 권한이 있는 IAM 역할입니다. ECR 서비스 역할에는 다음과 같은 권한이 있어야 합니다:
 
     ```
     [
@@ -189,40 +188,40 @@ ECR setup requires that the following kinds of IAM resources be created:
     ]
     ```
 
-#### **Setup steps for ECR**
+#### ECR 설정 단계
 
-The resources described can be used as follows so that a single Container Registry Agent instance can access ECR repositories located in different accounts.
+설명된 리소스는 단일 컨테이너 레지스트리 에이전트 인스턴스가 서로 다른 계정에 있는 ECR 리포지토리에 액세스할 수 있도록 다음과 같이 사용할 수 있습니다.
 
-**Run this step once only.** Create the Container Registry Agent IAM Role or IAM User and use it to run the Container Registry Agent. The IAM Role or IAM User could be provided to the Container Registry Agent using one of the methods described in the [AWS docs](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html).
+**이 단계는 한 번만 실행하세요.** 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자를 생성하고 이를 사용하여 컨테이너 레지스트리 에이전트를 실행합니다. [AWS 문서](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html)에 설명된 방법 중 하나를 사용하여 컨테이너 레지스트리 에이전트에 IAM 역할 또는 IAM 사용자를 제공할 수 있습니다.
 
-**Run the following steps for each of your ECR accounts, using a separate Broker instance for each ECR account:**
+**각 ECR 계정에 대해 별도의 Broker 인스턴스를 사용하여 각 ECR 계정에 대해 다음 단계를 실행합니다:**
 
-1. In the AWS account where your ECR resides, create the Snyk ECR Service Role with read access to your ECR, and edit the trust relationship to allow this role to be assumed only by the specific Container Registry Agent IAM Role or IAM User created in the one-time step.
-2. Restrict the Container Registry Agent IAM Role or IAM User to be allowed to assume only the Snyk ECR Service Role(s).
-3. Provide the Broker Client with the Role ARN (Amazon Service Name) of the Snyk ECR Service Role together with the ECR region. The Broker Client passes this Role ARN to the Container Registry Agent, and the Container Registry Agent assumes it to access your ECR. The following environment variables are required:
-   * CR\_ROLE\_ARN=\<the role ARN of SnykEcrServiceRole>
-   * CR\_REGION=\<AWS Region of ECR>
-   * CR\_EXTERNAL\_ID=\<Optional. An external ID found in the trust relationship condition>
+1. ECR이 있는 AWS 계정에서 ECR에 대한 읽기 권한이 있는 Snyk ECR 서비스 역할을 생성하고, 일회성 단계에서 생성한 특정 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자만 이 역할을 맡을 수 있도록 신뢰 관계를 편집합니다.
+2. 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자가 Snyk ECR 서비스 역할만 맡을 수 있도록 제한합니다.
+3. Broker 클라이언트에 ECR 리전과 함께 Snyk ECR 서비스 역할의 역할 ARN(Amazon 서비스 이름)을 제공합니다. Broker 클라이언트는 이 역할 ARN을 컨테이너 레지스트리 에이전트에 전달하고, 컨테이너 레지스트리 에이전트는 이 역할이 ECR에 액세스하는 것으로 간주합니다. 다음 환경 변수가 필요합니다:
+   * CR\_ROLE\_ARN=\<SnykEcrServiceRole의 역할 ARN>
+   * CR\_REGION=\<ECR의 AWS 지역>
+   * CR\_EXTERNAL\_ID=<선택 사항. 신뢰 관계 조건에서 찾은 외부 ID>
 
-## **Configuring and using systemcheck**
+## 시스템 검사 구성 및 사용
 
-You can use the `/systemcheck` endpoint of the Broker Client to verify connectivity between the Broker Client, the Container Registry Agent, and your container registry.
+Broker 클라이언트의 `/systemcheck` 엔드포인트를 사용하여 Broker 클라이언트, 컨테이너 레지스트리 에이전트 및 컨테이너 레지스트리 간의 연결을 확인할 수 있습니다.
 
-To use the endpoint, provide the following environment variable to the Broker Client:\
+엔드포인트를 사용하려면 Broker 클라이언트에 다음 환경 변수를 제공하세요:\
 `BROKER_CLIENT_VALIDATION_URL=<agent-url>/systemcheck`
 
-When you call the `/systemcheck` endpoint of the Broker Client, it uses the `BROKER_CLIENT_VALIDATION_URL` to make a request to the `/systemcheck` endpoint Container Registry Agent, with the credentials provided to the Broker Client. The Container Registry Agent then makes a request to the container registry to validate connectivity.
+Broker 클라이언트의 `/systemcheck` 엔드포인트를 호출하면, Broker 클라이언트에 제공된 자격 증명을 사용하여 `BROKER_CLIENT_VALIDATION_URL`을 사용하여 `/systemcheck` 엔드포인트 컨테이너 레지스트리 에이전트에 요청을 보냅니다. 그러면 컨테이너 레지스트리 에이전트가 컨테이너 레지스트리에 요청하여 연결 유효성을 검사합니다.
 
 {% hint style="info" %}
-The `/systemcheck` endpoint is not mandatory for the brokered integration to function. For more information, see [Systemcheck documentation](../troubleshooting-broker.md#monitoring-systemcheck).
+The`/systemcheck` 엔드포인트는 중개된 통합이 작동하기 위해 반드시 필요한 것은 아닙니다. 자세한 내용은 [Systemcheck 문서](../troubleshooting-broker.md#monitoring-systemcheck)를 참조하세요.
 {% endhint %}
 
-## **Debugging methods for Container Registry Agent**
+## 컨테이너 레지스트리 에이전트의 디버깅 방법
 
-The `LOG_LEVEL` environment variable can be set to the desired level (debug/info/warn/error) in order to change the level of the Container Registry Agent and Broker Client logs.
+컨테이너 레지스트리 에이전트 및 Broker 클라이언트 로그의 수준을 변경하기 위해`LOG_LEVEL`환경 변수를 원하는 수준(debug/info/warn/error)으로 설정할 수 있습니다.
 
-For more verbose debugging, run the Container Registry Agent with the `DEBUG=*` environment variable. This allows you to print the logs of the Node [Debug](https://www.npmjs.com/package/debug) package. The Debug package is used by several packages in the Container Registry Agent, among them the [Needle](https://www.npmjs.com/package/needle) package, which is used for making HTTP requests. To print debug logs specifically from Needle, set `DEBUG=needle`.
+보다 자세한 디버깅을 원하면`DEBUG=*` 환경 변수를 사용하여 컨테이너 레지스트리 에이전트를 실행하세요. 이렇게 하면 노드 [Debug](https://www.npmjs.com/package/debug) 패키지의 로그를 인쇄할 수 있습니다. 디버그 패키지는 컨테이너 레지스트리 에이전트의 여러 패키지에서 사용되며, 그 중 HTTP 요청을 하는 데 사용되는 [Needle](https://www.npmjs.com/package/needle) 패키지가 있습니다. 특히 Needle에서 디버그 로그를 인쇄하려면`DEBUG=needle`을 설정하세요.
 
 {% hint style="warning" %}
-Using the debugging options of third-party tools is not recommended for production environments, as this may result in logging sensitive information in logs that are not maintained by Snyk, for example, header information of HTTP requests.
+타사 도구의 디버깅 옵션을 사용하는 것은 프로덕션 환경에서는 권장하지 않는데, 이는 HTTP 요청의 헤더 정보 등 Snyk에서 관리하지 않는 민감한 정보를 로그에 기록할 수 있기 때문입니다.
 {% endhint %}
