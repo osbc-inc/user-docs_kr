@@ -1,8 +1,8 @@
-# Securing data at rest
+# 저장 데이터 보안
 
-The Snyk CLI stores its configuration in a JSON file in the local file system in a user-related path. Because the configuration file might include secrets like tokens, it is recommended that you secure the stored file.
+Snyk CLI는 로컬 파일 시스템의 사용자 관련 경로에 있는 JSON 파일에 구성을 저장합니다. 구성 파일에는 토큰과 같은 보안 정보가 포함될 수 있으므로 저장된 파일을 보호하는 것이 좋습니다.
 
-The following practices are recommended:
+다음과 같은 방법을 권장합니다:
 
-* Use ACLs to limit access to the [file path of the configuration file](access-requirements.md). This might be provided by the operating system.
-* Use Hard Disk Encryption to secure persisted data (data at rest).
+* ACL을 사용하여 구성 파일의 [파일 경로에 대한 액세스를 제한합니다](access-requirements.md). 이는 운영 체제에서 제공할 수 있습니다.
+* 하드 디스크 암호화를 사용하여 영구 데이터(미사용 데이터)를 보호합니다.
