@@ -1,21 +1,21 @@
-# Using FIPS-validated cryptography
+# FIPS 인증 암호화 사용
 
-## Availability of FIPS-validated cryptography in Snyk
+## Snyk에서 FIPS 인증 암호화 사용 가능 범위
 
-Support for use of FIPS-validated cryptography is limited to the Windows and Linux operating systems.
+FIPS 인증 암호화 사용 기능은 Windows 및 Linux 운영 체제로만 지원됩니다.
 
-| Operating System | FIPS support |
-| ---------------- | ------------ |
-| Windows          | ✅            |
-| Linux            | ✅            |
-| Alpine           | ⛔            |
-| macOS            | ⛔            |
+| Operating System | FIPS 지원 |
+| ---------------- | ------- |
+| Windows          | ✅       |
+| Linux            | ✅       |
+| Alpine           | ⛔       |
+| macOS            | ⛔       |
 
-## FIPS-validated cryptography support and use in the Snyk CLI and Snyk Language Server
+## Snyk CLI 및 Snyk Language Server에서의 FIPS 검증 암호화 지원 및 사용
 
-To optimize the developer experience, Snyk is combining the [Snyk Language Server](../../integrate-with-snyk/ide-tools/snyk-language-server.md) and the [Snyk CLI](../getting-started-with-the-snyk-cli.md). As a first step, Snyk is bringing FIPS binaries under one application. Later also non-FIPS CLI binaries will be used for Snyk Language Server.
+개발자 경험을 최적화하기 위해 Snyk은 [Snyk Language Server](../../integrate-with-snyk/ide-tools/snyk-language-server.md)와 [Snyk CLI](../getting-started-with-the-snyk-cli.md)를 결합하고 있습니다. 첫 번째 단계로, Snyk은 하나의 애플리케이션에서 FIPS 바이너리를 제공합니다. 추후에는 FIPS 이외의 CLI 바이너리도 Snyk Language Server에 사용될 예정입니다.
 
-The Snyk Language Server can now be executed as a CLI command.
+이제 Snyk Language Server를 CLI 명령으로 실행할 수 있습니다.
 
 ```bash
 > snyk language-server
@@ -24,23 +24,23 @@ The Snyk Language Server can now be executed as a CLI command.
 > snyk-ls
 ```
 
-As a consequence, instructions for using FIPS-validated cryptography are the same for the CLI and the Language Server.
+따라서 FIPS 인증 암호화를 사용하기 위한 방법은 CLI와 Language Server에서 동일합니다.
 
-### Prerequisites for FIPS-cryptography in the CLI and Snyk Language Server
+### CLI 및 Snyk Language Server에서 FIPS 암호화를 위한 전제 조건
 
-**Linux operating systems**
+**Linux 운영 체제**
 
-On Linux, Snyk supports FIPS-validated cryptography through OpenSSL and its validated FIPS provider.
+Linux에서 Snyk은 OpenSSL 및 검증된 FIPS 제공업체를 통해 FIPS 검증 암호화를 지원합니다.
 
-Ensure that your Linux system has OpenSSL installed and configured to meet FIPS validation requirements. For information about how to accomplish this, see the documentation from the [OpenSSL project](https://www.openssl.org/docs/fips.html).
+Linux 시스템에 OpenSSL이 설치되어 있고 FIPS 유효성 검사 요구 사항을 충족하도록 구성되어 있는지 확인하세요. 이를 수행하는 방법에 대한 자세한 내용은 [OpenSSL project](https://www.openssl.org/docs/fips.html)의 설명서를 참조하세요.
 
-**Windows operating systems**
+**Windows 운영 체제**
 
-On Windows, Snyk supports FIPS-validated cryptography through the Windows CNG API.
+Windows에서 Snyk은 Windows CNG API를 통해 FIPS 검증 암호화를 지원합니다.
 
-To enable FIPS on Windows, [use the Windows FIPS policy](https://docs.microsoft.com/en-us/windows/security/threat-protection/fips-140-validation#step-3-enable-the-fips-security-policy).
+Windows에서 FIPS를 활성화하려면 [Windows FIPS 정책](https://learn.microsoft.com/en-us/windows/security/security-foundations/certification/fips-140-validation#step-3-enable-the-fips-security-policy)을 사용하세요.
 
-For testing, FIPS can be enabled using the following registry key   `HKLM\SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy` by setting the value of `Enabled` to 1.
+테스트를 위해 레지스트리 키`HKLM\SYSTEM\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy` 를 사용하여 `Enabled` 값을 1로 설정하여 FIPS를 활성화할 수 있습니다.
 
 #### Download FIPS-enabled binaries
 
