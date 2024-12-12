@@ -796,7 +796,7 @@
   * [Snyk의 보안 운영 개념](snyk-cli/security-concept-of-operations-for-snyk/README.md)
     * [액세스 요구 사항](snyk-cli/security-concept-of-operations-for-snyk/access-requirements.md)
     * [저장 데이터 보안](snyk-cli/security-concept-of-operations-for-snyk/securing-data-at-rest.md)
-    * [FIPS 인증 암호화 사용](snyk-cli/security-concept-of-operations-for-snyk/using-fips-validated-cryptography.md)
+    * [FIPS 지원 암호화 사용](snyk-cli/security-concept-of-operations-for-snyk/using-fips-validated-cryptography.md)
   * [Code execution warning for Snyk CLI](snyk-cli/code-execution-warning-for-snyk-cli.md)
   * [Scan and maintain Projects using the CLI](snyk-cli/scan-and-maintain-projects-using-the-cli/README.md)
     * [CLI tools](snyk-cli/scan-and-maintain-projects-using-the-cli/cli-tools/README.md)
