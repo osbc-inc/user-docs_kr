@@ -6,11 +6,11 @@ Snyk컨설턴트가 계정 구성 지원 서비스(“Jumpstart 서비스”)를
 
 목표는 애플리케이션 보안 노력을 계속할 수 있도록 잘 준비된 Snyk와 고객 팀의 작업 환경을 구축하는 것입니다.
 
-## Recommended for
+## 권장 대상
 
-* Teams needing assistance with the setup of Snyk products
-* Teams who are new to Snyk and have limited experience with security scanning
-* Self-starters who are comfortable with extending and maintaining Snyk on their own, post-engagement
+* Snyk 제품 설정에 도움이 필요한 팀
+* Snyk를 처음 사용하고 보안 스캔에 대한 경험이 부족한 팀
+* 계약 후에도 스스로 Snyk을 확장하고 유지 관리하는 데 익숙한 초보자
 
 ## Jumpstart Services description
 
