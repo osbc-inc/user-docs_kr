@@ -12,7 +12,7 @@ Snyk컨설턴트가 계정 구성 지원 서비스(“Jumpstart 서비스”)를
 * Snyk를 처음 사용하고 보안 스캔에 대한 경험이 부족한 팀
 * 계약 후에도 스스로 Snyk을 확장하고 유지 관리하는 데 익숙한 초보자
 
-## Jumpstart Services description
+## Jumpstart Services 설명
 
 The Snyk Consultant will deliver the following services related to the setup of Snyk remotely as part of the Jumpstart Services to the Customer. Note that the Jumpstart Services will be delivered only for the Snyk Applications purchased on an Order Form at the same time as this service. References to Snyk Services not purchased by the Customer are hereby omitted unless otherwise noted.
 
