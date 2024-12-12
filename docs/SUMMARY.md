@@ -794,7 +794,7 @@
 * [Snyk CLI](snyk-cli/README.md)
   * [Snyk CLI 시작하기](snyk-cli/getting-started-with-the-snyk-cli.md)
   * [Snyk의 보안 운영 개념](snyk-cli/security-concept-of-operations-for-snyk/README.md)
-    * [Access requirements](snyk-cli/security-concept-of-operations-for-snyk/access-requirements.md)
+    * [액세스 요구 사항](snyk-cli/security-concept-of-operations-for-snyk/access-requirements.md)
     * [Securing data at rest](snyk-cli/security-concept-of-operations-for-snyk/securing-data-at-rest.md)
     * [Using FIPS-validated cryptography](snyk-cli/security-concept-of-operations-for-snyk/using-fips-validated-cryptography.md)
   * [Code execution warning for Snyk CLI](snyk-cli/code-execution-warning-for-snyk-cli.md)
