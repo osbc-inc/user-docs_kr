@@ -18,94 +18,46 @@ Elastic 컨테이너 레지스트리에서 브로커링된 통신은 다른 컨�
 
 다음 단계에 따라 서로 다른 계정에 있는 ECR 리포지토리에 액세스할 수 있는 단일 컨테이너 레지스트리 에이전트 인스턴스를 설정하세요.
 
-1. **Run this step once only.** Create the Container Registry Agent IAM Role or IAM User with permissions to assume a role. Use the IAM Role or IAM User to run the Container Registry Agent. **Run the following steps for each of your ECR accounts, using a separate Broker instance for each ECR account**.
-2. In the AWS account where your ECR resides, create the Snyk ECR Service Role with read access to your ECR and restrict this role to be assumed only by the specific Container Registry Agent IAM Role or IAM User created in the previous step.
-3. Restrict the Container Registry Agent IAM Role or IAM User to be allowed to assume only your Snyk ECR Service Role(s).
-4. Provide the Broker Client with the Role Amazon Resource Name (ARN) of the Snyk ECR Service Role. The Broker Client passes this Role ARN to the Container Registry Agent, and the Container Registry Agent assumes it to access your ECR.
+1. **이 단계는 한 번만 실행하세요.** 역할을 맡을 수 있는 권한이 있는 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자를 만듭니다. IAM 역할 또는 IAM 사용자를 사용하여 컨테이너 레지스트리 에이전트를 실행합니다. **각 ECR 계정에 대해 별도의 Broker 인스턴스를 사용하여 각 ECR 계정에 대해 다음 단계를 실행합니다.**
+2. ECR이 있는 AWS 계정에서 ECR에 대한 읽기 권한이 있는 Snyk ECR 서비스 역할을 생성하고 이 역할은 이전 단계에서 생성한 특정 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자만 맡도록 제한합니다.
+3. 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 사용자가 Snyk ECR 서비스 역할만 맡을 수 있도록 제한합니다.
+4. Broker 클라이언트에 Snyk ECR 서비스 역할의 역할 아마존 리소스 이름(ARN)을 제공합니다. Broker 클라이언트는 이 역할 ARN을 컨테이너 레지스트리 에이전트에 전달하고, 컨테이너 레지스트리 에이전트는 이 역할이 ECR에 액세스하는 것으로 간주합니다.
 
-## **Step 1: Run the Container Registry Agent with a IAM User or IAM Role**
+## 1단계: IAM 사용자 또는 IAM 역할로 컨테이너 레지스트리 에이전트 실행하기
 
-In this step, create an IAM Role or an IAM User for use by the Container Registry Agent. The IAM Role or IAM User could be provided to the Container Registry Agent via the methods described in the [AWS docs](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html).
+이 단계에서는 컨테이너 레지스트리 에이전트에서 사용할 IAM 역할 또는 IAM 사용자를 생성합니다. [AWS 문서](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html)에 설명된 방법을 통해 컨테이너 레지스트리 에이전트에 IAM 역할 또는 IAM 사용자를 제공할 수 있습니다.
 
-The following examples explain how to provide the IAM Role or IAM User using one of the following methods:
+다음 예에서는 다음 방법 중 하나를 사용하여 IAM 역할 또는 IAM 사용자를 제공하는 방법을 설명합니다:
 
-* **Example a:** Create a dedicated EC2 role and load credentials from AWS Identity and Access Management (IAM) roles to the EC2 instance running the Container Registry Agent image.
-* **Example b:** Create a dedicated user and provide its credentials through environment variables.
+* **예제** **a**: 전용 EC2 역할을 생성하고 컨테이너 레지스트리 에이전트 이미지를 실행하는 EC2 인스턴스에 AWS IAM(ID 및 액세스 관리) 역할의 자격 증명을 로드합니다.
+* **예제 b**: 전용 사용자를 만들고 환경 변수를 통해 자격 증명을 제공합니다.
 
-You can also provide a dedicated role in Amazon ECS tasks. For more information see the [AWS docs](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html).
+Amazon ECS 작업에서 전용 역할을 제공할 수도 있습니다. 자세한 내용은 [AWS 문서](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html)를 참조하세요.
 
-### **Example a: Create a dedicated EC2 Service Role and load credentials from AWS Identity and Access Management (IAM) roles for Amazon EC2**
+### 예제 a: 전용 EC2 서비스 역할을 생성하고 Amazon EC2용 AWS IAM(신원 및 액세스 관리) 역할에서 자격 증명 로드하기
 
-#### Stage 1: Create a Role
+#### 1단계: 역할 만들기
 
-1. Go to [AWS](https://console.aws.amazon.com/iam/home?#/policies) to log in to the AWS Management Console with the IAM service and navigate to the **Roles** page.
-2. Choose to **create a role**.
-3. Select **AWS service** for the **type of trusted entity**.
-4. Select **EC2** as the **use case**.
-5. Choose to go next with permission and tags.
-6. Review and provide a role name: **SnykCraEc2Role**.
-7. Create the role.
-8.  From the role's **Summary** page, for later use, copy the **Instance Profile ARN**.\
-    Example: `arn:aws:iam::aws-account:instance-profile` or `SnykCraEc2Role`\
-    Also, copy the **Role ARN**.
+1. [AWS](https://console.aws.amazon.com/iam/home?#/policies) 로 이동하여 IAM 서비스를 사용하여 AWS 관리 콘솔에 로그인하고 **역할(role)** 페이지로 이동합니다.
+2. **역할 만들기(create a role)**&#xB97C; 선택합니다.
+3. **신뢰할 수 있는 엔티티 유형**에 대해 **AWS** 서비스를 선택합니다.
+4. **사용 사례(use case)**&#xB85C; **EC2**를 선택합니다.
+5. 권한 및 태그를 사용하여 다음으로 이동을 선택합니다.
+6. 역할 이름을 검토하고 입력합니다:**SnykCraEc2Role**.
+7. 역할을 만듭니다.
+8.  역할의 **요약(Summary)** 페이지에서 나중에 사용할 수 있도록 **인스턴스 프로필 ARN(Instance Profile ARN)**&#xC744; 복사합니다.\
+    예: `arn:aws:iam::aws-account:instance-profile` 또는`SnykCraEc2Role`\
+    또한 **Role ARN**을 복사합니다.
 
-    Example: `arn:aws:iam::aws-account:role` or `SnykCraEc2Role`
+    예: `arn:aws:iam::aws-account:role` 또는`SnykCraEc2Role`
 
-#### Stage 2: Create a policy to allow the EC2 role to assume another role
+#### 2단계: EC2 역할이 다른 역할을 맡을 수 있도록 허용하는 정책 만들기
 
-1. In the newly created role page, in the **Permissions** tab, create an **Inline policy**.
-2. In **Service** choose **STS**.
-3. In **Actions** choose **Write → AssumeRole**.
-4. In **Resources** choose **All resources** (you will harden the resources in a later step).
-5.  In the **JSON** tab verify that the policy contains the following:
-
-    ```
-    {
-      Version: 2012-10-17,
-      Statement: [
-        {
-          Sid: SnykCraAssumeRolePolicy,
-          Effect: Allow,
-          Action: sts:AssumeRole,
-          Resource: *
-        }
-      ]
-    }
-    ```
-6. Review the policy and provide a policy name: **SnykCraAssumeRolePolicy**.
-7. Choose to create the policy.
-
-#### Stage 3: Attach the role to the EC2 machine running the Container Registry Agent
-
-1. Go to the **EC2 Management Console** and choose the instance running the Container Registry Agent container.
-2. Select **Actions → Security → Modify IAM Role**.
-3. From the **IAM role** dropdown list, choose the Instance profile of the IAM role created in the first step.\
-   Example: `arn:aws:iam::aws-accoun:instance-profile` or `SnykCraEc2Role`
-4. Then **Save**.
-
-When you are running the Container Registry Agent image on the EC2 machine, the credentials of the attached role are automatically picked up by the running Container Registry Agent. Therefore, no extra steps are needed. For more information see the [Amazon docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials).
-
-### Example b: Creating a dedicated user and providing its credentials through environment variables
-
-#### Stage 1: Create a user
-
-1. Go to [AWS](https://console.aws.amazon.com/iam/home?#/policies) to log in to the AWS Management Console with the IAM service and navigate to the **Users** page.
-2. Select **Add users**.
-3. Enter the user name: **SnykCraUser**.
-4. Select **Programmatic access** as the **Access type**.
-5. Choose to go next with permission and tags.
-6. Review and create the user.
-7. Once the user is created, save its credentials (Access Key ID and Secret Access Key) for later use.
-8. From the user's **Summary** page, copy the **User ARN** for later use.\
-   Example: `arn:aws:iam::aws-account:user` or `SnykCraUser`
-
-#### Stage 2: Create a policy to allow the user to assume a role
-
-1. In the newly created user page, in the **Permissions** tab create an **Inline policy**.
-2. In **Service** choose **STS**.
-3. In **Actions** choose **Write→AssumeRole**.
-4. In **Resources** choose **All resources** (you will harden the resources in a later step).
-5.  In the **JSON** tab verify that the policy contains the following statement:
+1. 새로 만든 역할 페이지의 **권한(Permissions)** 탭에서 **인라인 정책(Inline policy)**&#xC744; 만듭니다.
+2. **Service**에서 **STS**를 선택합니다.
+3. **작업(Actions)**&#xC5D0;서 **쓰기(Write)** → **역할 가정하기(AssumeRole)**&#xB97C; 선택합니다.
+4. **리소스(Resources)**&#xC5D0;서 **모든 리소스(All resources)**&#xB97C; 선택합니다(이후 단계에서 리소스를 강화합니다).
+5.  **JSON** 탭에서 정책에 다음이 포함되어 있는지 확인합니다:
 
     ```
     {
@@ -120,26 +72,74 @@ When you are running the Container Registry Agent image on the EC2 machine, the 
       ]
     }
     ```
-6. Review the policy and provide a policy name: **SnykCraAssumeRolePolicy**.
-7. Choose to create the policy.
+6. 정책을 검토하고 정책 이름(**SnykCraAssumeRolePolicy**)을 입력합니다.
+7. 정책 생성을 선택합니다.
 
-#### Stage 3: Use the credentials when running the Container Registry Agent
+#### 3단계: 컨테이너 레지스트리 에이전트를 실행하는 EC2 머신에 역할 연결하기
 
-When you are running the Container Registry Agent image, the credentials could be provided by setting the following environment variables:
+1. **EC2 관리 콘솔(EC2 Management Console)**&#xB85C; 이동하여 컨테이너 레지스트리 에이전트 컨테이너를 실행하는 인스턴스를 선택합니다.
+2. **작업(Actions) → 보안(Security) → IAM 역할 수정(Modify IAM Role)**&#xC744; 선택합니다.
+3. **IAM 역할(IAM role)** 드롭다운 목록에서 첫 번째 단계에서 생성한 IAM 역할의 인스턴스 프로파일을 선택합니다. \
+   예: `arn:aws:iam::aws-accoun:instance-profile` 또는`SnykCraEc2Role`
+4. 그런 다음 **저장(Save)**&#xD569;니다.
+
+EC2 머신에서 컨테이너 레지스트리 에이전트 이미지를 실행하는 경우, 연결된 역할의 자격 증명이 실행 중인 컨테이너 레지스트리 에이전트에 의해 자동으로 선택됩니다. 따라서 추가 단계가 필요하지 않습니다. 자세한 내용은 [Amazon 문서](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials)를 참조하세요.
+
+### 예제 b: 환경 변수를 통해 전용 사용자 생성 및 자격 증명 제공
+
+#### 1단계: 사용자 만들기
+
+1. [AWS](https://console.aws.amazon.com/iam/home?#/policies) 로 이동하여 IAM 서비스를 사용하여 AWS 관리 콘솔에 로그인하고 **사용자** 페이지로 이동합니다.
+2. **사용자 추가(Add users)**&#xB97C; 선택합니다.
+3. 사용자 이름: **SnykCraUser**를 입력합니다.
+4. **액세스 유형(Access type)**&#xC73C;로 **프로그래밍 방식의 액세스(Programmatic access)**&#xB97C; 선택합니다.
+5. 권한 및 태그와 함께 다음으로 이동을 선택합니다.
+6. 사용자를 검토하고 생성합니다.
+7. 사용자가 생성되면 나중에 사용할 수 있도록 자격 증명(액세스 키 ID 및 비밀 액세스 키)을 저장합니다.
+8. 사용자의 **요약(Summary)** 페이지에서 나중에 사용할 수 있도록 **사용자 ARN(User ARN)**&#xC744; 복사합니다.\
+   예: `arn:aws:iam::aws-account:user` 또는`SnykCraUser`
+
+#### 2단계: 사용자가 역할을 맡을 수 있도록 허용하는 정책을 만듭니다.
+
+1. 새로 만든 사용자 페이지의 **권한(Permissions)** 탭에서 **인라인 정책(Inline policy)**&#xC744; 만듭니다.
+2. **Service** 에서 **STS**를 선택합니다.
+3. **작업(Actions)**&#xC5D0;서 **쓰기(Write)→역할 가정(AssumeRole)**&#xC744; 선택합니다.
+4. **리소스(Resources)**&#xC5D0;서 **모든 리소스(All resources)**&#xB97C; 선택합니다(이후 단계에서 리소스를 강화할 예정임).
+5.  **JSON** 탭에서 정책에 다음 문구가 포함되어 있는지 확인합니다:
+
+    ```
+    {
+      Version: 2012-10-17,
+      Statement: [
+        {
+          Sid: SnykCraAssumeRolePolicy,
+          Effect: Allow,
+          Action: sts:AssumeRole,
+          Resource: *
+        }
+      ]
+    }
+    ```
+6. 정책을 검토하고 정책 이름(**SnykCraAssumeRolePolicy**)을 입력합니다.
+7. 정책 생성을 선택합니다.
+
+#### 3단계: 컨테이너 레지스트리 에이전트를 실행할 때 자격 증명 사용
+
+컨테이너 레지스트리 에이전트 이미지를 실행할 때 다음 환경 변수를 설정하여 자격 증명을 제공할 수 있습니다:
 
 * `AWS_ACCESS_KEY_ID=User access key ID`
 * `AWS_SECRET_ACCESS_KEY=User secret access key`
 
-## Step 2: Create Snyk ECR Service Role and enable cross-account access to ECR
+## 2단계: Snyk ECR 서비스 역할을 생성하고 ECR에 대한 교차 계정 액세스 활성화
 
-In this step, you will create a Role in the account in which your ECR repositories reside. This Role will allow read-only access to your repositories and could be assumed by the Role created in the previous step.
+이 단계에서는 ECR 리포지토리가 있는 계정에서 역할을 만듭니다. 이 역할은 리포지토리에 대한 읽기 전용 액세스를 허용하며 이전 단계에서 만든 역할이 이 역할을 맡을 수 있습니다.
 
-### **1. Create a read-only ECR policy to be used by the Snyk ECR Service Role**
+### **1.** Snyk ECR 서비스 역할에서 사용할 읽기 전용 ECR 정책을 만듭니다.
 
-1. Go to [AWS](https://console.aws.amazon.com/iam/home?#/policies) to log in to the AWS Management Console with the IAM service and navigate to the **Policies** page.
-2. Create a new policy.
-3. Choose to edit the JSON data.
-4.  Delete the default data and in its place copy and paste the following:
+1. [AWS](https://console.aws.amazon.com/iam/home?#/policies)로 이동하여 IAM 서비스를 사용하여 AWS 관리 콘솔에 로그인하고 **정책(Policies)** 페이지로 이동합니다.
+2. 새 정책을 만듭니다.
+3. JSON 데이터 편집을 선택합니다.
+4.  기본 데이터를 삭제하고 그 자리에 다음을 복사하여 붙여넣습니다:
 
     ```
     {
@@ -166,30 +166,30 @@ In this step, you will create a Role in the account in which your ECR repositori
       ]
     }
     ```
-5. Choose to review the policy.
-6. Set **AmazonEC2ContainerRegistryReadOnlyForSnyk** as the **Name**.
-7. Set **Provides Container Registry Agent with read-only access to Amazon EC2 Container Registry repositories** as the **description**.
-8. Choose to create the policy.
+5. 정책을 검토하도록 선택합니다.
+6. **AmazonEC2ContainerRegistryReadOnlyForSnyk**를 **Name**으로 설정합니다.
+7. **컨테이너 레지스트리 에이전트에 Amazon EC2 컨테이너 레지스트리 리포지토리**에 대한 **읽기 전용 액세스 권한 제공**을 **설명**으로 설정합니다.
+8. 정책을 생성하도록 선택합니다.
 
-### 2. Create Snyk ECR Service Role with which to implement the policy
+### 2. 정책을 구현할 Snyk ECR 서비스 역할 만들기
 
-1. From the AWS Management Console again, navigate to the **Roles** page. [Log in](https://console.aws.amazon.com/iam/home?#/roles) if needed to navigate to the AWS Management Console.
-2. Create a new role.
-3. Select **AWS service** as the trusted entity and **EC2** as the service for this Role.
-4. Choose to go next with permission.
-5. Check the policy **AmazonEC2ContainerRegistryReadOnlyForSnyk** on the list.
-6. Choose to go next with tags and review.
-7. Set **SnykEcrServiceRole** as the Name.
-8. Set **Allows EC2 instances to call ECR AWS services on your behalf** as the Description.
+1. AWS 관리 콘솔에서 다시 **역할(Roles)** 페이지로 이동합니다. 필요한 경우 [로그인](https://console.aws.amazon.com/iam/home?#/roles)하여 AWS 관리 콘솔로 이동합니다.
+2. 새 역할을 만듭니다.
+3. 신뢰할 수 있는 엔티티로 **AWS 서비스**를 선택하고 이 역할의 서비스로 **EC2**를 선택합니다.
+4. 권한이 있는 다음 단계를 선택합니다.
+5. 목록에서 **AmazonEC2ContainerRegistryReadOnlyForSnyk** 정책을 확인합니다.
+6. 태그와 함께 다음으로 이동을 선택하고 검토합니다.
+7. **SnykEcrServiceRole**을 이름으로 설정합니다.
+8. **EC2 인스턴스가 사용자를 대신하여 ECR AWS 서비스를 호출할 수 있도록 허용**을 설명으로 설정합니다.
 
-### 3. Harden the usability scope of the Snyk ECR Service Role
+### 3. Snyk ECR 서비스 역할의 사용성 범위 강화
 
-This step hardens the usability of the Snyk ECR Service Role so that it could be assumed only by the Container Registry Agent IAM Role or IAM Role.
+이 단계는 컨테이너 레지스트리 에이전트 IAM 역할 또는 IAM 역할만 맡을 수 있도록 Snyk ECR 서비스 역할의 사용성을 강화합니다.
 
-1. Again from the **Roles** page, find and select the [SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole) to enter the Role configurations.
-2. Select the **Trust relationships** tab.
-3. Edit the trust relationship.
-4.  Delete all of the data and replace it with the following JSON:
+1. 다시 **역할(Roles)** 페이지에서 [SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole)을 찾아서 선택하여 역할 구성을 입력합니다.&#x20;
+2. **신뢰 관계(Trust relationships)** 탭을 선택합니다.
+3. 신뢰 관계(Trust relationships)를 편집합니다.
+4.  모든 데이터를 삭제하고 다음 JSON으로 바꿉니다:
 
     ```
     {
@@ -211,30 +211,29 @@ This step hardens the usability of the Snyk ECR Service Role so that it could be
     }
     ```
 
-    * In **Statement.Principal.AWS** enter the IAM Role or IAM User created in the Step 1 .\
-      Example: `arn:aws:iam::aws-account:user` or `SnykCraEc2Role`\
-      OR `arn:aws:iam::aws-account:role` or `SnykCraUser`, respectively
-    * In **Condition.StringEquals.sts:ExternalId** you may use an external ID of your choice, which will be used when the credentials object is provided to the Broker Client.
-    * To support multiple external IDs, enter a list of IDs in a square brackets.\
-      Example: `sts:ExternalId: [ 11111111-1111-1111-1111-111111111111, 22222222-2222-2222-2222-222222222222 ]`
-5. Update the trust policy.
+    * **Statement.Principal.AWS**에 1단계에서 생성한 IAM 역할 또는 IAM 사용자를 입력합니다.\
+      예: `arn:aws:iam::aws-account:user` 또는`SnykCraEc2Role`\
+      또는`arn:aws:iam::aws-account:role` 또는`SnykCraUser`를 각각 입력합니다.
+    * **Condition.StringEquals.sts:ExternalId** 에서 자격 증명 개체가 Broker 클라이언트에 제공될 때 사용되는 외부 ID를 사용할 수 있습니다.
+    * 여러 개의 외부 ID를 지원하려면 대괄호 안에 ID 목록을 입력합니다. 예: `sts:ExternalId: [ 11111111-1111-1111-1111-111111111111, 22222222-2222-2222-2222-222222222222 ]`
+5. 신뢰 정책을 업데이트합니다.
 
-## Step 3: Harden the usability scope of the IAM Role or IAM User used by the Container Registry Agent
+## 3단계: 컨테이너 레지스트리 에이전트에서 사용하는 IAM 역할 또는 IAM 사용자의 사용성 범위 강화하기
 
-This step hardens the usability of the IAM Role or IAM User used by the Container Registry Agent so that it could assume only the[ SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole).
+이 단계는 컨테이너 레지스트리 에이전트가 사용하는 IAM 역할 또는 IAM 사용자의 사용성을 강화하여 [SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole)만 맡을 수 있도록 합니다.
 
-1. Copy the Role ARN key that appears at the top of the **Summary** section of the[ SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole).
-2. In the AWS account where the IAM Role or IAM User was created for running the Container Registry Agent, edit the **SnykCraAssumeRolePolicy**:
-   1. If an IAM Role was created, go to **Roles** and choose the **SnykCraEc2Role** role.
-      1. In the **SnykCraAssumeRolePolicy** choose to edit the JSON.
-      2. Add the role ARN of[ SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole) as the resource:\
-         `Resource: Role ARN of SnykEcrServiceRole`
-   2. IF an IAM User was created, go to **Users** and choose the SnykCraUser user.
-      1. In the **SnykCraAssumeRolePolicy** choose to edit the JSON
-      2. Add the role ARN of[ SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole) as the resource:\
-         `Resource: Role ARN of SnykEcrServiceRol`
+1. [SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole)의 **요약(Summary)** 섹션 상단에 표시되는 역할 ARN 키를 복사합니다.
+2. 컨테이너 레지스트리 에이전트를 실행하기 위해 IAM 역할 또는 IAM 사용자가 생성된 AWS 계정에서 **SnykCraAssumeRolePolicy**를 편집합니다:
+   1. IAM 역할이 생성된 경우, **역할(Roles)**&#xB85C; 이동하여 **SnykCraEc2Role** 역할을 선택합니다.
+      1. **SnykCraAssumeRolePolicy**에서 JSON을 편집하도록 선택합니다.
+      2. [SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole)의 역할 ARN을 리소스로 추가합니다:\
+         `Resource:SnykEcrServiceRole`의 역할 `ARN`
+   2. IAM **사용자(Users)**&#xAC00; 생성된 경우 사용자로 이동하여 SnykCraUser 사용자를 선택합니다.
+      1. **SnykCraAssumeRolePolicy**에서 JSON을 편집하도록 선택합니다.
+      2. [SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole)의 역할 ARN을 리소스로 추가합니다:\
+         `Resource: SnykEcrServiceRol`의 역할 `ARN`&#x20;
 
-If the Container Registry Agent needs to access multiple ECR registries found in different accounts, you must add a separate item to the Statement list, so that each ECR account has a separate statement, for example:
+컨테이너 레지스트리 에이전트가 서로 다른 계정에 있는 여러 ECR 레지스트리에 액세스해야 하는 경우, 예를 들어 각 ECR 계정에 별도의 명세서가 있도록 명세서 목록에 별도의 항목을 추가해야 합니다:
 
 ```
 {
@@ -256,13 +255,13 @@ If the Container Registry Agent needs to access multiple ECR registries found in
 }
 ```
 
-## **Step 4: Provide** Snyk ECR Service Role **ARN and external ID to the Broker Client**
+## 4단계: Broker 클라이언트에 Snyk ECR 서비스 역할 ARN 및 외부 ID를 제공합니다.
 
-In this step, the Role ARN of the SnykEcrServiceRole \_\*\*\_will be used by providing it to the Broker Client. The broker client will pass it to the Container Registry Agent, which will assume it to connect to ECR.
+이 단계에서는 Broker 클라이언트에 SnykEcrServiceRole \_\*\*\_의 역할 ARN을 제공하여 사용합니다. Broker 클라이언트는 이를 컨테이너 레지스트리 에이전트에 전달하고, 이 에이전트는 ECR에 연결한다고 가정합니다.
 
-1. Copy the **Role ARN** key that appears at the top of the **Summary** section of the[ SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole).
-2. When running the Broker Client, provide the following environment variables to allow the Container Registry Agent to access your ECR account. No username and password are needed.
+1. [SnykEcrServiceRole](https://console.aws.amazon.com/iam/home?#/roles/SnykEcrServiceRole)의 **요약(Summary)** 섹션 상단에 표시되는 **역할 ARN(Role ARN)** 키를 복사합니다.
+2. Broker 클라이언트를 실행할 때 컨테이너 레지스트리 에이전트가 ECR 계정에 액세스할 수 있도록 다음 환경 변수를 제공하세요. 사용자 이름과 비밀번호는 필요하지 않습니다.
    * `CR_TYPE=ecr`
    * `CR_ROLE_ARN=the role ARN of SnykEcrServiceRole`
    * `CR_REGION=AWS Region of ECR`
-   * `CR_EXTERNAL_ID=Optional. The external ID found in the trust relationship condition`
+   * `CR_EXTERNAL_ID=`선택 사항. 신뢰 관계 조건에서 찾은 외부 ID

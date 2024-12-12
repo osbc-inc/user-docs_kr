@@ -1,6 +1,6 @@
-# Install Broker for Container Registry Agent using Helm
+# Helm을 사용하여 컨테이너 레지스트리 에이전트용 Broker 설치하기
 
-Installing the [Broker Container Registry Agent using Docker](./) requires the parameter `CR_AGENT_URL`, but it is not required to install using Helm. The environment variables are defined for [installing with Docker](https://docs.snyk.io/snyk-admin/snyk-broker/snyk-broker-container-registry-agent#configuring-and-running-the-broker-client-for-container-registry-agent) and apply also to installing with Helm.
+[Docker를 사용하여 컨테이너 레지스트리 에이전트](./) 설치하려면`CR_AGENT_URL`파라미터가 필요하지만 Helm을 사용하여 설치하는 데는 필요하지 않다. 환경 변수는 [Docker로 설치](https://docs.snyk.io/snyk-admin/snyk-broker/snyk-broker-container-registry-agent#configuring-and-running-the-broker-client-for-container-registry-agent)할 때 정의되며 Helm으로 설치할 때도 적용된다.
 
 ```
 helm install snyk-broker-chart snyk-broker/snyk-broker \
@@ -13,7 +13,7 @@ helm install snyk-broker-chart snyk-broker/snyk-broker \
              -n snyk-broker --create-namespace
 ```
 
-Allowed values for `crType`:
+`crType`에 허용되는 값입니다:
 
 `artifactory-cr`\
 `harbor-cr`\
@@ -26,9 +26,9 @@ Allowed values for `crType`:
 `ecr`\
 `digitalocean-cr`
 
-Elastic Container Registry and Digital Ocean Container Registry require specific parameters as explained in the sections that follow.
+Elastic 컨테이너 레지스트리와 디지털 오션 컨테이너 레지스트리에는 다음 섹션에서 설명하는 대로 특정 매개 변수가 필요합니다.
 
-## **Elastic Container Registry (ecr)**
+## Elastic 컨테이너 레지스트리(ecr)
 
 * crRoleArn
 * crRegion
@@ -45,7 +45,7 @@ helm install snyk-broker-chart snyk-broker/snyk-broker \
              -n snyk-broker --create-namespace
 ```
 
-## **DigitalOcean Container Registry (digitalocean-cr)**
+## **DigitalOcean** 컨테이너 레지스트리 **(digitalocean-cr)**
 
 * crToken
 

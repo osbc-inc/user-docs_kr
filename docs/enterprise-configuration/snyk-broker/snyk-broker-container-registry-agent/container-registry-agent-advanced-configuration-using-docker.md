@@ -1,12 +1,12 @@
-# Container Registry Agent advanced configuration using Docker
+# Docker를 사용한 컨테이너 레지스트리 에이전트 고급 구성
 
-For instructions on installation of the Broker Container Registry Agent using Docker, see [Snyk Broker - Container Registry Agent](./). See [Install Broker for Container Registry using Helm](install-broker-for-container-registry-agent-using-helm.md) for instructions on the Helm method.
+Docker를 사용한 Broker 컨테이너 레지스트리 에이전트 설치에 대한 지침은 [Snyk Broker - 컨테이너 레지스트리 에이전트](./) 를참조하세요. 헬름 방법에 대한 지침은 [Helm을 사용하여 컨테이너 레지스트리용 Broker 설치하기](install-broker-for-container-registry-agent-using-helm.md)를 참조하세요.
 
-## Container Registry Agent server **HTTPS configuration**
+## 컨테이너 레지스트리 에이전트 서버 HTTPS 구성
 
-The Container Registry Agent (CRA) runs an HTTP server by default. CRA can be configured to run an HTTPS server for local connections. This requires providing an SSL certificate and a private key to the Docker container at runtime.
+CRA(컨테이너 레지스트리 에이전트)는 기본적으로 HTTP 서버를 실행합니다. 로컬 연결을 위해 HTTPS 서버를 실행하도록 CRA를 구성할 수 있습니다. 이를 위해서는 런타임에 Docker 컨테이너에 SSL 인증서와 개인 키를 제공해야 합니다.
 
-For example, if your certificate files are found locally at `./private/container-registry-agent.crt` and `./private/container-registry-agent.key`, provide these files to the Docker container by mounting the folder and using the `HTTPS_CERT` and `HTTPS_KEY` environment variables:
+예를 들어 인증서 파일이 로컬에 `./private/container-registry-agent.crt` 및`./private/container-registry-agent.key`에 있는 경우, 폴더를 마운트하고 `HTTPS_CERT` 및`HTTPS_KEY`환경 변수를 사용하여 이 파일을 Docker 컨테이너에 제공하세요:
 
 ```
 docker run --restart=always \
