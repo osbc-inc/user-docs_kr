@@ -793,7 +793,7 @@
     * [Maximum number of Projects in an Organization](snyk-admin/snyk-projects/maximum-number-of-projects-in-an-organsation.md)
 * [Snyk CLI](snyk-cli/README.md)
   * [Snyk CLI 시작하기](snyk-cli/getting-started-with-the-snyk-cli.md)
-  * [Security concept of operations for Snyk](snyk-cli/security-concept-of-operations-for-snyk/README.md)
+  * [Snyk의 보안 운영 개념](snyk-cli/security-concept-of-operations-for-snyk/README.md)
     * [Access requirements](snyk-cli/security-concept-of-operations-for-snyk/access-requirements.md)
     * [Securing data at rest](snyk-cli/security-concept-of-operations-for-snyk/securing-data-at-rest.md)
     * [Using FIPS-validated cryptography](snyk-cli/security-concept-of-operations-for-snyk/using-fips-validated-cryptography.md)
