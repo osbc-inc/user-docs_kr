@@ -1,10 +1,10 @@
-# Detecting CloudFormation configuration files using Snyk Broker (Custom)
+# Snyk Broker(사용자 지정)를 사용하여 CloudFormation 구성 파일 감지하기
 
-## **CloudFormation in Snyk Broker**
+## Snyk Broker의 CloudFormation
 
-By default, some file types used by Infrastructure-as-Code (IaC) are not enabled. To grant the Broker access to IaC files in your repository, for example, CloudFormation, you can add an environment variable, `ACCEPT_IAC`, with any combination of `tf,yaml,yml,json,tpl.`
+기본적으로 IaC(코드형 인프라)에서 사용하는 일부 파일 유형은 사용하도록 설정되어 있지 않습니다. 브로커에 리포지토리의 IaC 파일(예: CloudFormation)에 대한 액세스 권한을 부여하려면 환경 변수`ACCEPT_IAC`를 `tf,yaml,yml,json,tpl`의 임의 조합으로 추가하면 됩니다.
 
-Example:
+예시:
 
 ```
 docker run --restart=always \
@@ -17,19 +17,19 @@ docker run --restart=always \
        snyk/broker:github-com
 ```
 
-Otherwise, you can edit your `accept.json`, add the relevant IaC specific rules, and load the customized accept file into the container. Note that if a custom accept file (from a separate folder) is used (using `ACCEPT` environment variable), the `ACCEPT_IAC` mechanism cannot be used.
+그렇지 않으면 `accept.json`을 편집하고 관련 IaC 특정 규칙을 추가한 다음 사용자 정의된 수락 파일을 컨테이너에 로드할 수 있습니다. 별도의 폴더에 있는 사용자 지정 허용 파일을 사용하는 경우(`ACCEPT`환경 변수를 사용하는 경우)`ACCEPT_IAC`메커니즘을 사용할 수 없습니다.
 
-These are the instructions if you require a custom allow-list and want to add CloudFormation files into the files Snyk can scan for.
+사용자 지정 허용 목록이 필요하고 Snyk가 스캔할 수 있는 파일에 CloudFormation 파일을 추가하려는 경우의 지침입니다.
 
-## Writing the configuration
+## 구성 작성하기
 
-The CloudFormation scanning features require access to the YAML or JSON files in the repository. This requires specific API permissions. These API permissions are slightly different depending on the source control system.
+CloudFormation 스캔 기능을 사용하려면 리포지토리에 있는 YAML 또는 JSON 파일에 액세스할 수 있어야 합니다. 이를 위해서는 특정 API 권한이 필요합니다. 이러한 API 권한은 소스 제어 시스템에 따라 약간씩 다릅니다.
 
-1. Find the appropriate accept.json sample file for the correct source control system and download [from the Broker repository](https://github.com/snyk/broker/tree/master/client-templates).
-2. Rename the file `accept.json` and add to the **private** array in the JSON file, add the rules that follow as appropriate to your SCM .
-3. Follow the instructions for [Configuring Broker](detecting-cloudformation-configuration-files-using-a-broker.md#configuring-broker).
+1. 올바른 소스 제어 시스템에 적합한 accept.json 샘플 파일을 찾아 [Broker 리포지토리에서](https://github.com/snyk/broker/tree/master/client-templates)다운로드합니다.
+2. `accept.json`파일의 이름을 바꾸고 JSON 파일의 **비공개(private)** 배열에 추가한 다음 다음 규칙을 SCM에 적절하게 추가합니다.
+3. [Broker 구성](detecting-cloudformation-configuration-files-using-a-broker.md#configuring-broker)지침을 따릅니다.
 
-### GitHub and GitHub Enterprise rules
+### GitHub 및 GitHub Enterprise 규칙
 
 ```
 {
@@ -70,7 +70,7 @@ The CloudFormation scanning features require access to the YAML or JSON files in
 },
 ```
 
-### Bitbucket rules
+### Bitbucket 규칙
 
 ```
 {
@@ -141,7 +141,7 @@ The CloudFormation scanning features require access to the YAML or JSON files in
 },
 ```
 
-### GitLab rules
+### GitLab 규칙
 
 ```
 {
@@ -182,9 +182,9 @@ The CloudFormation scanning features require access to the YAML or JSON files in
 },
 ```
 
-## Configuring Broker
+## Broker 구성
 
-Broker takes the path to the accept.json file, with the applicable rules added, in the ACCEPT environment variable. The following provides an example of passing that variable to the GitHub Broker.
+Broker는 ACCEPT 환경 변수에 해당 규칙이 추가된 accept.json 파일의 경로를 가져옵니다. 다음은 해당 변수를 GitHub Broker에 전달하는 예제입니다.
 
 ```
 docker run --restart=always \
@@ -198,4 +198,4 @@ docker run --restart=always \
   snyk/broker:github-com
 ```
 
-Note that this gives Snyk the ability to query for any `.yaml`, `.yml`, or `.json` files. If you would prefer to be stricter, you can alter the paths in the preceding examples to be more restrictive for certain projects or file layouts.
+이렇게 하면 Snyk이 모든`.yaml`, `.yml`, 또는`.json`파일을 쿼리할 수 있습니다. 더 엄격하게 하려면 앞의 예제에서 특정 프로젝트나 파일 레이아웃에 대해 더 제한적으로 경로를 변경할 수 있습니다.
