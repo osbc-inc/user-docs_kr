@@ -14,7 +14,7 @@ Snyk컨설턴트가 계정 구성 지원 서비스(“Jumpstart 서비스”)를
 
 ## Jumpstart Services 설명
 
-The Snyk Consultant will deliver the following services related to the setup of Snyk remotely as part of the Jumpstart Services to the Customer. Note that the Jumpstart Services will be delivered only for the Snyk Applications purchased on an Order Form at the same time as this service. References to Snyk Services not purchased by the Customer are hereby omitted unless otherwise noted.
+Snyk 컨설턴트는 고객에게 Jumpstart서비스의 일부로 원격으로 Snyk 설치와 관련된 다음 서비스를 제공합니다. 점프스타트 서비스는 이 서비스와 동시에 주문 양식에서 구매한 Snyk 애플리케이션에 대해서만 제공됩니다. 고객이 구매하지 않은 Snyk 서비스에 대한 언급은 달리 명시되지 않는 한 생략됩니다.
 
 1. [Pre-engagement planning and preparation](snyk-jumpstart-services-description.md#pre-engagement-planning-and-preparation)
    1. Review deliverables per product module
