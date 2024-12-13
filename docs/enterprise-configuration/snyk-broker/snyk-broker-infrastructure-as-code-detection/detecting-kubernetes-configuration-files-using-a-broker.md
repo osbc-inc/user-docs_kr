@@ -1,10 +1,10 @@
-# Detecting Kubernetes configuration files using Snyk Broker (Custom)
+# Snyk Broker (사용자 정의)를 사용하여 Kubernetes 구성 파일 감지하기
 
-## **Kubernetes configuration files in Snyk Broker**
+## Snyk Broker의 Kubernetes 구성 파일
 
-By default, some file types used by Infrastructure-as-Code (IaC) are not enabled. To grant the Broker access to IaC files in your repository, for example, Kubernetes configuration files, you can add an environment variable `ACCEPT_IAC` with any combination of `tf,yaml,yml,json,tpl.`
+기본적으로, 코드형 인프라(IaC)에서 사용하는 일부 파일 형식은 활성화되지 않는다. Broker에 리포지토리의 IaC 파일(예: Kubernetes 구성 파일)에 대한 액세스 권한을 부여하려면 환경 변수 `ACCEPT_IAC` 를 `tf,yaml,yml,json,tpl`의 임의 조합으로 추가하면 됩니다.
 
-Example:
+예시:
 
 ```
 docker run --restart=always \
@@ -17,19 +17,19 @@ docker run --restart=always \
        snyk/broker:github-com
 ```
 
-Otherwise you can edit your `accept.json`, add the relevant IaC specific rules, and load the customized accept file into the container. Note that if a custom accept file (from a separate folder) is used (using `ACCEPT` environment variable), the `ACCEPT_IAC` mechanism cannot be used.
+그렇지 않으면 `accept.json`, 을 편집하고 관련 IaC 특정 규칙을 추가한 다음 사용자 정의된 수락 파일을 컨테이너에 로드할 수 있습니다. 별도의 폴더에 있는 사용자 지정 허용 파일을 사용하는 경우( `ACCEPT` 환경 변수를 사용하는 경우) `ACCEPT_IAC` 메커니즘을 사용할 수 없다는 점에 유의하세요.
 
-These are the instructions if you require a custom allow-list and want to add Kubernetes configuration files into the files Snyk can scan for.
+다음은 사용자 지정 허용 목록이 필요하고 Snyk이 검사할 수 있는 파일에 Kubernetes 구성 파일을 추가하려는 경우의 지침입니다.
 
-## Writing the configuration
+## 구성 작성하기
 
-You must grant the Broker access to particular files in the repository. This requires specific API permissions. These API permissions are slightly different depending on which source control system you are using. The configuration that follows is for the file extensions `.yaml`, `.yml`, and `.json`. This allows the Broker to access potential Kubernetes and CloudFormation files, but you may adapt the configuration as necessary. For example, you may wish to add configurations for `.tf` files in order to scan Terraform HCL files.
+Broker에게 리포지토리의 특정 파일에 대한 액세스 권한을 부여해야 합니다. 이를 위해서는 특정 API 권한이 필요합니다. 이러한 API 권한은 사용 중인 소스 제어 시스템에 따라 약간 다릅니다. 다음 구성은 파일 확장자 `.yaml`, `.yml`, 및`.json`. 에 대한 구성입니다. 이를 통해 Broker가 잠재적인 Kubernetes 및 CloudFormation 파일에 액세스할 수 있지만 필요에 따라 구성을 조정할 수 있습니다. 예를 들어, Terraform HCL 파일을 스캔하기 위해 `.tf` 파일에 대한 구성을 추가할 수 있습니다.
 
-1. Find the appropriate `accept.json` sample file for your source control system and download it [from the Broker repository](https://github.com/snyk/broker/tree/master/client-templates).
-2. Rename the file to `accept.json` and to the **private** array in the JSON file, add the following rules as appropriate to your SCM.
-3. Follow the instructions for [Configuring Broker](detecting-kubernetes-configuration-files-using-a-broker.md#configuring-broker).
+1. 소스 제어 시스템에 적합한 `accept.json` 샘플 파일을 찾아서 [Broker 리포지토리에서](https://github.com/snyk/broker/tree/master/client-templates) 다운로드합니다.
+2. 파일 이름을 `accept.json` 으로 바꾸고 JSON 파일의 **비공개(private)** 배열에 다음 규칙을 SCM에 적절히 추가합니다.
+3. [Broker 구성](detecting-kubernetes-configuration-files-using-a-broker.md#configuring-broker)지침을 따릅니다.
 
-### GitHub and GitHub Enterprise rules
+### GitHub 및 GitHub Enterprise 규칙
 
 ```
 {
@@ -82,7 +82,7 @@ You must grant the Broker access to particular files in the repository. This req
 },
 ```
 
-### Bitbucket rules
+### Bitbucket 규칙
 
 ```
 {
@@ -175,7 +175,7 @@ You must grant the Broker access to particular files in the repository. This req
 },
 ```
 
-### GitLab rules
+### GitLab 규칙
 
 ```
 {
@@ -228,7 +228,7 @@ You must grant the Broker access to particular files in the repository. This req
 },
 ```
 
-### Azure Repo rules
+### Azure Repo 규칙
 
 ```
 {
@@ -499,9 +499,9 @@ You must grant the Broker access to particular files in the repository. This req
 }
 ```
 
-## Configuring Broker
+## Broker 구성
 
-Broker takes the path to the accept.json file, with the applicable rules added, in the ACCEPT environment variable. The following provides an example of passing that variable to the GitHub Broker.
+Broker는 ACCEPT 환경 변수에 해당 규칙이 추가된 accept.json 파일의 경로를 가져옵니다. 다음은 해당 변수를 GitHub Broker에 전달하는 예제입니다.
 
 ```
 docker run --restart=always \
