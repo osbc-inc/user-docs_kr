@@ -153,7 +153,7 @@
     * [Snyk Broker 비행 전 점검(Preflight checks)](enterprise-configuration/snyk-broker/preflight-checks-for-snyk-broker.md)
     * [문제 해결(Troubleshooting) Broker](enterprise-configuration/snyk-broker/troubleshooting-broker.md)
 * [Snyk 구현 가이드](implement-snyk/README.md)
-  * [Team implementation guide](implement-snyk/team-implementation-guide/README.md)
+  * [팀 구현 가이드](implement-snyk/team-implementation-guide/README.md)
     * [Prerequisites: project plan templates](implement-snyk/team-implementation-guide/prerequisites-project-plan-templates.md)
     * [Phase 1: Discovery and planning](implement-snyk/team-implementation-guide/phase-1-discovery-and-planning/README.md)
       * [Validate your Snyk plan](implement-snyk/team-implementation-guide/phase-1-discovery-and-planning/validate-your-snyk-plan.md)
