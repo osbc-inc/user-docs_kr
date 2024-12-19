@@ -53,18 +53,18 @@
 
 이러한 단계적 접근 방식을 통해 신중한 온보딩을 진행하는 동시에 신속하게 가시성과 제어력을 확보할 수 있습니다.
 
-### 5. Turn on gating
+### 5. 게이팅 켜기
 
-After the first month, gradually turn on gating measures.
+첫 달이 지나면 점차적으로 게이팅 조치를 켜세요.
 
-* Pull Request/Merge Request Checks using criteria such as `severity` and `is fixable`.
-* Fail builds based on criteria such as `High` or `Critical`, `CVSS`, `Mature Exploit` for Open Source and other criteria using the [Snyk Filter](https://github.com/snyk-labs/snyk-filter) plugin.
+* 풀 리퀘스트/병합 요청 `severity` 등의 기준을 사용하여 확인하며 `fixable(수정 가능)`합니다.
+* `High` 또는`Critical`, `CVSS`, `Mature Exploit`오픈 소스용 성숙 익스플로잇 및 [Snyk Filter](https://github.com/snyk-labs/snyk-filter) 플러그인을 사용한 기타 기준에 따라 빌드 실패를 표시합니다.
 
-It's recommended to start with a few applications, especially during the pilot team phase, work through the processes then roll out more widely.
+특히 파일럿 팀 단계에서 몇 가지 애플리케이션으로 시작하여 프로세스를 진행한 다음 더 광범위하게 배포하는 것이 좋습니다.
 
-## Exception handling
+## 예외 처리
 
-Ensure there is an exception process in place and users are aware. For example:
+예외 프로세스가 마련되어 있고 사용자가 이를 인지하고 있는지 확인합니다. 예를 들어
 
-* If a pull request/merge request is failed by Snyk, let the users know who is the Snyk admin who can override it.
-* Similarly, if Snyk fails in CI/CD, let users know who can create an ignore rule, authorize it to progress, or configure CI/CD to run without the Snyk `test` or set it to `monitor` only.
+* Snyk에서 풀 리퀘스트/병합 요청이 실패한 경우, 이를 재정의할 수 있는 Snyk 관리자가 누구인지 사용자에게 알려주세요.
+* 마찬가지로, Snyk이 CI/CD에서 실패하는 경우 사용자에게 무시 규칙을 만들거나, 진행하도록 승인하거나, Snyk `test` 없이 실행하거나 `monitor` 만 하도록 설정하도록 CI/CD를 구성할 수 있는 사람이 누구인지 알려주세요.
