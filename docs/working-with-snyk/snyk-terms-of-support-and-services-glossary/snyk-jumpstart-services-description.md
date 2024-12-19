@@ -45,7 +45,7 @@ Snyk 컨설턴트는 고객과 협력하여 원하는 ID 공급자(IdP)가 제�
 
 #### 템플릿 조직 구성
 
-The Snyk Consultant will work with the Customer to configure notification settings, language settings, and Snyk account structure. Time will be spent reviewing configuration details with the Customer to ensure the Customer understands and maintains them.
+Snyk 컨설턴트는 고객과 협력하여 알림 설정, 언어 설정, Snyk 계정 구조를 구성합니다. 고객이 구성 세부 사항을 이해하고 유지 관리할 수 있도록 고객과 함께 구성 세부 사항을 검토하는 데 시간을 할애합니다.
 
 #### Admin Training
 
