@@ -27,11 +27,11 @@ Snyk 컨설턴트는 고객에게 Jumpstart서비스의 일부로 원격으로 S
 6. [Snyk IaC+ 구성 ](snyk-jumpstart-services-description.md#snyk-iac-configuration)
 7. [Snyk 앱리스크 에센셜 우선순위 구성 ](snyk-jumpstart-services-description.md#snyk-apprisk-essentials-prioritization-configuration)
 
-## Pre-engagement planning and preparation
+## 사전 참여 계획 및 준비
 
-### Pre-engagement call
+### 사전 참여 통화
 
-A Pre-engagement call will be held before the start of the Jumpstart Services listed herein, to ensure the Customer understands the prerequisites required for engagement start along with the deliverables completed during the engagement timeframe. Customer prerequisites, including resources, availability, and deliverables for each product module, will be reviewed and confirmed. The Customer acknowledges that complying with these prerequisites is its sole responsibility, and Snyk will not be responsible for any delays or failure to deliver the Jumpstart Services based on the Customer’s failure to meet these prerequisites.
+고객이 참여 기간 동안 완료된 결과물과 함께 참여 시작에 필요한 전제 조건을 이해할 수 있도록 여기에 나열된 Jumpstart Service를 시작하기 전에 사전 참여 통화를 진행합니다. 각 제품 모듈의 리소스, 가용성 및 결과물을 포함한 고객 전제 조건이 검토 및 확인됩니다. 고객은 이러한 전제 조건을 준수하는 것이 전적으로 자신의 책임임을 인정하며, 스닉은 고객이 이러한 전제 조건을 충족하지 못하여 점프스타트 서비스를 제공하지 못하거나 지연되는 것에 대해 책임을 지지 않습니다.
 
 ## Snyk Platform configuration
 
