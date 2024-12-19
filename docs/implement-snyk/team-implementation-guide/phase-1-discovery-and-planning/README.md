@@ -1,47 +1,43 @@
-# Phase 1: Discovery and planning
+# 1단계: 발견 및 계획
 
+## 검색 단계
 
+* [Snyk 요금제 확인](validate-your-snyk-plan.md): 라이선스가 올바르게 적용되었는지 확인합니다.
+* [검색 수행](discovery.md): 모니터링 할 이해관계자, 통합 및 애플리케이션을 식별합니다.
+* [조직 이름 지정](name-your-organization.md): 조직 이름을 결정합니다.
+* [사용자 역할 지정](determine-member-roles.md): 누가 관리자가 되나요?
+* [성공을 위한 계획](plan-for-success.md): 롤아웃의 성공 여부를 판단하는 방법을 결정합니다.
+* [롤아웃 통합 선택](choose-rollout-integrations.md): 처음에 구현할 통합을 결정합니다.
+* [롤아웃 계획 만들기](create-rollout-plan.md): 비즈니스에 Snyk을 배포하기 위한 높은 수준의 계획을 세우세요.
 
-## Discovery phase steps&#x20;
+## 일반적인 사전 롤아웃 질문
 
-* [Validate your Snyk plan](validate-your-snyk-plan.md): c[onfirm your license has been applied correctly.](#user-content-fn-1)[^1]
-* [Conduct discovery](discovery.md): identify stakeholders, integrations, and applications to monitor.
-* [Name your  Organization](name-your-organization.md): decide what to name your Organization.
-* [Determine user roles](determine-member-roles.md): who will be administrators?
-* [Plan for success](plan-for-success.md): decide how to judge the success of your rollout.&#x20;
-* [Choose rollout integrations](choose-rollout-integrations.md): decide which integrations to implement initially.
-* [Create rollout plan](create-rollout-plan.md): create your high-level plan for rolling out Snyk in your business.
+배포를 시작하기 전에 배포 계획 프로세스를 결정하는 데 도움이 될 수 있는 몇 가지 초기 질문은 다음과 같습니다.
 
-## General pre-rollout questions
+### 누가 참여하나요?
 
-Before starting rollout, here are some initial questions you can ask to assist in planning, as an alternative way of deciding your rollout planning process.
+* 누가 프로젝트를 관리하고 감독하나요?
+* 누가 Snyk을 옹호할 것인가요?
+* 관리자는 누가 되나요?
 
-### Who's involved?
+### 목표는 무엇인가요?
 
-* Who will manage and oversee the project?
-* Who will champion Snyk?
-* Who will be the administrators?
+* Snyk을 선택한 이유는 무엇인가요?
+* 지금 구현하는 이유는 무엇인가요?
 
-### What are your goals?
+### 사용자가 Snyk을 어떻게 사용하나요?
 
-* Why did you choose Snyk?&#x20;
-* Why are you implementing it now?
+사용자를 프로비저닝하고 Snyk을 플랫폼과 통합하는 방법은 무엇인가요?
 
-### How will your users use Snyk?&#x20;
+* 누가 Snyk에 액세스해야 하나요?
+* 누가 Snyk에게 Git 리포지토리와 같은 플랫폼에 대한 액세스 권한을 부여할 수 있나요?
 
-How will you provision users, and integrate Snyk with your platforms?
+### 조직 이름을 무엇으로 정하시겠습니까?
 
-* Who will need access to Snyk?&#x20;
-* Who can grant Snyk access to platforms like Git Repositories?
+* Snyk에서 조직의 이름을 무엇으로 정하시겠습니까? 조직 이름은 모든 사용자에게 공개됩니다.
 
-### What will you name your Organization?
+### 성공을 어떻게 측정할 것인가요?
 
-* What will you name the Organization in Snyk? The Organization name will be public to all users.
-
-### How will you measure success?&#x20;
-
-* What KPIs will be tracked?
-* How will you know you’re making progress?
-* Are there key development projects that progress tracking should be aligned with, or at least included to measure progress against?
-
-[^1]: 
+* 어떤 KPI를 추적하나요?
+* 진행 상황을 어떻게 알 수 있나요?
+* 진행 상황 추적이 연계되어야 하거나 최소한 진행 상황을 측정하기 위해 포함되어야 하는 주요 개발 프로젝트가 있나요?

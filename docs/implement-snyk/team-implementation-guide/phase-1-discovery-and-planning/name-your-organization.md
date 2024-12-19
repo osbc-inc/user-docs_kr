@@ -1,39 +1,35 @@
-# Name your Organization
+# 조직 이름 지정
 
-Organizations contain your scan, setup integrations, and view results.&#x20;
+조직에는 스캔, 통합 설정, 결과 보기가 포함되어 있습니다.
 
-* A Group is only available on the Enterprise plan, typically named after the company or line of business.
-* An Organization on the Team plan is the topmost level and is typically named after the company or name given to that company's Organization.&#x20;
+* 그룹은 기업 요금제에서만 사용할 수 있으며, 일반적으로 회사 또는 사업 부문의 이름을 따서 명명합니다.
+* 팀 플랜의 조직은 최상위 레벨이며 일반적으로 회사 또는 해당 회사의 조직에 부여된 이름을 따서 명명됩니다.
 
 {% hint style="info" %}
-The Team plan consists of one licensed Organization for your use.
+팀 요금제는 라이선스가 부여된 하나의 조직으로 구성됩니다.
 {% endhint %}
 
-The first step is to set the name of your Organization to be used by Snyk and others when referring to Snyk.
+첫 번째 단계는 Snyk과 다른 사람들이 Snyk을 참조할 때 사용할 조직의 이름을 설정하는 것입니다.
 
-## Introduction to structure
+## 구조 소개
 
-<div align="left">
+<div align="left"><figure><img src="../../../.gitbook/assets/determine-account-structure.png" alt="Determine your account structure" width="563"><figcaption><p>계정 구조 결정</p></figcaption></figure></div>
 
-<figure><img src="../../../.gitbook/assets/determine-account-structure.png" alt="Determine your account structure" width="563"><figcaption><p>Determine your account structure</p></figcaption></figure>
+Snyk은 자산, 액세스 및 롤업 보고를 관리하기 위해 계층적 접근 방식을 사용합니다.
 
-</div>
+* **Snyk 그룹-** Snyk 엔터프라이즈 고객 전용입니다. 조직을 그룹화하는 데 사용되는 최상위 엔터티입니다.
+*   **Snyk 조직**: 일반적으로 그룹 수준 이하를 나타냅니다:
 
-Snyk uses a hierarchical approach to managing assets, access, and rollup reporting.
+    * 사업 분야
+    * Git 조직 또는 팀 구조
+    * 애플리케이션 유형
+    * 개발 팀
 
-* **Snyk Group -** For Snyk Enterprise customers only. This is the top entity used to group Organizations.
-*   **Snyk Organizations**: below the Group level, typically representing:
+    Snyk 팀 또는 무료 플랜의 경우 단일 조직을 사용할 수 있습니다. 일반적으로 회사 이름을 사용하거나 회사 내에 팀 플랜이 있는 여러 팀이 있는 경우 회사 이름에 팀 이름 또는 사업 분야를 이름으로 사용하는 것이 좋습니다. 예: “회사 - 팀 이름”
+* **Snyk 프로젝트:** CLI 스캔, 레지스트리에서 모니터링 중인 컨테이너 또는 식별된 오픈 소스 파일 등 Snyk로 테스트/모니터링한 대상입니다.
 
-    * Line of business
-    * Git Organization or team structure
-    * Types of application
-    * Development teams.
-
-    In the context of Snyk Team or Free plans,  you are entitled to a single Organization. The expectation is usually to use a company name, or if there are several different teams with team plans in your company, use the company name with your team name or line of business as the name. For example, "Company - Team Name"
-* **Snyk Projects:** The targets you have tested/monitored with Snyk, such as a CLI scan, a container being monitored in registry, or open source files identified.
-
-For more details, see [Manage Groups and Organizations](../../../snyk-admin/manage-groups-and-organizations/).
+자세한 내용은 [그룹 및 조직 관리하기](../../../snyk-admin/manage-groups-and-organizations/)를 참조하세요.
 
 {% hint style="info" %}
-If you have hundreds or thousands of repositories, consider the Snyk Enterprise plan for access to multiple organizations to restrict access, separate reporting, and manageable lists to interact with.
+수백, 수천 개의 리포지토리가 있는 경우, 여러 조직에 대한 액세스를 제한하고, 별도의 보고 및 관리 가능한 목록으로 상호 작용할 수 있는 Snyk Enterprise 플랜을 고려해 보세요.
 {% endhint %}

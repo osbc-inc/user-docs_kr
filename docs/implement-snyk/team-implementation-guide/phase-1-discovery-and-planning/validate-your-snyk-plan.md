@@ -1,5 +1,5 @@
-# Validate your Snyk plan
+# Snyk 요금제 확인
 
-Confirm your Snyk license has been applied correctly. Navigate to your Organization by clicking the Organization name on the left menu and click **Settings**. Confirm the license has been applied to this Organization by reviewing Usage, Plans, and Billing. Tests should be unlimited for the products purchased, and a Team plan should be indicated.
+Snyk 라이선스가 올바르게 적용되었는지 확인합니다. 왼쪽 메뉴에서 조직 이름을 클릭하여 조직으로 이동한 다음 **설정(Settings)**&#xC744; 클릭합니다. 사용량, 요금제 및 청구를 검토하여 라이선스가 이 조직에 적용되었는지 확인합니다. 구매한 제품에 대한 테스트는 무제한이어야 하며 팀 요금제가 표시되어야 합니다.
 
-The proper license setup ensures you can fully use Snyk capabilities without limitations. It also guarantees you remain compliant with Snyk terms of use. If the license was incorrectly assigned,  contact Snyk support.
+라이선스를 올바르게 설정하면 Snyk 기능을 제한 없이 완전히 사용할 수 있습니다. 또한 Snyk 사용 약관을 계속 준수할 수 있도록 보장합니다. 라이선스가 잘못 할당된 경우 Snyk 지원팀에 문의하세요.

@@ -11,43 +11,43 @@ to teams of up to 10 members. Snyk을 사용하여 팀 성과를 가속화하세
 
 며칠 안에 팀을 위해 Snyk를 구현할 수 있습니다. 구현 후 곧바로 Git 통합을 사용하여 Snyk로 스캔을 시작할 수 있습니다. 자세한 내용은 [Getting started](../../getting-started/) 및 [Start scanning using the CLI, Web UI, or API](../../scan-with-snyk/start-scanning-using-the-cli-web-ui-or-api.md)를 참조하세요. 팀이 Snyk를 배포하기 위한 주요 지침은 프로젝트를 온보딩하고, 중요한 프로젝트에 Snyk 기능을 시범 적용하여 워크플로에 가장 적합한지 확인한 다음, 다른 프로젝트에 활성화하여 정기적인 커뮤니케이션을 통해 팀에 기대치를 알려주는 것입니다.
 
-## Implementation strategy overview
+## 구현 전략 개요
 
-This guide is composed of multiple phases, outlining a series of actions configuring your account, as well as actions outside the system, that align with the following goals:
+이 가이드는 여러 단계로 구성되어 있으며, 다음 목표에 따라 계정을 구성하는 일련의 작업과 시스템 외부에서 수행하는 작업을 간략하게 설명합니다:
 
-* [Achieve visibility](./#achieve-visibility)
-* [Achieve prevention and drive developer adoption](./#achieve-prevention-and-drive-developer-adoption)
-* [Fix the backlog and triage issues](./#fix-the-backlog-and-triage-issues)
+* [가시성 확보](./#achieve-visibility)
+* [예방 달성 및개발자 채택촉진](./#achieve-prevention-and-drive-developer-adoption)
+* [백로그 및 분류 문제 해결](./#fix-the-backlog-and-triage-issues)
 
-### Achieve visibility
+### 가시성 확보
 
-If you focus on visibility first, you can get a clear sense of the security issues, but without always fixing them.
+가시성에 먼저 집중하면 보안 문제를 명확하게 파악할 수 있지만 항상 문제를 해결할 수는 없습니다.
 
 {% hint style="info" %}
-This does not stop you from fixing issues using Snyk. You can start fixing issues early, but the emphasis is to avoid blocking development early on, build trust, and slowly introduce gating in later phases, usually the prevention phase. This is true of the smallest or largest teams - communication is key.
+그렇다고 해서 Snyk을 사용하여 문제를 해결하는 것을 막지는 않습니다. 문제 해결을 조기에 시작할 수는 있지만, 중요한 것은 개발을 조기에 차단하지 않고 신뢰를 구축한 다음, 이후 단계(일반적으로 예방 단계)에서 천천히 게이팅을 도입하는 것입니다. 이는 소규모 팀이나 대규모 팀 모두에게 해당되는 사항으로, 커뮤니케이션이 핵심입니다.
 {% endhint %}
 
-Visibility achieves a broad view of security across your application portfolio, avoids Snyk scans being seen as a blocker, and minimizes impact on development processes.
+가시성을 통해 애플리케이션 포트폴리오 전반의 보안을 폭넓게 파악하고, Snyk 검사가 차단기로 간주되지 않도록 하며, 개발 프로세스에 미치는 영향을 최소화할 수 있습니다.
 
-This visibility helps build trust while rolling out Snyk. With the Team plan, this equates to onboarding your projects through Git repository and disabling PR Checks/Auto PRs in the integration settings. Choose an important project and enable PR checks after communicating with the relevant team members. This guide details this later on.
+이러한 가시성은 Snyk를 배포하는 동안 신뢰를 구축하는 데 도움이 됩니다. 팀 플랜의 경우, 이는 Git 리포지토리를 통해 프로젝트를 온보딩하고 통합 설정에서 PR 확인/자동 PR을 비활성화하는 것과 동일합니다. 중요한 프로젝트를 선택하고 관련 팀원들과 소통한 후 PR 확인을 사용 설정하세요. 이 가이드는 나중에 자세히 설명합니다.
 
-### Achieve prevention and drive developer adoption
+### 예방 달성 및 개발자 채택 촉진
 
-Next is the prevention stage. You should stop new security issues from being added to your applications. During this stage, you can put controls in place to allow developers to see issues in their pipelines using Pull Request (PR)/Merge Request (MR) checks, and checks in the pipeline that may block.
+다음은 예방 단계입니다. 애플리케이션에 새로운 보안 문제가 추가되는 것을 막아야 합니다. 이 단계에서는 개발자가 풀 리퀘스트(PR)/병합 요청(MR) 검사 및 차단할 수 있는 파이프라인의 검사를 사용하여 파이프라인에서 문제를 확인할 수 있도록 제어 기능을 설정할 수 있습니다.
 
-As part of this, developers may use IDE plugins and other tools like [Snyk Advisor](https://snyk.io/advisor) to select secure packages and [Snyk Learn](https://learn.snyk.io/) to educate on secure coding, security, and the product. It's quite common to see developers download and use IDE plugins. Provide guides indicating the settings they should use and guidelines on what they should fix to start often Criticals and Highs, where fixes are available.
+그 일환으로 개발자는 IDE 플러그인 및 [Snyk Advisor](https://snyk.io/advisor)와 같은 기타 도구를 사용하여 보안 패키지를 선택하고[Snyk Learn](https://learn.snyk.io/)을 통해 보안 코딩, 보안 및 제품에 대한 교육을 받을 수 있습니다. 개발자가 IDE 플러그인을 다운로드하여 사용하는 것은 매우 일반적입니다. 개발자가 사용해야 하는 설정에 대한 가이드와 수정이 가능한 중요도 및 심각도를 자주 시작하기 위해 수정해야 하는 사항에 대한 지침을 제공하세요.
 
-### Fix the backlog and triage issues
+### 백로그 및 분류 문제 해결
 
-Finally, you can focus on fixing your backlog of security issues. This can take several forms:
+마지막으로 백로그에 쌓인 보안 문제를 해결하는 데 집중할 수 있습니다. 여기에는 여러 가지 형태가 있을 수 있습니다:
 
-* As part of the initial rollout, security or initial stakeholder may triage the initial results for the existing portfolio, create tickets for priority items to investigate or address, or have the teams do that for their applications as part of the weekly triage process.
-* After getting visibility and achieving prevention, you can look at your backlog of issues. For example, a weekly triage process with the key stakeholders can guide the teams on what to address.
+* 초기 롤아웃의 일환으로 보안 또는 초기 이해관계자는 기존 포트폴리오의 초기 결과를 분류하고 조사 또는 해결해야 할 우선순위 항목에 대한 티켓을 만들거나 주간 분류 프로세스의 일부로 팀에 애플리케이션에 대해 이러한 작업을 수행하도록 할 수 있습니다.
+* 가시성을 확보하고 예방을 달성한 후에는 이슈의 백로그를 살펴볼 수 있습니다. 예를 들어, 주요 이해관계자와 함께 매주 분류 프로세스를 통해 팀에 해결해야 할 사항을 안내할 수 있습니다.
 
-## Use enhanced resources with Snyk
+## Snyk으로 향상된 리소스 사용
 
-Snyk was built with developers in mind, providing:
+Snyk은 개발자를 염두에 두고 제작되어 다음과 같은 기능을 제공합니다:
 
-* Tools to create secure applications using integrations for IDE, Git, and CI/CD.
-* [Snyk Advisor](https://snyk.io/advisor) and other tools to make decisions.
-* [Snyk Learn](https://learn.snyk.io) training materials on products, securing code, and best practices.
+* IDE, Git 및 CI/CD용 통합을 사용하여 보안 애플리케이션을 만드는 도구입니다.
+* [Snyk Advisor](https://snyk.io/advisor) 및 기타 도구로 의사결정을 내릴 수 있습니다.
+* 제품, 보안 코드 및 모범 사례에 대한 [Snyk Learn](https://learn.snyk.io) 교육 자료를 확인하세요.
