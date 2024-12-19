@@ -10,33 +10,33 @@ KPI는 인식 제고부터 새로운 문제 예방에 이르기까지 각 도입
 * 개선이 필요한 영역 식별
 * 이해관계자에게 Snyk의 가치 입증
 
-Tracking metrics aligned to each stage provides tangible insights into what's working well and where improvements may be needed. KPIs help optimize your use of Snyk and progress your application security program.
+각 단계에 맞춰 메트릭을 추적하면 잘 작동하는 부분과 개선이 필요한 부분에 대한 실질적인 인사이트를 얻을 수 있습니다. KPI는 Snyk 사용을 최적화하고 애플리케이션 보안 프로그램을 발전시키는 데 도움이 됩니다.
 
-## Example metrics
+## metrics 예시
 
-These are just some potential examples of success metrics to consider. Analyzing relevant data points at each stage can provide insight into what's working well and identify areas for improvement.
+이는 고려해야 할 성공 지표의 몇 가지 잠재적인 예일 뿐입니다. 각 단계에서 관련 데이터 포인트를 분석하면 무엇이 잘 작동하는지에 대한 인사이트를 얻고 개선이 필요한 영역을 파악할 수 있습니다.
 
-### Gain visibility
+### 가시성 확보
 
-* Percentage of Projects that have been successfully scanned for vulnerabilities
-* The number of critical and high-severity vulnerabilities identified
-* Mean time to complete the initial scan for a Project
-* Progress in prioritizing vulnerabilities by severity level
+* 취약점을 성공적으로 스캔한 프로젝트의 비율
+* 확인된 중요하고 심각도가 높은 취약점의 수
+* 프로젝트의 초기 스캔을 완료하는 데 걸린 평균 시간
+* 심각도 수준별 취약점 우선순위 지정 진행률
 
-### Prevent new issues
+### 새로운 문제 방지
 
-* Percentage of pull requests or builds that are failing based on Snyk automation
-* Reduction in new vulnerabilities introduced after automation is turned on
-* Time taken to address blocked pull requests and resolve them
+* Snyk 자동화를 기반으로 실패한 풀 리퀘스트 또는 빌드의 비율
+* 자동화를 켠 후 새로 발견된 취약점 감소율
+* 차단된 풀리퀘스트를 처리하고 해결하는 데 걸린 시간
 
-### Build awareness
+### 인지도 구축
 
-* Number of developers who have been introduced to Snyk
-* Percentage of Projects that have been tested with Snyk during this phase
+* Snyk을 소개받은 개발자 수
+* 이 단계에서 Snyk으로 테스트한 프로젝트의 백분율
 
-### Fix backlog
+### 백로그 수정
 
-* Percentage of existing vulnerabilities that have been resolved
-* Mean time to fix vulnerabilities from the backlog
-* Number of auto-fix pull requests raised and successfully merged
-* Progress in using Jira integration for managing vulnerabilities and tracking fixes
+* 기존 취약점 중 해결된 취약점의 비율
+* 백로그에서 취약점을 수정하는 데 걸린 평균 시간
+* 제기되어 성공적으로 병합된 자동 수정 풀 리퀘스트의 수
+* 취약성 관리 및 수정 사항 추적을 위해 Jira 통합을 사용한 진행 상황

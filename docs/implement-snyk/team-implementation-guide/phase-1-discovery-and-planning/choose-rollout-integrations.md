@@ -1,84 +1,82 @@
-# Choose rollout integrations
+# 롤아웃 통합 선택
 
-## **SDLC integration points**
+## **SDLC** 통합 포인트
 
-Snyk offers many integrations that seamlessly integrate into every stage of SDLC.&#x20;
+Snyk은 SDLC의 모든 단계에 원활하게 통합되는 다양한 통합 기능을 제공합니다.
 
-Many businesses typically roll out automated solutions first, then slowly introduce tools to enable the developers. In addition, gating features are gradually turned on over a period of time to minimize disruption.
-
-{% hint style="info" %}
-As using multiple integrations can result in duplicate reporting of issues, you do not initially need to implement more than one integration type. For example, you can start by importing everything with Git repositories, then later use the CI/CD view for fine-grained detail (potentially removing the source control integration if both views are not desired).
-{% endhint %}
-
-## Integration types
-
-Below are typical early integrations.
-
-### Source Code Management (SCM) integrations
-
-Integrations with popular version control platforms like GitHub, GitLab, Azure Repos, and Bitbucket seamlessly integrate Snyk security checks into the code review process. This ensures that potential vulnerabilities are identified and addressed before the code is merged into the main branch. Important features include:
-
-* Daily testing/monitoring of a specified branch (typically "development" branch),&#x20;
-* (optional) Pull Request/Merge Request checks against any branch of the repository.
-* (optional) Automated dependency upgrades and automated security fix upgrades using pull requests.
-
-Advantages:
-
-* Visibility into repository security posture
-* Automatic Scan on code change
-* Immediate feedback on issues for the developer
-* Onboarding of repositories can be configured using the UI
-* Supports Cloud Repositories on the Team plan
-
-For more details, see [Git repositories (SCMs)](../../../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/).
-
-
+많은 기업은 일반적으로 자동화된 솔루션을 먼저 출시한 다음 개발자가 사용할 수 있는 도구를 천천히 도입합니다. 또한 혼란을 최소화하기 위해 일정 기간에 걸쳐 게이팅 기능을 점진적으로 활성화합니다.
 
 {% hint style="info" %}
-If you have a non-cloud facing/or your own instance of a git SCM:
-
-* Consider deploying a [Snyk Broker](https://docs.snyk.io/snyk-admin/snyk-broker) for Snyk to communicate with your repositories, which would also require a Snyk Enterprise Plan.&#x20;
-* Enterprise customers can enable and manage [Snyk Broker](https://docs.snyk.io/enterprise-setup/snyk-broker) via API.&#x20;
-
-[Paid services](https://docs.snyk.io/more-info/snyk-terms-of-support-and-services-glossary) can be engaged to assist in broker deployments.
+여러 통합을 사용하면 이슈가 중복 보고될 수 있으므로 처음에는 두 가지 이상의 통합 유형을 구현할 필요는 없습니다. 예를 들어 Git 리포지토리로 모든 것을 가져오는 것으로 시작한 다음 나중에 CI/CD 보기를 사용하여 세분화된 세부 정보를 확인할 수 있습니다(두 가지 보기를 모두 원하지 않는 경우 소스 제어 통합을 제거할 수도 있음).
 {% endhint %}
 
-### Continuous Integration/Continuous Deployment (CI/CD) pipeline integrations
+## 통합 유형
 
-Integrating Snyk into CI/CD pipelines, such as Jenkins, Travis CI, or CircleCI, automates security checks during the build and deployment process. This ensures that vulnerabilities are detected early in the software development lifecycle and prevents their propagation into production. Typical features include:
+다음은 일반적인 초기 통합 사례입니다.
 
-* (Optional) Ability to passively monitor results during build and view results in Snyk
-* (Optional) Ability to test and potentially break the build based on criteria you specified
-* Integration can be achieved with specific Marketplace plugins or more generally, with the CLI as part of your pipeline script.
+### SCM(소스 코드 관리) 통합
 
-Advantages:
+GitHub, GitLab, Azure Repos, Bitbucket 등 널리 사용되는 버전 제어 플랫폼과의 통합을 통해 코드 검토 프로세스에 Snyk 보안 검사를 원활하게 통합할 수 있습니다. 이를 통해 코드가 메인 브랜치에 병합되기 전에 잠재적인 취약점을 식별하고 해결할 수 있습니다. 중요한 기능은 다음과 같습니다:
 
-* Assess local code vulnerabilities
-* Full control over testing (which tests to run, where in the build script)
-* Can automate via CI/CD
+* 지정된 브랜치(일반적으로 “개발” 브랜치)에 대한 일일 테스트/모니터링,
+* (선택 사항) 리포지토리의 모든 브랜치에 대한 풀 리퀘스트/병합 리퀘스트 검사.
+* (선택 사항) 풀 리퀘스트를 사용한 자동화된 종속성 업그레이드 및 자동화된 보안 수정 업그레이드.
 
-For more details, see [Snyk CI/CD integrations](../../../integrate-with-snyk/snyk-ci-cd-integrations/).
+장점:
 
-### Integrated Development Environment (IDE) integrations
+* 리포지토리 보안 상태에 대한 가시성 확보
+* 코드 변경 시 자동 스캔
+* 개발자에게 이슈에 대한 즉각적인 피드백 제공
+* UI를 사용하여 리포지토리 온보딩 구성 가능
+* Team 플랜에서 Cloud 리포지토리 지원
 
-IDE integrations like Visual Studio Code, IntelliJ IDEA, and Eclipse allow developers to access Snyk's security features directly within their coding environment. This enables real-time scanning and issue remediation as developers write code at the earliest possible stages.&#x20;
+자세한 내용은 [Git repositories (SCMs)](../../../integrate-with-snyk/git-repositories-scms-integrations-with-snyk/)를 참조하세요.
 
-For more details, see [Use Snyk in your IDE](../../../integrate-with-snyk/ide-tools/).
+{% hint style="info" %}
+클라우드를 사용하지 않거나 자체적인 git SCM 인스턴스가 있는 경우:
 
-## Considerations for import strategies&#x20;
+* 리포지토리와 통신하기 위해 Snyk용 [Snyk Broker](https://docs.snyk.io/snyk-admin/snyk-broker) 를 배포하는 것도 고려할 수 있는데, 이 경우 Snyk 엔터프라이즈 요금제가 필요합니다.
+* 기업 고객은 API를 통해 [Snyk Broker](https://docs.snyk.io/enterprise-setup/snyk-broker)를 활성화하고 관리할 수 있습니다.
 
-<table><thead><tr><th width="200">Project Import Strategy</th><th>Considerations</th><th>Advantages</th><th>Disadvantages</th></tr></thead><tbody><tr><td>CLI (automated CI/CD)</td><td>Must be configured for each application within CI/CD.</td><td><ul><li>Can select what to test and when (i.e. which package managers, where in the process, which language to analyze.</li><li>May need development effort for integration.</li></ul></td><td>It requires configuration per application.</td></tr><tr><td>CLI (Run locally by user)</td><td>User can use CLI to perform testing locally while working on an application, very configurable per scan type.</td><td>Local use case</td><td>Not meant for visibility or automation. Can require buildable code or dependencies to be installed (For example Gradle without Lockfile, Scala).</td></tr><tr><td>Git Code Repository Integration</td><td>Onboarding and daily monitoring: rapid vulnerability assessment across application portfolio.</td><td><p></p><ul><li>Continuous monitoring of repositories (even when you are not working on it).</li><li> Centralized visibility for teams.</li><li>Monitors specified branch</li><li>Code does not need to be built.</li></ul></td><td><ul><li>Can be initiated via UI</li><li>Some languages/package managers have better resolution utilizing the CLI (Gradle without lockfile, Scala).</li></ul></td></tr><tr><td></td><td>Pull request (PR)/merge request (MR)  scanning</td><td>Immediate feedback on introduced issues on the PR/MR against any branch on repository.</td><td>Configurable rules for pass/fail</td></tr></tbody></table>
+broker 배포를 지원하기 위해 [유료 서비스](https://docs.snyk.io/more-info/snyk-terms-of-support-and-services-glossary)를 이용할 수 있습니다.
+{% endhint %}
 
-## Additional considerations
+### 지속적 통합/지속 배포(CI/CD) 파이프라인 통합
 
-### Infrastructure as Code
+Jenkins, Travis CI, CircleCI와 같은 CI/CD 파이프라인에 Snyk를 통합하면 빌드 및 배포 프로세스 중 보안 검사를 자동화할 수 있습니다. 이를 통해 소프트웨어 개발 수명 주기 초기에 취약점을 발견하고 프로덕션으로 전파되는 것을 방지할 수 있습니다. 일반적인 기능은 다음과 같습니다:
 
-For Snyk Infrastructure as Code, it is common that your Terraform or yaml configuration files are held in your SCM, but they may be in a separate area or repository. As a result, consider if there are other areas you need to import. You may also want to integrate with Terraform Cloud (if applicable) to enable Snyk tests as part of your "Terraform run" processes.
+* (선택 사항) 빌드 중 수동적으로 결과를 모니터링하고 Snyk에서 결과를 볼 수 있는 기능
+* (선택 사항) 지정한 기준에 따라 빌드를 테스트하고 잠재적으로 중단할 수 있는 기능
+* 특정 마켓플레이스 플러그인 또는 더 일반적으로 파이프라인 스크립트의 일부로 CLI를 사용하여 통합할 수 있습니다.
 
-For complex environments, modules, and highly templated implementations, utilizing the CLI on your Terraform Plan file may provide the best results.
+장점:
+
+* 로컬 코드 취약성 평가
+* 테스트에 대한 완전한 제어(빌드 스크립트에서 어떤 테스트를 실행할지, 어디에서 실행할지)
+* CI/CD를 통한 자동화 가능
+
+자세한 내용은 [Snyk CI/CD 연동](../../../integrate-with-snyk/snyk-ci-cd-integrations/)을 참조하세요.
+
+### 통합 개발 환경(IDE) 통합
+
+개발자는 Visual Studio Code, IntelliJ IDEA, Eclipse와 같은 IDE 통합을 통해 코딩 환경 내에서 바로 Snyk의 보안 기능에 액세스할 수 있습니다. 따라서 개발자가 코드를 작성하는 가장 초기 단계에서 실시간 스캔 및 문제 해결이 가능합니다.
+
+자세한 내용은 [IDE에서 Snyk 사용](../../../integrate-with-snyk/ide-tools/)을 참조하세요.
+
+## 가져오기 전략에 대한 고려 사항
+
+<table><thead><tr><th width="200">프로젝트 가져오기 전략</th><th>고려 사항</th><th>장점</th><th>단점</th></tr></thead><tbody><tr><td>CLI(자동화된 CI/CD)</td><td>CI/CD 내에서 각 애플리케이션에 대해 구성해야 합니다.</td><td><ul><li>테스트할 대상과 시기(예: 어떤 패키지 관리자, 프로세스 중 어디에서, 어떤 언어를 분석할지)를 선택할 수 있습니다.</li><li>통합을 위한 개발 노력이 필요할 수 있습니다.</li></ul></td><td>애플리케이션별로 구성해야 합니다.</td></tr><tr><td>CLI(사용자가 로컬에서 실행)</td><td>사용자는 애플리케이션에서 작업하는 동안 CLI를 사용하여 로컬에서 테스트를 수행할 수 있으며, 스캔 유형별로 매우 다양하게 구성할 수 있습니다.</td><td>로컬 사용 사례</td><td>가시성 또는 자동화를 위한 것이 아닙니다. 빌드 가능한 코드 또는 종속성을 설치해야 할 수 있습니다(예: 잠금 파일이 없는 Gradle, Scala).로컬 사용 사례</td></tr><tr><td>Git 코드 리포지토리 통합</td><td>온보딩 및 일일 모니터링: 애플리케이션 포트폴리오 전반의 취약성을 신속하게 평가합니다.</td><td><ul><li>리포지토리에 대한 지속적인 모니터링(작업하지 않을 때에도).</li><li>팀을 위한 중앙 집중식 가시성.</li><li>지정된 브랜치 모니터링</li><li>코드를 빌드할 필요가 없습니다.</li></ul></td><td><ul><li>UI를 통해 시작 가능</li><li>일부 언어/패키지 관리자는 CLI를 사용하면 더 나은 해상도를 제공합니다(잠금 파일 없는 Gradle, Scala).</li></ul></td></tr><tr><td></td><td>풀 리퀘스트(PR)/병합 리퀘스트(MR) 스캔</td><td>리포지토리의 모든 브랜치에 대해 PR/MR에 도입된 이슈에 대한 즉각적인 피드백을 제공합니다.</td><td>합격/불합격에 대한 구성 가능한 규칙</td></tr></tbody></table>
+
+## 추가 고려 사항
+
+### 코드로서의 인프라
+
+코드형 Snyk 인프라의 경우, Terraform 또는 yaml 구성 파일이 SCM에 보관되는 것이 일반적이지만 별도의 영역이나 리포지토리에 있을 수도 있습니다. 따라서 가져와야 하는 다른 영역이 있는지 고려하세요. 또한 “Terraform 실행” 프로세스의 일부로 Snyk 테스트를 활성화하기 위해 Terraform Cloud(해당되는 경우)와 통합할 수도 있습니다.
+
+복잡한 환경, 모듈 및 고도로 템플릿화된 구현의 경우, 테라폼 플랜 파일에 CLI를 사용하면 최상의 결과를 얻을 수 있습니다.
 
 ### CR (Container Registries)
 
-Snyk also integrates with various [Container Registries](../../../integrate-with-snyk/snyk-container-integrations/) to enable you to import and monitor your containers for vulnerabilities. Snyk tests the containers you have imported for any known security vulnerabilities found at a frequency you control.
+또한 Snyk은 다양한 [Container Registries](../../../integrate-with-snyk/snyk-container-integrations/)와 통합되어 컨테이너를 가져와서 취약점이 있는지 모니터링할 수 있습니다. Snyk은 사용자가 제어하는 주기로 가져온 컨테이너에서 발견된 알려진 보안 취약점이 있는지 테스트합니다.
 
 ###
