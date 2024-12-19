@@ -31,19 +31,19 @@ Snyk 컨설턴트는 고객에게 Jumpstart서비스의 일부로 원격으로 S
 
 ### 사전 참여 통화
 
-고객이 참여 기간 동안 완료된 결과물과 함께 참여 시작에 필요한 전제 조건을 이해할 수 있도록 여기에 나열된 Jumpstart Service를 시작하기 전에 사전 참여 통화를 진행합니다. 각 제품 모듈의 리소스, 가용성 및 결과물을 포함한 고객 전제 조건이 검토 및 확인됩니다. 고객은 이러한 전제 조건을 준수하는 것이 전적으로 자신의 책임임을 인정하며, 스닉은 고객이 이러한 전제 조건을 충족하지 못하여 점프스타트 서비스를 제공하지 못하거나 지연되는 것에 대해 책임을 지지 않습니다.
+고객이 참여 기간 동안 완료된 결과물과 함께 참여 시작에 필요한 전제 조건을 이해할 수 있도록 여기에 나열된 Jumpstart Service를 시작하기 전에 사전 참여 통화를 진행합니다. 각 제품 모듈의 리소스, 가용성 및 결과물을 포함한 고객 전제 조건이 검토 및 확인됩니다. 고객은 이러한 전제 조건을 준수하는 것이 전적으로 자신의 책임임을 인정하며, Snyk은 고객이 이러한 전제 조건을 충족하지 못하여 점프스타트 서비스를 제공하지 못하거나 지연되는 것에 대해 책임을 지지 않습니다.
 
-## Snyk Platform configuration
+## Snyk 플랫폼  구성&#x20;
 
-### Delivery approach - Snyk Platform configuration
+### 제공 방식 - Snyk 플랫폼 구성
 
-The Snyk delivery method is designed to ensure rapid value realization with Snyk. Throughout our collaboration, Snyk will guide the Customer in setting up a foundational configuration and equip them to expand this setup to other applications and integrations. Ensuring Snyk is correctly set up from the outset improves developer adoption and paves the way for long-term success.
+Snyk 전달 방식은 Snyk을 통해 신속한 가치 실현을 보장하도록 설계되었습니다.양사의 협업을 통해 Snyk은 고객이 기본 구성을 설정할 수 있도록 안내하고 이 설정을 다른 애플리케이션 및 통합으로 확장할 수 있도록 지원합니다. 처음부터 Snyk을 올바르게 설정하면 개발자의 채택률이 향상되고 장기적인 성공의 기반을 마련할 수 있습니다.
 
-#### Base SSO Configuration and Custom Mapping
+#### 기본SSO 구성 및 사용자 지정 매핑
 
-The Snyk Consultant will work with the Customer to configure SSO through SAML, Azure AD, OIDC, or ADFS connection along with custom mapping of dynamically assigned users to Snyk Groups and Organizations based on data provided by the desired Identity Provider (IdP) to set up a scaled user provisioning and access model.
+Snyk 컨설턴트는 고객과 협력하여 원하는 ID 공급자(IdP)가 제공한 데이터를 기반으로 동적으로 할당된 사용자를 Snyk 그룹 및 조직에 사용자 지정 매핑하는 것과 함께 SAML, Azure AD, OIDC 또는 ADFS 연결을 통해 SSO를 구성하여 확장된 사용자 프로비저닝 및 액세스 모델을 설정합니다.
 
-#### **Template Organization configuration**
+#### 템플릿 조직 구성
 
 The Snyk Consultant will work with the Customer to configure notification settings, language settings, and Snyk account structure. Time will be spent reviewing configuration details with the Customer to ensure the Customer understands and maintains them.
 
