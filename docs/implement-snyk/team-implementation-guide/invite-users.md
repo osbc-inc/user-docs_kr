@@ -1,7 +1,7 @@
-# Invite Users
+# 사용자 초대
 
-Click **Members** and invite your team members, applying the role alignments decided in Phase 1 for each member.&#x20;
+**팀원(Members)**&#xC744; 클릭하고 각 팀원에게 1단계에서 결정한 역할 배정을 적용하여 팀원을 초대합니다.
 
 {% hint style="info" %}
-Inviting members is generally suggested after importing your Projects. You may bring in a few initial members to start and then do a wider rollout. This can be done at any time as part of stages four and five. It is strongly recommended to communicate what is expected prior to the actual invitation and then communicate throughout the various stages as pull request checks are turned on, pipelines enabled, and as policies/practices change.
+멤버 초대는 일반적으로 프로젝트를 가져온 후에 하는 것이 좋습니다. 몇 명의 초기 멤버를 초대하여 시작한 다음 더 많은 멤버를 초대할 수 있습니다. 이 작업은 4단계와 5단계의 일부로 언제든지 수행할 수 있습니다. 실제 초대에 앞서 예상되는 사항을 전달한 다음 풀 리퀘스트 확인이 켜지고 파이프라인이 활성화되고 정책/관행이 변경됨에 따라 여러 단계에 걸쳐 소통하는 것이 좋습니다.
 {% endhint %}

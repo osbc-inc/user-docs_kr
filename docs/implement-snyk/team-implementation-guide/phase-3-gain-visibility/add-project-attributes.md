@@ -1,6 +1,5 @@
-# Add project attributes
+# 프로젝트 속성 추가
 
-After importing your projects, you can add metadata to your Projects using [Project Attributes](../../../snyk-admin/snyk-projects/project-attributes.md). This allows you to filter and report on specific subsets of your Organization.
+프로젝트를 가져온 후 [프로젝트 속성](../../../snyk-admin/snyk-projects/project-attributes.md)을 사용하여 프로젝트에 메타데이터를 추가할 수 있습니다. 이를 통해 조직의 특정 하위 집합을 필터링하고 보고할 수 있습니다.
 
-For example, if you add  Project Attributes to all of your Projects, you can easily filter Projects to those that are "frontend critical vulnerabilities in production" from the Projects page.&#x20;
-
+예를 들어 모든 프로젝트에 프로젝트 속성을 추가하면 프로젝트 페이지에서 '프로덕션의 프런트엔드 중요 취약점'이 있는 프로젝트로 프로젝트를 쉽게 필터링할 수 있습니다.

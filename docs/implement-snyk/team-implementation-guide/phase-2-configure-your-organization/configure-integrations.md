@@ -1,45 +1,45 @@
-# Configure integrations
+# 통합 구성
 
-Integrate Git or CI/CD integrations as identified in the previous phase.
+이전 단계에서 식별한 대로 Git 또는 CI/CD 통합을 통합합니다.
 
-## Git repositories
+## Git 리포지토리
 
-For Git integration, Snyk suggests the following settings:
+Git 통합을 위해 Snyk은 다음 설정을 제안합니다:
 
-To disable gating initially, use the daily monitoring that is automatically configured when a Project is onboarded in Snyk, and disable the following PR/MR Checks in the configuration settings:
+처음에 게이팅을 비활성화하려면 Snyk에서 프로젝트가 온보딩될 때 자동으로 구성되는 일일 모니터링을 사용하고 구성 설정에서 다음 PR/MR 검사를 비활성화하세요:
 
-* Automatic fixes Snyk can position
-  * Automatic fix PRs
-  * Automatic dependency upgrade PRs
-  * Snyk vulnerability patches.
-* PR checks for
-  * Pull Request status checks for Open Source security and licenses
-  * Code analysis (Beta).
+* Snyk이 배치할 수 있는 자동 수정
+  * 자동 수정 PR
+  * 자동 종속성 업그레이드 PR
+  * Snyk 취약점 패치.
+* PR 확인 대상
+  * 오픈 소스 보안 및 라이선스에 대한 풀 리퀘스트 상태 확인
+  * 코드 분석(베타).
 
-## CI/CD (Build pipelines)
+## CI/CD (빌드 파이프라인)
 
-Keep your applications secure by preventing deployment of vulnerable applications or components (registries), adding Snyk in the build as a step of the pipeline.
+취약한 애플리케이션 또는 구성 요소(레지스트리)의 배포를 방지하여 애플리케이션을 안전하게 유지하고, 빌드에 Snyk을 파이프라인의 한 단계로 추가하세요.
 
-The CLI provides:
+CLI이 제공합니다:
 
-* Better resolution of dependencies for a number of specific package managers (such as Scala, Gradle, and GO).
-* Supports private packages without having to configure an additional integration, providing that your build environment will have access to your private packages.
-* Give visibility to components that are pushed to production by either breaking builds and reporting to Snyk or only reporting to Snyk.
+* 여러 특정 패키지 관리자(예: Scala, Gradle, GO)에 대한 종속성을 더 잘 해결합니다.
+* 추가 통합을 구성할 필요 없이 비공개 패키지를 지원하여 빌드 환경이 비공개 패키지에 액세스할 수 있도록 합니다.
+* 빌드를 중단하고 Snyk에 보고하거나 Snyk에만 보고하여 프로덕션에 푸시되는 컴포넌트에 대한 가시성을 제공합니다.
 
-There are several [CI/CD integrations](../../../integrate-with-snyk/snyk-ci-cd-integrations/) available, or you can use the [Snyk CLI](../../../snyk-cli/) as part of your pipeline, in order to have more flexibility in the tests you are running.
+실행 중인 테스트의 유연성을 높이기 위해 여러 가지 [CI/CD 통합](../../../integrate-with-snyk/snyk-ci-cd-integrations/)을 사용할 수 있으며, 파이프라인의 일부로 [Snyk CLI](../../../snyk-cli/)를 사용할 수도 있습니다.
 
-In the initial phase, Snyk recommends using the “monitor” feature to import information into Snyk so you can see any discovered issues (unless you are already importing your repos using a source control integration to achieve this). Later, when you want to start gating/blocking new vulnerabilities from being added, you can introduce “test” features - initially failing builds on critical issues and then gradually adapting the fail criteria over time.
+초기 단계에서는 “모니터” 기능을 사용하여 발견된 이슈를 확인할 수 있도록 Snyk으로 정보를 가져오는 것이 좋습니다(이를 위해 이미 소스 제어 통합을 사용하여 리포지토리를 가져오고 있는 경우 제외). 나중에 새로운 취약점이 추가되지 않도록 게이팅/차단하려는 경우 처음에는 중요한 이슈에 대해 빌드를 실패시킨 다음 시간이 지나면서 실패 기준을 점진적으로 조정하는 “테스트” 기능을 도입할 수 있습니다.
 
 {% hint style="info" %}
-For `snyk iac test --report` and `snyk code test --report` (beta), finding issues will result in the build possibly stopping with a non-zero response code. \
+`snyk iac test --report` 및`snyk code test --report`(베타)의 경우 문제를 발견하면 응답 코드가 0이 아닌 상태로 빌드가 중지될 수 있습니다.\
 \
-If you want to test passively,  the inclusion of the `--report` argument requires either setting the build step to always continue or an alternative like concatenating logic equating to "or true" (i.e. `snyk code test --report || true`). The exact syntax depends on the ecosystem the CLI is run in.&#x20;
+수동적으로 테스트하려는 경우 `--report` 인수를 포함하려면 빌드 단계를 항상 계속하도록 설정하거나 “또는 true”와 동일한 로직을 연결(예: `snyk code test --report || true`)하는 등의 대안이 필요합니다. 정확한 구문은 CLI가 실행되는 에코시스템에 따라 다릅니다.
 {% endhint %}
 
-When configuring pipelines, you can use popular plugins like [Snyk Filter](https://docs.snyk.io/snyk-api/other-tools/tool-snyk-filter) for advanced filtering.&#x20;
+파이프라인을 구성할 때 [Snyk 필터](https://docs.snyk.io/snyk-api/other-tools/tool-snyk-filter)와 같은 인기 있는 플러그인을 사용하여 고급 필터링을 할 수 있습니다.
 
 {% hint style="info" %}
-Some plugins may not be useable on the Team plan if they require API access, as it is a feature available on the Snyk Enterprise plan.
+일부 플러그인은 Snyk Enterprise 요금제에서 사용할 수 있는 기능이므로 API 액세스가 필요한 경우 Team 요금제에서는 사용할 수 없을 수 있습니다.
 {% endhint %}
 
-To see demonstrations of pipeline integrations, see [Snyk-Labs](https://github.com/snyk-labs/snyk-cicd-integration-examples).
+파이프라인 통합의 데모를 보려면 [Snyk-Labs](https://github.com/snyk-labs/snyk-cicd-integration-examples)를 참조하세요.

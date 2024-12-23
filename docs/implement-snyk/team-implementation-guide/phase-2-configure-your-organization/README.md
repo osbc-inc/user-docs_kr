@@ -1,38 +1,38 @@
-# Phase 2: Configure your Organization
+# 2단계: 조직 구성
 
-## Name your Organization
+## 조직 이름 지정
 
-This step is easiest performed prior to purchasing the license. If you did not, Snyk support can assist you.
+이 단계는 라이선스를 구매하기 전에 가장 쉽게 수행할 수 있습니다. 그렇지 않은 경우 Snyk 지원팀에서 도움을 받을 수 있습니다.
 
-### Changing the name prior to purchase
+### 구매 전 이름 변경하기
 
-Click the arrows next to your Organization name, click **Create New Organization**. From the **Settings-Plans and Billing** page, purchase a team plan.
+조직 이름 옆의 화살표를 클릭하고 **새 조직 만들기(Create New Organization)**&#xB97C; 클릭합니다. **설정-요금제 및 청구(Settings-Plans and Billing)** 페이지에서 팀 요금제를 구매합니다.
 
-### Changing the name after purchase
+### 구매 후 이름 변경하기
 
-After determining the name of your Organization in phase 1, navigate to **Settings** in the Snyk web UI and update your **Organization** **name**.&#x20;
+1단계에서 조직의 이름을 결정한 후 Snyk 웹 UI의 **설정(Settings)**&#xC73C;로 이동하여 **조직 이름**을 업데이트합니다.
 
 {% hint style="info" %}
-You must contact Snyk support and submit a ticket to update the url slug. This can impact any existing CI/CD scripts that your team has previously created, so this step should be performed as early as possible and be communicated to your team if CLI has been in use for a while.
+Snyk 지원팀에 연락하여 티켓을 제출하여 URL 슬러그를 업데이트해야 합니다. 이 작업은 팀에서 이전에 만든 기존 CI/CD 스크립트에 영향을 줄 수 있으므로 이 단계는 가능한 한 빨리 수행해야 하며, CLI를 사용한 지 오래되었다면 팀에 알려야 합니다.
 {% endhint %}
 
-## Additional settings to consider
+## 고려해야 할 추가 설정
 
-* Enable Snyk Code, if purchased, under **Settings-Snyk Code**.
-* Require reason to ignore issues in **Settings**.
-* Disable notifications at the Organization level under **Settings**. You can re-enable notifications after importing in the later step. This reduces noise during early testing/importing and is more appropriate for a steady state of the implementation.
+* 구매한 경우 **Settings**-**Snyk Code**에서 Snyk 코드를 활성화합니다.
+* **설정(Settings)**&#xC5D0;서 이슈를 무시할 이유를 설정합니다.
+* **설정(Settings)**&#xC758; 조직 수준에서 알림을 비활성화합니다. 이후 단계에서 가져오기 후 알림을 다시 활성화할 수 있습니다. 이렇게 하면 초기 테스트/임포트 중 노이즈를 줄일 수 있으며 구현이 안정된 상태에 더 적합합니다.
 
-### License policy (optional)
+### 라이선스 정책(선택 사항)
 
-Snyk comes with a default policy. You can find this under **Settings-Licenses** if your team wants to add custom text when an issue is found or change severities for specific licenses.
+Snyk은 기본 정책과 함께 제공됩니다. 팀에서 문제가 발견될 때 사용자 지정 텍스트를 추가하거나 특정 라이선스에 대한 심각도를 변경하려는 경우 **설정(Settings)-라이선스(Licenses)**&#xC5D0;서 이 정책을 찾을 수 있습니다.
 
-Administrators can set license policies to define Snyk behavior for treating license issues. For example, you can allow or disallow packages with certain license types to avoid using packages containing incompatible licenses.
+관리자는 라이선스 정책을 설정하여 라이선스 문제 처리를 위한 Snyk 동작을 정의할 수 있습니다. 예를 들어 특정 라이선스 유형의 패키지를 허용하거나 허용하지 않도록 설정하여 호환되지 않는 라이선스가 포함된 패키지를 사용하지 않도록 할 수 있습니다.
 
-By default, Snyk determines the severity of licenses as follows:
+기본적으로 Snyk은 라이선스의 심각도를 다음과 같이 결정합니다:
 
-* High severity - licenses that present issues for commercial software.
-* Medium severity - licenses that have clauses that may be of concern and should be reviewed.
+* 심각도 높음(High severity) - 상용 소프트웨어에 문제가 있는 라이선스.
+* 중간 심각도(Medium severity) - 우려할 만한 조항이 있어 검토가 필요한 라이선스입니다.&#x20;
 
-Configure policies to match your requirements.
+요구 사항에 맞게 정책을 구성하세요.
 
-For details, see [Getting Started with Snyk License Compliance Management](../../../scan-with-snyk/snyk-open-source/scan-open-source-libraries-and-licenses/snyk-license-compliance-management.md).
+자세한 내용은 [Snyk 라이선스 규정 준수관리 시작하기](../../../scan-with-snyk/snyk-open-source/scan-open-source-libraries-and-licenses/snyk-license-compliance-management.md)를 참조하세요.
