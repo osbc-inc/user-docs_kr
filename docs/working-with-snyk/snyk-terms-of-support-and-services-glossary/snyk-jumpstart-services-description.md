@@ -47,23 +47,23 @@ Snyk 컨설턴트는 고객과 협력하여 원하는 ID 공급자(IdP)가 제�
 
 Snyk 컨설턴트는 고객과 협력하여 알림 설정, 언어 설정, Snyk 계정 구조를 구성합니다. 고객이 구성 세부 사항을 이해하고 유지 관리할 수 있도록 고객과 함께 구성 세부 사항을 검토하는 데 시간을 할애합니다.
 
-#### Admin Training
+#### 관리자 교육
 
-The Snyk Consultant will run a 60-minute training session to ensure Customer administrator users know how to configure essential settings in Snyk based on the maturity of their security program.
+고객 관리자 사용자가 보안 프로그램의 성숙도에 따라 Snyk에서 필수 설정을 구성하는 방법을 알 수 있도록 60분간 교육 세션을 진행합니다.
 
-Training topics include:
+교육 주제는 다음과 같습니다:
 
-* Navigating the Snyk UI
-* Integration Settings
-* Notification Settings
-* Enabling new features
-* User roles and permissions
-* Filtering and prioritizing issues
-* Viewing results in Snyk reporting
-* Remediation workflow
+* Snyk UI 탐색하기
+* 통합 설정
+* 알림 설정
+* 새로운 기능 사용
+* 사용자 역할 및 권한
+* 이슈 필터링 및 우선 순위 지정
+* Snyk 보고에서 결과 보기
+* 문제 해결 워크플로우
 * Ignoring issues in the Snyk UI
 * PR Check walkthrough
-* Security and license policies
+* Security and license policie
 * Accessing additional training materials (learn.snyk.io)
 * Project Collections and views
 
