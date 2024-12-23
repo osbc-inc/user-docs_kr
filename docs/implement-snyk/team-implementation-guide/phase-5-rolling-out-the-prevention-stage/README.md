@@ -1,34 +1,33 @@
-# Phase 5: Rolling out the prevention stage
+# 5단계: 예방 단계 배포
 
-After you gain visibility on your security issues, you can now start to implement a prevention/gating system, to stop new vulnerabilities being added to your applications.
+보안 문제에 대한 가시성을 확보한 후에는 이제 예방/게이트 시스템을 구현하여 애플리케이션에 새로운 취약점이 추가되는 것을 차단할 수 있습니다.
 
-## Common prevention methods
+## 일반적인 예방 방법
 
-Below are the two common areas that allow you to "prevent new issues":&#x20;
+다음은 '새로운 문제를 예방'할 수 있는 두 가지 공통 영역입니다:
 
-* Snyk tests on pull request (PR)/merge checks (MR),  currently available for Open Source.&#x20;
-  * Snyk Code PR checks are currently in Beta.
-* Adding "Snyk test" to your CI/CD pipelines (you may have already implemented "Snyk monitor" to import your Projects as part of the pipeline).&#x20;
-  * Additionally, open source, code, infrastructure as code, and container vulnerabilities can all be gated.
+* 현재 오픈 소스에서 사용할 수 있는 풀 리퀘스트(PR)/병합 검사(MR)에 대한 Snyk 테스트.
+  * Snyk 코드 PR 검사는 현재 베타 버전입니다.
+* CI/CD 파이프라인에 “Snyk 테스트” 추가(이미 파이프라인의 일부로 프로젝트를 가져오기 위해 “Snyk 모니터”를 구현했을 수도 있음).
+  * 또한 오픈 소스, 코드, 코드형 인프라, 컨테이너 취약점을 모두 게이트할 수 있습니다.
 
-In either case, Snyk suggests that you communicate these changes clearly to your developers before implementing any form of gating.
+어떤 경우든 Snyk은 게이팅을 구현하기 전에 이러한 변경 사항을 개발자에게 명확하게 전달할 것을 제안합니다.
 
-## Tips
+## 팁
 
-### Block the differences
+### 차이점 차단
 
-If you are not already blocking vulnerabilities, start by blocking the difference.
+아직 취약점을 차단하고 있지 않다면 차이점을 차단하는 것부터 시작하세요.
 
-This eases developers into the process, as they only take responsibility for vulnerabilities directly related to their changes.&#x20;
+이렇게 하면 개발자는 변경 사항과 직접 관련된 취약점에 대해서만 책임을 지므로 프로세스를 쉽게 시작할 수 있습니다.
 
-To block new issues, you can use PR checks. For details, see [Run PR Checks](../../../scan-with-snyk/run-pr-checks/).
+새로운 이슈를 차단하려면 PR 확인을 사용할 수 있습니다. 자세한 내용은 [PR Checks 실행하기](../../../scan-with-snyk/run-pr-checks/)를 참조하세요.
 
-### Communicate exception processes
+### 예외 프로세스 전달
 
-It is important to ensure the teams know the exception processes and how to address if a PR is blocked or a build fails.&#x20;
+PR이 차단되거나 빌드가 실패할 경우 팀원들이 예외 프로세스와 해결 방법을 숙지하도록 하는 것이 중요합니다.
 
-For example:
+예를 들어:
 
-* Let the team know who has the authority to override a PR check if a pass is mandatory.
-* If a build fails, can the issue be ignored and the test rerun? Who can run it? Or can a script be run allowing that step to pass? Who can make that determination?
-
+* 통과가 필수인 경우 PR 검사를 재정의할 권한이 있는 사람을 팀에 알립니다.
+* 빌드에 실패하면 문제를 무시하고 테스트를 다시 실행할 수 있나요? 누가 실행할 수 있나요? 아니면 해당 단계를 통과하도록 허용하는 스크립트를 실행할 수 있나요? 누가 결정할 수 있나요?

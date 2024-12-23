@@ -1,69 +1,69 @@
-# Phase 4: Create a fix strategy
+# 4단계: 수정 전략 만들기
 
-After setting up your integrations, creating your Organization, and importing your Projects, you now have visibility into your business's current vulnerability backlog.&#x20;
+통합을 설정하고, 조직을 만들고, 프로젝트를 가져오면 이제 비즈니스의 현재 취약성 백로그에 대한 가시성을 확보할 수 있습니다.
 
-## Decide important focus areas
+## 중요한 집중 영역 결정
 
-Before diving into specific vulnerabilities, consider your Organizations and repositories ("targets" in Snyk) to consider any areas of specific importance. The discovery of business-critical applications you took in phase 1 can help inform and prioritize during this phase. For example, if your Organizations match different products, you can initially focus on the one product with the most users or where security matters most.&#x20;
+특정 취약점을 살펴보기 전에 조직과 리포지토리(Snyk에서는 “대상”)를 고려하여 특별히 중요한 영역이 있는지 고려하세요. 1단계에서 비즈니스 크리티컬 애플리케이션을 발견하면 이 단계에서 정보를 얻고 우선순위를 정하는 데 도움이 될 수 있습니다. 예를 들어, 조직에서 여러 제품을 사용하는 경우 처음에는 사용자가 가장 많거나 보안이 가장 중요한 하나의 제품에 집중할 수 있습니다.
 
-In your Organization, you can then consider the repositories that make up the application's different parts. Areas that handle sensitive data or are public-facing may be more important to secure, so this could be another way to narrow down your initial list of Projects to review.
+그런 다음 조직에서 애플리케이션의 여러 부분을 구성하는 리포지토리를 고려할 수 있습니다. 민감한 데이터를 처리하거나 대중에게 공개되는 영역은 보안이 더 중요할 수 있으므로 검토할 프로젝트의 초기 목록을 좁힐 수 있는 또 다른 방법이 될 수 있습니다.
 
 {% hint style="info" %}
-If you have used **Attributes** to add metadata to your Projects, these can be a great way to filter down the number of Projects that you are considering.
+**속성(Attributes)**&#xC744; 사용하여 프로젝트에 메타데이터를 추가한 경우, 고려 중인 프로젝트의 수를 필터링하는 좋은 방법이 될 수 있습니다.
 {% endhint %}
 
-## Group work by development teams
+## 개발 팀별 그룹 작업
 
-After you have your reduced set of Projects to prioritize, you may want to split these between different development teams. For example, you may have one Development team fixing issues with your open-source and first-party code and a separate DevOps team responsible for Containers and base image vulnerabilities.
+우선순위를 정할 프로젝트가 줄어들면 이를 여러 개발 팀으로 나눌 수 있습니다. 예를 들어 오픈 소스 및 퍼스트 파티 코드의 문제를 해결하는 한 개발 팀과 컨테이너 및 기본 이미지 취약성을 담당하는 별도의 DevOps 팀을 둘 수 있습니다.
 
-## Prioritization method
+## 우선순위 지정 방법
 
-Filters are available to help prioritize what issues need to be fixed more urgently. The following search criteria are most commonly used when building a prioritization plan and can be used iteratively or in combination as you analyze results.&#x20;
+필터를 사용하면 더 긴급하게 해결해야 하는 문제의 우선순위를 정하는 데 도움이 됩니다. 다음 검색 기준은 우선순위 지정 계획을 수립할 때 가장 일반적으로 사용되며 결과를 분석할 때 반복적으로 또는 조합하여 사용할 수 있습니다.
 
-* Severity (Start with **High** and **Critical**). It's common to filter by critical severity. However, if you are using Snyk Code, Snyk code only goes up to High, so start there for Code Analysis results.
-* [Exploit Maturity](https://snyk.io/blog/whats-so-wild-about-exploits-in-the-wild-and-how-can-we-prioritize-accordingly/) (Issues with **Mature** or **Proof of Concept** are more exploitable). By choosing this filter, you implicitly only filter the results to Open Source.
-* Fixable (if there’s a fix available by simply upgrading a package, it’s much faster to fix).  &#x20;
-* CVSS Score for Open Source Vulnerabilities
-* [Priority Score](https://docs.snyk.io/manage-risk/priorities-for-fixing-issues/priority-score) (The above values are used to calculate this score). One strategy is to eliminate the vulnerabilities with a score of 900-1000, and then move to vulnerabilities with a score of 800-900, and so on.
+* 심각도(**High** 및 **Critical**으로 시작). 일반적으로 심각도를 기준으로 필터링하는 것이 일반적입니다. 하지만 Snyk 코드를 사용하는 경우 Snyk 코드는 높음으로만 올라가므로 코드 분석 결과를 보려면 거기서부터 시작하세요.
+* [Exploit Maturity(성숙도)](https://snyk.io/blog/whats-so-wild-about-exploits-in-the-wild-and-how-can-we-prioritize-accordingly/) (**Mature** 또는 **개념 증명**이 있는 이슈가 더 많이 악용될 수 있음). 이 필터를 선택하면 암시적으로 결과가 오픈 소스로만 필터링됩니다.
+* 수정 가능(패키지를 업그레이드하는 것만으로 수정이 가능한 경우, 수정이 훨씬 빠름).
+* 오픈 소스 취약점에 대한 CVSS 점수
+* [우선순위 점수](https://docs.snyk.io/manage-risk/priorities-for-fixing-issues/priority-score)(위의 값을 사용하여 이 점수를 계산합니다). 한 가지 전략은 점수가 900-1000점인 취약점을 제거한 다음 800-900점인 취약점으로 이동하는 것입니다.
 
-Decide which metrics will be used when planning your fix strategy, and get specific with your timeline. If you choose to fix by severity, for example, estimate the time it will take to resolve vulnerability per severity. It’s recommended to be specific with your fix strategy.&#x20;
+수정 전략을 계획할 때 어떤 메트릭을 사용할지 결정하고 타임라인을 구체적으로 정하세요. 예를 들어 심각도별로 수정하기로 선택한 경우 심각도별로 취약점을 해결하는 데 걸리는 시간을 예상하세요. 수정 전략을 구체적으로 세우는 것이 좋습니다.
 
-**Example**
+**예시**
 
-If there are fifty critical severity issues and one hundred high severity issues,  you may plan on two weeks to fix critical vulnerabilities and then four weeks to fix high severity, based on the size of your team and workload.&#x20;
+심각도가 중요한 이슈가 50개, 심각도가 높은 이슈가 100개인 경우 팀 규모와 워크로드에 따라 중요 취약성을 수정하는 데 2주, 심각도가 높은 취약성을 수정하는 데 4주를 계획할 수 있습니다.
 
-Alternatively, you can fix by issue type.
+또는 이슈 유형별로 수정할 수도 있습니다.
 
-## Fix by issue type
+## 문제 유형별 수정
 
-It is also common to initially focus on specific issue types (for example, open source vulnerabilities), as then you can more easily compare issues across different Projects.&#x20;
+또한 처음에는 특정 이슈 유형(예: 오픈 소스 취약점)에 집중하는 것이 일반적이며, 이렇게 하면 여러 프로젝트에서 이슈를 더 쉽게 비교할 수 있습니다.
 
-Here are examples of processes based on whether fixes are led by different types of teams.
+다음은 다양한 유형의 팀에서 수정을 주도하는지 여부에 따른 프로세스의 예입니다.
 
-### Example: Developer-led priorities
+### 예시: 개발자 주도 우선 순위
 
-Developer-led implementation, with instruction from executives to minimize license risk:
+라이선스 리스크를 최소화하기 위해 경영진의 지시를 받아 개발자 주도로 구현합니다:
 
-1. Resolve all License issues identified by Snyk Open Source.
-2. Address all fixable Critical or High vulnerabilities in Snyk Open Source.
-3. Shift focus to Code Analysis Projects (using Snyk Code), starting with High severity issues.
-4. Scan the Containers and IaC files they are using to run their applications/environments.
+1. Snyk 오픈 소스에서 식별한 모든 라이선스 문제를 해결합니다.
+2. Snyk 오픈소스에서 수정 가능한 모든 중요 또는 고위험 취약점을 해결합니다.
+3. 심각도가 높은 문제부터 시작하여 코드 분석 프로젝트(Snyk 코드 사용)로 초점을 전환합니다.
+4. 애플리케이션/환경을 실행하는 데 사용하는 컨테이너 및 IaC 파일을 스캔합니다.
 
-### **Example: DevSecOps-led priorities**
+### 예시: DevSecOps 주도 우선 순위
 
-DevSecOps-led implementation, focusing on securing your custom images and environment:
+사용자 지정 이미지 및 환경 보안에 중점을 둔 DevSecOps 주도의 구현입니다:
 
-1. Scan and secure any custom base images that your development teams pull from.
-2. Integrate with your Container Registry, and scan the images you provide to your development teams.
-   1. Scan the image you have chosen and built after adding common internal tools and standardizing image parameters.
-   2. Ensure developers also scan their containers after adding their custom tools/packages to ensure that the container remains secure before deployment. This scan will also detect application vulnerabilities.
-3. After you have secured your Containers, start actively scanning your IaC files and cloud environments for misconfigurations that could lead to security breaches.
-4. Introduce Snyk to development teams to scan their Open Source and Code to reduce application vulnerabilities.
+1. 개발팀에서 가져온 사용자 지정 기본 이미지를 스캔하고 보호합니다.
+2. 컨테이너 레지스트리와 통합하고 개발 팀에 제공하는 이미지를 스캔합니다.
+   1. 일반적인 내부 도구를 추가하고 이미지 파라미터를 표준화한 후 선택한 이미지를 스캔합니다.
+   2. 개발자가 사용자 지정 도구/패키지를 추가한 후에도 컨테이너를 스캔하여 배포하기 전에 컨테이너가 안전한지 확인하세요. 이 스캔은 애플리케이션 취약점도 탐지합니다.
+3. 컨테이너를 보호한 후에는 보안 침해를 유발할 수 있는 잘못된 구성이 있는지 IaC 파일과 클라우드 환경을 적극적으로 스캔하세요.
+4. 개발팀에 Snyk을 소개하여 오픈 소스 및 코드를 스캔하여 애플리케이션 취약성을 줄이도록 하세요.
 
-## Targeted Vulnerabilities Campaigns
+## 표적 취약점 캠페인
 
-As you operationalize security testing in your development process, another option for your fix strategy is to have campaigns to eliminate vulnerability types, for example, SQL injection. Using CWE in your search filters can be very useful in reporting to identify and log issues.
+개발 프로세스에서 보안 테스트를 운영할 때 수정 전략의 또 다른 옵션은 SQL 인젝션과 같은 취약성 유형을 제거하기 위한 캠페인을 진행하는 것입니다. 검색 필터에 CWE를 사용하면 문제를 식별하고 기록하기 위한 보고에 매우 유용할 수 있습니다.
 
-## Update your timeline
+## 타임라인 업데이트
 
-Once you have created your fix strategy, update the timeline for Phase 7.
+수정 전략을 만든 후에는 7단계의 타임라인을 업데이트합니다.
