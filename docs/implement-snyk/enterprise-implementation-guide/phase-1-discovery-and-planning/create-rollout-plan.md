@@ -1,71 +1,71 @@
-# Create rollout plan
+# 롤아웃 계획 만들기
 
-Every business is different. If your teams have already used security tools and are in a heavily compliance-focused industry, controls may be turned on relatively more quickly. However, if security as part of development is new, rolling out tools and controls in phases is strongly suggested.
+비즈니스마다 상황이 다릅니다. 팀이 이미 보안 도구를 사용해 왔고 규정 준수에 중점을 두는 산업에 속해 있다면 상대적으로 더 빨리 제어 기능을 사용할 수 있습니다. 그러나 개발의 일부로서 보안을 처음 도입하는 경우에는 단계적으로 도구와 제어 기능을 도입하는 것이 좋습니다.
 
-## Suggested onboarding approach
+## 제안된 온보딩 접근 방식
 
-When you are introducing Snyk to your business, Snyk suggests the following phased rollout after implementing access by SSO and configuring integrations.
+비즈니스에 Snyk을 도입하는 경우 SSO를 통한 액세스를 구현하고 통합을 구성한 후 다음과 같은 단계적 롤아웃을 제안합니다.
 
-### 1. Kick off with a pilot team
+### 1. 파일럿 팀과 함께 시작하기
 
-Start by selecting a small group of engaged pilot users from:
+먼저 참여도가 높은 소규모 파일럿 사용자 그룹을 선택하세요:
 
-* Application security teams
-* Project teams building new applications
-* Developers of business-critical applications
+* 애플리케이션 보안 팀
+* 새로운 애플리케이션을 구축하는 프로젝트 팀
+* 비즈니스 크리티컬 애플리케이션 개발자
 
-This allows you to:
+이를 통해 다음을 수행할 수 있습니다:
 
-* Thoroughly onboard initial users
-* Gather feedback to refine processes
-* Identify issues before the broader rollout
-* Build success stories to promote Snyk
+* 철저한 초기 사용자 온보딩
+* 피드백을 수집하여 프로세스 개선
+* 광범위한 배포 전에 문제 파악
+* 성공 사례를 구축하여 Snyk 홍보
 
-Typically, within a large enterprise, importing everything using a repository integration for visibility and working through the rollout with a small pilot team allows you to identify the best processes and ways to implement Snyk within your environment.
+일반적으로 대기업에서는 가시성을 위해 리포지토리 통합을 사용하여 모든 것을 가져오고 소규모 파일럿 팀과 함께 롤아웃을 진행하면 사용자 환경 내에서 Snyk을 구현하는 데 가장 적합한 프로세스와 방법을 파악할 수 있습니다.
 
-### 2. Gain visibility with Git repository integration
+### 2. Git 리포지토리 통합을 통한 가시성 확보
 
-Next, set up Snyk integrations across your Git repositories to gain broad visibility into your security posture.&#x20;
+다음으로, Git 리포지토리 전체에 Snyk 통합을 설정하여 보안 상태에 대한 광범위한 가시성을 확보하세요.
 
 {% hint style="warning" %}
-To reduce noise, disable notifications before import if you have onboarded all your users.
+노이즈를 줄이려면 모든 사용자를 온보딩한 경우 가져오기 전에 알림을 비활성화하세요.
 {% endhint %}
 
-Key advantages of using this process are:
+이 프로세스를 사용하면 다음과 같은 주요 이점이 있습니다:
 
-* Widespread scanning across your codebase
-* Automatic scanning triggered on code changes
-* Convenient way to gain coverage
+* 코드베이스 전반에 걸친 광범위한 스캔
+* 코드 변경 시 자동 스캔 트리거
+* 커버리지를 확보하는 편리한 방법
 
-### 3. Prioritize key applications
+### 3. 주요 애플리케이션 우선순위 지정
 
-Have your pilot team focus on securing priority applications using targeted Snyk CLI scans.
+파일럿 팀이 타겟팅된 Snyk CLI 스캔을 사용하여 우선 순위 애플리케이션을 보호하는 데 집중하도록 하세요.
 
-Key advantages of using this process are:
+이 프로세스를 사용하면 다음과 같은 주요 이점이 있습니다:
 
-* Enhanced visibility into critical apps
-* Fine-tuned CLI testing for precision
-* Removing repo noise for a focused view
+* 중요한 앱에 대한 가시성 향상
+* 정밀도를 위해 미세 조정된 CLI 테스트
+* 집중된 보기를 위해 리포지토리 노이즈 제거
 
-### 4. Expand access
+### 4. 액세스 확장
 
-With priorities addressed and processes refined, start expanding access more broadly across teams.
+우선순위가 정해지고 프로세스가 개선되면 팀 전체로 액세스를 더욱 광범위하게 확장할 수 있습니다.
 
-This phased approach allows thoughtful onboarding while rapidly gaining visibility and control.
+이러한 단계적 접근 방식을 통해 신중한 온보딩을 진행하는 동시에 신속하게 가시성과 제어력을 확보할 수 있습니다.
 
-### 5. Turn on gating
+### 5. 게이팅 켜기
 
-After the first month, gradually turn on gating measures.
+첫 달이 지나면 점차적으로 게이팅 조치를 켜세요.
 
-* Pull Request/Merge Request Checks using criteria such as `severity` and `is fixable`.
-* Fail builds based on criteria such as `High` or `Critical`, `CVSS`, `Mature Exploit` for Open Source, and other criteria using the [Snyk Filter](https://github.com/snyk-labs/snyk-filter) plugin.
+* 풀 리퀘스트/병합 요청`severity`등의 기준을 사용하여 확인하며 `수정이 가능합니다.`
+* `High` 또는`Critical`, `CVSS`, 오픈 소스용 `Mature Exploit`, [Snyk Filter](https://github.com/snyk-labs/snyk-filter)플러그인을 사용한 기타 기준에 따라 빌드 불합격이 결정됩니다.
 
-It's recommended to start with a few applications, especially during the pilot team phase, work through the processes then roll out more widely.
+특히 파일럿 팀 단계에서 몇 가지 애플리케이션으로 시작하여 프로세스를 진행한 다음 더 광범위하게 배포하는 것이 좋습니다.
 
-## Exception handling
+## 예외 처리
 
-Ensure there is an exception process in place and users are aware. For example:
+예외 프로세스가 마련되어 있고 사용자가 이를 인지하고 있는지 확인합니다. 예를 들어
 
-* If a pull request/merge request is failed by Snyk, let the users know who is the Snyk admin who can override it.&#x20;
-* Similarly, if Snyk fails in CI/CD, let users know who can create an ignore rule or, authorize it to progress, or configure CI/CD to run without the Snyk `test` or set it to `monitor` only.
+* Snyk에서 풀 리퀘스트/병합 요청이 실패한 경우, 이를 재정의할 수 있는 Snyk 관리자가 누구인지 사용자에게 알려주세요.
+* 마찬가지로, Snyk가 CI/CD에서 실패하는 경우 사용자에게 무시 규칙을 만들거나 진행 권한을 부여할 수 있는 사람을 알려주거나, Snyk `test`없이 `monitor`만 하도록 설정하도록 CI/CD를 구성하세요.
 
