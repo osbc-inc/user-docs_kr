@@ -61,11 +61,11 @@ Snyk 컨설턴트는 고객과 협력하여 알림 설정, 언어 설정, Snyk �
 * 이슈 필터링 및 우선 순위 지정
 * Snyk 보고에서 결과 보기
 * 문제 해결 워크플로우
-* Ignoring issues in the Snyk UI
-* PR Check walkthrough
-* Security and license policie
-* Accessing additional training materials (learn.snyk.io)
-* Project Collections and views
+* Snyk UI의 문제 무시하기
+* PR 체크 연습
+* 보안 및 라이선스 정책
+* 추가 교육 자료 액세스하기기(learn.snyk.io)
+* 프로젝트 컬렉션 및 보기
 
 ### Target Initiatives - Snyk Platform configuration
 
