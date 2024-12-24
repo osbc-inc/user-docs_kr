@@ -1,51 +1,51 @@
-# Phase 1: Discovery and planning
+# 1단계: 발견 및 계획
 
-## Discovery phase steps&#x20;
+## 검색 단계
 
-* [Connect with Snyk](connect-with-snyk.md): Connect with your Snyk account manager.
-* [Conduct discovery](conduct-discovery.md): Identify stakeholders, integrations, and applications to monitor.
-* [Plan Organization structure](plan-organization-structure.md): Decide how to organize and control access to content using Organization structure.
-* [Determine user roles](determine-member-roles.md): Decide whether your users need customized access to Snyk.
-* [Decide SSO access](decide-sso-access.md): Identify initial Single Sign-On (SSO) settings.
-* [Plan for success](plan-for-success.md): Decide how to judge the success of your rollout.
-* [Choose rollout integrations](choose-rollout-integrations.md): Decide which integrations to implement initially.
-* [Create rollout plan](create-rollout-plan.md): Create your high-level plan for rolling out Snyk in your business.
+* [Snyk과 연결하세요](connect-with-snyk.md): Snyk 계정 관리자와 연결하세요.
+* [검색을 수행합니다](conduct-discovery.md): 모니터링할 이해관계자, 통합 및 애플리케이션을 식별합니다.
+* [조직 구조 계획하기](plan-organization-structure.md): 조직 구조를 사용하여 콘텐츠에 대한 액세스를 구성하고 제어하는 방법을 결정하세요.
+* [사용자 역할 결정하기](determine-member-roles.md): 사용자에게 Snyk에 대한 사용자 지정 액세스가 필요한지 여부를 결정하세요.
+* [SSO 액세스 결정](decide-sso-access.md): 초기 통합 인증(SSO) 설정을 확인합니다.
+* [성공을 위한 계획](plan-for-success.md): 롤아웃의 성공 여부를 판단하는 방법을 결정합니다.
+* [롤아웃 통합을 선택합니다](choose-rollout-integrations.md): 초기에 구현할 통합을 결정합니다.
+* [롤아웃 계획 만들기](create-rollout-plan.md): 비즈니스에 Snyk을 배포하기 위한 높은 수준의 계획을 만듭니다.
 
-## General pre-rollout questions
+## 일반적인 사전 롤아웃 질문
 
-Some initial questions follow that you can ask before starting the rollout to assist in planning. This is one way of deciding on your rollout planning process.
+다음은 롤아웃을 시작하기 전에 계획을 세우는 데 도움이 되는 몇 가지 초기 질문입니다. 이는 롤아웃 계획 프로세스를 결정하는 한 가지 방법입니다.
 
-### Who is involved?
+### 누가 관여하나요?
 
-* Who will manage and oversee the project?
-* Who will champion Snyk?
-* Who will be the Group Administrator?
+* 누가 프로젝트를 관리하고 감독하나요?
+* 누가 Snyk을 옹호하나요?
+* 그룹 관리자는 누가 되나요?
 
-### What are your goals?
+### 목표는 무엇인가요?
 
-* Why did you choose Snyk?&#x20;
-* Why are you implementing it now?
+* Snyk을 선택한 이유는 무엇인가요?
+* 지금 구현하는 이유는 무엇인가요?
 
-### How will your users use Snyk?&#x20;
+### 사용자가 Snyk을 어떻게 사용하나요?
 
-How will you provision users and integrate Snyk with your platforms?
+사용자를 프로비저닝하고 Snyk를 플랫폼과 통합하는 방법은 무엇인가요?
 
-* Who will need access to Snyk?&#x20;
-* What will they need access to?&#x20;
-* Will access be restricted to certain Projects?
-* Who can grant Snyk access to platforms like SSO and Git Repositories?
+* 누가 Snyk에 액세스해야 하나요?
+* 어떤 액세스 권한이 필요한가요?
+* 특정 프로젝트에 대한 액세스가 제한되나요?
+* SSO 및 Git 리포지토리와 같은 플랫폼에 대한 액세스 권한은 누가 부여할 수 있나요?
 
-### How will you structure your account?
+### 계정을 어떻게 구성할 건가요?
 
-* How will you group Projects?
-  * By developer teams?&#x20;
-  * By product?&#x20;
-  * By business unit?
-* If by developer teams, are there some teams that would need access to the same Projects? If yes, think about a different structure to avoid confusion.
-* How many [Snyk Organizations](../../../snyk-admin/manage-groups-and-organizations/whats-a-snyk-organization.md) do you need?&#x20;
+* 프로젝트를 어떻게 그룹화하나요?
+  * 개발자 팀별로?
+  * 제품별로?
+  * 사업부별로?
+* 개발자 팀별로 그룹화할 경우 동일한 프로젝트에 액세스해야 하는 팀이 있나요? 그렇다면 혼동을 피하기 위해 다른 구조를 생각해 보세요.
+* 얼마나 많은 [Snyk 조직](../../../snyk-admin/manage-groups-and-organizations/whats-a-snyk-organization.md)이 필요한가요?
 
-### How will you measure success?&#x20;
+### 성공을 어떻게 측정할 것인가요?
 
-* What KPIs will be tracked?
-* How will you know you’re making progress?
-* Are there key development projects that progress tracking should be aligned with, or at least included, to measure progress against?
+* 어떤 KPI를 추적하나요?
+* 진행 상황을 어떻게 알 수 있나요?
+* 진행 상황 추적이 진행 상황을 측정하기 위해 연계되어야 하거나 최소한 포함되어야 하는 주요 개발 프로젝트가 있나요?

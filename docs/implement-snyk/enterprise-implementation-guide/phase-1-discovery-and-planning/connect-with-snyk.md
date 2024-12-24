@@ -1,23 +1,23 @@
-# Connect with Snyk
+# Snyk와 연결
 
-## Connect with your account manager
+## 계정 관리자와 연결
 
-Before implementing Snyk, please contact your Snyk account manager to confirm you have the appropriate license for your use case. They can advise on the best license type and access level based on your business needs.
+Snyk을 구현하기 전에 Snyk 계정 관리자에게 문의하여 사용 사례에 적합한 라이선스를 보유하고 있는지 확인하세요. 담당자가 비즈니스 요구 사항에 따라 최적의 라이선스 유형과 액세스 수준을 조언해 드릴 수 있습니다.
 
-The proper license setup ensures you can fully use Snyk capabilities without limitations. It also guarantees you remain compliant with our terms of use.
+적절한 라이선스 설정을 통해 제한 없이 Snyk 기능을 완벽하게 사용할 수 있습니다. 또한 사용 약관을 계속 준수할 수 있도록 보장합니다.
 
-## License questions
+## 라이선스 관련 질문
 
-Your account manager is your go-to resource for any account-related questions or updates. Reach out to your account manager directly regarding:
+계정 관리자는 계정 관련 질문이나 업데이트에 대해 문의할 수 있는 리소스입니다. 궁금한 점이 있으면 계정 관리자에게 직접 문의하세요:
 
-* Confirming your current license
-* Adjusting license quantity or scope
-* Renewing your license
-* Adding new products and features
-* Changing account access
+* 현재 라이선스 확인
+* 라이선스 수량 또는 범위 조정하기
+* 라이선스 갱신
+* 새 제품 및 기능 추가
+* 계정 액세스 권한 변경
 
-With the right license in hand, you're set up for a smooth and successful experience using Snyk.
+올바른 라이선스를 보유하고 있으면 Snyk을 원활하고 성공적으로 사용할 수 있습니다.
 
 {% hint style="info" %}
-Most importantly, your account manager can confirm your Snyk license has been applied to an environment, has the correct naming, and is ready to be implemented.
+가장 중요한 것은 계정 관리자가 Snyk 라이선스가 환경에 적용되었는지, 올바른 이름이 지정되었는지, 구현할 준비가 되었는지 확인할 수 있다는 점입니다.
 {% endhint %}

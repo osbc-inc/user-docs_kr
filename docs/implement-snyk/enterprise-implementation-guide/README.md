@@ -1,60 +1,60 @@
-# Enterprise implementation guide
+# 엔터프라이즈 구현 가이드
 
-Each business and environment is different. With that in mind, this guide aims to help an enterprise business to implement Snyk. The guide provides recommendations on implementing a large-scale rollout, focusing on the stages needed to help get towards an ideal rollout.
+각 비즈니스와 환경은 다릅니다. 이러한 점을 염두에 두고 이 가이드는 엔터프라이즈 비즈니스에서 Snyk을 구현하는 데 도움을 드리고자 합니다. 이 가이드는 이상적인 롤아웃에 도달하는 데 필요한 단계에 초점을 맞춰 대규모 롤아웃을 구현하는 데 필요한 권장 사항을 제공합니다.
 
-The guide starts by recognizing that most businesses:
+이 가이드는 대부분의 비즈니스가 이러한 문제를 안고 있다는 사실을 인식하는 것으로 시작합니다:
 
-* Have a backlog of issues in their existing software.
-* Are continuously creating new software, and need to secure new code.&#x20;
-
-{% hint style="info" %}
-There are **typical timelines for implementation** depending on the size and scope of your business.
-
-If your business is small and nimble, Snyk implementation can be achieved in days. You can start scanning with Snyk soon after purchasing, often using a Git integration and the [API Import Tool](../../snyk-api-info/other-tools/tool-snyk-api-import/). See the [Getting started](../../getting-started/) and [Start scanning](../../scan-with-snyk/start-scanning-using-the-cli-web-ui-or-api.md) sections for details of this type of process
-
-However, for larger, more process-oriented enterprises, the implementation process may take weeks or months and it requires more detailed planning to succeed.&#x20;
-{% endhint %}
-
-If you want to enable the Application Security Posture Management for all your used products, you can use the [Snyk AppRisk Implementation Guide](../../manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/).
-
-## Implementation strategy overview
-
-This guide is composed of multiple phases, outlining a series of actions that align with three goals:
-
-* [Achieve visibility](./#achieve-visibility)
-* [Achieve prevention and drive developer adoption](./#achieve-prevention-and-drive-developer-adoption)
-* [Fix the backlog and triage issues](./#fix-the-backlog-and-triage-issues)
-
-### Achieve visibility
-
-For large businesses, we recommend you first focus on visibility - getting a clear sense of the security issues, but without always fixing them.
+* 기존 소프트웨어에 백로그가 쌓여 있는 경우.
+* 지속적으로 새로운 소프트웨어를 만들고 있으며 새로운 코드를 보호해야 하는 경우.
 
 {% hint style="info" %}
-This does not stop you from fixing issues using Snyk. You can start fixing issues early, but the emphasis is to avoid blocking development early on, build trust, and slowly introduce gating in later phases, usually the prevention phase.
+비즈니스의 규모와 범위에 따라 **일반적인 구현 일정**이 있습니다.
+
+비즈니스 규모가 작고 민첩한 경우 며칠 내에 Snyk을 구현할 수 있습니다. 구매 후 곧바로 Git 통합 및 [API Import 도구](../../snyk-api-info/other-tools/tool-snyk-api-import/)를 사용하여 Snyk으로 스캔을 시작할 수 있습니다. 이러한 유형의 프로세스에 대한 자세한 내용은 [시작하기](../../getting-started/) 및 [스캔 시작](../../scan-with-snyk/start-scanning-using-the-cli-web-ui-or-api.md) 섹션을 참조하세요.
+
+그러나 더 큰 규모의 프로세스 지향적인 기업의 경우 구현 프로세스에 몇 주 또는 몇 달이 걸릴 수 있으며 성공하려면 더 자세한 계획이 필요합니다.
 {% endhint %}
 
-Visibility achieves a broad view of security across your application portfolio, avoids Snyk scans being seen as a blocker, and minimizes impact on development processes.&#x20;
+사용 중인 모든 제품에 대해 애플리케이션 보안 태세 관리를 사용 설정하려면 [Snyk AppRisk 구현 가이드](../../manage-risk/snyk-apprisk/implementation-guide-for-snyk-apprisk/)를 참조하세요.
 
-This visibility helps build trust while rolling out Snyk.&#x20;
+## 구현 전략 개요
 
-### Achieve prevention and drive developer adoption
+이 가이드는 여러 단계로 구성되어 있으며, 세 가지 목표에 부합하는 일련의 조치를 간략하게 설명합니다:
 
-Next is the prevention stage; stopping new security issues from being added to your applications. During this stage, you can put controls in place to allow developers to see issues in their pipelines using Pull Request (PR)/Merge Request (MR) checks, and checks in the pipeline that may block.&#x20;
+* [가시성 확보](./#achieve-visibility)
+* [예방 및 개발자 채택 촉진](./#achieve-prevention-and-drive-developer-adoption)
+* [백로그 및 분류 문제 해결](./#fix-the-backlog-and-triage-issues)
 
-As part of this, developers may use IDE plugins and other tools like [Snyk Advisor](https://snyk.io/advisor) to select secure packages, and [Snyk Learn](https://learn.snyk.io/) to educate on secure coding, security, and the product.
+### 가시성 확보
 
-### Fix the backlog and triage issues
+대기업의 경우 먼저 보안 문제를 명확하게 파악하는 가시성에 초점을 맞추는 것이 좋지만, 항상 문제를 해결하지는 않는 것이 좋습니다.
 
-Finally, you can focus on fixing your backlog of security issues. This can take several forms:
+{% hint style="info" %}
+그렇다고 해서 Snyk을 사용하여 문제를 해결하는 것을 막지는 않습니다. 문제 해결을 일찍 시작할 수도 있지만, 초기에 개발을 차단하지 않고 신뢰를 구축한 다음 이후 단계(일반적으로 예방 단계)에서 게이팅을 천천히 도입하는 것이 중요합니다.
+{% endhint %}
 
-* As part of the initial rollout, security or initial stakeholder may triage the initial results for the existing portfolio, create tickets for priority items to investigate or address, or have the teams do that for their applications as part of the weekly triage process.
-* After getting visibility and achieving prevention, you can look at your backlog of issues.  For example, a weekly triage process with the key stakeholders can guide the teams on what to address.
+가시성을 통해 애플리케이션 포트폴리오 전반의 보안을 폭넓게 파악하고, Snyk 검사가 차단기로 간주되지 않도록 하며, 개발 프로세스에 미치는 영향을 최소화할 수 있습니다.
 
-## Use enhanced resources with Snyk
+이러한 가시성은 Snyk을 출시하는 동안 신뢰를 구축하는 데 도움이 됩니다.
 
-Snyk was built with developers in mind, providing:
+### 예방 달성 및 개발자 채택 촉진
 
-* Tools to create secure applications using integrations for IDE, Git, and CI/CD.
-* [Snyk Advisor](https://snyk.io/advisor) and other tools to make decisions.
-* [Snyk Learn](https://learn.snyk.io) training materials on products, securing code, and best practices.&#x20;
-* [Policies](../../scan-with-snyk/policies/) that allow security and compliance teams to provide direction.
+다음은 예방 단계로, 애플리케이션에 새로운 보안 문제가 추가되는 것을 막는 단계입니다. 이 단계에서는 풀 리퀘스트(PR)/병합 요청(MR) 검사를 사용하여 개발자가 파이프라인에서 문제를 확인하고 차단할 수 있는 파이프라인의 검사를 확인할 수 있도록 제어 기능을 설정할 수 있습니다.
+
+그 일환으로 개발자는 IDE 플러그인 및 [Snyk Advisor](https://snyk.io/advisor)r와 같은 기타 도구를 사용하여 보안 패키지를 선택하고, [Snyk Learn](https://learn.snyk.io/)을 통해 보안 코딩, 보안 및 제품에 대한 교육을 받을 수 있습니다.
+
+### 백로그 및 분류 문제 해결
+
+마지막으로 백로그에 쌓인 보안 문제를 해결하는 데 집중할 수 있습니다. 여기에는 여러 가지 형태가 있을 수 있습니다:
+
+* 초기 롤아웃의 일환으로 보안 또는 초기 이해관계자가 기존 포트폴리오의 초기 결과를 분류하고, 조사 또는 해결해야 할 우선순위 항목에 대한 티켓을 만들거나, 주간 분류 프로세스의 일부로 팀에서 애플리케이션에 대해 이러한 작업을 수행하도록 할 수 있습니다.
+* 가시성을 확보하고 예방을 달성한 후에는 이슈의 백로그를 살펴볼 수 있습니다. 예를 들어 주요 이해관계자와 함께 주간 분류 프로세스를 통해 팀에게 해결해야 할 사항을 안내할 수 있습니다.
+
+## Snyk으로 향상된 리소스 사용
+
+Snyk은 개발자를 염두에 두고 개발되었습니다:
+
+* IDE, Git 및 CI/CD용 통합을 사용하여 안전한 애플리케이션을 만드는 도구.
+* [Snyk Advisor](https://snyk.io/advisor) 및 의사 결정을 위한 기타 도구.
+* 제품, 보안 코드 및 모범 사례에 대한 [Snyk Learn](https://learn.snyk.io) 교육 자료.
+* 보안 및 규정 준수 팀이 방향을 제시할 수 있는 [정책(Policies](../../scan-with-snyk/policies/)).
