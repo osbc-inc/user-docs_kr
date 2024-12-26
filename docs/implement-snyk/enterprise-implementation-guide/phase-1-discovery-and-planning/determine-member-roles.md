@@ -1,48 +1,48 @@
-# Determine user roles
+# 사용자 역할 결정
 
-## Use default or customized roles?
+## 기본 또는 사용자 지정 역할을 사용하시나요?
 
-A key consideration when setting up Snyk is determining if the pre-defined [default user roles](../../../snyk-admin/user-roles-and-permissions/pre-defined-roles.md) align with your needs, or if you need to customize roles for your business requirements.&#x20;
+&#x20;Snyk을 설정할 때 중요한 고려 사항은 미리 정의된 [기본  사용자 역할](../../../snyk-admin/user-roles-and-permissions/pre-defined-roles.md)필요에 맞는지 또는 비즈니스 요구사항에 맞게 역할을 사용자 지정해야 하는지 여부를 결정하는 것입니다.
 
 {% hint style="info" %}
-The default user roles in Snyk have a fixed set of permissions that cannot be changed. One of the biggest advantages of customizing roles is that you can adjust the role permissions to align with your desired level of control.&#x20;
+Snyk의 기본 사용자 역할에는 변경할 수 없는 고정된 권한 집합이 있습니다. 역할 사용자 지정의 가장 큰 장점 중 하나는 원하는 제어 수준에 맞게 역할 권한을 조정할 수 있다는 것입니다.
 {% endhint %}
 
-## Default roles
+## 기본 역할
 
-The following are the default user roles. See [Pre-defined roles](../../../snyk-admin/user-roles-and-permissions/pre-defined-roles.md) for more details.
+다음은 기본 사용자 역할입니다. 자세한 내용은 [사전 정의 된 역할](../../../snyk-admin/user-roles-and-permissions/pre-defined-roles.md) 참조하세요.
 
-* **Group Member**: a non-functional role in Snyk. The user has access to the Group but requires Organization-level permissions to use Snyk.&#x20;
-* **Group Admin**: provides a full set of permissions at the Group and Organization level. No other roles need to be assigned. This role is typically used for users who manage Snyk.&#x20;
-* **Org Admin**: Typically assigned to team leads. Users with this role can add and delete Projects, override Snyk checks, and provision Group users with an Organization-level role.&#x20;
-* **Org Collaborator**: This is the default role in Snyk used for developers. This role is ideal for small teams or a very developer-first organizational approach.&#x20;
+* **그룹 구성원**: Snyk에서 기능적이지 않은 역할입니다. 사용자는 그룹에 액세스할 수 있지만 Snyk을 사용하려면 조직 수준의 권한이 필요합니다.
+* **그룹 관리자**: 그룹 및 조직 수준에서 전체 권한을 제공합니다. 다른 역할은 할당할 필요가 없습니다. 이 역할은 일반적으로 Snyk를 관리하는 사용자에게 사용됩니다.
+* **조직 관리자**: 일반적으로 팀 리더에게 할당됩니다. 이 역할을 가진 사용자는 프로젝트를 추가 및 삭제하고, Snyk 검사를 재정의하고, 조직 수준 역할로 그룹 사용자를 프로비저닝할 수 있습니다.
+* **조직 공동 작업자**: 개발자에게 사용되는 Snyk의 기본 역할입니다. 이 역할은 소규모 팀이나 개발자 우선의 조직적 접근 방식에 이상적입니다.
 
 {% hint style="info" %}
-Large enterprises typically limit access to actions such as who can add or delete Projects, and so reduce permissions early on. For this purpose, you should use Custom Roles, for example, creating a **Team Lead** role to provide a middle ground between the **Org Collaborator** and **Org Admin** roles.
+대기업에서는 일반적으로 프로젝트를 추가하거나 삭제할 수 있는 사람과 같은 작업에 대한 액세스를 제한하므로 초기에 권한을 줄입니다. 이를 위해 사용자 지정 역할을 사용해야 하는데, 예를 들어 **팀 리더** 역할을 만들어 조직 **공동 작업자**와 **조직 관리자** 역할 사이의 중간 지점을 제공하세요.
 {% endhint %}
 
-As with all default roles, the permissions within the **Org Collaborator** role cannot be changed, so you cannot grant the developers the ability to **Mark SCM Check as Successful**. This role can be helpful when introducing developers to Snyk PR Checks. This is where Custom Roles is useful.&#x20;
+모든 기본 역할과 마찬가지로 **조직 공동 작업자** 역할 내의 권한은 변경할 수 없으므로 개발자에게 SCM 검사를 **성공으로 표시**할 수 있는 권한을 부여할 수 없습니다. 이 역할은 개발자에게 Snyk PR 검사를 소개할 때 유용할 수 있습니다. 이때는 사용자 지정 역할이 유용합니다.
 
-## Customized roles
+## 맞춤형 역할
 
-The [User role management](../../../snyk-admin/user-roles-and-permissions/user-role-management.md) feature provides Role-Based Access Control (RBAC) for Snyk, allowing you to create and enforce customized access by assigning a set of permissions to a role that will be granted to users. The permissions within these roles can be updated and changed even after assigning them to users.&#x20;
+[사용자 역할 관리](../../../snyk-admin/user-roles-and-permissions/user-role-management.md)기능은 Snyk에 역할 기반 액세스 제어(RBAC)를 제공하여 사용자에게 부여할 권한 집합을 역할에 할당하여 사용자 지정 액세스를 만들고 적용할 수 있도록 합니다. 이러한 역할 내의 권한은 사용자에게 할당된 후에도 업데이트 및 변경할 수 있습니다.
 
-The most common types of custom roles include Team Lead and Developer.
+가장 일반적인 사용자 지정 역할 유형에는 팀 리더와 개발자가 있습니다.
 
 {% hint style="info" %}
-See [Custom role templates](../../../snyk-admin/user-roles-and-permissions/custom-role-templates/) for examples.
+예는 [사용자 지정 역할 템플릿](../../../snyk-admin/user-roles-and-permissions/custom-role-templates/)을 참조하세요.
 {% endhint %}
 
-### Team Lead&#x20;
+### 팀 리더
 
-* This often starts as an equivalent to the Org Admin default role but would provide the ability to customize or change the permissions within the role if needed. You can duplicate the default Org Admin role as a starting point.&#x20;
-* Sample permissions might include the ability to **Mark as Successful** in SCM for pull request/merge request checks., with the ignore capability disabled.
+* 이 역할은 보통 조직 관리자 기본 역할과 동일하게 시작하지만 필요한 경우 역할 내에서 권한을 사용자 지정하거나 변경할 수 있는 기능을 제공합니다. 기본 조직 관리자 역할을 시작점으로 복제할 수 있습니다.
+* 샘플 권한에는 무시 기능이 비활성화된 상태에서 풀 리퀘스트/병합 리퀘스트 확인을 위해 SCM에서 **성공으로 표시**하는 기능이 포함될 수 있습니다.
 
-### Developer&#x20;
+### 개발자
 
-* This is a custom role that, at minimum, allows developers to view Organizations and Projects and also gives them the ability to test Projects.&#x20;
-* Often, when a company is deploying Snyk, developers might have the ability to override Snyk PR checks, but this permission might get revoked after developers are comfortable using the Snyk IDE extensions and start fixing issues earlier in the SDLC. Similarly, you may start by allowing them to add Projects and then limit that permission to a team lead.
+* 이 역할은 최소한 개발자가 조직 및 프로젝트를 볼 수 있고 프로젝트를 테스트할 수 있는 기능을 제공하는 사용자 지정 역할입니다.
+* 회사에서 Snyk을 배포할 때 개발자에게 Snyk PR 검사를 재정의할 수 있는 권한이 있는 경우가 많지만 개발자가 Snyk IDE 확장 기능을 익숙하게 사용하고 SDLC 초기에 문제를 해결하기 시작하면 이 권한이 취소될 수 있습니다. 마찬가지로 개발자가 프로젝트를 추가할 수 있도록 허용한 다음 해당 권한을 팀 리더로 제한할 수도 있습니다.
 
 {% hint style="info" %}
-Remember to give developers the ability to `test` Projects and `test` packages when you create the developer role to ensure developers can initiate tests.
+개발자가 `test` 를 시작할 수 있도록 개발자 역할을 만들 때 개발자에게 프로젝트 및 `test`  패키지를 테스트할 수 있는 권한을 부여하는 것을 잊지 마세요.
 {% endhint %}

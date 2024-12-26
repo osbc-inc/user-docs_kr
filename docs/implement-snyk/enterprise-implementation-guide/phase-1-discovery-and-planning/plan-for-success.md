@@ -1,43 +1,42 @@
-# Plan for success
+# 성공을 위한 계획
 
-## Determine success metrics with Snyk
+## Snyk으로 성공 지표 결정하기
 
-Implementing Snyk provides an opportunity to enhance your application security. But how do you know if you're getting the most out of it? Key Performance Indicators (KPIs) are essential measurements that track Snyk's impact and help guide your security journey.
+Snyk을 구현하면 애플리케이션 보안을 강화할 수 있는 기회를 얻을 수 있습니다. 하지만 이를 최대한 활용하고 있는지 어떻게 알 수 있을까요? 핵심 성과 지표(KPI)는 Snyk의 영향을 추적하고 보안 여정을 안내하는 데 도움이 되는 필수 측정 지표입니다.
 
-KPIs give you valuable insights by monitoring key metrics at each adoption phase, from raising awareness to preventing new issues. KPIs help you:
+KPI는 인식 제고부터 새로운 문제 예방에 이르기까지 각 도입 단계의 주요 지표를 모니터링하여 귀중한 인사이트를 제공합니다. KPI가 도움이 됩니다:
 
-* Assess progress toward security goals
-* Identify areas needing improvement
-* Demonstrate Snyk's value to stakeholders
+* 보안 목표에 대한 진행 상황 평가
+* 개선이 필요한 영역 식별
+* 이해관계자에게 Snyk의 가치 입증
 
-Tracking metrics aligned to each stage provides tangible insights into what's working well and where improvements may be needed. KPIs help optimize your use of Snyk and progress your application security program.
+각 단계에 맞춰 메트릭을 추적하면 잘 작동하는 부분과 개선이 필요한 부분에 대한 실질적인 인사이트를 얻을 수 있습니다. KPI는 Snyk 사용을 최적화하고 애플리케이션 보안 프로그램을 발전시키는 데 도움이 됩니다.
 
-## Example metrics
+## metrics 예시
 
-Some examples of success metrics to consider are provided here. Analyzing relevant data points at each stage can provide insight into what's working well and help identify areas for improvement.
+고려해야 할 성공 지표의 몇 가지 예가 여기에 나와 있습니다. 각 단계에서 관련 데이터 요소를 분석하면 무엇이 잘 작동하는지에 대한 인사이트를 얻고 개선이 필요한 영역을 파악하는 데 도움이 될 수 있습니다.
 
-### Build awareness
+### 인지도 구축
 
-* Number of developers who have been introduced to Snyk
-* Percentage of Projects that have been tested with Snyk during this phase
+* Snyk을 소개받은 개발자 수
+* 이 단계에서 Snyk으로 테스트한 프로젝트의 백분율
 
-### Gain visibility
+### 가시성 확보
 
-* Percentage of Projects that have been successfully scanned for issues
-* The number of critical and high-severity issues identified
-* Mean time to complete the initial scan for a Project
-* Progress in prioritizing issues by severity level
+* 이슈를 성공적으로 스캔한 프로젝트의 백분율
+* 확인된 중요하고 심각도가 높은 이슈의 수
+* 프로젝트의 초기 스캔을 완료하는 데 걸린 평균 시간
+* 심각도 수준별 이슈 우선순위 지정 진행률
 
-### Prevent new Issues
+### 새로운 문제 방지
 
-* Percentage of pull requests or builds that are being failed based on Snyk automation
-* Reduction in new issues introduced after automation is turned on
-* Time taken to address blocked pull requests and resolve them
+* Snyk 자동화를 기반으로 실패한 풀 리퀘스트 또는 빌드의 비율
+* 자동화를 켠 후 새로 발생한 이슈의 감소율
+* 차단된 풀리퀘스트를 처리하고 해결하는 데 걸린 시간
 
-### Fix backlog
+### 백로그 수정
 
-* Percentage of existing issues that have been resolved
-* Mean time to fix issues from the backlog
-* Number of auto-fix pull requests raised and successfully merged
-* Progress in using Jira integration for managing issues and tracking fixes
-
+* 해결된 기존 이슈의 비율
+* 백로그에서 이슈를 수정하는 데 걸린 평균 시간
+* 제기되어 성공적으로 병합된 자동 수정 풀 리퀘스트의 수
+* 이슈 관리 및 수정 사항 추적을 위해 Jira 통합을 사용한 진행 상황
