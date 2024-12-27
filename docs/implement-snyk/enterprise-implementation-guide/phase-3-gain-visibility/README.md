@@ -1,7 +1,7 @@
-# Phase 3: Gain visibility
+# 3단계: 가시성 확보
 
-When the [Account configuration](../phase-2-configure-account/) phase is complete, you can import your repositories to scan your applications.
+&#x20;[계정 구성](../phase-2-configure-account/) 단계가 완료되면 리포지토리를 가져와 애플리케이션을 스캔할 수 있습니다.
 
-When importing your repositories, Snyk scans the contents to find all supported files and to create these in Snyk as Projects, for example, open-source manifest files, code files, IaC configuration files, and so on. See [Import Projects](import-projects.md).
+리포지토리를 가져올 때 Snyk은 콘텐츠를 스캔하여 지원되는 모든 파일을 찾아 오픈 소스 매니페스트 파일, 코드 파일, IaC 구성 파일 등과 같은 파일을 Snyk에서 프로젝트로 생성합니다.  [프로젝트 가져오기](import-projects.md)를 참조하세요.
 
-You may optionally add Project Tags or Attributes, which can be useful to filter and organize your Projects when creating collections, views, or reporting. See [Add Project tags and attributes](add-project-tags-and-attributes.md).
+컬렉션, 보기 또는 리포팅을 만들 때 프로젝트를 필터링하고 구성하는 데 유용한 프로젝트 태그 또는 속성을 선택적으로 추가할 수 있습니다. [프로젝트 태그 및 속성 추가하기](add-project-tags-and-attributes.md)를 참조하세요.

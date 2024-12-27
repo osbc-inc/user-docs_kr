@@ -1,34 +1,27 @@
-# Apply security and license policies
+# 보안 및 라이선스 정책 적용
 
-Snyk Policies define how Snyk behaves when identifying issues. Policies give you a quick and automated way to identify, prioritize, and triage issues. This saves valuable development time and allows developers to take more responsibility and ownership for security, reducing the “noise” level.
+Snyk 정책은 문제를 식별할 때 Snyk이 작동하는 방식을 정의합니다. 정책을 사용하면 문제를 식별하고, 우선 순위를 정하고, 분류하는 빠르고 자동화된 방법을 사용할 수 있습니다. 이를 통해 귀중한 개발 시간을 절약하고 개발자가 보안에 대한 책임과 소유권을 더 많이 가져 '노이즈' 수준을 줄일 수 있습니다.
 
-See [Policies](../../../scan-with-snyk/policies/) for more details.
+자세한 내용은 [정책](../../../scan-with-snyk/policies/)을 참조하세요.
 
-## Security policies
+## 보안 정책
 
-Group administrators can define security policies, thus providing an automated way to identify certain issues or types of issues, and apply actions like changing the severity or ignoring the issue based on your conditions.&#x20;
+그룹 관리자는 보안 정책을 정의하여 특정 문제 또는 문제 유형을 식별하고, 조건에 따라 심각도 변경 또는 문제 무시 등의 조치를 자동으로 적용할 수 있는 방법을 제공할 수 있습니다.
 
-* Configure policies to increase priority or decrease it as needed.&#x20;
-* Create ignores where needed
+* 필요에 따라 우선순위를 높이거나 낮추도록 정책을 구성합니다.
+* 필요한 경우 무시 생성
 
-See [Security policies](../../../scan-with-snyk/policies/security-policies/) for more details.
+자세한 내용은 [보안 정책](../../../scan-with-snyk/policies/security-policies/)을 참조하세요.
 
-## License policies
+## 라이선스 정책
 
-Group administrators can set license policies to define Snyk behavior for treating license issues. For example, you can allow or disallow packages with certain license types, to avoid using packages containing incompatible licenses.
+그룹 관리자는 라이선스 정책을 설정하여 라이선스 문제 처리를 위한 Snyk의 동작을 정의할 수 있습니다. 예를 들어 특정 라이선스 유형의 패키지를 허용하거나 허용하지 않도록 설정하여 호환되지 않는 라이선스가 포함된 패키지를 사용하지 않도록 할 수 있습니다.
 
-By default, Snyk determines the severity of licenses in the following way:
+기본적으로 Snyk은 다음과 같은 방식으로 라이선스의 심각도를 결정합니다:
 
-* High severity - licenses that definitely present issues for commercial software.
-* Medium severity - licenses that have clauses that may be of concern and should be reviewed.
+* 심각도가 높은 라이선스 - 상용 소프트웨어에 확실히 문제가 있는 라이선스입니다.
+* 중간 심각도 - 우려할 만한 조항이 있어 검토가 필요한 라이선스입니다.
 
-Configure policies to match your requirements.
+요구 사항에 맞게 정책을 구성하세요.
 
-See [Snyk License Compliance Management](../../../scan-with-snyk/snyk-open-source/scan-open-source-libraries-and-licenses/snyk-license-compliance-management.md) for more details.
-
-
-
-
-
-
-
+자세한 내용은 [Snyk 라이선스 규정 준수관리](../../../scan-with-snyk/snyk-open-source/scan-open-source-libraries-and-licenses/snyk-license-compliance-management.md)를 참조하세요.
