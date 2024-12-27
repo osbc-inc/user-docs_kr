@@ -1,46 +1,46 @@
-# Set visibility and configure an Organization template
+# 가시성 설정 및 조직 템플릿 구성하기
 
-Whether you want to create a single Organization or build a template to create multiple Organizations, there are some initial settings you should configure.&#x20;
-
-{% hint style="info" %}
-For importing Projects, see the [Import Projects](../../phase-3-gain-visibility/import-projects.md) and [Rollout](../../phase-5-initial-rollout-to-team/) discussions
-{% endhint %}
-
-## Create your Organization structure using a template
-
-When you create a new Organization, you can select an existing Organization to use as the model for settings and integrations. To streamline creating your Organizations, Snyk recommends configuring a template Organization before creating your full Organization structure.
-
-This template-based approach will save you considerable time because you will aovid manually configuring each integration for each Organization.
-
-There is no specific template functionality in Snyk. The recommended process is to create an Organization called **Template and** then fully configure this Organization. Afterwards, when you create more Organizations, you can use the option to clone settings from an existing Organization with **Template** as the existing Organization.
+단일 조직을 만들든 템플릿을 만들어 여러 조직을 만들든 간에 구성해야 할 몇 가지 초기 설정이 있습니다.
 
 {% hint style="info" %}
-**Creating a template using the API**\
-Templating functionality is also available if you are creating your Organizations using the API, whether you are using the [snyk-api-import](../../../../snyk-api-info/other-tools/tool-snyk-api-import/) tool to mirror an Organization from an existing source, such as GitHub Organizations, or using the [API endpoints](https://snyk.docs.apiary.io/#reference/organizations/create-organization/create-a-new-organization) by providing a `sourceOrgId`.
+프로젝트 가져오기에 대해서는 [Import Projects](../../phase-3-gain-visibility/import-projects.md) 및 [Rollout](../../phase-5-initial-rollout-to-team/) 토론을 참조하세요.
 {% endhint %}
 
-## Configure template Organization settings
+## 템플릿을 사용하여 조직 구조 만들기
 
-In your template Organization, configure a range of settings that you can choose to copy when creating your full Organization structure:
+새 조직을 만들 때 설정 및 통합을 위한 모델로 사용할 기존 조직을 선택할 수 있습니다. 조직 만들기를 간소화하려면 전체 조직 구조를 만들기 전에 템플릿 조직을 구성하는 것이 좋습니다.
 
-* All relevant integrations, for example, GitHub Enterprise, Docker Hub.\
-  Note: If you have on-premise source code management tools, you must configure and run [Snyk Broker](../../../../enterprise-configuration/snyk-broker/) to enable the integration.
-* Integration settings, for example, configuring whether you want Snyk to run tests on PRs.
-  * The default settings for a new Git repository integration include Snyk running tests on newly raised PRs and the option to automatically raise PRs when new vulnerabilities are found. Snyk recommends disabling these settings initially and turning them on when you are ready to introduce these features in the [Prevention Stage](../../phase-6-rolling-out-the-prevention-stage/).
-  * The following [Integrations](configure-integrations.md) section discusses integrations you may want to add to your templates before copying them.
-* Product settings, for example, enabling Snyk Code.
-  * By default, Snyk Code is disabled for new Organizations.
-  * If you want to enable SAST scanning of repositories imported through a Git repository integration, ensure you use the toggle to enable Snyk Code before importing your Projects.
-  * If you use Snyk Code and **forget to enable it before importing your Project, you must enable Snyk Code and reimport your code** from Git. See [Enabling Snyk Code](enable-snyk-code.md).
-* Notification settings (email notifications)
-  * Snyk suggests that you initially disable all Group and Organization email notifications so users do not receive a large number of notifications while Projects are imported.
-  * To do this, disable Notifications at the Group level for new organizations, and at the Organization level for all existing Organizations.
+이 템플릿 기반 접근 방식을 사용하면 각 조직에 대해 각 통합을 수동으로 구성할 필요가 없으므로 상당한 시간을 절약할 수 있습니다.
 
-The following table shows what is copied from the template Organization to the new Organizations you create using the web interface or API\
+Snyk에는 특정 템플릿 기능이 없습니다. **템플릿**이라는 조직을 만든 다음 이 조직을 완전히 구성하는 것이 좋습니다. 나중에 조직을 더 만들 때 **템플릿**이 있는 기존 조직의 설정을 기존 조직으로 복제하는 옵션을 사용할 수 있습니다.\
 
 
-<table><thead><tr><th width="466">All integrations and their settings WILL be copied</th><th>The following WILL NOT be copied</th></tr></thead><tbody><tr><td>Source control integrations</td><td>Snyk Service accounts</td></tr><tr><td>Container registry integrations</td><td>Members</td></tr><tr><td>Container orchestrators integrations (Kubernetes)</td><td>Projects</td></tr><tr><td>PaaS and Serverless integrations</td><td>Notification preferences</td></tr><tr><td>Notificiation integrations (Slack and Jira)</td><td></td></tr><tr><td>Policies</td><td></td></tr><tr><td>Ignore settings</td><td></td></tr><tr><td>Language settings</td><td></td></tr><tr><td>Infrastructure as code (IaC) settings</td><td></td></tr><tr><td>Snyk Code settings</td><td></td></tr></tbody></table>
+{% hint style="info" %}
+**API를 사용하여 템플릿 만들기**\
+API를 사용하여 조직을 만드는 경우에도 템플릿 기능을 사용할 수 있습니다. [snyk-api-import](../../../../snyk-api-info/other-tools/tool-snyk-api-import/) 도구를 사용하여 GitHub 조직과 같은 기존 소스에서 조직을 미러링하든, `sourceOrgId`를 제공하여 [API endpoints](https://snyk.docs.apiary.io/#reference/organizations/create-organization/create-a-new-organization)를 사용하든 상관없이 API를 사용하여 조직을 만드는 경우에도 템플릿 기능을 사용할 수 있습니다.
+{% endhint %}
 
-## Duplicate the template Organization
+## 템플릿 조직 설정 구성
 
-After the Organization is created and configured, use it as a template when creating new Organizations, to build out the remaining structure.
+조직 템플릿에서 전체 조직 구조를 만들 때 복사하도록 선택할 수 있는 다양한 설정을 구성합니다:
+
+* 모든 관련 통합(예: GitHub Enterprise, Docker Hub)\
+  참고: 온프레미스 소스 코드 관리 도구가 있는 경우 통합을 사용하려면 [Snyk Broker](../../../../enterprise-configuration/snyk-broker/)를 구성하고 실행해야 합니다.
+* 통합 설정(예: Snyk가 PR에서 테스트를 실행할지 여부 구성).
+  * 새 Git 리포지토리 통합의 기본 설정에는 새로 등록한 PR에 대해 Snyk가 테스트를 실행하고 새로운 취약점이 발견되면 자동으로 PR을 등록하는 옵션이 포함되어 있습니다. 처음에는 이러한 설정을 비활성화하고 [예방 단계](../../phase-6-rolling-out-the-prevention-stage/)에서 이러한 기능을 도입할 준비가 되면 켜는 것이 좋습니다.
+  * 다음 [연동](configure-integrations.md) 기능 섹션에서는 템플릿을 복사하기 전에 템플릿에 추가할 수 있는 연동 기능에 대해 설명합니다.
+* 제품 설정(예: Snyk 코드 활성화)을 예로 들 수 있습니다.
+  * 기본적으로 새 조직에 대해서는 Snyk Code가 비활성화되어 있습니다.
+  * Git 리포지토리 통합을 통해 가져온 리포지토리의 SAST 스캔을 활성화하려면 프로젝트를 가져오기 전에 토글을 사용하여 Snyk Code를 활성화해야 합니다.
+  * Snyk Code를 사용하다가 **프로젝트를 가져오기 전에 활성화하는 것을 잊은 경우, Snyk Code를 활성화하고 Git에서 코드를 다시 임포트**해야 합니다. [Snyk 코드 활성화하기](enable-snyk-code.md)를 참조하세요.
+* 알림 설정(이메일 알림)
+  * 프로젝트를 가져오는 동안 사용자가 많은 알림을 받지 않도록 처음에는 모든 그룹 및 조직 이메일 알림을 비활성화하는 것이 좋습니다.
+  * 이렇게 하려면 새 조직에 대해서는 그룹 수준에서, 모든 기존 조직에 대해서는 조직 수준에서 알림을 비활성화하세요.
+
+다음 표는 템플릿 조직에서 웹 인터페이스 또는 API를 사용하여 만든 새 조직으로 복사되는 내용을 보여줍니다.
+
+<table><thead><tr><th width="466">모든 통합 및 해당 설정이 복사됩니다.</th><th>The following WILL NOT be copied</th></tr></thead><tbody><tr><td>소스 제어 통합</td><td>Snyk 서비스 계정</td></tr><tr><td>컨테이너 레지스트리 통합</td><td>회원</td></tr><tr><td>컨테이너 오케스트레이터 통합(Kubernetes)</td><td>프로젝트</td></tr><tr><td>PaaS 및 서버리스 통합</td><td>알림 기본 설정</td></tr><tr><td>알림 통합(Slack 및 Jira)</td><td></td></tr><tr><td>정책</td><td></td></tr><tr><td>설정 무시</td><td></td></tr><tr><td>언어 설정</td><td></td></tr><tr><td>코드형 인프라(IaC) 설정</td><td></td></tr><tr><td>Snyk 코드 설정</td><td></td></tr></tbody></table>
+
+## 조직 템플릿 복제
+
+조직을 만들고 구성한 후에는 새 조직을 만들 때 템플릿으로 사용하여 나머지 구조를 구축할 수 있습니다.

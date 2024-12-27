@@ -1,12 +1,11 @@
-# Phase 2: Configure account
+# 2단계: 계정 구성
 
-After you finish [Phase 1: Discovery and planning](../phase-1-discovery-and-planning/), the next step is configuration.
+[1단계: 검색 및 계획 단계](../phase-1-discovery-and-planning/)를 완료한 후 다음 단계는 구성입니다.
 
-The following sections suggest initial settings to incorporate in your first Organization or to use in a template Organization that you can copy as you build out your environment.
+다음 섹션에서는 첫 번째 조직에 통합하거나 환경을 구축할 때 복사할 수 있는 템플릿 조직에 사용할 초기 설정을 제안합니다.
 
-As part of this configuration, you will want to do the following:
+이 구성의 일부로 다음을 수행할 수 있습니다:
 
-* [Configure SSO](configure-sso.md)
-* [Configure Organizations](set-visibility-and-configure-an-organization-template/), including [setting up integrations](set-visibility-and-configure-an-organization-template/configure-integrations.md)
-* [Configure license and security policies](apply-security-and-license-policies.md)
-
+* [SSO 구성하기](configure-sso.md)
+* [연동 설정 등 조직 구성하기](set-visibility-and-configure-an-organization-template/)
+* [라이선스 및 보안 정책 구성하기](apply-security-and-license-policies.md)
