@@ -1,39 +1,39 @@
-# Enable and configure Snyk on PRs
+# PR에서 Snyk 활성화 및 구성하기
 
-## Use PR Checks to introduce gating
+## PR 검사를 사용하여 게이팅 도입하기
 
-[Snyk Pull Request(PR)/Merge Request (MR) Checks](../../../scan-with-snyk/run-pr-checks/) allow you to prevent new security issues from entering your codebase by automatically scanning code changes when you submit a pull request (PR). PR Checks are available for open-source vulnerabilities, license compliance issues, and your own code issues.
+[Snyk 풀리퀘스트(PR)/병합 요청(MR) 검사](../../../scan-with-snyk/run-pr-checks/)를 사용하면 풀 리퀘스트(PR)를 제출할 때 코드 변경 사항을 자동으로 스캔하여 새로운 보안 문제가 코드베이스에 유입되는 것을 방지할 수 있습니다. PR 검사는 오픈 소스 취약성, 라이선스 규정 준수 문제 및 자체 코드 문제에 대해 사용할 수 있습니다.
 
-If you import Projects through a source control integration, then Snyk Open Source PR Checks is a good place to start introducing gating.&#x20;
+소스 제어 통합을 통해 프로젝트를 임포트하는 경우, Snyk 오픈 소스 PR 체크는 gatin 도입을 시작하기에 좋은 곳입니다.
 
 {% hint style="info" %}
-It is recommended that you announce the changes prior to rolling them out. See [Announcement Templates](announcement-templates-for-prevention.md) for examples of how to message your developers.
+It변경 사항을 적용하기 전에 공지하는 것이 좋습니다. 개발자에게 메시지를 보내는 방법의 예는 [공지 템플릿](announcement-templates-for-prevention.md)을 참조하세요.
 {% endhint %}
 
-## Implement PR Checks
+## PR 점검 구현
 
-You can use fail conditions to help you gradually introduce PR Checks to avoid friction with your development teams.
+실패 조건을 사용하면 개발팀과의 마찰을 피하기 위해 점진적으로 PR 확인을 도입하는 데 도움이 될 수 있습니다.
 
-Fail conditions allow you to control whether the test will fail if the PR itself is adding a dependency with issues (most common), or if the repository as a whole has issues.
+실패 조건을 사용하면 PR 자체에 문제가 있는 종속성이 추가되는 경우(가장 일반적인 경우) 또는 리포지토리 전체에 문제가 있는 경우 테스트가 실패할지 여부를 제어할 수 있습니다.
 
-The criteria for what constitutes a failed test can also be customized. By default, the test does not filter based on severity or fixability, which can mean that PR tests will regularly fail. You can customize  the criteria to fail the test:
+실패한 테스트를 구성하는 기준도 사용자 지정할 수 있습니다. 기본적으로 테스트는 심각도 또는 수정 가능성을 기준으로 필터링하지 않으므로 PR 테스트가 정기적으로 실패할 수 있습니다. 테스트 실패 기준을 사용자 지정할 수 있습니다:
 
-* Fail only for High or Critical severity issues; function available for Snyk Open Source and Snyk Code
-* Fail only when the issues found have a fix available; function available for Snyk Open Source
+* 심각도가 높음 또는 심각인 문제에 대해서만 실패; Snyk 오픈 소스 및 Snyk 코드에서 사용 가능한 기능입니다.
+* 발견된 이슈에 사용 가능한 수정 사항이 있는 경우에만 실패; Snyk 오픈 소스에서 사용 가능한 기능입니다.
 
-When you first enable PR Checks, Snyk suggests ticking both of these boxes so that a test would fail if a High or Critical and fixable issue is found. In this case, you would want to encourage to developer to fix the issue before proceeding.
+처음 PR 검사를 사용 설정할 때는 이 두 상자를 모두 선택하여 높음 또는 심각하고 수정 가능한 문제가 발견되면 테스트가 실패하도록 하는 것이 좋습니다. 이 경우 계속 진행하기 전에 개발자에게 문제를 해결하도록 권장하고 싶을 것입니다.
 
-These PR tests are optional by default, meaning that even if the test fails, the developer may be able to continue and merge the PR. Controlling whether a PR test is optional or blocking is configured within your source control management platform, such as GitHub’s branch protection rules.
+이러한 PR 테스트는 기본적으로 선택 사항이므로 테스트에 실패하더라도 개발자는 계속 진행하여 PR을 병합할 수 있습니다. PR 테스트의 선택 사항 또는 차단 여부는 GitHub의 브랜치 보호 규칙과 같은 소스 제어 관리 플랫폼 내에서 구성할 수 있습니다.
 
-## Use PR Checks for a phased rollout
+## 단계적 롤아웃을 위해 PR 확인 사용
 
-It is common to have a phased rollout of Snyk features. Using PR checks as an example:
+Snyk 기능은 단계적으로 출시하는 것이 일반적입니다. PR 확인을 예로 들어 보겠습니다:
 
-* You may initially run Snyk tests and set them through your source control settings as optional checks. The results are displayed, but the developer is not blocked from merging the PR.&#x20;
-* Over time, as developers adapt to seeing these results and begin addressing the critical issues proactively, you can choose to start blocking PRs from being merged if there are any new High or Critical severity issues, or in the case of Snyk Open Source, if there is a fix available.&#x20;
+* 처음에 Snyk 테스트를 실행하고 소스 제어 설정을 통해 선택적 검사로 설정할 수 있습니다. 결과는 표시되지만 개발자가 PR을 병합하는 것은 차단되지 않습니다.
+* 시간이 지나면서 개발자가 이러한 결과를 보는 데 적응하고 중요한 문제를 사전에 해결하기 시작하면 심각도가 높거나 심각한 새로운 문제가 있거나 Snyk 오픈 소스의 경우 사용 가능한 수정 사항이 있는 경우 PR이 병합되지 않도록 차단하도록 선택할 수 있습니다.
 
-This phased rollout helps to decrease friction between your security and development teams.
+이 단계적 롤아웃은 보안 팀과 개발 팀 간의 마찰을 줄이는 데 도움이 됩니다.
 
-## Additional information
+## 추가 정보
 
-The webinar [Dev-First Prevention Strategies Using PR Checks](https://www.youtube.com/watch?v=6x33EJW\_d\_E) covers PR checks in more detail and includes an example of how you can gradually introduce this feature.
+웨비나 [PR 확인을 사용한 개발자 우선 예방 전략](https://www.youtube.com/watch?v=6x33EJW_d_E)에서는 PR 확인에 대해 자세히 다루며 이 기능을 점진적으로 도입하는 방법에 대한 예시가 포함되어 있습니다.

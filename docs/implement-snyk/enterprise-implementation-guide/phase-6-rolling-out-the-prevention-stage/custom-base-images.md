@@ -1,9 +1,9 @@
-# Custom base images
+# 사용자 지정 기본 이미지
 
-If you build custom base images and store them in a registry for your development teams to select from, Snyk recommends that you introduce Snyk container tests as part of this workflow.
+사용자 지정 기본 이미지를 만들어 개발팀이 선택할 수 있도록 레지스트리에 저장하는 경우 이 워크플로우의 일부로 Snyk 컨테이너 테스트를 도입할 것을 권장합니다.
 
-The team responsible for creating the custom base images can use container tests to select the most secure base images and identify layer-based fixes. This ensures that the base images selected by your development teams start with a secure base.
+사용자 지정 기본 이미지 생성을 담당하는 팀은 컨테이너 테스트를 사용하여 가장 안전한 기본 이미지를 선택하고 레이어 기반 수정 사항을 식별할 수 있습니다. 이렇게 하면 개발팀에서 선택한 기본 이미지가 안전한 기반에서 시작됩니다.
 
-As development teams build their custom tools and packages into these images, they can run additional container tests to ensure their changes are secure before being pushed to production use.&#x20;
+개발팀은 이러한 이미지에 사용자 지정 도구 및 패키지를 빌드하면서 프로덕션에 푸시하기 전에 추가 컨테이너 테스트를 실행하여 변경 사항이 안전한지 확인할 수 있습니다.
 
-For more information, see [Use Custom Base Image Recommendations](../../../scan-with-snyk/snyk-container/use-snyk-container-from-the-web-ui/use-custom-base-image-recommendations/).
+자세한 내용은 [사용자 지정 기본 이미지 권장 사항 사용](../../../scan-with-snyk/snyk-container/use-snyk-container-from-the-web-ui/use-custom-base-image-recommendations/)을 참조하세요.

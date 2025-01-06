@@ -1,33 +1,33 @@
-# Add and configure Snyk in your CI/CD pipeline
+# CI/CD 파이프라인에 Snyk 추가 및 구성하기
 
-Using Snyk as a gatekeeper in your build pipeline prevents the introduction of new vulnerabilities based on the fail criteria you set.
+빌드 파이프라인에서 Snyk을 게이트키퍼로 사용하면 설정한 실패 기준에 따라 새로운 취약점이 도입되는 것을 방지할 수 있습니다.
 
-After your teams understand the vulnerabilities in their applications, and develop a process for fixing them early in the development cycle, you can configure Snyk to fail your builds if vulnerabilities are detected, to prevent introducing vulnerabilities into your applications.
+팀에서 애플리케이션의 취약점을 파악하고 개발 주기 초기에 취약점을 수정하는 프로세스를 개발한 후에는 취약점이 발견되면 빌드를 실패하도록 Snyk을 구성하여 애플리케이션에 취약점이 도입되는 것을 방지할 수 있습니다.
 
-## No import requirement
+## 가져오기 요구 사항 없음
 
-A benefit of adding tests to your pipeline is that you do not need to import the repository to Snyk using the source control integration, which is required for Snyk PR Checks). Adding tests to your pipeline can also be used as an additional gate, even if you are testing PRs, to further decrease the chance of new vulnerabilities entering your production builds.
+파이프라인에 테스트를 추가하면 Snyk PR 검사에 필요한 소스 제어 통합을 사용하여 리포지토리를 Snyk로 가져올 필요가 없다는 이점이 있습니다.) 파이프라인에 테스트를 추가하는 것은 PR을 테스트하는 경우에도 추가 게이트로 사용하여 프로덕션 빌드에 새로운 취약점이 유입될 가능성을 더욱 줄일 수 있습니다.
 
-## Pipeline options
+## 파이프라인 옵션
 
-When adding Snyk to a build pipeline, there are common options:&#x20;
+빌드 파이프라인에 Snyk을 추가할 때 일반적인 옵션이 있습니다:
 
-* Using the specific [pipeline integration](../../../integrate-with-snyk/snyk-ci-cd-integrations/) for your tool.
-* Using the [Snyk CLI](../../../snyk-cli/) and running the specific commands directly.&#x20;
+* 도구에 대한 특정 [파이프라인 통합](../../../integrate-with-snyk/snyk-ci-cd-integrations/)을 사용합니다.
+* [Snyk CLI](../../../snyk-cli/)를 사용하고 특정 명령을 직접 실행하는 방법.
 
-Each option has benefits; using an existing pipeline integration may be faster and easier to configure, but using the Snyk CLI will give you a greater range of options and flexibility in your fail criteria.&#x20;
+각 옵션에는 장점이 있습니다. 기존 파이프라인 통합을 사용하면 더 빠르고 쉽게 구성할 수 있지만 Snyk CLI를 사용하면 실패 기준에서 더 다양한 옵션과 유연성을 얻을 수 있습니다.
 
-## Pipeline test filters
+## 파이프라인 테스트 필터
 
-When you run a test in your pipeline, you can use filters to determine what would result in a test's passing or failing. The most common of these is severity threshold, where you can specify to fail a build only if there are High or Critical severity vulnerabilities.
+파이프라인에서 테스트를 실행할 때 필터를 사용하여 테스트의 합격 또는 불합격 결과를 결정할 수 있습니다. 가장 일반적인 것은 심각도 임계값으로, 심각도가 높음 또는 심각인 취약점이 있는 경우에만 빌드를 실패하도록 지정할 수 있습니다.
 
-## CLI supporting tools
+## CLI 지원 도구
 
-When you use the Snyk CLI in your pipeline, you can use a range of supporting [Snyk Tools](../../../snyk-api-info/other-tools/) that provide additional functionality, including:
+파이프라인에서 Snyk CLI를 사용하는 경우 다음과 같은 추가 기능을 제공하는 다양한 지원 [Snyk Tools](../../../snyk-api-info/other-tools/)를 사용할 수 있습니다:
 
-* [snyk-delta](https://docs.snyk.io/snyk-api/other-tools/tool-snyk-delta), which can be used to compare two sets of results and identify new vulnerabilities, similar to how the PR Checks feature tests for new vulnerabilities only
-* [snyk-filter](https://docs.snyk.io/snyk-api/other-tools/tool-snyk-filter), which can be used for more complex fail criteria, such as `fail if more than three High severity vulnerabilities are found`.
+* 두 세트의 결과를 비교하고 새로운 취약점을 식별하는 데 사용할 수 있는 [snyk-delta](https://docs.snyk.io/snyk-api/other-tools/tool-snyk-delta) -  PR 검사 기능에서 새로운 취약점만 테스트하는 것과 유사하게 새로운 취약점을 식별하는 데 사용할 수 있습니다.
+* `심각도가 높은 취약점이 3개 이상 발견되면 실패`하는 등 보다 복잡한 실패 기준에 사용할 수 있는 [snyk-filter](https://docs.snyk.io/snyk-api/other-tools/tool-snyk-filter)
 
-## Additional information
+## 추가 정보
 
-[CI/CD Best Practices](https://www.youtube.com/watch?v=6QS9gRQ0WVU) is a webinar that covers CI/CD checks in more detail, and includes an example of how you can gradually introduce this feature.
+[CI/CD 모범 사례](https://www.youtube.com/watch?v=6QS9gRQ0WVU)는 CI/CD 점검에 대해 자세히 다루는 웨비나로, 이 기능을 점진적으로 도입하는 방법에 대한 예시가 포함되어 있습니다.

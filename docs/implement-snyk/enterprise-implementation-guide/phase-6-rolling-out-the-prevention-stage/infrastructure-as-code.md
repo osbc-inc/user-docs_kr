@@ -1,6 +1,5 @@
-# Infrastructure as Code
+# 코드로서의 인프라
 
-For Snyk IaC, you may choose to integrate with [Terraform Cloud](../../../integrate-with-snyk/snyk-ci-cd-integrations/terraform-cloud-integration-for-snyk-iac-using-run-tasks/how-to-use-the-terraform-cloud-integration-for-iac.md) to run `snyk iac test` as part of a run workflow, in addition to scanning Terraform and YAML files that are included as part of your source control repositories.
+Snyk IaC의 경우, 소스 제어 리포지토리의 일부로 포함된 Terraform 및 YAML 파일을 스캔하는 것 외에도 실행 워크플로우의 일부로 `snyk iac test` 를 실행하기 위해 [Terraform Cloud](../../../integrate-with-snyk/snyk-ci-cd-integrations/terraform-cloud-integration-for-snyk-iac-using-run-tasks/how-to-use-the-terraform-cloud-integration-for-iac.md)와 통합하도록 선택할 수 있습니다.
 
-See [Snyk CLI for IaC](../../../snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac/) for instructions on how to implement Snyk by aC type in the Snyk CLI.
-
+Snyk CLI에서 aC 유형별로 Snyk을 구현하는 방법에 대한 지침은 [lac용 Snyk CLI](../../../snyk-cli/scan-and-maintain-projects-using-the-cli/snyk-cli-for-iac/)를 참조하세요.
