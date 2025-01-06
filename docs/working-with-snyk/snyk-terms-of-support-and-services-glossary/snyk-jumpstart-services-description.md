@@ -75,7 +75,7 @@ Snyk 컨설턴트는 고객과 협력하여 알림 설정, 언어 설정, Snyk �
 
 ### 제공 방식 - Snyk 오픈소스 구성
 
-The Snyk delivery method is designed to ensure rapid value realization with Snyk. Throughout our collaboration, Snyk will guide the Customer in setting up a foundational configuration and equip the Customer to expand this setup to other applications and integrations. Ensuring Snyk is correctly set up from the outset improves developer adoption and paves the way for long-term success.
+Snyk의 제공 방식은 Snyk을 통해 신속한 가치 실현을 보장하도록 설계되었습니다. 양사의 협업을 통해 Snyk는 고객이 기본 구성을 설정하도록 안내하고 고객이 이 설정을 다른 애플리케이션 및 통합으로 확장할 수 있도록 지원합니다. 처음부터 Snyk를 올바르게 설정하면 개발자의 채택률이 향상되고 장기적인 성공을 위한 기반을 마련할 수 있습니다.
 
 #### Repository import
 
