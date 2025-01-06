@@ -216,7 +216,7 @@
     * [취약점 파악](implement-snyk/walkthrough-code-repository-projects/understand-your-vulnerabilities.md)
     * [첫 번째 취약점 수정](implement-snyk/walkthrough-code-repository-projects/fix-your-first-vulnerability.md)
     * [첫 번째 취약점 수정 - 심층 분석](implement-snyk/walkthrough-code-repository-projects/fix-your-first-vulnerability-deeper-dive.md)
-    * [Assign fix work](implement-snyk/walkthrough-code-repository-projects/assign-fix-work.md)
+    * [수정 작업 할당](implement-snyk/walkthrough-code-repository-projects/assign-fix-work.md)
     * [Use Reports in managing risk](implement-snyk/walkthrough-code-repository-projects/use-reports-in-managing-risk.md)
   * [Walkthrough: Initiate a scan locally](implement-snyk/walkthrough-initiate-a-scan-locally.md)
 * [Snyk 연동](integrate-with-snyk/README.md)

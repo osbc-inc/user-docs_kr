@@ -1,14 +1,14 @@
-# Assign fix work
+# 수정 작업 할당
 
 {% hint style="info" %}
-**Recap**\
-You have understood and fixed a vulnerability.
+**요약**\
+취약점을 파악하고 수정했습니다.
 {% endhint %}
 
-This section describes how this fix process works throughout your team for your applications.
+이 섹션에서는 팀 전체에서 애플리케이션에 대한 이 수정 프로세스가 어떻게 작동하는지에 대해 설명합니다.
 
-* [Decide what to fix first](assign-fix-work.md#decide-what-to-fix-first): determine your team fix priorities.
-* [Decide your fix workflow](assign-fix-work.md#example-workflow-team-lead-driven-using-jira): for example, using a Jira-driven process.
+* [먼저 수정할 항목 결정하기](assign-fix-work.md#decide-what-to-fix-first): 팀의 수정 우선 순위를 결정합니다.
+* [수정 워크플로 결정](assign-fix-work.md#example-workflow-team-lead-driven-using-jira): 예를 들어 Jira 기반 프로세스를 사용합니다.
 
 ## Decide what to fix first
 
