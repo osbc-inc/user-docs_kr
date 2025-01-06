@@ -71,9 +71,9 @@ Snyk 컨설턴트는 고객과 협력하여 알림 설정, 언어 설정, Snyk �
 
 <table><thead><tr><th width="248">Platform - initial setup</th><th width="410">Outcome</th><th>Hours</th></tr></thead><tbody><tr><td>기본 SSO 연결 구성</td><td>사용자는 역할에 따라 Snyk에 액세스할 수 있습니다.</td><td>1</td></tr><tr><td>SSO 사용자 지정 매핑</td><td>사용자는 역할에 따라 Snyk에 액세스할 수 있습니다.</td><td>4</td></tr><tr><td>(템플릿 조직) 사용자 지정 역할 및 서비스 계정 구성</td><td>템플릿화된 조직을 제공하여 Snyk 설정을 빠르게 복제하고 확장할 수 있습니다.</td><td>.5</td></tr><tr><td>(템플릿 조직) 알림 구성</td><td>템플릿화된 조직을 제공하여 Snyk 설정을 빠르게 복제하고 확장할 수 있습니다.</td><td>.5</td></tr><tr><td>(템플릿 조직) 언어 설정 구성</td><td></td><td>.5</td></tr><tr><td>(템플릿 조직) Jira 또는 Slack 앱 구성</td><td></td><td>1</td></tr><tr><td>(템플릿 조직) 계정 조직 및 그룹 구성</td><td></td><td>.5</td></tr><tr><td>관리자 교육</td><td></td><td>1</td></tr><tr><td><strong>총 시간</strong> </td><td></td><td><strong>9</strong></td></tr></tbody></table>
 
-## Snyk Open Source configuration
+## Snyk 오픈소스 구성
 
-### Delivery approach - Snyk Open Source configuration
+### 제공 방식 - Snyk 오픈소스 구성
 
 The Snyk delivery method is designed to ensure rapid value realization with Snyk. Throughout our collaboration, Snyk will guide the Customer in setting up a foundational configuration and equip the Customer to expand this setup to other applications and integrations. Ensuring Snyk is correctly set up from the outset improves developer adoption and paves the way for long-term success.
 
