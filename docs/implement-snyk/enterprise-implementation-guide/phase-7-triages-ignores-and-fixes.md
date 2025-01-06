@@ -1,44 +1,44 @@
-# Phase 7: Triages, ignores, and fixes
+# 7단계: 분류, 무시 및 수정하기
 
-## Tips for deciding on prioritization
+## 우선순위 결정을 위한 팁
 
-After you implement a strategy to prevent new issues from entering your repositories, whether blocking builds or running in a non-blocking, advisory mode, the next step is to prioritize and start fixing issues in your backlog.
+빌드를 차단하거나 차단하지 않는 자문 모드로 실행하는 등 새로운 이슈가 리포지토리에 들어오는 것을 방지하는 전략을 구현한 후에는 다음 단계로 백로그에서 이슈의 우선 순위를 정하고 수정을 시작해야 합니다.
 
-* In [Phase 4: Create a Fix strategy](phase-4-create-a-fix-strategy.md), you created a plan for prioritizing your Projects and issues. To implement this, you can schedule regular meetings with development team leads to assist them with this process.&#x20;
-* In the [Snyk Tools](../../snyk-api-info/other-tools/) section, there is a tool called **jira-tickets-for-new-vulns,** which can be scheduled to run on a regular basis to automatically create Jira tickets for vulnerabilities that meet your specified criteria. Whether this process is automated or not, creating tickets for your developers to review can be a great way to help make issues identified by Snyk more visible.
-* If you use Jira Cloud, you can download and install the [Snyk Security in Jira Cloud](https://marketplace.atlassian.com/apps/1230482/snyk-security-in-jira-cloud) plugin from the Atlassian marketplace. This allows you to view information on your Snyk Vulnerabilities directly in Jira, and use Jira Automation to create new tickets when new vulnerabilities are identified.
+* [4단계: 수정 전략 만들기](phase-4-create-a-fix-strategy.md)에서는 프로젝트 및 이슈의 우선순위를 정하기 위한 계획을 만들었습니다. 이를 실행하기 위해 개발 팀 리더와 정기적인 미팅을 예약하여 이 프로세스를 지원할 수 있습니다.
+* [Snyk Tools](../../snyk-api-info/other-tools/) 섹션에는 지정된 기준을 충족하는 취약점에 대한 Jira 티켓을 자동으로 만들도록 정기적으로 실행되도록 예약할 수 있는 **jira-tickets-for-new-vulns**라는 도구가 있습니다. 이 프로세스의 자동화 여부와 관계없이 개발자가 검토할 티켓을 만드는 것은 Snyk에서 식별한 문제를 더 잘 볼 수 있도록 하는 좋은 방법이 될 수 있습니다.
+* Jira Cloud를 사용하는 경우 Atlassian 마켓플레이스에서 [Snyk Security in Jira Cloud](https://marketplace.atlassian.com/apps/1230482/snyk-security-in-jira-cloud) 플러그인을 다운로드하여 설치할 수 있습니다. 이렇게 하면 Jira에서 바로 Snyk 취약성에 대한 정보를 보고, 새로운 취약성이 식별되면 Jira Automation을 사용하여 새 티켓을 만들 수 있습니다.
 
-## When should you ignore an issue?
+## 언제 문제를 무시해야 하나요?
 
-When deciding your priority for fixing issues, you may see specific packages or vulnerabilities that you do not currently want to fix. This could be for a range of reasons, such as:
+문제 해결의 우선순위를 결정할 때 현재 수정하고 싶지 않은 특정 패키지나 취약점이 표시될 수 있습니다. 다음과 같은 다양한 이유가 있을 수 있습니다:
 
-* The fix introduces breaking changes, and you do not have time to fix them.
-* This vulnerability does not apply to you for an environmental or contextual reason.
+* 수정 사항으로 인해 변경 사항이 발생하여 수정할 시간이 없는 경우.
+* 이 취약점은 환경적 또는 상황적 이유로 사용자에게 적용되지 않습니다.
 
-## Use the ignore feature
+## 무시 기능 사용
 
-In each case, you can use the ignore feature to stop these issues from appearing each time you run a test.&#x20;
-
-{% hint style="info" %}
-Confirm an ignore with a Group Admin or Organization Admin. They may need to complete this step themselves.&#x20;
-{% endhint %}
-
-When adding an ignore:
-
-* Ensure you add a detailed reason, so the ignore reason is clear to others who see this issue.
-* Set an expiration date for the ignore, rather than having a permanent ignore. This is essential, as though the issue may not be fixable or relevant today, it should be reviewed regularly, monthly or quarterly, to see if it is possible to implement a fix.
+각각의 경우 무시 기능을 사용하여 테스트를 실행할 때마다 이러한 문제가 나타나지 않도록 할 수 있습니다.
 
 {% hint style="info" %}
-It is common to use the General Settings to limit access for users to permission to ignore an issue and to require a reason.
+그룹 관리자 또는 조직 관리자에게 무시를 확인합니다. 이 단계를 직접 완료해야 할 수도 있습니다.
 {% endhint %}
 
-By default, the **Organization Collaborator** role has permission to ignore issues, but this can be controlled for each Organization on the settings page, that is, restricted to **Organization admins** only.&#x20;
+무시를 추가할 때:
 
-See [Ignore issues](../../scan-with-snyk/find-and-manage-priority-issues/ignore-issues/) for more details.
+* 자세한 이유를 추가하여 이 문제를 보는 다른 사람들이 무시 이유를 명확히 알 수 있도록 하세요.
+* 영구적으로 무시하지 말고 무시 만료일을 설정하세요. 이는 매우 중요한데, 문제가 지금 당장 수정할 수 없거나 관련성이 없을지라도 월별 또는 분기별로 정기적으로 검토하여 수정이 가능한지 확인해야 하기 때문입니다.
 
-## Review Snyk reports to track adoption of Snyk across your teams
+{% hint style="info" %}
+일반 설정을 사용하여 사용자의 액세스 권한을 이슈 무시 권한으로 제한하고 사유를 요구하는 것이 일반적입니다.
+{% endhint %}
 
-There are a number of different reports in Snyk to help you get an overview of your issues and vulnerabilities. For more information, see [Reporting](../../manage-issues/reporting/).
+기본적으로 **조직 공동 작업자** 역할에는 이슈를 무시할 수 있는 권한이 있지만 설정 페이지에서 각 조직별로, 즉 **조직 관리자**로만 제한하여 이 권한을 제어할 수 있습니다.
 
-* On the **Issues Summary** report, the **Risk Breakdown** section displays open, new, and resolved issues across different Organizations. Tracking the amount of activity in each Organization can help you identify which teams are adopting the tool most actively.
-* Individual Organization administrators can also view reports focused on their Organization, as a way to help identify which vulnerabilities are most common across their repositories, and also track issues resolved in different Projects.
+자세한 내용은 [이슈 무시](../../scan-with-snyk/find-and-manage-priority-issues/ignore-issues/)를 참조하세요.
+
+## Snyk 보고서를 검토하여 팀 전체에서 Snyk의 채택을 추적하세요.
+
+Snyk에는 문제와 취약성에 대한 개요를 파악하는 데 도움이 되는 다양한 보고서가 있습니다. 자세한 내용은 [Reporting](../../manage-issues/reporting/)을 참조하세요.
+
+* **이슈 요약** 보고서의 **위험 분석** 섹션에는 여러 조직에서 진행 중인 이슈, 새 이슈 및 해결된 이슈가 표시됩니다. 각 조직의 활동량을 추적하면 어느 팀이 가장 적극적으로 도구를 채택하고 있는지 파악하는 데 도움이 될 수 있습니다.
+* 개별 조직 관리자는 리포지토리 전체에서 가장 일반적인 취약점을 파악하고 여러 프로젝트에서 해결된 이슈를 추적하는 데 도움이 되는 방법으로 조직에 초점을 맞춘 보고서를 볼 수도 있습니다.

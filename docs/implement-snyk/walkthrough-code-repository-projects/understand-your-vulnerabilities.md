@@ -1,33 +1,33 @@
-# Understand your vulnerabilities
+# 취약점 파악
 
 {% hint style="info" %}
-**Recap**\
-You have [viewed and understood scanned Projects](view-your-first-snyk-projects.md); now you can look at the details of vulnerabilities in that Project.
+**요약**\
+[스캔된 프로젝트를 보고 이해했으니](view-your-first-snyk-projects.md) 이제 해당 프로젝트의 취약점에 대한 세부 정보를 살펴볼 수 있습니다.
 {% endhint %}
 
-## **See vulnerability details**
+## 취약점 세부 정보 보기
 
-First, open a target to see your Snyk Projects:
+먼저 대상을 열어 Snyk 프로젝트를 확인합니다:
 
-<figure><img src="../../.gitbook/assets/image (354).png" alt="View imported Projects"><figcaption><p>View imported Projects</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (354).png" alt="View imported Projects"><figcaption><p>가져온 프로젝트 보기</p></figcaption></figure>
 
-Next, select a Project in that list, to see details of the vulnerabilities found in that Project.
+그런 다음 해당 목록에서 프로젝트를 선택하면 해당 프로젝트에서 발견된 취약점에 대한 세부 정보를 볼 수 있습니다.
 
-For example, for a **Code analysis** project scanned by Snyk Code:
+예를 들어 Snyk Code로 스캔한 **코드 분석** 프로젝트를 예로 들어 보겠습니다:
 
-<figure><img src="../../.gitbook/assets/image (149) (1) (1) (2).png" alt="Vulnerability example - Code analysis"><figcaption><p>Vulnerability example - Code analysis</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (149) (1) (1) (2).png" alt="Vulnerability example - Code analysis"><figcaption><p>Vulner취약점 예시 - 코드 분석</p></figcaption></figure>
 
-See [View project information](../../snyk-admin/snyk-projects/view-project-information.md) for more details.
+자세한 내용은 [프로젝트 정보 보기](../../snyk-admin/snyk-projects/view-project-information.md)를 참조하세요.
 
-## View Issue Cards
+## 발급 카드 보기
 
-Now, look at the vulnerability information for each Snyk Project, provided in Issue Cards:
+이제 이슈 카드에서 제공되는 각 Snyk 프로젝트에 대한 취약점 정보를 살펴보세요:
 
-<figure><img src="../../.gitbook/assets/image (101) (2).png" alt="Vulnerability details Issue Card"><figcaption><p>Vulnerability details Issue Card</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (101) (2).png" alt="Vulnerability details Issue Card"><figcaption><p>취약점 세부 정보 이슈 카드</p></figcaption></figure>
 
-Again, there's a lot of information for you to understand, so take the time to understand how all of this information relates to your vulnerability, to help you decide on what fix actions to take.
+다시 말하지만, 이해해야 할 정보가 많으므로 시간을 들여 이 모든 정보가 취약성과 어떤 관련이 있는지 이해하여 어떤 수정 조치를 취할지 결정하세요.
 
-For details, see [Issue card information](../../snyk-admin/snyk-projects/issue-card-information.md).
+자세한 내용은 [카드 정보 발급하기](../../snyk-admin/snyk-projects/issue-card-information.md)를 참조하세요.
 
 ## Access more vulnerability information
 
