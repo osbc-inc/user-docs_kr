@@ -1,18 +1,13 @@
-# Phase 5: Initial rollout to team
+# 5단계: 팀에 초기 배포
 
-After the initial onboarding of Projects and potentially triaging the initial results, you can invite your initial stakeholder groups, allowing them to explore Snyk tools and add Snyk to their day-to-day processes.
+프로젝트의 초기 온보딩이 완료되고 초기 결과를 검토한 후에는 초기 이해관계자 그룹을 초대하여 이들이 Snyk 도구를 탐색하고 일상적인 프로세스에 Snyk을 추가할 수 있도록 할 수 있습니다.
 
-Adding Snyk can include:
+Snyk을 추가할 수 있습니다:
 
-* Fixing issues and retesting.
-* Including in development pipelines using CI/CD integrations and passive monitoring.
-* Creating tickets and configuring additional integrations such as Jira.
+* 문제 해결 및 재테스트.
+* CI/CD 통합 및 수동 모니터링을 사용하여 개발 파이프라인에 포함.
+* 티켓을 만들고 Jira와 같은 추가 통합을 구성합니다.
 
-As the team finalizes how Snyk would best fit into their processes, the wider team can be notified and start using Snyk at scale.
+팀이 Snyk을 프로세스에 가장 잘 적용하는 방법을 확정하면 더 많은 팀에게 알림을 보내고 대규모로 Snyk을 사용하기 시작할 수 있습니다.
 
 ##
-
-
-
-
-

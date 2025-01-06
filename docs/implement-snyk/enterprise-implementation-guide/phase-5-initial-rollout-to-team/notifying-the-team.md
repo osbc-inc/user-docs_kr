@@ -1,37 +1,37 @@
-# Notifying the team
+# 팀에 알리기
 
-## Set email notifications
+## 이메일 알림 설정
 
-Snyk can automatically notify you when new issues are found in imported Projects. By default, email notifications are sent for any newly found vulnerabilities, but notifications can be customized, for example, to send messages only for new High and Critical severity issues.&#x20;
+가져온 프로젝트에서 새 이슈가 발견되면 Snyk에서 자동으로 알려줍니다. 기본적으로 새로 발견된 모든 취약점에 대해 이메일 알림이 전송되지만, 예를 들어 심각도 높음 및 심각도가 높은 새로운 이슈에 대해서만 메시지를 전송하도록 알림을 사용자 지정할 수 있습니다.
 
-Snyk sends you a **weekly update** summarizing your security status across all of your Organizations.&#x20;
+Snyk은 모든 조직의 보안 상태를 요약하여 **매주 업데이트**를 보냅니다.
 
-Also, Snyk generates **usage alert emails** that warn you when you are approaching usage limits if you rely on the limited capacity of monthly free tests in one of your Snyk products. These are also often disabled during the initial setup period.
+또한 Snyk 제품 중 하나에서 월간 무료 테스트의 제한된 용량에 의존하는 경우 사용량 한도에 가까워지면 **사용량 경고 이메일**을 생성하여 경고합니다. 이러한 기능은 초기 설정 기간 동안 비활성화되는 경우가 많습니다.
 
-## Configure notifications
+## 알림 구성
 
 {% hint style="info" %}
-Snyk suggests that you initially disable all email notifications so that users do not receive many notifications while Projects are being imported. This means disabling at the Group level for new Organizations and at the Organization level for all existing Organizations.
+프로젝트를 가져오는 동안 사용자가 많은 알림을 받지 않도록 처음에는 모든 이메일 알림을 비활성화하는 것이 좋습니다. 즉, 새 조직의 경우 그룹 수준에서, 모든 기존 조직의 경우 조직 수준에서 비활성화하세요.
 {% endhint %}
 
-There are several methods to control email notifications based on the audience and the following factors:
+대상 및 다음 요소에 따라 이메일 알림을 제어하는 방법에는 여러 가지가 있습니다:
 
-* **Group Settings**: Configure the default settings for new Organizations and get an overview of the current settings for each Organization.
-* **Organization Settings**: Configure the default settings for new users in this Organization.
-* **Personal Settings**: Users can manually change their individual settings to have precise control over what emails they receive for each Organization they have access to.
+* **그룹 설정**: 새 조직의 기본 설정을 구성하고 각 조직의 현재 설정에 대한 개요를 확인할 수 있습니다.
+* **조직 설정**: 이 조직의 새 사용자에 대한 기본 설정을 구성합니다.
+* **개인 설정**: 사용자는 개별 설정을 수동으로 변경하여 액세스 권한이 있는 각 조직에 대해 어떤 이메일을 받을지 정밀하게 제어할 수 있습니다.
 
-Users such as administrators can opt-in to email notifications in their personal settings.
+관리자와 같은 사용자는 개인 설정에서 이메일 알림을 수신하도록 선택할 수 있습니다.
 
-When you are ready to enable notifications more widely, you can see the overview for your Organizations and enable them in bulk on the **Group Settings** page.
+알림을 더 광범위하게 사용 설정할 준비가 되면 조직에 대한 개요를 보고 **그룹 설정** 페이지에서 알림을 일괄적으로 사용 설정할 수 있습니다.
 
-For demonstrations of choosing settings for Organization and individual notifications, see the page  [Configure notifications](../phase-2-configure-account/set-visibility-and-configure-an-organization-template/configure-notifications.md). See [Manage notifications](../../../snyk-admin/manage-notifications.md) for detailed steps.
+조직 및 개별 알림에 대한 설정을 선택하는 데모는 [알림 구성하기](../phase-2-configure-account/set-visibility-and-configure-an-organization-template/configure-notifications.md) 페이지를 참조하세요. 자세한 단계는 [알림 관리하기](../../../snyk-admin/manage-notifications.md)를 참조하세요.
 
-## Announce Snyk to your teams
+## Snyk을 팀에 알리기
 
-Introducing Snyk to your developers is the first step in building awareness of Snyk functions and how your developers can get the most out of Snyk. Typically, Snyk recommends disabling many of the potentially more intrusive features, for example, automatically raising PRs, until your teams are comfortable with Snyk use and results.
+개발자에게 Snyk을 소개하는 것은 Snyk 기능에 대한 인식을 높이고 개발자가 Snyk을 최대한 활용할 수 있는 방법을 알려주는 첫 번째 단계입니다. 일반적으로 Snyk은 팀이 Snyk 사용 및 결과에 익숙해질 때까지 PR 자동 올리기 등 잠재적으로 방해가 될 수 있는 많은 기능을 비활성화할 것을 권장합니다.
 
-## Introduce Snyk to your developers
+## 개발자에게 Snyk 소개하기
 
-This is your chance to get developers excited about better ways to introduce security into their work. If Snyk can make their lives easier, they will be more likely to get on board.
+개발자들이 업무에 보안을 도입하는 더 나은 방법에 대해 흥미를 가질 수 있는 기회입니다. Snyk을 통해 개발자의 업무가 더 쉬워진다면 더 많은 개발자가 참여할 가능성이 높아질 것입니다.
 
-You can use the [Announcement templates](announcement-templates-for-initial-rollout.md) to communicate the Snyk rollout to the rest of the developers.
+[공지 템플릿](announcement-templates-for-initial-rollout.md)을 사용하여 나머지 개발자에게 Snyk 출시를 알릴 수 있습니다.
