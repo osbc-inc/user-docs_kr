@@ -73,7 +73,7 @@ Common Vulnerabilities and Exposures의 약자로, 잘 알려진 취약점에 �
 
 ### CVSS
 
-Common Vulnerability Scoring System의 약자로, 0점(가장 낮음)에서 10점(가장 높음) 사이의 점수를 사용하여 취약성의 심각도를 평가하는 업계 표준입니다. Snyk는 CVSS를 사용합니다.
+Common Vulnerability Scoring System의 약자로, 0점(가장 낮음)에서 10점(가장 높음) 사이의 점수를 사용하여 취약성의 심각도를 평가하는 업계 표준입니다. Snyk CVSS를 사용합니다.
 
 ### CWE
 
@@ -162,11 +162,11 @@ Integrated Development Environment의  약자로, 일반적으로 소스 코드 
 
 ### Integrations
 
-Snyk가 작동하는 타사 제품, 애플리케이션 및 플랫폼(예: GitHub와 같은 SCM 시스템). [Snyk 연동](../integrate-with-snyk/)을 참조하십시오.
+Snyk이 작동하는 타사 제품, 애플리케이션 및 플랫폼(예: GitHub와 같은 SCM 시스템). [Snyk 연동](../integrate-with-snyk/)을 참조하십시오.
 
 ### Issue
 
-Snyk가 식별하고 나열한 라이선스 문제, 취약성 또는 구성 오류입니다. [Find and manage priority issues](../scan-with-snyk/find-and-manage-priority-issues/)를 참조하십시오.
+Snyk이 식별하고 나열한 라이선스 문제, 취약성 또는 구성 오류입니다. [Find and manage priority issues](../scan-with-snyk/find-and-manage-priority-issues/)를 참조하십시오.
 
 ## L
 
@@ -200,7 +200,7 @@ Snyk의 조직은 프로젝트를 수집하고 구성하는 방법입니다. 그
 
 ### Origin or source
 
-Target이 존재하는 생태계의 식별자입니다. Snyk는 CLI, API, GitHub, Kubernetes 등을 포함한 여러 통합에서 프로젝트를 스캔할 수 있습니다. [Snyk Projects](../snyk-admin/snyk-projects/)를 참조하십시오.
+Target이 존재하는 생태계의 식별자입니다. Snyk CLI, API, GitHub, Kubernetes 등을 포함한 여러 통합에서 프로젝트를 스캔할 수 있습니다. [Snyk Projects](../snyk-admin/snyk-projects/)를 참조하십시오.
 
 ## P
 
@@ -238,7 +238,7 @@ Snyk PR Checks를 사용하면 소스 코드 관리자(SCM)에서 pull request(P
 
 ### Priority Score
 
-Snyk는 Issue(취약점 및 라이선스)를 점수화하여 각각의 Issue 해결의 우선순위를 정하는 데 도움이 됩니다. 점수는 CVSS 점수를 포함한 여러 요소를 기반으로 하며 0(낮음)에서 1000(높음) 사이의 범위를 가집니다. [Priority Score](../scan-with-snyk/find-and-manage-priority-issues/priority-score.md)를 참조하십시오.
+Snyk Issue(취약점 및 라이선스)를 점수화하여 각각의 Issue 해결의 우선순위를 정하는 데 도움이 됩니다. 점수는 CVSS 점수를 포함한 여러 요소를 기반으로 하며 0(낮음)에서 1000(높음) 사이의 범위를 가집니다. [Priority Score](../scan-with-snyk/find-and-manage-priority-issues/priority-score.md)를 참조하십시오.
 
 ### Project
 
@@ -310,11 +310,11 @@ Software Development Life Cycle의 약자로, 소프트웨어 개발 수명 주�
 
 ### `.snyk` policy
 
-Snyk가 특정 분석 동작을 정의하고, CLI 및 CI/CD 플러그인에 대한 패치를 지정하는 데 사용하는 정책 파일입니다. [The .snyk file](../scan-with-snyk/policies/the-.snyk-file.md)를 참조하십시오.
+Snyk이 특정 분석 동작을 정의하고, CLI 및 CI/CD 플러그인에 대한 패치를 지정하는 데 사용하는 정책 파일입니다. [The .snyk file](../scan-with-snyk/policies/the-.snyk-file.md)를 참조하십시오.
 
 ### Snyk
 
-CNAS(Cloud Native Application Security) 솔루션을 제공하는 플랫폼으로 개발자는 코드 및 오픈소스에서 컨테이너 및 클라우드 인프라에 이르기까지 전체 애플리케이션에 대한 보안을 유지하고 구축할 수 있습니다. Synk은 또한 Snyk 플랫폼을 제공하는 회사입니다. [Introducing Snyk](broken-reference/)를 참조하십시오.
+CNAS(Cloud Native Application Security) 솔루션을 제공하는 플랫폼으로 개발자는 코드 및 오픈소스에서 컨테이너 및 클라우드 인프라에 이르기까지 전체 애플리케이션에 대한 보안을 유지하고 구축할 수 있습니다. Synk은 또한 Snyk 플랫폼을 제공하는 회사입니다. [Introducing Snyk](broken-reference/) 참조하십시오.
 
 ### Snyk Advisor
 
@@ -367,7 +367,7 @@ Snk 클라우드 네이티브 애플리케이션 보안 플랫폼을 지원하�
 
 ### Social Trends
 
-Snyk는 트위터에서 활발하게 논의되고 있는 문제에 대한 인기 배너를 표시합니다. [Vulnerabilities with Social Trends](../scan-with-snyk/find-and-manage-priority-issues/vulnerabilities-with-social-trends.md)를 참조하십시오.
+Snyk 트위터에서 활발하게 논의되고 있는 문제에 대한 인기 배너를 표시합니다. [Vulnerabilities with Social Trends](../scan-with-snyk/find-and-manage-priority-issues/vulnerabilities-with-social-trends.md)를 참조하십시오.
 
 ### Source
 
@@ -385,7 +385,7 @@ Software Package Data Exchange의 약자로, 소프트웨어가 배포되는 소
 
 ### Target
 
-Snyk가 스캔한 외부 리소스의 표현입니다. 모든 [Snyk Projects](glossary.md#project)는상위 Target과 연결되어 있습니다. 하나의 타겟은 여러 프로젝트와 관련될 수 있습니다. Target의 구조는[origin](glossary.md#origin-or-source)에 따라 다릅니다.
+Snyk이 스캔한 외부 리소스의 표현입니다. 모든 [Snyk Projects](glossary.md#project)는상위 Target과 연결되어 있습니다. 하나의 타겟은 여러 프로젝트와 관련될 수 있습니다. Target의 구조는[origin](glossary.md#origin-or-source)에 따라 다릅니다.
 
 ### **Tags (Snyk AppRisk)**
 
@@ -401,10 +401,10 @@ Snyk가 스캔한 외부 리소스의 표현입니다. 모든 [Snyk Projects](gl
 
 ### Vulnerability
 
-Snyk가 식별한 보안 취약점입니다. [Manage vulnerabilities](../scan-with-snyk/snyk-open-source/manage-vulnerabilities/)를 참조하십시오.
+Snyk이 식별한 보안 취약점입니다. [Manage vulnerabilities](../scan-with-snyk/snyk-open-source/manage-vulnerabilities/)를 참조하십시오.
 
 ## W
 
 ### Webhook
 
-프로그램이 다른 애플리케이션에 실시간 정보를 제공하는 방법입니다. Snyk는 웹훅을 사용하여 코드 변경 사항을 확인합니다. [Snyk Webhooks](../snyk-api-info/snyk-webhooks/)를 참조하십시오.
+프로그램이 다른 애플리케이션에 실시간 정보를 제공하는 방법입니다. Snyk은 웹훅을 사용하여 코드 변경 사항을 확인합니다. [Snyk Webhooks](../snyk-api-info/snyk-webhooks/)를 참조하십시오.
