@@ -40,7 +40,7 @@ Command Line Interface의 약자로, [Snyk CLI](glossary.md#snyk-cli)를 참조�
 
 ### Cloud Native Application Security
 
-CI/CD 파이프라인 전반에 걸쳐 보안을 구현하고, 마이크로서비스에 보안 내장을 자동화하고, 반복을 최대화하여 취약점 발생을 줄입니다. Snyk는 포괄적인 [CNAS platform](https://snyk.io/product/cloud-native-application-security/)을 제공합니다.\
+CI/CD 파이프라인 전반에 걸쳐 보안을 구현하고, 마이크로서비스에 보안 내장을 자동화하고, 반복을 최대화하여 취약점 발생을 줄입니다. Snyk은 포괄적인 [CNAS platform](https://snyk.io/product/cloud-native-application-security/)을 제공합니다.\
 [Cloud-native security guide for building secure applications](https://snyk.io/learn/cloud-native-security-for-cloud-native-applications/) 문서를 참조하세요.
 
 ### Container
