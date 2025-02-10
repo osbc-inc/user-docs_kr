@@ -36,11 +36,11 @@
 
 ## 라이선스 정책에 대한 규칙 및 심각도 지정하기
 
-1. **정책 관리자(Policy manager)**에서 **License policies(라이선스 정책) > Organization(조직)**으로 이동하고 정책 링크를 선택하여 **라이선스 정책(License policy)** 화면을 엽니다.
+1. **정책 관리자(Policy manager)**&#xC5D0;서 **License policies(라이선스 정책) > Organization(조직)**&#xC73C;로 이동하고 정책 링크를 선택하여 **라이선스 정책(License policy)** 화면을 엽니다.
 2. 특정 라이선스에 대한 심각도를 설정하려면 **라이선스 정책(License policy)** 화면에서 **심각도(Severity)** 선택기를 클릭하고 **심각도(Severity)** 수준을 선택하여 Snyk 테스트가 실행될 때 식별하려는 라이선스 문제를 정의합니다.\
    **없음(None)** 이외의 심각도를 선택하고 해당 라이선스 문제가 식별될 때 추가 지침 또는 수정 권장 사항을 표시하려면 **심각도(Severity)** 드롭다운의 오른쪽에 있는 지침 아이콘을 선택하고 라이선스 지침에 대한 텍스트를 입력합니다.
-3. **추가(Add)** 또는 **업데이트(Update)**를 클릭하여 변경 사항을 확인합니다.
-4. **제출(Submit)**을 클릭하여 정책을 저장합니다.
+3. **추가(Add)** 또는 **업데이트(Update)**&#xB97C; 클릭하여 변경 사항을 확인합니다.
+4. **제출(Submit)**&#xC744; 클릭하여 정책을 저장합니다.
 
 <figure><img src="../../../.gitbook/assets/policy-severity-instructions-x_06oct2022 (1).png" alt="Update license policy instructions"><figcaption><p>라이선스 정책 지침 업데이트</p></figcaption></figure>
 
@@ -50,15 +50,11 @@
 
 ## Unknown 라이선스 유형에 대한 심각도 설정
 
-`Unknown` 라이선스 유형은 Snyk가 특정 패키지 버전에 대한 라이선스를 인식하지 못했음을 나타냅니다. 예를 들어 **Unknown**에 심각도 수준을 설정하여 이러한 라이선스 문제에 더 높은 심각도를 부여하여 결과에 더 눈에 띄게 표시되도록 할 수 있습니다.
+`Unknown` 라이선스 유형은 Snyk 특정 패키지 버전에 대한 라이선스를 인식하지 못했음을 나타냅니다. 예를 들어 **Unknown**에 심각도 수준을 설정하여 이러한 라이선스 문제에 더 높은 심각도를 부여하여 결과에 더 눈에 띄게 표시되도록 할 수 있습니다.
 
 편집 중인 정책의 오른쪽에 있는 라이선스 목록을 아래로 스크롤한 다음 **Unknown** 라이선스 유형에 대한 심각도 드롭다운을 선택합니다:
 
-<div align="left">
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-05-12 at 10.42.12.png" alt="Set severity for Unknown license type"><figcaption><p>Unknown 라이선스 유형에 대한 심각도 설정</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../../.gitbook/assets/Screenshot 2023-05-12 at 10.42.12.png" alt="Set severity for Unknown license type"><figcaption><p>Unknown 라이선스 유형에 대한 심각도 설정</p></figcaption></figure></div>
 
 {% hint style="info" %}
 Snyk은 새 라이선스를 라이선스 정책에 추가할 때 **Unknown**으로 설정된 심각도 수준을 새 라이선스에 적용합니다.
